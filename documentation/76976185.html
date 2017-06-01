@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Annotations (JSON)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Result-exports_76976183.html">Result exports</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Annotations (JSON)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified by <span class='editor'> Václav Brodec</span> on Mär 03, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>This file represents annotations to the extended CSV file according to the <a class="external-link" href="https://www.w3.org/2013/csvw/wiki/Main_Page" rel="nofollow">CSV on the Web</a> standard. It contains metadata for each of &quot;physical&quot; columns of the CSV file and also for extra &quot;virtual&quot; columns describing classifications, relations or statistical data cube.</p><h1 id="Annotations(JSON)-ModelofAnnotatedtable">Model of Annotated table</h1><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/76976185/76976621.png" data-image-src="attachments/76976185/76976621.png" data-unresolved-comment-count="0" data-linked-resource-id="76976621" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="AnnotatedTableModel.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76976185" data-linked-resource-container-version="4"></span></p><h1 id="Annotations(JSON)-Example">Example</h1><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+&quot;@context&quot;: &quot;http://www.w3.org/ns/csvw&quot;,
+&quot;url&quot;: &quot;file.csv&quot;,
+ 
+&quot;tableSchema&quot;: { &quot;columns&quot;: [
+{ &quot;name&quot;: &quot;City&quot;, &quot;titles&quot;: [ &quot;City&quot;, &quot;LAU_NAME, &quot;Town&quot; ], &quot;dc:description&quot;: &quot;City of Austria&quot;, &quot;datatype&quot;: &quot;string&quot; 
+  &quot;aboutUrl&quot;: &quot;{City_url}&quot;,
+  &quot;propertyUrl&quot;: &quot;dcterms:title&quot;},
+{ &quot;name&quot;: &quot;District&quot;, &quot;titles&quot;: [ &quot;City&quot;, &quot;DISTRICT_NAME&quot; ], &quot;dc:description&quot;: &quot;District of Austria&quot;, &quot;datatype&quot;: &quot;string&quot;
+  &quot;aboutUrl&quot;: &quot;{District_url}&quot;,
+  &quot;propertyUrl&quot;: &quot;dcterms:title&quot;},
+{ &quot;name&quot;: &quot;POP_FOR_NAT&quot;, &quot;titles&quot;: [ &quot;Population of foreigners&quot; ], &quot;dc:description&quot;: &quot;Population of foreigners in the given area&quot;, &quot;datatype&quot;: &quot;string&quot;
+  &quot;aboutUrl&quot;: &quot;{City_url}&quot;,
+  &quot;propertyUrl&quot;: &quot;x:hasPopulationNat&quot;},
+{ &quot;name&quot;: &quot;POP_TOTAL&quot;, &quot;titles&quot;: [ &quot;Population Total&quot; ], &quot;dc:description&quot;: &quot;Total Population in the given area&quot;, &quot;datatype&quot;: &quot;string&quot;
+  &quot;aboutUrl&quot;: &quot;{City_url}&quot;,
+  &quot;propertyUrl&quot;: &quot;x:hasPopulationTotal&quot;},
+
+{ &quot;name&quot;: &quot;City_type&quot;,
+      &quot;virtual&quot;: true,
+	  &quot;aboutUrl&quot;: &quot;{City_url}&quot;, //relies on value within the column City - does it take valueUrl automatically (if available)?
+      &quot;propertyUrl&quot;: &quot;rdf:type&quot;,
+      &quot;valueUrl&quot;: &quot;http://adequate.at/concept/city&quot;},
+ 
+{ &quot;name&quot;: &quot;City_url&quot;,   //do not produce to the output JSON, this is used only to hold identifier for the row/part of the row
+	  &quot;suppressOutput&quot; : &quot;true&quot;,
+	  &quot;datatype&quot;: &quot;anyURI&quot;  
+      &quot;valueUrl&quot;: &quot;{City_url}&quot;
+ 
+{ &quot;name&quot;: &quot;City_alternative_urls&quot;,  //in the form &quot;http://example.org/1 http://example.org/2&quot;
+	  &quot;aboutUrl&quot;: &quot;{City_url}&quot;, //relies on value within the column City - does it take valueUrl automatically (if available)?
+      &quot;separator&quot;: &quot; &quot;,
+      &quot;propertyUrl&quot;: &quot;owl:sameAs&quot;,
+      &quot;valueUrl&quot;: &quot;{City_alternative_urls}&quot;},
+    
+ 
+{ &quot;name&quot;: &quot;District_type&quot;,
+      &quot;virtual&quot;: true,
+	  &quot;aboutUrl&quot;: &quot;{District_url}&quot;,
+      &quot;propertyUrl&quot;: &quot;rdf:type&quot;,
+      &quot;valueUrl&quot;: &quot;http://adequate.at/concept/district&quot;},},
+ 
+{ &quot;name&quot;: &quot;District_url&quot;,
+	   &quot;suppressOutput&quot; : &quot;true&quot;,
+       &quot;datatype&quot;: &quot;anyURI&quot; 
+       &quot;valueUrl&quot;: &quot;{District_url}, },
+ 
+{ &quot;name&quot;: &quot;City_District_liesIn&quot;,
+	  &quot;virtual&quot;: true,
+      &quot;aboutUrl&quot;: &quot;{City_url}&quot;,
+      &quot;propertyUrl&quot;: &quot;ad:liesIn&quot;,
+      &quot;valueUrl&quot;: &quot;{District_url}&quot;}, },
+},  //end of table schema
+} //end
+</pre>
+</div></div><h1 id="Annotations(JSON)-Exportprocess">Export process</h1><p>First the annotations for original columns are created. They include original column name (also as title), dataType String and when the column is disambiguated, then the relation between corresponding *_url column and the column name with predicate dcterms:title is added. When the disambiguations exist, the annotations for *_url (which only holds the URI of disambiguation), resp. *_alternative_urls (which describes also relation between *_url and *_alternative_urls with predicate owl:sameAs) are also created.</p><p>Then the header annotations (classifications) from the Result are read and for each of them the virtual column describing the relation between *_url and classification resource with predicate rdf:type is created.</p><p>Finally the column relation annotations from the Result are read and corresponding virtual columns are created. The subject must be always resource. But the object can be also literal (for example string or number). In this case we must also find the object dataType, which is derived from the Range property of the relation predicate entity.</p><h3 id="Annotations(JSON)-Statisticaldataspecifics">Statistical data specifics</h3><p>When statistical data are processed, some more columns (apart from columns with original input values, columns with disambiguation and alternative disambiguation URLs and virtual columns describing classifications) are added to the Annotated table JSON (virtual columns describing relations are not present, because relation discovery part of the algorithm is skipped). Some newly added virtual columns describe just one certain triple (without links to columns), because it is needed for definition of data cube.</p><p>When the URL is written in prefixed form (compact IRI), the appropriate prefix mapping is added to the &quot;@context&quot; attribute of annotated table. The &quot;@context&quot; attribute then contains array with two objects: first item is String with link to the definition of CSV on the Web standard context, second item is a map with prefixes used in the document (local context).</p><p>Dataset definition includes three virtual column with concrete triples: {datasetUri} rdf:type qb:DataSet , {datasetUri} dcterms:title {inputIdentifier} and {datasetUri} qb:structure {dsdUri} , where datasetUri is generated accoridng to the template &quot;{kbInsertSchemaElementPrefix}dataset/{UUID}&quot; and dsdUri according to &quot;{kbInsertSchemaElementPrefix}dsd/{UUID}&quot; , inputIdentifier is set by user during file upload and kbInsertSchemaElementPrefix is fetched from the KnowledgeBase configuration (property called kb.insert.prefix.schema.element).</p><p>Data structure definition includes one virtual column with triple: {dsdUri} rdf:type qb:DataStructureDefinition.</p><p>Then we add column &quot;OBSERVATION_url&quot; as holder for URLs of observations (similar as other &quot;*_url&quot; columns for URLs of disambiguations) and two virtual columns linking the &quot;OBSERVATION_url&quot; with rdf:type predicate to qb:Observation and with qb:dataset predicate to {datasetUri}.</p><p>Component definition includes two virtual columns with concrete triples: {dsdUri} qb:component {compUri} and {compUri} {kind} {colPredicate} , where compUri is generated according to template &quot;{kbInsertSchemaElementPrefix}dimension/{UUID}&quot; in case of dimension component or &quot;{kbInsertSchemaElementPrefix}measure/{UUID}&quot; in case of measure component, kind is qb:dimension for dimension or qb:measure for measure and colPredicate is set by user in feedback (predicate describing concrete relation of dimension or measure associated with column of input file).</p><p>Next part is slightly different for dimension and for measure. Dimension definition includes triples: {colPredicate} rdf:type rdf:Property , {colPredicate} rdf:type qb:DimensionProperty , {colPredicate} rdfs:label {colPredicateLabel} and {colPredicate} qb:concept {colClassification} , where colPredicateLabel is label associated with colPredicate entity and colClassification is entity used for classification of the column. Measure definition includes triples: {colPredicate} rdf:type rdf:Property , {colPredicate} rdf:type qb:MeasureProperty , {colPredicate} rdfs:label {colPredicateLabel}, {colPredicate} qb:concept {colClassification} and {colPredicate} rdfs:subPropertyOf sdmx-measure:obsValue .</p><p>And finally there is a virtual column describing relation between OBSERVATION_url column and the column which is associated with the component. Relation predicate is colPredicate. In case of dimension component the link points to the *_url column with disambiguation URLs. For measure component the link points to the original column, which is not disambiguated, because it does not contain named entity.</p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976185/76976621.png">AnnotatedTableModel.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

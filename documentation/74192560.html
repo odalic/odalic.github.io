@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Story: User leaves a column from the export</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4.iteration_75563298.html">4.iteration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Story: User leaves a column from the export
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified by <span class='editor'> Tomas Knap</span> on Sep 23, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Story:Userleavesacolumnfromtheexport-GithubIssues:https://github.com/odalic/sti/issues/142,https://github.com/odalic/odalic-ui/issues/70">Github Issues: <a href="https://github.com/odalic/sti/issues/142" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/142</a> , <a href="https://github.com/odalic/odalic-ui/issues/70" class="external-link" rel="nofollow">https://github.com/odalic/odalic-ui/issues/70</a></h2><h2 id="Story:Userleavesacolumnfromtheexport-Req:66">Req: 66</h2><h2 id="Story:Userleavesacolumnfromtheexport-UserStory">User Story</h2><p><span>As a user I want to leave some column and all associated relations from the result, but still keep it as a part of the input when the algorithm is processing it. </span></p><p><span>The choice is remembered for the re-runs, so unless I revert the choice back, all subsequent exports will miss the column and the relations it forms as well.</span></p><p><span><span class="inline-comment-marker" data-ref="5e4da49a-70d2-4f46-85e5-23991628125b">I am not able to form additional custom relations with the left out column.</span></span></p><p><span><span class="inline-comment-marker" data-ref="5e4da49a-70d2-4f46-85e5-23991628125b">This step is skipped in case of statistical data</span></span></p><p><span><span class="inline-comment-marker" data-ref="5e4da49a-70d2-4f46-85e5-23991628125b">Note: When having such extra step, we may need to have &quot;Export&quot; and &quot;Export with adjustment&quot; buttons for RDF/CSV</span></span></p><p><span><span class="inline-comment-marker" data-ref="5e4da49a-70d2-4f46-85e5-23991628125b"><br/></span></span></p><p><span><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_story-leave-1"><img class="balsamiq_mockup" src="attachments/74192560/74875751.png"/></a><br/></div><br/></span></p><h2 id="Story:Userleavesacolumnfromtheexport-Preconditions">Preconditions</h2><ul><li>The algorithm has been run at least once on the data or the application already knows how many columns are available in the output.</li></ul><h2 id="Story:Userleavesacolumnfromtheexport-DetailedDescription"><span style="color: rgb(0,0,0);">Detailed Description</span></h2><ol><li>User indicates that a column is to be left from the export (by unchecking associated check-box).</li><li>Associated relations are shown to be removed when the relations designing screen is displayed.</li><li>When the user chooses to export the result, the column (and all relations it appears in) will miss in all available export formats.</li><li>The choice is saved for the re-runs.</li><li>The associated check-box is filled according to the choice.</li></ol><h2 id="Story:Userleavesacolumnfromtheexport-AcceptanceCriteria&amp;TestScenarios">Acceptance Criteria &amp; Test Scenarios</h2><ol><li>All supported export formats do not contain the left out column or relations it forms.</li><li>The choice to leave the column is applied also in the subsequent export.</li><li>Note the differences between this functionality an the option to entirely ignore a column, which leave the column before the algorithm even starts.</li></ol><h2 id="Story:Userleavesacolumnfromtheexport-Variations">Variations</h2><ul><li>Optional goal: The user is able to take his decision back without any problems affecting the immediate export. No re-run is necessary (unless other feedback, requiring a re-run is provided).</li></ul>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74192560/74875752.bmml">mockup_story-leave-1.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74192560/74875753.png">mockup_story-leave-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74192560/75563515.bmml">mockup_story-leave-1.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74192560/75563516.png">mockup_story-leave-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74192560/74875750.bmml">mockup_story-leave-1.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74192560/74875751.png">mockup_story-leave-1.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

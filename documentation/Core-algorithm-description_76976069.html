@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Core algorithm description</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Core algorithm description
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified on Mai 30, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Corealgorithmdescription-Phases">Phases</h1><p>The main goal of the <span class="inline-comment-marker" data-ref="79997352-5ca0-49bc-ba15-7837f202cf15">core algorithm</span> is to take the the tabular input data, interpret it as best as it can using selected knowledge bases, and return an annotated table. This annotation process has several distinct phases:</p><ol><li><strong>Subject Column Detection</strong><br/>The subject column candidate is determined from both the column headers and cell values. The values in the subject column then represent main entities, values from other columns are interpreted as properties of these main entities.</li><li><strong>Cells Disambiguation</strong><br/>Individual cell values are searched in available knowledge bases. Search results are then scored and their types and properties are loaded for further processing. The result of this phase is a list of candidates for every table cell.</li><li><strong>Columns Classification</strong><br/>Classification determines candidates for columns based on types of disambiguated column cells. The desired result is to pick a class that is a type for majority of the column cells, but also is not too broad (e.g. when classifying a column of writers, we want to receive dbpedia:Writer and not dbpedia:Thing).</li><li><strong>Relations Enumeration</strong><br/>Relations between cells and columns are determined from properties of disambiguated cells.</li></ol><p>A more in-depth description of the original algorithm, upon which is the core algorithm base on, can be found in the paper <a href="http://www.semantic-web-journal.net/content/effective-and-efficient-semantic-table-interpretation-using-tableminer-0" class="external-link" rel="nofollow">http://www.semantic-web-journal.net/content/effective-and-efficient-semantic-table-interpretation-using-tableminer-0</a><span class="inline-comment-marker" data-ref="f20c63f3-ee86-45e5-8f8a-688111ec1b8a"> </span>. Its implementation of the algorithm is spread into several modules.</p><ul><li><strong>sti-main</strong><br/>The main part of the algorithm. Contains the implementation of the above mentioned steps. The original TableMiner+ contained many experimental interpreter implementations. In the Odalic, most of them were removed in favor of the TMP implementation. The reason for this is, that each of them would have to be extended by new features like user feedback, which would go beyond the scope of our project. Also there are mostly proven inferior by the paper.</li><li><strong>sti-kbproxy</strong><br/>Provides an abstracted interface for communication with various KBs. Used both by the core algorithm and Odalic server.</li><li><strong>sti-websearch</strong><br/>Handles scoring of results based on web search.</li></ul><h1 id="Corealgorithmdescription-MainModule">Main Module</h1><p>The entry point for the algorithm is the <strong>uk.ac.shef.dcs.sti.core.algorithm.tmp.TMPOdalicInterpreter</strong> class, to successfully initialize the interpreter it is necessary to obtain instances of following classes.</p><ul><li><strong>uk.ac.shef.dcs.sti.core.algorithm.tmp.TCellDisambiguator</strong><br/>Handles cell disambiguation.</li><li><strong>uk.ac.shef.dcs.sti.core.algorithm.tmp.TColumnClassifier</strong><br/>Handles columns classification.</li><li><strong>uk.ac.shef.dcs.sti.core.algorithm.tmp.sampler.TContentCellRanker</strong><br/>Provides ranking of rows based on number of non-empty cells. Currently used implementation is <strong>uk.ac.shef.dcs.sti.core.algorithm.tmp.sampler.OSPD_nonEmpty</strong>.</li><li><strong>uk.ac.shef.dcs.sti.core.algorithm.tmp.LEARNING</strong><br/>Performs preliminary disambiguation and classification on a sample of rows.</li><li><strong>uk.ac.shef.dcs.sti.core.algorithm.tmp.UPDATE</strong><br/>Updates results scores at the of phase 3, after the classification is done.</li><li><strong>uk.ac.shef.dcs.sti.core.algorithm.tmp.TColumnColumnRelationEnumerator</strong><br/>Discovers relations between columns and cells.</li><li><strong>uk.ac.shef.dcs.sti.core.algorithm.tmp.LiteralColumnTagger</strong><br/>Used at the end of phase 4. Annotates any not yet annotated columns as data properties and tries to find relations with the subject column.</li><li><strong>uk.ac.shef.dcs.kbproxy</strong><br/>Provides access to the underlying knowledge bases.</li></ul><h1 id="Corealgorithmdescription-KBProxyModule">KB Proxy Module</h1><p>The KB Proxy module is used by both Main module and Odalic server module to search configured KBs. The <strong><span style="color: rgb(0,0,0);">uk</span>.ac.shef.dcs.kbproxy.KBProxy</strong> instances are created from Odalic configuration files using the <strong>uk.ac.shef.dcs.kbproxy.</strong><span style="color: rgb(0,0,0);"><strong>KBProxyFactory</strong>. The base class has built in Solr cache and provides methods for saving <span style="color: rgb(0,0,0);">search results</span> to the cache and retrieving them from the cache. Each KBproxy has it's own solr cache defined by the KB name. There are currently two implementations of the <strong><span style="color: rgb(0,0,0);">uk</span>.ac.shef.dcs.kbproxy.KBProxy</strong>.</span></p><ul><li><strong>uk.ac.shef.dcs.kbproxy.sparql.SPARQLProxy</strong><br/>Generic implementation of KB Search of SPARQL KBs.</li><li><strong>uk.ac.shef.dcs.kbproxy.sparql.DBpediaProxy</strong><br/>Specific implementation of KB Search for DBpedia type of KBs. Extends the <strong>SPARQLProxy</strong> and currently has only modified label retrieval methods.</li></ul><p>The original TableMiner+ used proxy class for Freebase. This was replaced by a more generic SPARQL proxy. The Freebase is no longer supported, because it's original public API is no longer available.The <strong><span style="color: rgb(0,0,0);">uk</span>.ac.shef.dcs.kbproxy.KBProxy</strong> has four main groups of public methods.</p><h2 id="Corealgorithmdescription-Corealgorithmsearch">Core algorithm search</h2><p>These methods are used by the core algorithm, they do not throw any exceptions. To implement them, it is necessary to override the &quot;<strong>*Internal</strong>&quot; methods with same names. Any potential errors are caught and returned as warning for the user.</p><ul><li><strong>findAttributesOfClazz</strong><br/>Returns a collection of attributes of the selected class.</li><li><strong>findAttributesOfEntities</strong><br/>Returns a collection of attributes of the selected entity.</li><li><strong>findAttributesOfProperty</strong><br/>Returns a collection of attributes of the selected property.</li><li><strong>findEntityCandidates</strong><br/>Method used for the preliminary disambiguation or for main disambiguation when the preliminary disambiguation returned no types. Searches for candidates in the KB based on their label. The entities are returned with complete information about attributes and types.</li><li><strong>findEntityCandidatesOfTypes</strong><br/>Same as <strong>findEntityCandidates</strong> with the difference that results are only of certain types. Used in disambiguation when preliminary disambiguation returned some candidate types.</li><li><strong>findEntityClazzSimilarity</strong><br/>Evaluates similarity between two classes.</li><li><strong>findGranularityOfClazz</strong><br/>Evaluates granularity of a class.</li><li><strong>loadEntity</strong><br/>Loads single entity from the KB with complete information about attributes and types.</li></ul><h2 id="Corealgorithmdescription-UserinitiatedSearch">User initiated Search</h2><p>These methods are used by the Odalic server in the user search dialog.</p><ul><li><strong>findPredicateByFulltext</strong><br/>Returns candidate entities (predicates) from the KB based on supplied string value, domain and range.</li><li><strong>findResourceByFulltext</strong><br/>Returns candidate entities (resources) from the KB based on supplied string value.</li><li><strong>findClassByFulltext</strong><br/>Returns candidate entities (classes) from the KB based on supplied string value.</li></ul><h2 id="Corealgorithmdescription-Proposals">Proposals</h2><ul><li><strong>isInsertSupported</strong><br/>Information about whether the knowledge base supports inserting new concepts.</li><li><strong>insertClass</strong><br/>Inserts a new class into the knowledge base.</li><li><strong>insertConcept</strong><br/>Inserts a new concept into the knowledge base.</li><li><strong>insertProperty</strong><br/>Inserts a new property type into the knowledge base.</li></ul><h2 id="Corealgorithmdescription-Export">Export</h2><ul><li><strong>getPropertyDomains</strong><br/>Returns domain of the given resource.</li><li><strong>getPropertyRanges</strong><br/>Returns range properties of the given resource.</li></ul><h2 id="Corealgorithmdescription-SPARQLProxy">SPARQL Proxy</h2><p>The SPARQL Proxy implements the above mentioned methods using <a href="https://jena.apache.org/" class="external-link" rel="nofollow">Jena</a> to generate the required SPARQL SELECT, INSERT and ASK requests. The original TableMiner+ created SPARQL queries by string concatenation, the current approach makes use of Jena &quot;bulder&quot; classes and is both more readable and less error prone. The fulltext search is implemented by querying the DBpedia fulltext catalogue through the &quot;<strong>bif:contains</strong>&quot; predicate. If the fulltext catalogue is not available, the proxy falls back on regex based filters, that are somewhat slower.</p><p>In user search, it is important to be able to return any resources found during the disambiguation. This is not always possible, because some results, like types from column classification, may not have labels. It is also important to be able to find any recently proposed resources. For this reason, the user initiated search always performs both exact match query and fulltext query. The exact match query usually returns less results, but can find recently proposed resources, that have not yet been added to the fulltext catalogue of the knowledge base.</p><p>The disambiguation of cells usually creates following queries.</p><ol><li><p><strong>Exact match query by label</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">PREFIX  geonames: &lt;http://www.geonames.org/ontology#&gt;
+PREFIX  owl:  &lt;http://www.w3.org/2002/07/owl#&gt;
+PREFIX  skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+... # Other prefixes left out.
+
+SELECT DISTINCT  ?subject
+WHERE
+  { { SELECT DISTINCT  ?subject
+      WHERE
+        {   { ?subject  foaf:name  &quot;Gardens of the Moon&quot;@en }
+          UNION
+            { ?subject  dbpprop:fullname  &quot;Gardens of the Moon&quot;@en }
+          UNION
+            { ?subject  rdfs:label  &quot;Gardens of the Moon&quot;@en }
+          UNION
+            { ?subject  dbpprop:name  &quot;Gardens of the Moon&quot;@en }
+          UNION
+            { ?subject  dbpedia-owl:originalTitle  &quot;Gardens of the Moon&quot;@en }
+        }
+    }
+    ?subject  rdf:type  ?class
+  }</pre>
+</div></div></li><li><p><strong>Fulltext query by label</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"># Prefixes left out.
+
+SELECT DISTINCT  ?subject ?object
+WHERE
+  { { SELECT DISTINCT  ?subject ?object
+      WHERE
+        {   { ?subject  foaf:name       ?object .
+              ?object   &lt;bif:contains&gt;  &quot;\&quot;Gardens\&quot; AND \&quot;of\&quot; AND \&quot;the\&quot; AND \&quot;Moon\&quot;&quot;
+            }
+          UNION
+            { ?subject  dbpprop:fullname  ?object .
+              ?object   &lt;bif:contains&gt;    &quot;\&quot;Gardens\&quot; AND \&quot;of\&quot; AND \&quot;the\&quot; AND \&quot;Moon\&quot;&quot;
+            }
+          UNION
+            { ?subject  rdfs:label      ?object .
+              ?object   &lt;bif:contains&gt;  &quot;\&quot;Gardens\&quot; AND \&quot;of\&quot; AND \&quot;the\&quot; AND \&quot;Moon\&quot;&quot;
+            }
+          UNION
+            { ?subject  dbpprop:name    ?object .
+              ?object   &lt;bif:contains&gt;  &quot;\&quot;Gardens\&quot; AND \&quot;of\&quot; AND \&quot;the\&quot; AND \&quot;Moon\&quot;&quot;
+            }
+          UNION
+            { ?subject  dbpedia-owl:originalTitle  ?object .
+              ?object   &lt;bif:contains&gt;        &quot;\&quot;Gardens\&quot; AND \&quot;of\&quot; AND \&quot;the\&quot; AND \&quot;Moon\&quot;&quot;
+            }
+        }
+    }
+    ?subject  rdf:type  ?class
+  }</pre>
+</div></div></li><li><p><strong>Query attributes for every result</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"># Prefixes left out.
+
+SELECT DISTINCT  ?predicate ?object
+WHERE
+  { dbpedia:Gardens_of_the_Moon
+              ?predicate  ?object
+  }</pre>
+</div></div></li><li><p><strong>Query label for every attribute</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"># Prefixes left out.
+
+SELECT DISTINCT  ?object
+WHERE
+  {   { dbpedia-owl:Book
+                  foaf:name  ?object
+      }
+    UNION
+      { dbpedia-owl:Book
+                  dbpprop:fullname  ?object
+      }
+    UNION
+      { dbpedia-owl:Book
+                  rdfs:label  ?object
+      }
+    UNION
+      { dbpedia-owl:Book
+                  dbpprop:name  ?object
+      }
+    UNION
+      { dbpedia-owl:Book
+                  dbpedia-owl:originalTitle  ?object
+      }
+  }</pre>
+</div></div></li></ol><h1 id="Corealgorithmdescription-WebsearchModule">Websearch Module</h1><p>Provides functionality for searching concepts of the web. Used for scoring results. Formerly implemented using Bing Web Search API, now renamed to Microsoft Cognitive Services.</p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

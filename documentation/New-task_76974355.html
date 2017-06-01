@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : New task</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="User-Documentation_76974286.html">User Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="User-interface_76977455.html">User interface</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : New task
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified by <span class='editor'> Kateřina Boková</span> on Mai 31, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Page for creation of a new task configuration can be opened from the main menu - <span class="inline-comment-marker" data-ref="5233388c-e8d7-461d-82ef-759bc7d538c0">item <em>Tasks &gt; Add new</em> or from the List of tasks</span> - button <em>Add new</em> at the bottom of the page.</p><h1 id="Newtask-Basicsettings">Basic settings</h1><p>Basic task settings include Task identifier and description. Task identifier must not be empty and may contain only alphanumeric characters, spaces, dots, commas, underscores and dashes. After creation the task identifier cannot be changed, but you can always <a href="Task-import_76974372.html">re-import</a> the task under different identifier.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76974355/76989083.png" data-image-src="attachments/76974355/76989083.png" data-unresolved-comment-count="0" data-linked-resource-id="76989083" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="newTask.PNG" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974355" data-linked-resource-container-version="9"></span></p><h1 id="Newtask-Settingtheinputfile">Setting the input file</h1><p>You can select one of the already defined files, than skip to the File format configuration. Or you can add a new file. There are two options to do that:</p><h2 id="Newtask-Localfiles">Local files</h2><p>You can upload a file from your device. The identifier will be filled automatically with the file name, but you can change it (restrictions are the same as for the task identifier).</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="768" src="attachments/76974355/76974341.png" data-image-src="attachments/76974355/76974341.png" data-unresolved-comment-count="0" data-linked-resource-id="76974341" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="newtask-upload.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974355" data-linked-resource-container-version="9"></span></p><h2 id="Newtask-Remotefiles">Remote files</h2><p>Or you can attach a remote file. Just fill the location of the remote file and custom identifier.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="768" src="attachments/76974355/76974342.png" data-image-src="attachments/76974355/76974342.png" data-unresolved-comment-count="0" data-linked-resource-id="76974342" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="newtask-attach.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974355" data-linked-resource-container-version="9"></span></p><h2 id="Newtask-Fileformatconfiguration">File format configuration</h2><p>Select some file for processing in the task from the list of uploaded or attached files labelled <em>Selected file</em>. You can optionally configure format settings of the selected file (the dialog is opened in modal window):</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76974355/76976041.png" data-image-src="attachments/76974355/76976041.png" data-unresolved-comment-count="0" data-linked-resource-id="76976041" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="newtask-configure.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974355" data-linked-resource-container-version="9"></span></p><p>You can select some of predefined values or you can fill custom values. Custom character set names must be on of those provided in <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html" class="external-link" rel="nofollow">https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html</a>. Delimiter separates records in one row. <em>Quote character</em> marks start and end of section where delimiters are ignored. <em>Escape character</em> escapes the quote character. <em>Comment marker</em> turns on comments until the end of line. You can also tell the application to <em>Ignore empty lines</em>.</p><h1 id="Newtask-Knowledgebases">Knowledge bases</h1><p>Select <span class="inline-comment-marker" data-ref="e6db2de6-94d1-49bf-9c18-234db887cd20">knowledge bases</span> which will be used in the task processing. Available knowledge bases and their properties are set by configuration files. Their structure is described at <a href="Configuration_76975474.html">Configuration</a> part of the developer documentation. To turn them on they must be linked to from the main configuration file.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76974355/76989088.png" data-image-src="attachments/76974355/76989088.png" data-unresolved-comment-count="0" data-linked-resource-id="76989088" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="kbsNewTask.PNG" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974355" data-linked-resource-container-version="9"></span></p><p>Select also the <span class="inline-comment-marker" data-ref="939fc02f-f7ac-46ea-a7e6-189e02cf49b1">primary knowledge base</span>, which is modifiable, so it will be used for proposing new entities. During export of results, the concepts from the primary knowledge base are preferred.</p><h1 id="Newtask-Processing">Processing</h1><p>In the last section you can restrict the number of lines processed in the task (including the header). Also check whether you want to process the file as <span class="inline-comment-marker" data-ref="7525d433-fe78-4d14-80b0-efd31d9cc517">statistical data</span> - in this case the relation discovery phase will be skipped, but statistical annotations will be assigned instead. They are then used when exporting results according to the <a href="https://www.w3.org/TR/vocab-data-cube/" class="external-link" rel="nofollow">RDF data cube standard</a>.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/76974355/76974354.png" data-image-src="attachments/76974355/76974354.png" data-unresolved-comment-count="0" data-linked-resource-id="76974354" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="newtask-processing.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974355" data-linked-resource-container-version="9"></span></p><p>You can save the task, save and immediately run, or cancel the changes.</p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76974329.png">newtask-basics.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76974341.png">newtask-upload.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76974342.png">newtask-attach.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76974349.png">newtask-configure.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76974343.png">newtask-configure.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76974350.png">newtask-kb.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76977307.png">newtask-processing.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76975818.png">newtask-configure.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76975819.png">newtask-basics.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76977305.png">newtask-basics.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76976041.png">newtask-configure.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76976038.png">newtask-basics.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76974354.png">newtask-processing.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76989087.png">newTask.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76989083.png">newTask.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76989090.png">kbsNewTask.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974355/76989088.png">kbsNewTask.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

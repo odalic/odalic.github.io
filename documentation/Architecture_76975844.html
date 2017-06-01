@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Architecture</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Architecture
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified on Jun 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76975844/76977481.png" data-image-src="attachments/76975844/76977481.png" data-unresolved-comment-count="0" data-linked-resource-id="76977481" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="overview-components Copy(1).png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76975844" data-linked-resource-container-version="9"></span></p><p>Odalic architecture follows the basic division into the three components: server (Odalic Semantic Table Interpreation), web client (Odalic UI) and the plugin (Odalic UnifiedViews Plugn). Both the client and server, and the plugin DPU instances and server communicate over the established server <a href="REST-API-specification_76975884.html">REST API</a>. Users can either use the web client to put CSV files to process, or in case they require the Odalic to integrate with other UnifiedViews DPUs or use some of the other UnifiedViews features, the plugin.</p><h1 id="Architecture-OdalicUI">Odalic UI</h1><p>Odalic UI is a single-page web application <em>(based on AngularJS),</em> which is running entirely in the client's browser. It uses the server REST API to let the user register, log in, send or set up files, run the processing on them, provide feedback and finally export the results or the used configuration.</p><p>In order to get notified about the change of execution state, the client actively polls the server.</p><h1 id="Architecture-OdalicSemanticTableInterpreation">Odalic Semantic Table Interpreation</h1><p>The server is deployed in a servlet container (tested on Apache Tomcat). It runs many services, of note is the one that actually does the processing of the input files. It spawns a new thread for every set up task and passes its configuration or a collected feedback (in case it is a re-run) to algorithm which is a <span class="inline-comment-marker" data-ref="26a173ab-80de-4e57-87b8-47b685214375">modified version of the TableMiner+ algorithm </span>by Ziqi Zhang. The server responds to state polling requests, but also allows to ask for the result upfront and blocks the response to the request until the result is available.</p><p>Interesting implementation details of this and other services are described throughout the developer documentation.</p><h2 id="Architecture-Knowledgebases">Knowledge bases</h2><p>Knowledge bases are hosted in a separate dedicated one or more RDF stores (e.g. <a href="https://virtuoso.openlinksw.com/" class="external-link" rel="nofollow">Virtuoso</a>). They can be accessed remotely, some of them are available to the general public. Access to them can be configured in <code>.properties</code> files stored in the <code>config</code> sub-directory of the working directory, which the server loads at start-up and provides to every created user. The bases can be further managed, new added and configured through the API and the UI. They are mainly used by the processing algorithm and services facilitating user feedback.</p><p>Odalic requires presence of at least one knowledge base that is modifiable, to be selected as the primary one. This base is used to store the user-defined resources and also takes precedence in case of conflict between partial results from the bases used in processing. The Docker installation comes with one such base so the user does not need to configure his or her own if he or she does not want to. This one can remain empty, only to store the proposed resources.</p><h2 id="Architecture-Serverstate">Server state</h2><p>The server uses a <a href="http://www.mapdb.org/" class="external-link" rel="nofollow">MapDB</a> file storage to keep the state of the server, which consists of the registered and logged users, their files, file and task configurations and the feedback users provided. The storage also caches execution results, so the users do not have to compute them again in case of server restart or crash, as they can be relatively expensive to do, from time and network traffic perspective.</p><h1 id="Architecture-OdalicDPU">Odalic DPU</h1><p>Odalic DPUs work within the boundaries of <a href="https://grips.semantic-web.at/display/UDDOC/Introduction" rel="nofollow">UnifiedViews architecture</a>, from the Odalic platform perspective they behave as another REST API client. They even use the same authentication mechanism as the Odalic UI, where the security token is saved in the DPU template and then used in all the template instances.</p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76975849">overview-components Copy</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76975850.png">overview-components Copy.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76975851">overview-components Copy</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76975852.png">overview-components Copy.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76975853">overview-components Copy</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76975854.png">overview-components Copy.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76975861">overview-components Copy</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76975862.png">overview-components Copy.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76976607.png">overview-components Copy.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76975846">overview-components Copy</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76976605.svg">overview-components Copy.svg</a> (image/svg+xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76975847.png">overview-components Copy.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76975844/76977481.png">overview-components Copy(1).png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

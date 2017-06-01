@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Scenario 2a Knowledge base import</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Scenario 2a Knowledge base import
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Jan Váňa</span>, last modified on Mai 23, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Scenario2aKnowledgebaseimport-InitialState"><span style="color: rgb(0,0,0);text-decoration: none;">Initial State</span></h2><p><span style="color: rgb(0,0,0);text-decoration: none;">The user is logged on the system <span style="color: rgb(0,0,0);"> (see: </span><a href="Scenario-0a--Login-and-home-screen_72223863.html">Scenario 0a Login and home screen</a><span style="color: rgb(0,0,0);">)</span></span></p><h2 id="Scenario2aKnowledgebaseimport-Description"><span style="color: rgb(0,0,0);text-decoration: none;"><span class="inline-comment-marker" data-ref="76af473f-4022-4bc6-baec-30ba8496026b">Description</span></span></h2><ol><li class="_mce_tagged_br">User displays a list of knowledge bases (see <a href="https://grips.semantic-web.at/display/ADEQ/Scenario+9+Viewing+list+of+knowledge+bases" rel="nofollow">Scenario 9</a>)<span style="color: rgb(0,0,0);text-decoration: none;"> </span><span style="color: rgb(0,0,0);text-decoration: none;"> </span><span style="color: rgb(0,0,0);text-decoration: none;"> </span></li><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;">User decides to add a new knowledge base</span><ol><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;">As a result, system shows the dialog from <span class="confluence-link"><a href="#Scenario2aKnowledgebaseimport-Mockup1">Mockup 1</a></span>.</span></li></ol></li><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;"> </span><span style="color: rgb(0,0,0);text-decoration: none;">User inserts the knowledge base name and description and confirms the dialog.</span><span style="color: rgb(0,0,0);text-decoration: none;"> </span><ol><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;"><span style="color: rgb(0,0,0);text-decoration: none;">As a result, system creates a new knowledge base.</span></span></li></ol></li><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;"><span>The scenario continues at step 3 of either <a href="https://grips.semantic-web.at/display/ADEQ/Scenario+2b+Dataset+import+-+RDF" rel="nofollow">Scenario 2b</a>, or <a href="https://grips.semantic-web.at/display/ADEQ/Scenario+2c+Dataset+Import+-+SPARQL" rel="nofollow">Scenario 2c</a>, depending on whether the user wants to create external or internal dataset in the new knowledge base.</span></span></li></ol><h2 id="Scenario2aKnowledgebaseimport-Alternatives"><span class="_mce_tagged_br">Alternatives</span></h2><ol><li class="_mce_tagged_br">User chooses to manage knowledge base in PoolParty in step 3.<ol><li class="_mce_tagged_br">As a result, system import datasets from the PoolParty.</li></ol></li></ol><h2 id="Scenario2aKnowledgebaseimport-Whatcangowrong"><span style="color: rgb(0,0,0);text-decoration: none;">What can go wrong</span></h2><ul><li style="list-style-type: disc;"><p><span style="color: rgb(0,0,0);text-decoration: none;">There is already a knowledge base with the same name.</span></p></li></ul><h2 id="Scenario2aKnowledgebaseimport-Systemstateoncompletion"><span style="color: rgb(0,0,0);text-decoration: none;">System state on completion</span></h2><p><span style="color: rgb(0,0,0);text-decoration: none;">The system saves the knowledge base and the user can use it in further conversion tasks.</span></p><h2 id="Scenario2aKnowledgebaseimport-RequirementsMotivatingtheScenario"><span style="color: rgb(0,0,0);text-decoration: none;">Requirements Motivating the Scenario</span></h2><p><span style="color: rgb(0,0,0);text-decoration: none;"><a href="List-of-Requirements_71440542.html#ListofRequirements-48">48</a>, <a href="List-of-Requirements_71440542.html#ListofRequirements-49">49</a>.</span></p><h2 id="Scenario2aKnowledgebaseimport-ImplementationNotes">Implementation Notes</h2><div>RDF files are stored into the internal RDF store.</div><h1 id="Scenario2aKnowledgebaseimport-Mockups"><span style="color: rgb(0,0,0);">Mockups</span></h1><h5 id="Scenario2aKnowledgebaseimport-Mockup1Mockup1"><span style="color: rgb(0,0,0);"><span class="confluence-anchor-link" id="Scenario2aKnowledgebaseimport-Mockup1"></span>Mockup 1</span></h5><p><span style="color: rgb(0,0,0);"><div class="balsamiq_mockup" align="left"><a class="balsamiq_mockup" name="mockup_mockup-kb-new"><img class="balsamiq_mockup" src="attachments/72222855/72226127.png"/></a><br/></div></span></p><p> </p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225082">1 - New knowledge base dialog</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225083.png">1 - New knowledge base dialog.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72223036">2 - RDF Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72223037.png">2 - RDF Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72223039">3 - SPARQL Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72223040.png">3 - SPARQL Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225076">2 - RDF Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225077.png">2 - RDF Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225072">3 - SPARQL Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225073.png">3 - SPARQL Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225074">3 - SPARQL Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225075.png">3 - SPARQL Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225078">3 - SPARQL Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225079.png">3 - SPARQL Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225545">2 - RDF Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225546.png">2 - RDF Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225547">3 - SPARQL Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225548.png">3 - SPARQL Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225543">1 - New knowledge base dialog</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72225544.png">1 - New knowledge base dialog.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72223026">1 - New knowledge base dialog</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72223027.png">1 - New knowledge base dialog.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72223031">2 - RDF Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72223032.png">2 - RDF Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72223034">3 - SPARQL Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72223035.png">3 - SPARQL Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226146.bmml">mockup_mockup-kb-new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226147.png">mockup_mockup-kb-new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226144.bmml">mockup_mockup - kb - dataset - new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226145.png">mockup_mockup - kb - dataset - new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226142.bmml">mockup_mockup-kb-dataset-new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226143.png">mockup_mockup-kb-dataset-new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226140.bmml">mockup_mockup-kd-dataset-RDF.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226141.png">mockup_mockup-kd-dataset-RDF.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226138.bmml">mockup_mockup-kd-dataset-RDF.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226139.png">mockup_mockup-kd-dataset-RDF.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226936.bmml">mockup_mockup-kb-dataset-new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226937.png">mockup_mockup-kb-dataset-new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226128.bmml">mockup_mockup - kb - dataset - new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226129.png">mockup_mockup - kb - dataset - new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226126.bmml">mockup_mockup-kb-new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226127.png">mockup_mockup-kb-new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226150.bmml">mockup_mockup-kb-dataset-sparql.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226151.png">mockup_mockup-kb-dataset-sparql.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226148.bmml">mockup_mockup-kb-dataset-sparql.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226149.png">mockup_mockup-kb-dataset-sparql.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226938.bmml">mockup_mockup-kb-dataset-new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226939.png">mockup_mockup-kb-dataset-new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226136.bmml">mockup_mockup-kb-dataset-new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222855/72226137.png">mockup_mockup-kb-dataset-new.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Scenario 2c Dataset Import - SPARQL</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Scenario 2c Dataset Import - SPARQL
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Jan Váňa</span>, last modified on Mai 23, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Scenario2cDatasetImport-SPARQL-InitialState"><span style="color: rgb(0,0,0);text-decoration: none;">Initial State</span></h2><p><span style="color: rgb(0,0,0);text-decoration: none;">The user is logged on the system <span style="color: rgb(0,0,0);"> (see: </span><a href="Scenario-0a--Login-and-home-screen_72223863.html">Scenario 0a Login and home screen</a><span style="color: rgb(0,0,0);">)</span></span></p><h2 id="Scenario2cDatasetImport-SPARQL-Description"><span style="color: rgb(0,0,0);text-decoration: none;"><span class="inline-comment-marker" data-ref="76af473f-4022-4bc6-baec-30ba8496026b">Description</span></span></h2><ol><li class="_mce_tagged_br">User displays a list of knowledge bases (see <a href="https://grips.semantic-web.at/display/ADEQ/Scenario+9+Viewing+list+of+knowledge+bases" rel="nofollow">Scenario 9</a>)<span style="color: rgb(0,0,0);text-decoration: none;"> </span><span style="color: rgb(0,0,0);text-decoration: none;"> </span><span style="color: rgb(0,0,0);text-decoration: none;"> </span></li><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;">User decides to add a new dataset to an existing knowledge base<br/></span><ol><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;">As a result, system shows the dialog from <span class="confluence-link"><a href="#Scenario2cDatasetImport-SPARQL-Mockup1">Mockup 1</a></span>.</span></li></ol></li><li class="_mce_tagged_br">U<span class="inline-comment-marker" data-ref="7f38f9a9-354f-479c-997e-99eb1f6005c3">ser inserts the Dataset Name and Named Graph.</span><span style="color: rgb(0,0,0);text-decoration: none;"> <br/></span></li><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;">User chooses to import from a <span style="color: rgb(0,0,0);text-decoration: none;">SPARQL </span>endpoint and confirms the dialog.</span><span style="color: rgb(0,0,0);text-decoration: none;"><br/></span><ol><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;">As a result, <span style="color: rgb(0,0,0);text-decoration: none;"><span style="color: rgb(0,0,0);text-decoration: none;">system shows the dialog from</span></span> <span class="confluence-link"><a href="#Scenario2cDatasetImport-SPARQL-Mockup2">Mockup 2</a></span>.</span></li></ol></li><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;"><span style="color: rgb(0,0,0);text-decoration: none;">ser inserts the SPARQL endpoint and confirms the import</span></span><span class="_mce_tagged_br"><br/></span><ol><li class="_mce_tagged_br"><span>As a result, system imports the dataset</span></li></ol></li></ol><h2 id="Scenario2cDatasetImport-SPARQL-Whatcangowrong"><span style="color: rgb(0,0,0);text-decoration: none;">What can go wrong</span></h2><ul><li style="list-style-type: disc;"><p><span style="color: rgb(0,0,0);text-decoration: none;">The specified SPARQL endpoint is not valid.</span></p></li></ul><h2 id="Scenario2cDatasetImport-SPARQL-Systemstateoncompletion"><span style="color: rgb(0,0,0);text-decoration: none;">System state on completion</span></h2><p><span style="color: rgb(0,0,0);text-decoration: none;">The system saves the dataset and the user can use it in further conversion tasks.</span></p><h2 id="Scenario2cDatasetImport-SPARQL-RequirementsMotivatingtheScenario"><span style="color: rgb(0,0,0);text-decoration: none;">Requirements Motivating the Scenario</span></h2><p><span style="color: rgb(0,0,0);text-decoration: none;"><a href="List-of-Requirements_71440542.html#ListofRequirements-49">49</a>.</span></p><h2 id="Scenario2cDatasetImport-SPARQL-ImplementationNotes">Implementation Notes</h2><div>SPARQL endpoint information is stored in the database.</div><h1 id="Scenario2cDatasetImport-SPARQL-Mockups"><span style="color: rgb(0,0,0);">Mockups</span></h1><h5 id="Scenario2cDatasetImport-SPARQL-Mockup1Mockup1"><span style="color: rgb(0,0,0);"><span class="confluence-anchor-link" id="Scenario2cDatasetImport-SPARQL-Mockup1"></span>Mockup 1</span></h5><p><div class="balsamiq_mockup" align="left"><a class="balsamiq_mockup" name="mockup_mockup - kb - dataset - new"><img class="balsamiq_mockup" src="attachments/73072809/73072799.png"/></a><br/></div></p><h4 id="Scenario2cDatasetImport-SPARQL-Mockup2Mockup2"><span class="confluence-anchor-link" id="Scenario2cDatasetImport-SPARQL-Mockup2"></span><span style="color: rgb(0,0,0);">Mockup 2<br/></span></h4><p><div class="balsamiq_mockup" align="left"><a class="balsamiq_mockup" name="mockup_mockup-kb-dataset-sparql"><img class="balsamiq_mockup" src="attachments/73072809/73072796.png"/></a><br/></div></p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072793.bmml">mockup_mockup-kb-dataset-new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072794.png">mockup_mockup-kb-dataset-new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072795.bmml">mockup_mockup-kb-dataset-sparql.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072796.png">mockup_mockup-kb-dataset-sparql.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072797.bmml">mockup_mockup-kb-new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072798.png">mockup_mockup-kb-new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072799.png">mockup_mockup - kb - dataset - new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072800.bmml">mockup_mockup - kb - dataset - new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072801.bmml">mockup_mockup-kd-dataset-RDF.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072802.png">mockup_mockup-kd-dataset-RDF.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072803">3 - SPARQL Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072804.png">3 - SPARQL Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072805">2 - RDF Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072806.png">2 - RDF Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072807">1 - New knowledge base dialog</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072809/73072808.png">1 - New knowledge base dialog.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

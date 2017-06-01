@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : REST API implementation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : REST API implementation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified on Mär 03, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="RESTAPIimplementation-Mapping">Mapping</h1><p>We opt for <a href="https://jersey.java.net/" class="external-link" rel="nofollow">Jersey</a> to implement the <a href="REST-API-specification_76975884.html">specified REST resources</a>. As the reference JAX-RS implementation it is well supported, extensible and blends good enough with the Spring container. Considering that the first client of the API is to be the Odalic UI, AngularJS web application, choosing JSON as the primary data format was reasonable as well. When choosing how to map the domain objects to JSON, two opposing concerns emerged:</p><ol><li>ease of mapping directly the domain objects by marking them with JAXB annotations (work for JSON too, but even then require certain concessions to the classes design) on one hand,</li><li>and the need to build a robust domain model that would fare well when its objects would be passed to the algorithm as feedback, or its classes used when adding new functionality.</li></ol><p>Although JAXB allows to annotate the class fields and make the constructor private, and there is no need to make the mapped class to be a true Java Bean, this still does not make its instances reliable to use within the domain model: fields missing in the original JSON would still be initialized to null, so even than the domain class would have to validated before use. And that makes the domain model too fragile from the beginning.</p><p>In the end a solution separating the domain classes (used throughout the project code) and their counterparts (located in <code>cz.cuni.mff.xrg.odalic.api.rest.values</code>), that would be mapped to JSON, was chosen. Thanks to <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/adapters/XmlAdapter.html" class="external-link" rel="nofollow">XmlAdapters</a> most of the domain classes can be seamlessly converted to the mapped ones and back, and it is even possible to use them in the method signatures that handle HTTP requests, making the mapping almost invisible to the rest of the server code. This solution has some drawbacks, mainly It proved to be next to impossible to inject dependencies from Spring container to XmlAdapters. For example an XmlAdapter cannot be used to convert from Task JSON value to Task domain object, if you want to make sure that the file referred by task exists. In this case you have to manually convert from the <code>cz.cuni.mff.xrg.odalic.api.rest.values.TaskValue</code> to <code>cz.cuni.mff.xrg.odalic.tasks.Task</code>. in the Jersey resource class, where the file service can be injected without a problem. On the other hand there are some perks:</p><ul><li>XmlAdapters are resolved recursively on the whole class hierarchy, so if you adapt a domain class that contains fields pointing to instances of other domain classes, you do not have to change the type of the fields in the mapped version, their XmlAdapters will be used automatically.</li><li>The adapters work well alongside custom JSON serializers and de-serializers from <a href="https://github.com/FasterXML/jackson-databind" class="external-link" rel="nofollow">jackson-databind</a> library. This allows to convert fields of complex type, e.g. nested Maps with non-String keys. This helped to encode a feedback on individual, sparsely distributed table cells in a relatively compact way (see <code>cz.cuni.mff.xrg.odalic.api.rest.values.DisambiguationValue</code> and compare with the output produced, as seen in <a href="REST-API-specification_76975884.html#RESTAPIspecification-feedback-format">in the REST API specification examples</a>).</li></ul><h1 id="RESTAPIimplementation-Otherfeatures">Other features</h1><p>The API implementation relies on other useful Jersey features, such as request and response <a href="https://jersey.java.net/documentation/latest/filters-and-interceptors.html" class="external-link" rel="nofollow">filters</a> and <a href="https://jersey.java.net/documentation/latest/representations.html#d0e6754" class="external-link" rel="nofollow">exception mappers</a>. The filters are used to set <a href="https://en.wikipedia.org/wiki/CORS" class="external-link" rel="nofollow">CORS</a> headers, log the requests and to facilitate <a href="Authentication-and-authorization_76976075.html">authorization and authentication</a>. An exception mapper was used to convert the exceptions thrown during the course of request processing to JSON messages presented in the specification. Concerning the overall exception handling strategy, we chose to strictly separate the API from the underlying services and vowed not to raise web application exceptions in code that is not aware of being executed in web application. This required responsible mapping from general exceptions raised by the implementing services to the <a href="http://docs.oracle.com/javaee/7/api/javax/ws/rs/WebApplicationException.html" class="external-link" rel="nofollow">WebApplicationException</a>s, that were in the end turned by the mapper into appropriate HTTP responses.</p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

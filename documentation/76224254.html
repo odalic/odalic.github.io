@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Abstammung 2015 (enumeration of people)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Testing-Data_75564208.html">Testing Data</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Abstammung 2015 (enumeration of people)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified on Dez 14, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Version: develop 11.12.2016<br/> File: <a href="http://data.linz.gv.at/katalog/population/abstammung/2015/auslg_2015.csv" class="external-link" rel="nofollow">http://data.linz.gv.at/katalog/population/abstammung/2015/auslg_2015.csv</a> with removed quotes (all 85 lines)</p><h2 id="Abstammung2015(enumerationofpeople)-Analysisoftheresults">Analysis of the results</h2><p>against Jan's (reduced) DBpedia, original DBpedia and German DBpedia:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/76224254/76224523.png" data-image-src="attachments/76224254/76224523.png" data-unresolved-comment-count="0" data-linked-resource-id="76224523" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="abstammung-result.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76224254" data-linked-resource-container-version="2"></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/76224254/76224522.png" data-image-src="attachments/76224254/76224522.png" data-unresolved-comment-count="0" data-linked-resource-id="76224522" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="abstammung-relations.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76224254" data-linked-resource-container-version="2"></span></p><p>Classification:</p><ul><li>Nationalität all, but partially good (Place)</li><li>other columns not (expected, just numeric values) <span class="inline-comment-marker" data-ref="18de0e5a-f8f6-4062-9685-16085b41b4d0">(Männer just DBpedia, but wrongly)</span></li></ul><p>Disambiguation:</p><ul><li>Nationalität sometimes all OK, sometimes just DBpedia, sometimes two of KBs, <span class="inline-comment-marker" data-ref="3c060af6-dc70-45cb-9c91-ec58345fbaa8">sometimes nothing</span></li><li>other columns are just numeric values</li></ul><p>Subject column:</p><ul><li>Nationalität always - OK</li></ul><p>Relations:</p><ul><li>No relations were expected, DBpedia found one, but wrong (point)</li></ul><p>Complete data (preprocessed file, screens, exports and caches):</p><ul><li><a href="attachments/76224254/76224524.zip" data-linked-resource-id="76224524" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="auslg_2015.zip" data-nice-type="Zip Archive" data-linked-resource-content-type="application/zip" data-linked-resource-container-id="76224254" data-linked-resource-container-version="2">auslg_2015.zip</a></li></ul><h2 id="Abstammung2015(enumerationofpeople)-Issues/Bugs">Issues/Bugs</h2><p>Task execution ended by error. The UI displayed the error statement, but user cannot recognize what is the reason of the error:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/76224254/76224521.png" data-image-src="attachments/76224254/76224521.png" data-unresolved-comment-count="0" data-linked-resource-id="76224521" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="abstammung-error.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76224254" data-linked-resource-container-version="2"></span></p><p>In the original file text fields (in the first column) are wrapped in quotes). Currently the program is not prepared for this file configuration. The error was not thrown during input file processing. Then the error was caused by SPARQLProxy and the method queryEntityCandidates when the query string contained quotes, These strings are problematic for this query method. <span class="inline-comment-marker" data-ref="eda7a084-d326-40d7-acae-c6d48699f180">Then I removed all quotes and file was processed.</span></p><ul><li>issue: <a href="https://github.com/odalic/sti/issues/242" rel="nofollow" class="external-link">https://github.com/odalic/sti/issues/242</a> (error when quotes in query)</li><li>issue: <a href="https://github.com/odalic/sti/issues/245" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/245</a> (support CSV format configuration: text fields are wrapped in quotes)</li></ul><p>Special German characters, e.g. ä, not correctly displayed</p><ul><li>issue: <a href="https://github.com/odalic/sti/issues/243" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/243</a></li></ul><p>UI - result - first step: not all rows are displayed (just 47 from 85 rows are displayed), this leads to not proper highlighting of even and odd rows (due to missing rows)</p><ul><li>issue: <a href="https://github.com/odalic/odalic-ui/issues/183" class="external-link" rel="nofollow">https://github.com/odalic/odalic-ui/issues/183</a></li></ul><p> </p><h2 id="Abstammung2015(enumerationofpeople)-Performance">Performance</h2><p>The file was processed in 60 minutes / all 85 lines.</p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224254/76224521.png">abstammung-error.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224254/76224522.png">abstammung-relations.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224254/76224523.png">abstammung-result.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224254/76224524.zip">auslg_2015.zip</a> (application/zip)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

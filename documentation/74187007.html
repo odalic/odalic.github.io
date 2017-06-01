@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Story: User can browse KB for a concept to be used for classification/disambiguation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="2.iteration_75563366.html">2.iteration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Story: User can browse KB for a concept to be used for classification/disambiguation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified by <span class='editor'> Václav Brodec</span> on Jul 19, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Story:UsercanbrowseKBforaconcepttobeusedforclassification/disambiguation-GithubIssue:https://github.com/odalic/sti/issues/63/https://github.com/odalic/odalic-ui/issues/26/https://github.com/odalic/odalic-ui/issues/23/https://github.com/odalic/sti/issues/8">Github Issue: <a href="https://github.com/odalic/sti/issues/63" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/63</a> / <a href="https://github.com/odalic/odalic-ui/issues/26" class="external-link" rel="nofollow">https://github.com/odalic/odalic-ui/issues/26</a> / <a href="https://github.com/odalic/odalic-ui/issues/23" class="external-link" rel="nofollow">https://github.com/odalic/odalic-ui/issues/23</a> / <a href="https://github.com/odalic/sti/issues/84" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/84</a></h2><h2 id="Story:UsercanbrowseKBforaconcepttobeusedforclassification/disambiguation-UserStory">User Story</h2><p><span>As a user i want to be able to browse KB to see details/context of the suggested or searched concept.</span></p><h2 id="Story:UsercanbrowseKBforaconcepttobeusedforclassification/disambiguation-Preconditions">Preconditions</h2><p>User can see results of classification/disambiguation (<a href="73762224.html">Story: User can see results of classification/disambiguation</a>). </p><p> </p><h2 id="Story:UsercanbrowseKBforaconcepttobeusedforclassification/disambiguation-DetailedDescription(Browsingfortheclass)"><span style="color: rgb(0,0,0);">Detailed Description (Browsing for the class)</span></h2><ol><li>User can click on &quot;Customize&quot; button next to the column header<br/><ol><li>To see the location of that button, please see mockup in <a href="Scenario-4b-Customizing-classification-class---selecting-different-non-suggested-primary-class-for-the-column-classification_72224380.html">Scenario 4b Customizing classification class - selecting different non-suggested primary class for the column classification</a></li><li>As a result, system shows the dialog<ol><li>The part of the dialog relevant for this story is depicted below</li><li>The complete dialog is depicted in <a href="Scenario-4b-Customizing-classification-class---selecting-different-non-suggested-primary-class-for-the-column-classification_72224380.html">Scenario 4b Customizing classification class - selecting different non-suggested primary class for the column classification</a></li><li>System shows browse button next to each suggested concept. </li></ol></li></ol></li><li>User may click on that browse button<ol><li>As a result, system shows detail of that resource using LodView (see Mockup 2)<ol><li>User can see the details of the resource, can follow the links to other resources. </li></ol></li></ol></li><li>User can switch to graph mode by clicking on the icon in the top right corner <ol><li>As a result,system shows graphs with the browsed resource in the center. (Mockup 3)</li></ol></li><li>User may examine relations to other resources using graph mode</li><li>User may select resource and request to see the details <ol><li>As a result, system is shows the detail mode (Mockup 2)<span style="color: rgb(255,0,0);"> </span></li></ol></li><li>User may select any resource by clicking &quot;Add&quot; button in detail overview (Mockup 2)<ol><li>As a result, the browse dialog is closed and the resource is added to the list of classes suggested. (see Mockup 4)<br/><br/></li></ol></li></ol><p> </p><p><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_mockup-customize-class-search"><img class="balsamiq_mockup" src="attachments/74187007/74186983.png"/></a><br/></div></p><h2 id="Story:UsercanbrowseKBforaconcepttobeusedforclassification/disambiguation-AcceptanceCriteria&amp;TestScenarios">Acceptance Criteria &amp; Test Scenarios</h2><ol><li>Run Odalic Core</li><li>Customize classification</li><li>Browse KB, select alternative class, try to add it. </li><li>Ensure that new class can be selected and after closing customize dialog also appear in the table.</li></ol><h2 id="Story:UsercanbrowseKBforaconcepttobeusedforclassification/disambiguation-Variations">Variations</h2><h3 id="Story:UsercanbrowseKBforaconcepttobeusedforclassification/disambiguation-Browsingfortheentitydisambiguatingthecellvalue">Browsing for the entity disambiguating the cell value</h3><p>The detailed description works similarly as for browsing for class - the differences:  </p><ul><li>Different title of the dialog - &quot;Customize disambiguation&quot;</li></ul><p> </p><h3 id="Story:UsercanbrowseKBforaconcepttobeusedforclassification/disambiguation-Browsingsearchedresource">Browsing searched resource</h3><p>Use may also browse (in the same way as above) the resource, which was just searched. See: <a href="74186917.html">Story: User can search KB for a concept to be used for classification/disambiguation/relation discovery</a> + the browse button next to the search text field in the Mockup 1</p><p> </p><h2 id="Story:UsercanbrowseKBforaconcepttobeusedforclassification/disambiguation-Notes:">Notes: </h2><p>Note: As part of Odalic, we provide default browser. Nevertheless, it must be easy to use also custom browsers (e.g. PoolParty (the knowledge base used in AD) already has some sort of wiki browser style, which does not require any login and is read-only and so it must be possible to easily use this browser instead of the default one)</p><ol><li><span style="color: rgb(255,0,0);">TODO Tomas: Describe in a separate page the use of custom browser and the way how the selected class will be pushed to the list</span></li></ol><p><span style="color: rgb(255,0,0);"><br/></span></p><h2 id="Story:UsercanbrowseKBforaconcepttobeusedforclassification/disambiguation-ImplementationNotes:">Implementation Notes: </h2><p>LodView has to be extended to have this &quot;Add&quot; button. LodLive has to be extended to properly switch to LodView detail view when certain resource is selected. </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74186984.bmml">mockup_mockup-alternative-classification.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74186985.png">mockup_mockup-alternative-classification.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74187004.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74187005.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74187015.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74187016.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74187058.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74187059.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74187233.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74187234.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74187236.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74187237.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74186982.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187007/74186983.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

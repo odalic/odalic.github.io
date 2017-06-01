@@ -1,0 +1,40 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1380" measuredH="542" mockupW="814" mockupH="416">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="566" y="126" w="814" h="416" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Task%20configuration</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::FieldSet" x="578" y="201" w="794" h="256" measuredW="200" measuredH="170" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cells</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="1306" y="475" w="-1" h="-1" measuredW="56" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Close</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="603" y="475" w="-1" h="-1" measuredW="149" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Export%20configuration...</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::ButtonBar" x="816" y="164" w="-1" h="-1" measuredW="338" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>2</selectedIndex>
+        <text>Knowledge%20Bases%2C%20Columns%2C%20Cells%2C%20Relations</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::DataGrid" x="591" y="222" w="775" h="227" measuredW="824" measuredH="111" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Column%20order%2C%20Column%20name%2C%20Subject%2C%20Literal%2C%20Concept%2C%20Disambiguate%2C%0A5%2C%20Favorite%20dish%2C%20Madrid%2C%20Pincho%20de%20Tortilla%2C%20Pincho%20%28http%3A//yumyumpedia.org/t/pincho%29%2C%20%5Bx%5D%2C%20%5BDelete%5D%0A1%2C%20Country%2C%20Nuuk%2C%20Greenland%2C%20%2C%20%5B%5D%2C%20%5BDelete%5D%0A5%2C%20%2C%20Praha%2C%20%u0161unka%2C%20Prague%20ham%20%28http%3A//yumyumpedia.org/t/prague-ham%29%2C%20%5Bx%5D%2C%20%5BDelete%5D</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::StickyNote" x="966" y="278" w="129" h="129" measuredW="109" measuredH="123" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Disabled%20to%20edits%20when%20read-only.%20The%20concepts%20can%20still%20be%20visualized.</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

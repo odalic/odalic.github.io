@@ -1,0 +1,253 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="2348" measuredH="991" mockupW="2250" mockupH="971">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="129" y="63" w="662" h="379" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Customize%20Classification</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="141" y="108" w="646" h="299" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="150" y="111" w="390" h="281" measuredW="167" measuredH="171" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%0A*ADEQATE%20KB%20%28Primary%20KB%29*%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::TitleWindow" x="129" y="519" w="662" h="472" measuredW="450" measuredH="400" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Customize%20Classification</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Canvas" x="141" y="564" w="646" h="347" measuredW="100" measuredH="70" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="150" y="567" w="390" h="281" measuredW="167" measuredH="171" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%0A*ADEQATE%20KB%20%28Primary%20KB%29*%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::List" x="174" y="623" w="490" h="148" measuredW="100" measuredH="130" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <italic>false</italic>
+        <rowHeight>31</rowHeight>
+        <selectedIndex>3</selectedIndex>
+        <text>City%20%28http%3A//adequate.at/concept/city%29%20%28curated%29%0ALauName%20%28http%3A//adequate.at/concept/dataset358/lauName%20%28generated%29%0ADistrict%20%28http%3A//adequate.at/concept/district%29%20%28curated%29%0ADistrict-Graz%20%28http%3A//adequate.at/concept/districts-in-graz%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::Button" x="664" y="623" w="86" h="29" measuredW="84" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::Button" x="664" y="654" w="86" h="29" measuredW="84" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::Button" x="664" y="688" w="86" h="29" measuredW="84" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::StickyNote" x="668" y="814" w="131" h="148" measuredW="109" measuredH="123" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>It%20would%20be%20good%20to%20emhasize%20somehow%20the%20added%20classes%20%28District-Graz%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::Arrow" x="2131" y="476" w="10" h="133" measuredW="150" measuredH="100" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <rightArrow>true</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::TitleWindow" x="1552" y="34" w="796" h="649" measuredW="450" measuredH="400" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Results</text>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Image" x="1573" y="73" w="760" h="571" measuredW="1008" measuredH="758" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>https%3A//grips.semantic-web.at/download/attachments/74186917/Screen%2520Shot%25202016-07-15%2520at%252010.57.18.png%3Fversion%3D1%26modificationDate%3D1468574853000%26api%3Dv2</src>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::TitleWindow" x="844" y="72" w="661" h="413" measuredW="450" measuredH="400" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Results%20-%20City%20%28http%3A//adequate.at/concept/city%29%20%28curated%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::Image" x="859" y="111" w="630" h="323" measuredW="1919" measuredH="789" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>https%3A//grips.semantic-web.at/download/attachments/72224380/Screen%2520Shot%25202016-07-15%2520at%252012.33.18.png%3Fversion%3D1%26modificationDate%3D1468578845000%26api%3Dv2</src>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::StickyNote" x="850" y="434" w="467" h="133" measuredW="109" measuredH="123" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>LODView%20is%20used.%20%0A%20%0ASee%3A%20http%3A//lodview.it/lodview/%3FIRI%3Dhttp%253A%252F%252Fdbpedia.org%252Fresource%252FPrague%26sparql%3Dhttp%253A%252F%252Fdbpedia.org%252Fsparql%26prefix%3Dhttp%253A%252F%252Fdbpedia.org%252F</text>
+      </controlProperties>
+    </control>
+    <control controlID="88" controlTypeID="com.balsamiq.mockups::Arrow" x="1499" y="111" w="74" h="10" measuredW="150" measuredH="100" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <direction>top</direction>
+        <leftArrow>true</leftArrow>
+        <rightArrow>true</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::StickyNote" x="1484" y="133" w="163" h="298" measuredW="109" measuredH="123" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>It%20is%20possible%20to%20switch%20back%20and%20forth%20to%20graph%20view.%0A%20%0AIn%20detail%20mode%2C%20it%20is%20possible%20to%20click%20on%20icon%20to%20switch.%20%0AIn%20graph%20mode%2C%20by%20clicking%20on%20the%20circle%2C%20detail%20mode%20should%20be%20depicted%20%28this%20is%20not%20the%20current%20standard%20behavior%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::Button" x="1378" y="458" w="121" h="27" measuredW="124" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>plus%7Cxsmall</icon>
+        <text>Add%20and%20close</text>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::List" x="165" y="161" w="490" h="133" measuredW="100" measuredH="126" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>31</rowHeight>
+        <selectedIndex>0</selectedIndex>
+        <text>City%20%28http%3A//adequate.at/concept/city%29%20%28curated%29%0ALauName%20%28http%3A//adequate.at/concept/dataset358/lauName%20%28generated%29%0ADistrict%20%28http%3A//adequate.at/concept/district%29%20%28curated%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Button" x="655" y="164" w="86" h="29" measuredW="84" measuredH="27" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::Button" x="656" y="195" w="86" h="29" measuredW="84" measuredH="27" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="94" controlTypeID="com.balsamiq.mockups::Button" x="656" y="224" w="86" h="29" measuredW="84" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="95" controlTypeID="com.balsamiq.mockups::Arrow" x="750" y="173" w="74" h="10" measuredW="150" measuredH="100" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <rightArrow>true</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::Button" x="664" y="771" w="86" h="29" measuredW="84" measuredH="27" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <state>disabled</state>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::TextInput" x="174" y="772" w="400" h="-1" measuredW="267" measuredH="27" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%28search%20for%20more%20candidates%20-%20by%20keyword%20%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::Button" x="574" y="772" w="90" h="27" measuredW="64" measuredH="27" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>plus%7Cxsmall</icon>
+        <state>disabled</state>
+        <text>Add</text>
+      </controlProperties>
+    </control>
+    <control controlID="99" controlTypeID="com.balsamiq.mockups::Arrow" x="750" y="304" w="74" h="10" measuredW="150" measuredH="100" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <rightArrow>true</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="100" controlTypeID="com.balsamiq.mockups::Arrow" x="750" y="204" w="74" h="10" measuredW="150" measuredH="100" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <rightArrow>true</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="101" controlTypeID="com.balsamiq.mockups::Arrow" x="750" y="233" w="74" h="10" measuredW="150" measuredH="100" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <rightArrow>true</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::Button" x="664" y="719" w="86" h="29" measuredW="84" measuredH="27" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="104" controlTypeID="com.balsamiq.mockups::Arrow" x="649" y="476" w="763" h="241" measuredW="150" measuredH="100" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <direction>bottom</direction>
+        <leftArrow>true</leftArrow>
+        <rightArrow>false</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::Button" x="655" y="295" w="86" h="29" measuredW="84" measuredH="27" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <state>disabled</state>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="106" controlTypeID="com.balsamiq.mockups::TextInput" x="165" y="296" w="400" h="-1" measuredW="267" measuredH="27" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%28search%20for%20more%20candidates%20-%20by%20keyword%20%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="107" controlTypeID="com.balsamiq.mockups::Button" x="565" y="296" w="90" h="27" measuredW="64" measuredH="27" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>plus%7Cxsmall</icon>
+        <state>disabled</state>
+        <text>Add</text>
+      </controlProperties>
+    </control>
+    <control controlID="108" controlTypeID="com.balsamiq.mockups::CallOut" x="102" y="36" w="-1" h="-1" measuredW="33" measuredH="39" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1</text>
+      </controlProperties>
+    </control>
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::CallOut" x="818" y="49" w="-1" h="-1" measuredW="36" measuredH="39" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::CallOut" x="98" y="495" w="-1" h="-1" measuredW="41" measuredH="39" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>4</text>
+      </controlProperties>
+    </control>
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::CallOut" x="1518" y="20" w="-1" h="-1" measuredW="36" measuredH="43" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>3</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Questions</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic-UI_74187672.html">Odalic UI</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Questions
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span> on Feb 16, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Idea behind:</p><ul><li>directives<ul><li>afake</li></ul></li></ul><p> </p><h2 id="Questions-Questions:">Questions: </h2><p><span class="inline-comment-marker" data-ref="8c51191e-8f4a-4511-a61a-cecc7fe14743">So the directive alert is used for alerts all over app? But there is also ng-messages, e.g.:</span> </p><pre><span>&lt;</span><span style="color: rgb(0,0,128);">div </span><span style="color: rgb(0,0,255);">ng-messages=</span><span style="color: rgb(0,128,0);">&quot;signupForm.password2.$error&quot; </span><span style="color: rgb(0,0,255);">ng-if=</span><span style="color: rgb(0,128,0);">'</span><span style="color: rgb(102,14,122);">signupForm</span><span style="color: rgb(0,128,0);">.</span><span style="color: rgb(102,14,122);">password2</span><span style="color: rgb(0,128,0);">.</span><span style="color: rgb(102,14,122);">$dirty</span><span style="color: rgb(0,128,0);">' </span><span style="color: rgb(0,0,255);">role=</span><span style="color: rgb(0,128,0);">&quot;alert&quot;</span><span>&gt;</span><br/>    <span>&lt;</span><span style="color: rgb(0,0,128);">div </span><span style="color: rgb(0,0,255);">ng-message=</span><span style="color: rgb(0,128,0);">&quot;compare&quot;</span><span>&gt;&lt;</span><span style="color: rgb(0,0,128);">error-msg</span><span>&gt;</span>Passwords do not match.<span>&lt;/</span><span style="color: rgb(0,0,128);">error-msg</span><span>&gt;&lt;/</span><span style="color: rgb(0,0,128);">div</span><span>&gt;</span><br/><span>&lt;/</span><span style="color: rgb(0,0,128);">div</span><span>&gt;</span></pre><p><strong>There is also errorMsg directive - not used?</strong></p><p><strong><br/></strong></p><p><strong><span class="inline-comment-marker" data-ref="7b24f326-da0e-40ae-85f8-3843530b22e9">Frankctive directive not used?</span></strong></p><p><strong><br/></strong></p><pre><span class="inline-comment-marker" data-ref="9e042de3-d86c-4ef0-8e2b-50b522aa7819">scope.</span><span style="color: rgb(122,122,67);"><span class="inline-comment-marker" data-ref="9e042de3-d86c-4ef0-8e2b-50b522aa7819">$broadcast</span></span><span class="inline-comment-marker" data-ref="9e042de3-d86c-4ef0-8e2b-50b522aa7819">(</span><span style="color: rgb(0,128,0);"><span class="inline-comment-marker" data-ref="9e042de3-d86c-4ef0-8e2b-50b522aa7819">'pagination'</span></span><span class="inline-comment-marker" data-ref="9e042de3-d86c-4ef0-8e2b-50b522aa7819">); What it does?</span></pre><p><strong><br/></strong></p><p> </p><p><span class="inline-comment-marker" data-ref="f92abe58-ebd3-4146-a93d-21624289e2d7">fileinput.js:</span> </p><pre><span style="color: rgb(128,128,128);">// Clicking outside of the modal is not registered by angular, but clicking on the modal button is =&gt; manually call digest cycle if necessary<br/></span><span style="color: rgb(128,128,128);">// </span><span style="color: rgb(0,115,191);">TODO: For some reason &quot;scope.$$phase&quot; gets buggy here and always returns false (not even try-catch block helps...)<br/></span>scope.<span style="color: rgb(122,122,67);">$apply</span>();</pre><p> </p><p> </p><h2 id="Questions-TODO:">TODO: </h2><ul style="list-style-type: square;"><li><span class="inline-comment-marker" data-ref="eaec7d54-37e8-4460-99a7-b6843b6832ec"><span class="inline-comment-marker" data-ref="b26feb1e-296f-4804-a1d6-269b86acecb5">describe all directives:</span></span><ul style="list-style-type: square;"><li><span class="inline-comment-marker" data-ref="eaec7d54-37e8-4460-99a7-b6843b6832ec">In a similar way as angularJS does</span><ul style="list-style-type: square;"><li><a href="https://docs.angularjs.org/api/ngMessages/directive/ngMessages" class="external-link" rel="nofollow">https://docs.angularjs.org/api/ngMessages/directive/ngMessages</a><ul style="list-style-type: square;"><li>Description, Usage (typically there), Arguments (typically not there),<br/><ul style="list-style-type: square;"><li>e.g. for injector, ..</li><li>compareTo - there is description but not clear to me - that it sets error?</li></ul></li></ul></li></ul></li></ul></li></ul>
+                    </div>
+
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-76974533"></a>
+                                    <font class="smallfont"><p>I believe the code should be 'sufficiently commented' by now. Not everything was explained in much detail, but for basic changes and extension of the application, it should be enough.</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by satmarii at Feb 19, 2017 11:05
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

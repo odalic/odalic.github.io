@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Story: Handling data cube data</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3.iteration_74875930.html">3.iteration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Story: Handling data cube data
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified on Feb 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Story:Handlingdatacubedata-GithubIssues:https://github.com/odalic/sti/issues/137,https://github.com/odalic/sti/issues/138,https://github.com/odalic/odalic-ui/issues/13">Github Issues: <a href="https://github.com/odalic/sti/issues/137" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/137</a> , <a href="https://github.com/odalic/sti/issues/138" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/138</a> , <a href="https://github.com/odalic/odalic-ui/issues/13" class="external-link" rel="nofollow">https://github.com/odalic/odalic-ui/issues/13</a></h2><h2 id="Story:Handlingdatacubedata-Req:28">Req: 28</h2><p>See also: <a href="Data-cube_74875911.html">Data cube</a></p><h2 id="Story:Handlingdatacubedata-UserStory">User Story</h2><span>As a user i want to define data cube data and export them, so that I can publish statistical data as RDF data cubes.</span><h2 id="Story:Handlingdatacubedata-Preconditions"><br/>Preconditions</h2><p><span style="color: rgb(0,0,0);">The user is logged on the system (<span>see: </span><a href="Scenario-0a--Login-and-home-screen_72223863.html">Scenario 0a Login and home screen</a>)</span></p><p><span style="color: rgb(0,0,0);">User have defined and run classification/disambiguation task (see: <a href="Scenario-1-Task-creation_71439879.html">Scenario 1 Task creation</a>). User is observing the results of the classification/disambiguation/relation discovery task.</span></p><p><span style="color: rgb(0,0,0);line-height: 1.5;font-size: 20.0px;">Detailed Description</span></p><ol><li style="list-style-type: decimal;"><p>User defines new task</p><ol><li style="list-style-type: decimal;"><p>as part of that, user defines that the data he would like to process are statistical data. (extra checkbox available) </p></li></ol></li><li>User executes the algorithm<ol><li>Step relation discovery is a bit different (see mockup)</li></ol></li><li>Step 1 (results of classification/disambiguation) is the same as in case of processing non-statistical data</li><li><strong><span class="inline-comment-marker" data-ref="a19bb100-8747-45a8-8fd9-e20d8ff67156">Step 2 is skipped</span></strong></li><li><span class="inline-comment-marker" data-ref="a387e192-ee9b-408b-b6b1-7fc956beb7fd"><span class="inline-comment-marker" data-ref="a387e192-ee9b-408b-b6b1-7fc956beb7fd">Step 3 -</span></span> relation discovery is a bit different (see mockup)</li><li>User can export such RDF data (see also <a href="72222951.html">Story: Export resulting data as RDF data</a>, but in this case, the data is published according to RDF data cube vocabulary)</li><ol><li>System exports data according to RDF data cube vocabulary</li><li>Only those dimensions and metrics, which are linked from &quot;observation&quot; node</li><li>It uses some default values for data cube name etc.</li><li>It uses datatype for measures from ranges of predicates</li></ol></ol><h2 id="Story:Handlingdatacubedata-Changesneeded">Changes needed</h2><ul><li>UI</li><ul><li>add &quot;Statistical data&quot; checkbox to the &quot;Create new task&quot; (task configuration) page (bind to &quot;statistical&quot; boolean field of Configuration) (done)</li><li>hide the &quot;Step 2&quot; (subject column) of the &quot;Result&quot; page for statistical tasks (when the &quot;statistical&quot; boolean field of Configuration is true)</li><li>hide the relations graph in the &quot;Step 3&quot; of the &quot;Result&quot; page for statistical tasks (when the &quot;statistical&quot; boolean field of Configuration is true)</li><li>add new tables for dimensions and measures to the &quot;Step 3&quot; of the &quot;Result&quot; page (according to mockup)</li><ul><li>when the user changes the component type or predicate entity, send this info as part of feedback</li><li>predicates will be proposed / searched by the user exactly the same way as normal relations</li><li>show and set component types and predicates of columns only for primary knowledge base</li></ul></ul><li>REST API<ul><li>add &quot;IsStatistical&quot; boolean flag to the Configuration of the task (done)</li><li>add enum to determine whether the column is dimension or measure or nothing of this (done)</li><li>add statistical annotations to the Result and Feedback in odalic and to Constraints and TAnnotation in sti-main (done)</li></ul></li><li>Server</li><ul><li>algorithm: no relation discovery for statistical data, suggest dimensions and measures or get it from feedback (done)</li><li>adjust export functions to generate RDF data cube (done)</li></ul></ul><h2 id="Story:Handlingdatacubedata-Mockup9mockup-data-cube">Mockup<br/><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_mockup-data-cube"><img class="balsamiq_mockup" src="attachments/72224374/73072660.png" border="0" usemap="#map_mockup-data-cube"/></a><map name="map_mockup-data-cube"><area shape="rect" coords="787,1459,975,1486" href="/x/5whOB#mockup_mockup-rdf-preview-2" alt="mockup-rdf-preview-2" id="45"/>
+<area shape="rect" coords="669,1459,772,1486" href="/x/fA5OB#mockup_mockup-classification-customization" alt="mockup-classification-customization" id="47"/>
+</map></div></h2><p> </p><p> </p><p> </p><p> </p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/72224372">Mockup Output processing</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/72224373.png">Mockup Output processing.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/73072661.bmml">mockup_mockup-data-cube.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/73072662.png">mockup_mockup-data-cube.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/73761261.bmml">mockup_mockup-data-cube.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/73761262.png">mockup_mockup-data-cube.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/73761265.bmml">mockup_mockup-data-cube.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/73761266.png">mockup_mockup-data-cube.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/75563509.bmml">mockup_mockup-data-cube.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/75563510.png">mockup_mockup-data-cube.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/76227210.bmml">mockup_mockup-data-cube.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/76227211.png">mockup_mockup-data-cube.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/76227202.png">Screen Shot 2017-01-17 at 16.25.08.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/76227216.bmml">mockup_mockup-data-cube.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/76227217.png">mockup_mockup-data-cube.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/76227219.bmml">mockup_mockup-data-cube.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/76227220.png">mockup_mockup-data-cube.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/76227706.bmml">mockup_mockup-data-cube.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/76227707.png">mockup_mockup-data-cube.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/76227705.png">Screen Shot 2017-01-20 at 19.47.39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/73072659.bmml">mockup_mockup-data-cube.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224374/73072660.png">mockup_mockup-data-cube.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

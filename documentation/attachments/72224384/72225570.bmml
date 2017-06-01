@@ -1,0 +1,81 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="800" measuredH="996" mockupW="647" mockupH="682">
+  <controls>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::Arrow" x="494" y="375" w="10" h="109" measuredW="150" measuredH="100" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <direction>bottom</direction>
+        <rightArrow>false</rightArrow>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::TitleWindow" x="153" y="314" w="647" h="682" measuredW="450" measuredH="400" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Customize%20Disambiguation</text>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::Canvas" x="174" y="362" w="606" h="531" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="181" y="375" w="390" h="333" measuredW="160" measuredH="413" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%0AADEQATE%20KB%20%28Primary%20KB%29%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20%0ADBpedia%20KB%20%0A%20%0A%20%0A%20%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::List" x="189" y="454" w="484" h="100" measuredW="100" measuredH="126" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Aibl%20%28http%3A//adequate.at/concept/city/aibl%29%0AAibel%20%28http%3A//adequate.at/concept/city/aibel%29%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="101" controlTypeID="com.balsamiq.mockups::Button" x="679" y="454" w="86" h="29" measuredW="84" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::Button" x="680" y="485" w="86" h="29" measuredW="84" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="104" controlTypeID="com.balsamiq.mockups::Button" x="679" y="585" w="86" h="29" measuredW="84" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>eye%7Cxsmall</icon>
+        <state>disabled</state>
+        <text>Browse</text>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::TextInput" x="189" y="586" w="400" h="-1" measuredW="267" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%28search%20for%20more%20candidates%20-%20by%20keyword%20%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="106" controlTypeID="com.balsamiq.mockups::Button" x="589" y="586" w="90" h="27" measuredW="64" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>plus%7Cxsmall</icon>
+        <state>disabled</state>
+        <text>Add</text>
+      </controlProperties>
+    </control>
+    <control controlID="107" controlTypeID="com.balsamiq.mockups::Button" x="589" y="614" w="176" h="27" measuredW="90" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>slideshare%7Cxsmall</icon>
+        <text>Propose</text>
+      </controlProperties>
+    </control>
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::CheckBox" x="189" y="426" w="-1" h="-1" measuredW="63" measuredH="22" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>selected</state>
+        <text>Locked</text>
+      </controlProperties>
+    </control>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::Button" x="745" y="362" w="35" h="32" measuredW="38" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>unlock-alt%7Cxsmall</icon>
+        <text/>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

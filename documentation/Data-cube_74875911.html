@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Data cube</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Data cube
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified by <span class='editor'> Václav Brodec</span> on Mär 03, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Statistical data can be published as RDF Data cube. General documentation of RDF Data cube vocabulary can be found at <a href="http://www.w3.org/TR/vocab-data-cube/" class="external-link" rel="nofollow">http://www.w3.org/TR/vocab-data-cube/</a>. The following content of this section discusses information and proposals for RDF Data cube export functionality of Odalic and corresponding issues and problems that were encountered.</p><h1 id="Datacube-Inputfilestructure">Input file structure</h1><p>First we had to decide which structure of input file would be supported by Odalic for processing statistical data. There is an example of input file in documentation on the page <a href="http://www.w3.org/TR/vocab-data-cube/#example" class="external-link" rel="nofollow">http://www.w3.org/TR/vocab-data-cube/#example</a>:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh"> </th><th colspan="2" class="confluenceTh"><p style="text-align: center;">2004-2006</p></th><th colspan="2" class="confluenceTh"><p style="text-align: center;">2005-2007</p></th><th colspan="2" class="confluenceTh"><p style="text-align: center;">2006-2008</p></th></tr><tr><th class="confluenceTh"> </th><th class="confluenceTh">Male</th><th class="confluenceTh">Female</th><th class="confluenceTh">Male</th><th class="confluenceTh">Female</th><th class="confluenceTh">Male</th><th class="confluenceTh">Female</th></tr><tr><th class="confluenceTh">Newport</th><td class="confluenceTd"><p>76.7</p></td><td class="confluenceTd"><p>80.7</p></td><td class="confluenceTd"><p>77.1</p></td><td class="confluenceTd"><p>80.9</p></td><td class="confluenceTd"><p>77.0</p></td><td class="confluenceTd"><p>81.5</p></td></tr><tr><th class="confluenceTh">Cardiff</th><td class="confluenceTd"><p>78.7</p></td><td class="confluenceTd"><p>83.3</p></td><td class="confluenceTd"><p>78.6</p></td><td class="confluenceTd"><p>83.7</p></td><td class="confluenceTd"><p>78.7</p></td><td class="confluenceTd"><p>83.4</p></td></tr><tr><th class="confluenceTh">Monmouthshire</th><td class="confluenceTd"><p>76.6</p></td><td class="confluenceTd"><p>81.3</p></td><td class="confluenceTd"><p>76.5</p></td><td class="confluenceTd"><p>81.5</p></td><td class="confluenceTd"><p>76.6</p></td><td class="confluenceTd"><p>81.7</p></td></tr><tr><th class="confluenceTh"><p>Merthyr Tydfil</p></th><td class="confluenceTd"><p>75.5</p></td><td class="confluenceTd"><p>79.1</p></td><td class="confluenceTd"><p>75.5</p></td><td class="confluenceTd"><p>79.4</p></td><td class="confluenceTd"><p>74.9</p></td><td class="confluenceTd"><p>79.6</p></td></tr></tbody></table></div><p>There are three dimensions: time period (rolling averages over three year time-spans), region and sex. Each observation represents the life expectancy for that population (the measure) and we needed an attribute to define the units (years) of the measured values. This table has multiline headers, heading rows and heading column. Then every cell represents one observation. But this structure of the table is not in the end supported by Odalic. Odalic supports only tables with exactly one header row and no header columns. So the data above can be transformed to following table structure (slightly extended):</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Country</th><th class="confluenceTh">Region</th><th class="confluenceTh">Time period</th><th class="confluenceTh">Sex</th><th class="confluenceTh">Life expectancy</th></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Newport</td><td class="confluenceTd"><p>2004-2006</p></td><td class="confluenceTd">Male</td><td class="confluenceTd"><p>76.7</p></td></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Newport</td><td class="confluenceTd"><p>2004-2006</p></td><td class="confluenceTd">Female</td><td class="confluenceTd"><p>80.7</p></td></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Newport</td><td class="confluenceTd"><p>2005-2007</p></td><td class="confluenceTd">Male</td><td class="confluenceTd"><p>77.1</p></td></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Newport</td><td class="confluenceTd"><p>2005-2007</p></td><td class="confluenceTd">Female</td><td class="confluenceTd"><p>80.9</p></td></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Newport</td><td class="confluenceTd"><p>2006-2008</p></td><td class="confluenceTd">Male</td><td class="confluenceTd"><p>77.0</p></td></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Newport</td><td class="confluenceTd"><p>2006-2008</p></td><td class="confluenceTd">Female</td><td class="confluenceTd"><p>81.5</p></td></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Cardiff</td><td class="confluenceTd"><p>2004-2006</p></td><td class="confluenceTd">Male</td><td class="confluenceTd"><p>78.7</p></td></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Cardiff</td><td class="confluenceTd"><p>2004-2006</p></td><td class="confluenceTd">Female</td><td class="confluenceTd"><p>83.3</p></td></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Cardiff</td><td class="confluenceTd"><p>2005-2007</p></td><td class="confluenceTd">Male</td><td class="confluenceTd"><p>78.6</p></td></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Cardiff</td><td class="confluenceTd"><p>2005-2007</p></td><td class="confluenceTd">Female</td><td class="confluenceTd"><p>83.7</p></td></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Cardiff</td><td class="confluenceTd"><p>2006-2008</p></td><td class="confluenceTd">Male</td><td class="confluenceTd"><p>78.7</p></td></tr><tr><td class="confluenceTd">Count1</td><td class="confluenceTd">Cardiff</td><td class="confluenceTd"><p>2006-2008</p></td><td class="confluenceTd">Female</td><td class="confluenceTd"><p>83.4</p></td></tr><tr><td class="confluenceTd">Count2</td><td class="confluenceTd">Monmouthshire</td><td class="confluenceTd"><p>2004-2006</p></td><td class="confluenceTd">Male</td><td class="confluenceTd"><p>76.6</p></td></tr><tr><td class="confluenceTd">Count2</td><td class="confluenceTd">Monmouthshire</td><td class="confluenceTd"><p>2004-2006</p></td><td class="confluenceTd">Female</td><td class="confluenceTd"><p>81.3</p></td></tr><tr><td class="confluenceTd">Count2</td><td class="confluenceTd">Monmouthshire</td><td class="confluenceTd"><p>2005-2007</p></td><td class="confluenceTd">Male</td><td class="confluenceTd"><p>76.5</p></td></tr><tr><td class="confluenceTd">Count2</td><td class="confluenceTd">Monmouthshire</td><td class="confluenceTd"><p>2005-2007</p></td><td class="confluenceTd">Female</td><td class="confluenceTd"><p>81.5</p></td></tr><tr><td class="confluenceTd">Count2</td><td class="confluenceTd">Monmouthshire</td><td class="confluenceTd"><p>2006-2008</p></td><td class="confluenceTd">Male</td><td class="confluenceTd"><p>76.6</p></td></tr><tr><td class="confluenceTd">Count2</td><td class="confluenceTd">Monmouthshire</td><td class="confluenceTd"><p>2006-2008</p></td><td class="confluenceTd">Female</td><td class="confluenceTd"><p>81.7</p></td></tr><tr><td class="confluenceTd">Count2</td><td class="confluenceTd"><p>Merthyr Tydfil</p></td><td class="confluenceTd"><p>2004-2006</p></td><td class="confluenceTd">Male</td><td class="confluenceTd"><p>75.5</p></td></tr><tr><td colspan="1" class="confluenceTd">Count2</td><td colspan="1" class="confluenceTd"><p>Merthyr Tydfil</p></td><td colspan="1" class="confluenceTd">2004-2006</td><td colspan="1" class="confluenceTd">Female</td><td colspan="1" class="confluenceTd"><p>79.1</p></td></tr><tr><td colspan="1" class="confluenceTd">Count2</td><td colspan="1" class="confluenceTd"><p>Merthyr Tydfil</p></td><td colspan="1" class="confluenceTd"><p>2005-2007</p></td><td colspan="1" class="confluenceTd">Male</td><td colspan="1" class="confluenceTd"><p>75.5</p></td></tr><tr><td colspan="1" class="confluenceTd">Count2</td><td colspan="1" class="confluenceTd"><p>Merthyr Tydfil</p></td><td colspan="1" class="confluenceTd"><p>2005-2007</p></td><td colspan="1" class="confluenceTd">Female</td><td colspan="1" class="confluenceTd"><p>79.4</p></td></tr><tr><td colspan="1" class="confluenceTd">Count2</td><td colspan="1" class="confluenceTd"><p>Merthyr Tydfil</p></td><td colspan="1" class="confluenceTd"><p>2006-2008</p></td><td colspan="1" class="confluenceTd">Male</td><td colspan="1" class="confluenceTd">74.9</td></tr><tr><td colspan="1" class="confluenceTd">Count2</td><td colspan="1" class="confluenceTd"><p>Merthyr Tydfil</p></td><td colspan="1" class="confluenceTd"><p>2006-2008</p></td><td colspan="1" class="confluenceTd">Female</td><td colspan="1" class="confluenceTd"><p>79.6</p></td></tr></tbody></table></div><p>Then every row represents one observation. One column represents measure (Life expectancy) and three columns represent dimensions (Region, Time period, Sex). <span class="inline-comment-marker" data-ref="e8862592-0cdf-4345-a4e9-0c786c7482cd">First column is neither measure nor dimension, because there is a relation between Country and Region</span>. There are no relations among other columns. Theoretically there could be more columns representing measures.</p><h1 id="Datacube-ResultingRDFDatacubeandthegeneratedpatterns">Resulting RDF Data cube and the generated patterns</h1><p>Based on the example above, there is complete resulting RDF Data cube in documentation at <a href="http://www.w3.org/TR/vocab-data-cube/#full-example" class="external-link" rel="nofollow">http://www.w3.org/TR/vocab-data-cube/#full-example</a>. According to the example in documentation the RDF Data cube contains these parts:</p><ul style="list-style-type: square;"><li>Data Set</li><li>Data structure definition</li><li>Dimensions and measures</li><li>Observations</li></ul><p>For every part there is a &quot;pattern&quot; showing how Odalic producec the RDF. For producing the RDF Data cube we needed the Result provided by Odalic core algorithm and also the Data cube definition (&quot;CubeDef&quot;) provided by user. For every pattern there is depicted what information we need from Result and CubeDef for producing the RDF.</p><h2 id="Datacube-DataSetpattern">Data Set pattern</h2><p>Input from Odalic Result:</p><ul style="list-style-type: square;"><li>(none)</li></ul><p>Input from user's CubeDef:</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Parameter</th><th class="confluenceTh">Value</th></tr><tr><td class="confluenceTd">Title</td><td class="confluenceTd">Life expectancy title</td></tr><tr><td class="confluenceTd">Label</td><td class="confluenceTd">Life expectancy desc</td></tr><tr><td class="confluenceTd">Comment</td><td class="confluenceTd">Life expectancy within Welsh Unitary authorities comment</td></tr><tr><td colspan="1" class="confluenceTd">Description</td><td colspan="1" class="confluenceTd">Life expectancy within Welsh Unitary authorities - extracted from Stats Wales</td></tr><tr><td colspan="1" class="confluenceTd">Subject</td><td colspan="1" class="confluenceTd"><span class="nolink">http://purl.org/linked-data/sdmx/2009/subject/3.2</span></td></tr><tr><td colspan="1" class="confluenceTd">Organization</td><td colspan="1" class="confluenceTd">Example org</td></tr></tbody></table></div><ul style="list-style-type: square;"><li>Note: Date for &quot;issued&quot; can be computed by program during RDF producing.</li></ul><p>RDF output pattern:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"># -- Data Set --------------------------------------------
+
+eg:dataset a qb:DataSet;
+    dct:title       &quot;Life expectancy title&quot;;
+    rdfs:label      &quot;Life expectancy desc&quot;;
+    rdfs:comment    &quot;Life expectancy within Welsh Unitary authorities comment&quot;;
+    dct:description &quot;Life expectancy within Welsh Unitary authorities - extracted from Stats Wales&quot;;
+    dct:publisher   eg:organization;
+    dct:issued      &quot;2016-09-22&quot;;
+    dct:subject     &lt;http://purl.org/linked-data/sdmx/2009/subject/3.2&gt;;
+    qb:structure    eg:dsd;
+    .
+
+eg:organization a org:Organization, foaf:Agent;
+    rdfs:label &quot;Example org&quot;;
+    .</pre>
+</div></div><h2 id="Datacube-Datastructuredefinitionpattern">Data structure definition pattern</h2><p>Input from Odalic Result:</p><ul style="list-style-type: square;"><li>(none)</li></ul><p>Input from user's CubeDef:</p><ul style="list-style-type: square;"><li>Which columns are dimensions and measures - the column numbers (order in the Input of the task) are enough.</li></ul><p>RDF output pattern:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"># -- Data structure definition ----------------------------
+
+eg:dsd a qb:DataStructureDefinition;
+    # The dimensions
+    qb:component [ qb:dimension eg:refArea;         qb:order 1 ];
+    qb:component [ qb:dimension eg:refPeriod;       qb:order 2 ];
+
+    # The measure(s)
+    qb:component [ qb:measure eg:lifeExpectancy ];
+
+    # The attributes
+    qb:component [ qb:attribute sdmx-attribute:unitMeasure ];
+    .
+</pre>
+</div></div><h2 id="Datacube-Dimensionsandmeasurespattern">Dimensions and measures pattern</h2><p>Input from Odalic Result:</p><ul style="list-style-type: square;"><li>Classification of columns pointed by user as dimensions and measures (Label and Resource)</li></ul><p>Input from user's CubeDef:</p><ul style="list-style-type: square;"><li>Which columns are dimensions and measures (for example the number of column in input is enough).</li></ul><p>RDF output pattern:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"># -- Dimensions and measures  ----------------------------
+
+eg:refPeriod a rdf:Property, qb:DimensionProperty;
+    rdfs:label &quot;reference period&quot;;
+    qb:concept &lt;http://dbpedia.org/resource/Reference_period&gt;;
+    .
+
+eg:refArea a rdf:Property, qb:DimensionProperty;
+    rdfs:label &quot;reference area&quot;;
+    qb:concept &lt;http://dbpedia.org/resource/Region&gt;;
+    .
+
+eg:lifeExpectancy a rdf:Property, qb:MeasureProperty;
+    rdfs:label &quot;life expectancy&quot;;
+    rdfs:subPropertyOf sdmx-measure:obsValue;
+    qb:concept &lt;http://dbpedia.org/resource/Life_expectancy&gt;;
+    .
+</pre>
+</div></div><h2 id="Datacube-Observationspattern">Observations pattern</h2><p>Input from Odalic Result:</p><ul style="list-style-type: square;"><li>Disambiguation of cells in columns pointed by user as dimensions (Resource)</li></ul><p>Input from user's CubeDef:</p><ul style="list-style-type: square;"><li>Unit of measure (Resource)</li></ul><p>Note: Values of cells in column pointed by user as measure are obtained from the Input of the task.</p><p>RDF output pattern:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"># -- Observations -----------------------------------------
+
+ 
+eg:o1 a qb:Observation;
+    qb:dataSet  eg:dataset ;
+    eg:refArea                 &lt;http://dbpedia.org/page/Newport,_New_South_Wales&gt; ;
+    eg:refPeriod               &lt;http://reference.data.gov.uk/id/gregorian-interval/2004-01-01T00:00:00/P3Y&gt; ;
+    sdmx-attribute:unitMeasure &lt;http://dbpedia.org/resource/Year&gt; ;
+    eg:lifeExpectancy          76.7 ;
+    .
+
+eg:o2 a qb:Observation;
+    qb:dataSet  eg:dataset ;
+    eg:refArea                 &lt;http://dbpedia.org/resource/Cardiff&gt; ;
+    eg:refPeriod               &lt;http://reference.data.gov.uk/id/gregorian-interval/2004-01-01T00:00:00/P3Y&gt; ;
+    sdmx-attribute:unitMeasure &lt;http://dbpedia.org/resource/Year&gt; ;
+    eg:lifeExpectancy          78.7 ;
+    .
+</pre>
+</div></div><p> </p><p> </p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

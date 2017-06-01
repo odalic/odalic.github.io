@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Scenario 4c Customizing disambiguation - selecting an extra concept for disambiguation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Scenario 4c Customizing disambiguation - selecting an extra concept for disambiguation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified by <span class='editor'> Tomas Knap</span> on Sep 22, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Scenario4cCustomizingdisambiguation-selectinganextraconceptfordisambiguation-InitialState">Initial State</h1><p><span style="color: rgb(0,0,0);">The user is logged on the system <span style="color: rgb(0,0,0);">(see: </span><a href="Scenario-0a--Login-and-home-screen_72223863.html">Scenario 0 Login and home screen</a><span style="color: rgb(0,0,0);">)</span></span></p><p><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);">The user wants to choose alternative disambiguation of respective cell (see: <a href="Scenario-4a-Customizing-subject-column---Selecting-different-subject-column_72223005.html">Scenario 4a Customizing subject column - Selecting different subject column</a>)</span></span></span></p><h1 id="Scenario4cCustomizingdisambiguation-selectinganextraconceptfordisambiguation-Description">Description</h1><ol><li style="list-style-type: decimal;"><p>User is provided with a table preview with the suggested winning disambiguation for the given cell value of certain CSV column</p><ol><li>System clearly marks the suggested winning choice (e.g. <a href="http://adequate.at/concept/city" class="external-link" rel="nofollow">http://adequate.at/concept/city</a>/Aibl for column with cities)</li></ol></li><li>User would like to specify that also the resource <a href="http://adequate.at/concept/city" style="text-decoration: underline;" class="external-link" rel="nofollow">http://freebase.com/</a>../Aibl is the right concept disambiguating the given cell value<ol><li>User selects &quot;Customize&quot; <ol><li>As a result, system shows &quot;Customize disambiguation&quot; dialog as below<ol><li><p>List with alternative disambiguations suggested by the Odalic Core is shown, for each knowledge base in a different section</p><ol><li>options are sorted by probability / score</li></ol></li></ol></li></ol></li><li><p>User selects also the concept Aibl from Freebase KB</p></li></ol></li><li style="list-style-type: decimal;"><p><span style="color: rgb(0,0,0);">User confirms the given selection</span></p><ol><li><p><span style="color: rgb(0,0,0);">As a result system saves such selection and changes the suggested winning concept for the disambiguation of the given cell value</span><br/><span style="color: rgb(0,0,0);"><br/></span></p></li></ol></li></ol><h1 id="Scenario4cCustomizingdisambiguation-selectinganextraconceptfordisambiguation-Alternatives">Alternatives</h1><ol><li><span style="color: rgb(0,0,0);">In 2. user may select a different<strong> (not suggested)</strong> concept by browsing/selecting the concept in knowledge base (in a similar way as in Scenario 4b)</span></li><li><span style="color: rgb(0,0,0);">In <span style="color: rgb(0,0,0);">2. user may create new concept in the given internal knowledge base - as a result, system shows a dialog for specifying basic details about the concept</span></span></li><li><span style="color: rgb(0,0,0);">In 2. when the user wants to provide and existing custom concept  - he may write appropriate custom URL to the &quot;custom&quot; textbox</span><span style="color: rgb(0,0,0);"><br/></span></li><li><span style="color: rgb(0,0,0);">In 2. when the user isn't satisfied with any suggested alternative, he selects &quot;no suitable&quot; option in the customize disambiguation dialog</span><span style="color: rgb(0,0,0);">, withou specifying the correct alternative - as a result, the table preview is updated and there is no disamibugation for the given cell value</span><span style="color: rgb(0,0,0);"> </span></li></ol><h1 id="Scenario4cCustomizingdisambiguation-selectinganextraconceptfordisambiguation-Whatcangowrong">What can go wrong</h1><p>There is no suggested disambiguation for the given cell value (due to low evidence in KBs). </p><h1 id="Scenario4cCustomizingdisambiguation-selectinganextraconceptfordisambiguation-Systemstateoncompletion">System state on completion</h1><p><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);">The user is provided with the alternative <span style="color: rgb(0,0,0);">disambiguation </span>of the cell value (the one he selects)</span></span></p><h1 id="Scenario4cCustomizingdisambiguation-selectinganextraconceptfordisambiguation-RequirementsMotivatingtheScenario">Requirements Motivating the Scenario</h1><ul><li>18, 19, 20, 52</li></ul><h1 id="Scenario4cCustomizingdisambiguation-selectinganextraconceptfordisambiguation-Notes">Notes</h1><p>More than one concept may be used (one from each KB) to disambiguate the column</p><p><span style="color: rgb(0,0,0);">moreover, by clicking on the URL, user looks at the disambiguated entity in the context of the knowledge base (corresponding webpage is opened)</span></p><h1 id="Scenario4cCustomizingdisambiguation-selectinganextraconceptfordisambiguation-Mockups">Mockups</h1><p>This mockup shows only the disambiguation customization dialog (for bigger context, see <a href="Scenario-4b-Customizing-classification-class---selecting-different-non-suggested-primary-class-for-the-column-classification_72224380.html">Scenario 4b Customizing classification class - selecting different non-suggested primary class for the column classification</a>)</p><p><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_mockup-disamb-customization"><img class="balsamiq_mockup" src="attachments/72224384/72225564.png"/></a><br/></div></p><p> </p><p> </p><p> </p><p> </p><p> </p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72224647">Mockup Output feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72224648.png">Mockup Output feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72224650">Mockup Output feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72224651.png">Mockup Output feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72224382">Mockup Output feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72224383.png">Mockup Output feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72224659">Mockup Disambiguation feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72224660.png">Mockup Disambiguation feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72224672">Mockup 4c Disambiguation feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72224673.png">Mockup 4c Disambiguation feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225565.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225566.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225570.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225571.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225573.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225574.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225575.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225576.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225579.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225580.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225581.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225582.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225590.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225591.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/73073661.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/73073662.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/73073686.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/73073687.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/73073705.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/73073706.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/75563407.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/75563408.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225563.bmml">mockup_mockup-disamb-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224384/72225564.png">mockup_mockup-disamb-customization.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-73073603"></a>
+                                    <font class="smallfont"><p>Same comments in 4b apply here</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by zhangz at Mai 31, 2016 17:56
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

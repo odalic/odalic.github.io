@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Main Settings</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Configuration_76975474.html">Configuration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Main Settings
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Jan Váňa</span>, last modified by <span class='editor'> Václav Brodec</span> on Jun 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>All main settings are <strong>mandatory</strong>, unless it is stated otherwise in the description.</p><h2 id="MainSettings-FilePaths">File Paths</h2><ul><li><p><strong>sti.home</strong> - STI home folder. All other file paths wil be relative to this (except otherwise stated).</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">sti.home = d:\\Documents\\odalic\\sti\\</pre>
+</div></div></li><li><p><strong>sti.nlp</strong> - Folder containing nlp resources, by default this is the &quot;/resource&quot; folder in the distribution. The resources generally contain data that may change during the processing, so it makes sense to keep them apart from the configuration.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">sti.nlp = resources</pre>
+</div></div></li><li><p><strong>sti.cache.main.dir</strong> - Folder containing cached data. Whenever KB search or Web search is performed, the query and results are cached in a Solr instance. This specifies the base path of all Solr instances.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> sti.cache.main.dir = ..\\cache\\</pre>
+</div></div></li><li><p><strong>sti.websearch.properties</strong> - Web search configuration files. By default, it is in the &quot;/config&quot; folder of the distribution. See <a href="Websearch-Settings_76975480.html">Websearch Settings</a>.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> sti.websearch.properties = config\\websearch.properties</pre>
+</div></div></li><li><p>Former<strong> sti.kbproxy.propertyfile</strong> option, which contained a list of bases to load, has been made obsolete thanks to introduction of runtime KB management. Nevertheless the user can still leave KB proxy configuration files in the config library and they are scanned during startup to create the initial set of available bases for a newly signed-up user. This helps to provide examples to customize, while keeping the old files format which is arguably easier to manually customize than exported RDF configurations. These should be put in the &quot;/config&quot; folder of the distribution. See <a href="KB-Proxy-Settings_76975478.html">KB Proxy Settings</a> for details of the files.</p></li></ul><h2 id="MainSettings-Subjectcolumndetection,thewsscorer">Subject column detection, the ws scorer</h2><ul><li><p><strong>sti.subjectcolumndetection.ws</strong> - Choose whether STI should use the web search score in detecting subject columns (the columns serving as the source of relations with other columns).</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> sti.subjectcolumndetection.ws = true</pre>
+</div></div></li><li><p><strong>sti.iinf.websearch.stopping.class</strong> - If the above mentioned option is on, determines what stopping criteria class should be used. Must extend the <strong>uk.ac.shef.dcs.sti.core.algorithm.tmp.stopping</strong> class.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> sti.iinf.websearch.stopping.class = uk.ac.shef.dcs.sti.core.algorithm.tmp.stopping.IInf</pre>
+</div></div></li><li><p><strong>sti.iinf.websearch.stopping.class.constructor.params</strong> - If the ws option is on, this provides the stopping criteria class above its constructor parameters in the order as defined, delimited by &quot;,&quot;. These options generally serve to fine-tune the algorithm results and are hardly ever needed to be modified.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> sti.iinf.websearch.stopping.class.constructor.params = 0.0,1,0.01</pre>
+</div></div></li></ul><h2 id="MainSettings-Relationenumeration">Relation enumeration</h2><ul><li><p><strong>sti.learning.relation</strong> - Choose whether or not STI should annotate relations. May be turned off when this is not required, for example when the administrator wants to rely only on the relations between columns and not put in relation the individual row cells in the results.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> sti.learning.relation = true</pre>
+</div></div></li></ul><h2 id="MainSettings-Output">Output</h2><ul><li><p><strong>cz.cuni.mff.xrg.odalic.prefixes</strong> - Prefix mapping configuration for the resources provided to the clients. Defines commonly used URI prefixes. A good candidate to turn into runtime option in later releases.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> cz.cuni.mff.xrg.odalic.prefixes = config\\PrefixMapping.ttl</pre>
+</div></div></li></ul><h2 id="MainSettings-Tableminer+">Tableminer+</h2><ul><li><p><strong>sti.tmp.iinf.learning.stopping.class</strong> - What stopping criteria class should be used in the iinf for preliminary column classification. Must extend the <strong>uk.ac.shef.dcs.sti.core.algorithm.tmp.stopping</strong> class.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> sti.tmp.iinf.learning.stopping.class = uk.ac.shef.dcs.sti.core.algorithm.tmp.stopping.IInf</pre>
+</div></div></li><li><p><strong>sti.tmp.iinf.learning.stopping.class.constructor.params</strong> - For the stopping criteria class provided above, also provide its constructor parameters in the order it is defined in the class values separated by &quot;,&quot;.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> sti.tmp.iinf.learning.stopping.class.constructor.params = 0.0,1,0.05</pre>
+</div></div></li></ul><h2 id="MainSettings-Mail(forconfirmationemails)">Mail (for confirmation emails)</h2><ul><li><strong>mail.username</strong> - SMTP server user name.</li><li><strong>mail.password</strong> - SMTP server password.</li><li><strong>mail.from</strong> - Sender of the outgoing e-mails.</li><li><strong>mail.smtp.host</strong> - Address of the SMTP server.</li><li><strong>mail.smtp.auth</strong> - Choose whether or the SMTP server use authentication.</li><li><strong>mail.smtp.port</strong> - Port of the SMTP server.</li><li><strong>mail.smtp.socketFactory.class</strong> - Class used as socket factory.</li><li><p><strong>mail.smtp.socketFactory.port</strong> - Port used by the socket factory.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">mail.username = odalic@email.cz
+mail.password = password
+mail.from = odalic@email.cz
+mail.smtp.host = smtp.seznam.cz
+mail.smtp.auth = true
+mail.smtp.port = 465
+mail.smtp.socketFactory.class = javax.net.ssl.SSLSocketFactory
+mail.smtp.socketFactory.port = 465</pre>
+</div></div></li></ul><h2 id="MainSettings-Users">Users</h2><ul><li><strong>cz.cuni.mff.xrg.odalic.users.maximumCodesKept</strong> - Maximum temporary codes kept per queue. When the confirmation of sign-up and password change is on, this helps to prevent to grow the waiting queue out of proportions.</li><li><strong>cz.cuni.mff.xrg.odalic.users.session.maximum.hours</strong> - Maximum hours that a single session can last.</li><li><strong>cz.cuni.mff.xrg.odalic.users.signup.window.minutes</strong> - Length of the time window when the sign-up confirmation token is active (in minutes).</li><li><strong>cz.cuni.mff.xrg.odalic.users.reset.window.minutes</strong> - Length of the time window when the password setting confirmation token is active (in minutes).</li><li><strong>cz.cuni.mff.xrg.odalic.users.signup.url</strong> - URL format for a sing-up confirmation. This is put in the confirmation e-mails in order the lead the user to the correct running UI instance.</li><li><strong>cz.cuni.mff.xrg.odalic.users.reset.url</strong> - URL format for a password setting confirmation. This is put in the confirmation e-mails in order the lead the user to the correct running UI instance.</li><li><strong>cz.cuni.mff.xrg.odalic.users.admin.email</strong> - Administrator's email (and the user ID).</li><li><p><strong>cz.cuni.mff.xrg.odalic.users.admin.password</strong> - Administrator's initial password. It is recommended to change it using the standard REST API or UI means.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">cz.cuni.mff.xrg.odalic.users.maximumCodesKept = 100
+cz.cuni.mff.xrg.odalic.users.session.maximum.hours = 172
+cz.cuni.mff.xrg.odalic.users.signup.window.minutes = 30
+cz.cuni.mff.xrg.odalic.users.reset.window.minutes = 30
+cz.cuni.mff.xrg.odalic.users.signup.url = http://localhost:8080/odalic-ui/index.html#/signup/%s
+cz.cuni.mff.xrg.odalic.users.reset.url = http://localhost:8080/odalic-ui/index.html#/chngpasswd/%s
+cz.cuni.mff.xrg.odalic.users.admin.email = odalic@email.cz
+cz.cuni.mff.xrg.odalic.users.admin.password = admin</pre>
+</div></div></li></ul><h2 id="MainSettings-Tokens">Tokens</h2><ul><li><p><strong>cz.cuni.mff.xrg.odalic.tokens.issuer</strong> - Name of the organization issuing this instance tokens. Serves mainly to distinguish tokens from non-related instances of the application.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> cz.cuni.mff.xrg.odalic.tokens.issuer = Odalic</pre>
+</div></div></li><li><p><strong>cz.cuni.mff.xrg.odalic.tokens.secret</strong> - Secret used for generating and verifying authentication tokens.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> cz.cuni.mff.xrg.odalic.tokens.secret = cPLsKpTZxAcDZH5cqg3bxAet3VdAJ683X8Ccu8yTyFh</pre>
+</div></div></li></ul><h2 id="MainSettings-Storage">Storage</h2><ul><li><p><strong>cz.cuni.mff.xrg.odalic.db.file</strong> - The local database file used to store Odalic data.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> cz.cuni.mff.xrg.odalic.db.file = resources\\db.dat</pre>
+</div></div></li></ul>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

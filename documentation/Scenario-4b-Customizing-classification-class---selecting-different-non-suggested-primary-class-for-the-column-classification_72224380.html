@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Scenario 4b Customizing classification class - selecting different non-suggested primary class for the column classification</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Scenario 4b Customizing classification class - selecting different non-suggested primary class for the column classification
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified by <span class='editor'> Tomas Knap</span> on Sep 23, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Scenario4bCustomizingclassificationclass-selectingdifferentnon-suggestedprimaryclassforthecolumnclassification-InitialState">Initial State</h1><p><span style="color: rgb(0,0,0);">The user is logged on the system <span style="color: rgb(0,0,0);">(see: </span><a href="Scenario-0a--Login-and-home-screen_72223863.html">Scenario 0 Login and home screen</a><span style="color: rgb(0,0,0);">)</span></span></p><p><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);">User have defined and run classification/disambiguation task (see: <a href="Scenario-1-Task-creation_71439879.html">Scenario 1 Task creation</a></span><span style="color: rgb(0,0,0);">). </span></span></span><span style="color: rgb(0,0,0);">User is observing the results of the classification/disambiguation task.</span></p><h1 id="Scenario4bCustomizingclassificationclass-selectingdifferentnon-suggestedprimaryclassforthecolumnclassification-Description">Description</h1><ol><li style="list-style-type: decimal;"><p>User is provided with a table preview with the <a href="Glossary_71439915.html">suggested winning class</a> for the CSV columns</p><ol><li>System clearly marks the suggested winning choice (e.g. http://adequate.at/concept/city for column with cities)</li></ol></li><li>User may customize the winning class (&quot;Customize&quot; button below)<ol><li>As a result, system shows &quot;Customize classification&quot; dialog as below<ol><li><p>Dropdown list with alternative classifications suggested by the Odalic Core is shown, for each knowledge base in a different section</p></li></ol></li></ol></li><li><span style="color: rgb(0,0,0);">User may select a different <strong>not suggested</strong> concept from the primary knowledge base (ADEQUTe in the mockup below) by clicking on &quot;Browse/Select&quot;</span><ol><li><span style="color: rgb(0,0,0);">As a result system show dialog, where user may specify the required concept</span></li></ol></li><li><span style="color: rgb(0,0,0);">User selects the concepts required and confirms</span><br/><ol><li><span style="color: rgb(0,0,0);">As a result system saves such selection and changes the suggested winning concept</span></li></ol></li></ol><h1 id="Scenario4bCustomizingclassificationclass-selectingdifferentnon-suggestedprimaryclassforthecolumnclassification-Alternatives">Alternatives</h1><ul><li><span style="color: rgb(0,0,0);"><span>In 3 user may decide to select one of the <strong>suggested</strong> concepts (instead of browsing KB and selecting one on its own)</span></span></li><li><span style="color: rgb(0,0,0);">In <span>3. user may create new concept in the given internal knowledge base - as a result, system shows a dialog for specifying basic details about the concept </span></span><span style="color: rgb(0,0,0);"><span><br/></span></span></li><li><span style="color: rgb(0,0,0);">In 3. user may provide an existing custom concept  - he may write appropriate custom URL to the &quot;custom&quot; text box</span><span style="color: rgb(0,0,0);"><span><span><br/></span></span></span></li><li><span style="color: rgb(0,0,0);">In 3. when the user isn't satisfied with any suggested alternative, he selects &quot;do not classify&quot; option in the customize dialog</span><span style="color: rgb(0,0,0);">, without specifying the correct alternative - as a result, the table preview is updated and there is no classification for the given cell value and in the consequent re-computations, such column is not considered as named entity column being classified/disambiguated.</span></li></ul><p> </p><h1 id="Scenario4bCustomizingclassificationclass-selectingdifferentnon-suggestedprimaryclassforthecolumnclassification-Whatcangowrong"><span style="color: rgb(0,0,0);">What can go wrong</span></h1><h1 id="Scenario4bCustomizingclassificationclass-selectingdifferentnon-suggestedprimaryclassforthecolumnclassification-Systemstateoncompletion">System state on completion</h1><p><span style="color: rgb(0,0,0);">The user selects the required concept classifying the column.</span></p><h1 id="Scenario4bCustomizingclassificationclass-selectingdifferentnon-suggestedprimaryclassforthecolumnclassification-RequirementsMotivatingtheScenario">Requirements Motivating the Scenario</h1><ul><li>17, 19, 20, 52</li></ul><h1 id="Scenario4bCustomizingclassificationclass-selectingdifferentnon-suggestedprimaryclassforthecolumnclassification-Notes">Notes</h1><p><span style="color: rgb(0,51,102);"><span class="inline-comment-marker" data-ref="64a87316-9d28-439d-ae6e-d88f6725f213">More than one concept (one from each KB) may be used to classify the column</span></span></p><p><span style="color: rgb(0,51,102);"><span class="inline-comment-marker" data-ref="3e278ac7-45fd-4377-a7b5-44a043b6947c">How can the user mark the specified classification/disambiguation as being wrong?  User may simply create/specify a different concept (User has to always specify at least one concept)</span></span></p><h1 id="Scenario4bCustomizingclassificationclass-selectingdifferentnon-suggestedprimaryclassforthecolumnclassification-Mockups">Mockups</h1><p><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_mockup-classification-customization"><img class="balsamiq_mockup" src="attachments/72224380/72224755.png" border="0" usemap="#map_mockup-classification-customization"/></a><map name="map_mockup-classification-customization"><area shape="rect" coords="1162,510,1265,537" href="/x/HQlOB#mockup_mockup-select-subject-column" alt="mockup-select-subject-column" id="238"/>
+</map></div></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224625">Mockup Output feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224626.png">Mockup Output feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224378">Mockup Output feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224379.png">Mockup Output feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224653">Mockup Classification feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224654.png">Mockup Classification feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224666">Mockup 4b Classification feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224667.png">Mockup 4b Classification feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224752.png">Screen Shot 2016-05-09 at 12.50.19.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224753.png">Screen Shot 2016-05-09 at 12.54.20.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224759.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224760.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72225560.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72225561.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72225577.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72225578.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72225583.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72225584.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72225691.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72225692.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72225836.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72225837.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/73073642.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/73073643.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/73073653.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/73073654.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/73073658.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/73073659.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/73073678.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/73073680.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74186786.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74186787.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74186789.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74186790.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74186908.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74186909.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187036.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187037.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187080.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187081.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187210.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187211.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187231.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187232.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187226.png">Screen Shot 2016-07-15 at 12.33.18.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187375.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187376.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187379.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74187380.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74875611.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/74875612.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563288.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563289.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563400.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563401.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563411.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563412.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563414.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563415.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563424.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563425.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563457.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563458.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563520.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/75563521.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224754.bmml">mockup_mockup-classification-customization.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224380/72224755.png">mockup_mockup-classification-customization.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-73073600"></a>
+                                    <font class="smallfont"><p>It would be nice to have a link next to each candidate concept in the dropdown list, such that when user clicks it, it opens the ontology browser and shows the concept in context (e.g., where it is in the ontology hierarchy etc). </p><p>This would be helpful because sometimes it is not obvious why the candidate concepts get suggested and what they mean.</p><p> </p><p> </p><p>From reading related scenarios 4b, 4c, 4d, my understanding is that there is no plan to 'propagate' user feedback, i.e., 'fix' certain annotations on the columns/cells and re-run the algorithm. This is a sensible choice, as propagating feedback can be fairly complex, and could require a fair bit of coding in tableminer+. For the sake of documentation I note it down here as you may consider this for future improvement. Examples:</p><ul style="list-style-type: square;"><li>if a winning class is changed, ideally it should trigger a check on the disambiguation results on all cells in that column, and for any cells whose tagged entity does not belong to the new class, they should be revised. Users may be given the option to allow this or not</li><li>following above, if any cells are revised, it could potentially affect the relations between columns. again users may be given the option to allow this or not</li><li>The same situation applies if users decide not to annotate the column</li></ul><p>Similar 'chain-reactions' can happen if users correct a cell, or relations between cells or columns.</p><p>Ultimately, users may be given the option to 'make a few corrections' (column, or cell, or relation) then 're-run the system with my feedback', and go through such steps in a few iterations, like an active learning fashion. </p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by zhangz at Mai 31, 2016 17:47
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-73073616"></a>
+                                    <font class="smallfont"><blockquote><p>It would be nice to have a link next to each candidate concept in the dropdown list, such that when user clicks it, it opens the ontology browser and shows the concept in context (e.g., where it is in the ontology hierarchy etc). </p><p>This would be helpful because sometimes it is not obvious why the candidate concepts get suggested and what they mean.Y</p></blockquote><p>Good point. In other words something akin to the screens displayed when making the custom suggestion, but not just for the custom ones, but for all. Right?</p><blockquote><p>From reading related scenarios 4b, 4c, 4d, my understanding is that there is no plan to 'propagate' user feedback, i.e., 'fix' certain annotations on the columns/cells and re-run the algorithm. This is a sensible choice, as propagating feedback can be fairly complex, and could require a fair bit of coding in tableminer+. For the sake of documentation I note it down here as you may consider this for future improvement. Examples:</p><ul><li>if a winning class is changed, ideally it should trigger a check on the disambiguation results on all cells in that column, and for any cells whose tagged entity does not belong to the new class, they should be revised. Users may be given the option to allow this or not</li><li>following above, if any cells are revised, it could potentially affect the relations between columns. again users may be given the option to allow this or not</li><li>The same situation applies if users decide not to annotate the column</li></ul><p>Similar 'chain-reactions' can happen if users correct a cell, or relations between cells or columns.</p><p>Ultimately, users may be given the option to 'make a few corrections' (column, or cell, or relation) then 're-run the system with my feedback', and go through such steps in a few iterations, like an active learning fashion.</p></blockquote><p>Actually this is something we do account for in later iterations and as our individual efforts to make improvements to various aspects of the algorithm will come to fruition. We do describe the process of using the feedback in other scenarios, mainly when creating a new task based on the configuration (including the provided user feedback) of another.</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by brodecv at Jun 01, 2016 1:18
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-73073667"></a>
+                                    <font class="smallfont"><p>Yes for the first question</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by zhangz at Jun 01, 2016 10:48
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

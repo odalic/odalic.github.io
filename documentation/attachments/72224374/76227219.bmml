@@ -1,0 +1,271 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1455" measuredH="1716" mockupW="1455" mockupH="1681">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="60" y="35" w="1061" h="706" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Step%202%3A%20Dimensions%20and%20Measures</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::DataGrid" x="483" y="600" w="831" h="81" measuredW="854" measuredH="81" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>NUTS3%2C%20DistrictCode%2C%20DistrictName%2C%20LauCode%2C%20*City%20%28http%3A//adequate.at/concept/city%29*%20%28Original%3A%20LauName%29%20%20%20%20%2C%20PopTotal%2C%20refDate%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060301%2C%20*Aibl%20%28http%3A//adequate.at/concept/city/aibl%29*%2C%201386%2C%2001.01.2014%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060303%2C%20AD%3AEibiswald%2C%201437%2C%2001.01.2014</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::TitleWindow" x="64" y="893" w="1061" h="706" measuredW="450" measuredH="400" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Step%203%3A%20Relation%20Discovery</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::TabBar" x="76" y="922" w="969" h="557" measuredW="196" measuredH="100" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>1</selectedIndex>
+        <text>Normal%2C%20Statistical</text>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::TextInput" x="204" y="983" w="133" h="-1" measuredW="76" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <italic>true</italic>
+        <text>Insert%20title</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Label" x="97" y="986" w="-1" h="-1" measuredW="96" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Data%20Cube%20Title%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::Button" x="787" y="1494" w="188" h="27" measuredW="121" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>mockup-rdf-preview-2%26bm%3B/x/5whOB%23mockup_mockup-rdf-preview-2%26bm%3B/download/attachments/72222951/mockup_mockup-rdf-preview-2.bmml%3Fapi%3Dv2%26bm%3B/plugins/servlet/mockups%3Fdo%3Dedit%26mockup%3Dmockup-rdf-preview-2%26page%3D72222951</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22787%2C1459%2C975%2C1486%22%20href%3D%22/x/5whOB%23mockup_mockup-rdf-preview-2%22%20alt%3D%22mockup-rdf-preview-2%22%20id%3D%2245%22/%3E</map>
+        <text>Export%20RDF%20data</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::Button" x="79" y="1494" w="-1" h="-1" measuredW="167" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Start%20from%20the%20beginning</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Button" x="669" y="1494" w="-1" h="-1" measuredW="103" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>mockup-classification-customization%26bm%3B/x/fA5OB%23mockup_mockup-classification-customization%26bm%3B/download/attachments/72224380/mockup_mockup-classification-customization.bmml%3Fapi%3Dv2%26bm%3B/plugins/servlet/mockups%3Fdo%3Dedit%26mockup%3Dmockup-classification-customization%26page%3D72224380</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22669%2C1459%2C772%2C1486%22%20href%3D%22/x/fA5OB%23mockup_mockup-classification-customization%22%20alt%3D%22mockup-classification-customization%22%20id%3D%2247%22/%3E</map>
+        <state>up</state>
+        <text>Previous%20step</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Button" x="981" y="1494" w="-1" h="-1" measuredW="123" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Export%20CSV%20data</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Label" x="97" y="1225" w="-1" h="-1" measuredW="47" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Metrics%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Button" x="285" y="1149" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>+</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::ComboBox" x="181" y="1149" w="-1" h="-1" measuredW="104" measuredH="46" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>DistrictCode%0ANUTS</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::StickyNote" x="343" y="1144" w="172" h="98" measuredW="109" measuredH="123" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>All%20the%20columns%20from%20the%20original%20CSV%20not%20assigned%20already%20being%20a%20dimension%20or%20measuer</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::DataGrid" x="180" y="1063" w="831" h="81" measuredW="379" measuredH="81" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Column%2C%20Dimension%20Title%20%28optional%29%2C%20Predicate%2C%20Actions%0ACity%2C%20%2C%20%0ADistrictName%2C%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::Button" x="966" y="1084" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>X</text>
+      </controlProperties>
+    </control>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::Label" x="97" y="1042" w="-1" h="-1" measuredW="68" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dimensions</text>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::DataGrid" x="181" y="1246" w="831" h="81" measuredW="295" measuredH="51" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Column%2C%20Measure%20Title%2C%20Predicate%2C%20Actions%0APopTotal%2C%20Population%20Total%2C%20%20%2C%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::Button" x="284" y="1334" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>+</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::ComboBox" x="180" y="1334" w="-1" h="-1" measuredW="30" measuredH="24" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::RoundButton" x="259" y="303" w="82" h="65" measuredW="32" measuredH="32" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <shape>circle</shape>
+        <size>10</size>
+        <text>Observation</text>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::RoundButton" x="477" y="149" w="57" h="50" measuredW="32" measuredH="32" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <shape>circle</shape>
+        <text>City</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::RoundButton" x="568" y="229" w="57" h="50" measuredW="32" measuredH="32" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>15843890</color>
+        <text>PopTotal</text>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::RoundButton" x="540" y="324" w="57" h="50" measuredW="32" measuredH="32" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>15843890</color>
+        <text>refDate</text>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::Button" x="688" y="86" w="-1" h="-1" measuredW="132" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>40463</color>
+        <text>Select%20Dimensions</text>
+      </controlProperties>
+    </control>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::Button" x="820" y="86" w="-1" h="-1" measuredW="122" measuredH="27" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>15843890</color>
+        <text>Select%20Measures</text>
+      </controlProperties>
+    </control>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::Arrow" x="328" y="186" w="149" h="123" measuredW="150" measuredH="100" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <leftArrow>false</leftArrow>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::Arrow" x="337" y="250" w="225" h="74" measuredW="150" measuredH="100" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <leftArrow>false</leftArrow>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::StickyNote" x="975" y="113" w="474" h="232" measuredW="109" measuredH="123" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>So%20the%20graph%20is%20the%20same%2C%20the%20only%20difference%20is%20that%3A%0A%20%0A-%20There%20is%20a%20special%20node%20representing%20%22observation%22%20%28an%20extra%20node%20not%20available%20in%20normal%20view%29%0A-%20It%20is%20possible%20to%20mark%20the%20nodes%20as%20dimensions%20or%20measures%20%28by%20default%20set%20up%20by%20the%20system%20-%20NE%20columns%20are%20dimensions%2C%20rest%20of%20the%20columns%20are%20measures%29%20TODO%20How%3F%20%28discuss%20with%20Istvan%29%2C%20one%20approach%20is%20to%20have%20buttons%2C%20which%20are%20clicked%20and%20then%20you%20can%20label%20your%20nodes.%0A-%20depict%20the%20nodes%20as%20dimensions%20or%20measures%20%28different%20colors%3F%20or%20different%20line%20e.g.%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::Image" x="328" y="72" w="304" h="55" measuredW="410" measuredH="71" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>https%3A//grips.semantic-web.at/download/attachments/72224374/Screen%2520Shot%25202017-01-17%2520at%252016.25.08.png%3Fversion%3D1%26modificationDate%3D1484666711000%26api%3Dv2</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::StickyNote" x="108" y="299" w="151" h="162" measuredW="109" measuredH="123" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>This%20is%20an%20extra%20node%20representing%20Observation.%20Users%20typically%20define%20relations%20from%20that%20node%20to%20the%20other%20nodes.%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::StickyNote" x="740" y="114" w="153" h="95" measuredW="109" measuredH="123" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>TO%20mark%20the%20nodes%20as%20dimensions%20or%20measures</text>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::StickyNote" x="97" y="689" w="509" h="162" measuredW="109" measuredH="123" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Exports%3A%20TableAnnotation%2C%20ExtendedCSV%20works%20the%20same%2C%20export%20to%20RDF%20%28turtle%2C%20JSON-LD%29%20is%20a%20bit%20adjusted%20based%20on%20W3C%20Reco%0A-%20It%20exports%20only%20dims/measures%20linked%0A-%20It%20uses%20some%20reasonable%20defeault%20values%20for%20measure%20titles%2C%20data%20cube%20titles%20etc.%0A-%20It%20uses%20datatypes%20for%20the%20measures%20from%20ranges%20defined%20for%20the%20predicate</text>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::Arrow" x="337" y="343" w="197" h="10" measuredW="150" measuredH="100" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <leftArrow>false</leftArrow>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::RoundButton" x="393" y="128" w="58" h="50" measuredW="32" measuredH="32" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <size>10</size>
+        <text>LauCode</text>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::RoundButton" x="296" y="128" w="58" h="50" measuredW="32" measuredH="32" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <size>10</size>
+        <text>DistrictName</text>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::RoundButton" x="210" y="136" w="57" h="50" measuredW="32" measuredH="32" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <size>10</size>
+        <text>DistrictCode</text>
+      </controlProperties>
+    </control>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::RoundButton" x="145" y="211" w="57" h="50" measuredW="32" measuredH="32" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <shape>circle</shape>
+        <size>10</size>
+        <text>NUTS3</text>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::StickyNote" x="981" y="359" w="474" h="102" measuredW="109" measuredH="123" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Feedback%20must%20always%20also%20save%20the%20settings%20for%20dimensions/measures%20%28which%20node%20is%20which%20%29%20and%20thats%20it.%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::StickyNote" x="981" y="485" w="474" h="102" measuredW="109" measuredH="123" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Not%20supported%3A%20%0A-%20possibility%20to%20define%20data%20cube%20name%0A-%20order%20of%20the%20dimensions%2C%20.%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Arrow" x="0" y="79" w="1094" h="640" measuredW="150" measuredH="100" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13576743</color>
+        <curvature>0</curvature>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <rightArrow>false</rightArrow>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::DataGrid" x="267" y="1635" w="831" h="81" measuredW="854" measuredH="81" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>NUTS3%2C%20DistrictCode%2C%20DistrictName%2C%20LauCode%2C%20*City%20%28http%3A//adequate.at/concept/city%29*%20%28Original%3A%20LauName%29%20%20%20%20%2C%20PopTotal%2C%20refDate%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060301%2C%20*Aibl%20%28http%3A//adequate.at/concept/city/aibl%29*%2C%201386%2C%2001.01.2014%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060303%2C%20AD%3AEibiswald%2C%201437%2C%2001.01.2014</text>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::Button" x="966" y="1111" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>X</text>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::Button" x="935" y="1261" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>X</text>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::Image" x="866" y="1081" w="91" h="33" measuredW="154" measuredH="66" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>https%3A//grips.semantic-web.at/download/attachments/72224374/Screen%20Shot%202017-01-20%20at%2019.47.39.png%3Fversion%3D1%26modificationDate%3D1484938084000%26api%3Dv2</src>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::Image" x="865" y="1108" w="91" h="33" measuredW="154" measuredH="66" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>https%3A//grips.semantic-web.at/download/attachments/72224374/Screen%2520Shot%25202017-01-20%2520at%252019.47.39.png%3Fversion%3D1%26modificationDate%3D1484938084000%26api%3Dv2</src>
+      </controlProperties>
+    </control>
+    <control controlID="94" controlTypeID="com.balsamiq.mockups::Image" x="836" y="1258" w="91" h="33" measuredW="154" measuredH="66" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>https%3A//grips.semantic-web.at/download/attachments/72224374/Screen%2520Shot%25202017-01-20%2520at%252019.47.39.png%3Fversion%3D1%26modificationDate%3D1484938084000%26api%3Dv2</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

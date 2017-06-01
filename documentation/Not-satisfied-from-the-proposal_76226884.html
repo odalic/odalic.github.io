@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Not satisfied from the proposal</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Not satisfied from the proposal
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Jan 16, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>User may adjust similarity metrics and their configuration used during classification/disambiguation/relation discovery of Odalic Core algorithm.</p><p><strong>-&gt; Too lowlevel, would be examined in MTs</strong></p><p><span style="color: rgb(255,0,0);">User is also provided with basic statistics - number of concepts classified, number of entities classified in each column, number of relations discovered.</span></p><p> </p><p>User may be presented with a preview of the resulting RDF data (presented on a sample row) derived from the data resulting from Odalic Core algorithm run, which may be further adjusted (URI prefixes, used predicates, etc.). </p><ul><li>System then applies the prepared template to all rows to produce RDF data </li><li>User may specify whether URIs should be reused from the (prefered) knowledge base or whether URIs for concepts/entities/relations should be generated according to a certain template and then linked to classified concept/disambiguated entities/discovered relations, e.g. by using owl:sameAs RDF predicates.</li></ul><p><strong>-&gt; Preview is available as TTL file. And there is also extended CSV./</strong></p><p><strong>-&gt; not needed, because Step 3 is powerfull enough + using CSV on the Web</strong></p><p> </p><p>User may save the generated RDF data either to a file (or files), which he or she may download, <strong>or to a preconfigured RDF store</strong></p><p><strong>-&gt; We decided to just provide files, which may be then easily loaded to an RDF store, e.g., via using UnifiedViews or by using the API of KBs.</strong></p><p><strong><br/></strong></p><p>Administrator may manage knowledge bases Odalic Core can work on top of:</p><ul><li>Administrator may add more knowledge bases: • by importing them in a file (RDF format - RDFS/OWL), • by providing URL to their SPARQL endpoint. • Administrator may remove knowledge bases. • Administrator may browse knowledge bases (using SPARQL endpoint of RDF store or any other suitable UI).</li></ul><p><strong>-&gt; Administration is there, he can add/remove KB, define properties of them - but there is no UI for such administration</strong></p><h3 id="Notsatisfiedfromtheproposal-Statisticaldata"><span style="color: rgb(255,0,0);">Statistical data</span></h3><p>System will support generation of statistical data in RDF data cube format (as these are typical files appearing within [4,6]):</p><ul><li>So user may specify which columns are dimensions of the data cube, which columns are measures of the data cube and then the RDF data cube is prepared using standard RDF data cube [11].</li></ul><h3 id="Notsatisfiedfromtheproposal-Users"><span style="color: rgb(255,0,0);">Users</span></h3><p>User may get list of all conversion configurations previously defined and saved :</p><ul><li>The list of conversions is automatically prefiltered for each user so that he can see the conversions defined by him. • Administrator may see all conversions.</li></ul><p>User may see list of executions executed by him.</p><p>User must log in before he can save the configuration, see the list of executions or manage his configurations and executions.</p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

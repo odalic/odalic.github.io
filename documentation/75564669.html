@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Story: Subject column selection for each base</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3.iteration_74875930.html">3.iteration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Story: Subject column selection for each base
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified on Okt 05, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Story:Subjectcolumnselectionforeachbase-GithubIssues:https://github.com/odalic/odalic-ui/issues/104">Github Issues: <a href="https://github.com/odalic/odalic-ui/issues/104" class="external-link" rel="nofollow">https://github.com/odalic/odalic-ui/issues/104</a></h2><h2 id="Story:Subjectcolumnselectionforeachbase-Req:">Req: </h2><h2 id="Story:Subjectcolumnselectionforeachbase-UserStory">User Story</h2><p><span>As a user I would like to see the results of subject column selection for each base and select them manually also per base, as I prefer to let the algorithm choose the best one possible, rather than force the algorithm to select one column across all bases.<br/></span></p><p><span>So it is necessary to duplicate the current and proposed subject column controls for each base, the primary one should be always displayed as first, but with no special highlights.</span></p><p><span style="color: rgb(0,0,0);">Detailed Description</span></p><ol><li style="list-style-type: decimal;">User steps into chosen subject column selection (display) screen.</li><li style="list-style-type: decimal;">User checks each automatically selected (or manually set) subject column and either:<br/><ol><li>does nothing,</li><li>switches the selection to manual by either clicking the A/M toggle previously set to automatic mode or selecting other than the previously automatically selected column,</li><li>switches the selection to automatic by clicking the A/M toggle previously set to manual mode.</li></ol></li><li>When all is done, proceeds to the available actions (next, previous step; re-run, start from beginning).</li></ol><p><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_story-3rd-iteration-subject-columns-for-each-kb"><img class="balsamiq_mockup" src="attachments/75564669/75565048.png"/></a><br/></div></p><h2 id="Story:Subjectcolumnselectionforeachbase-AcceptanceCriteria&amp;TestScenarios">Acceptance Criteria &amp; Test Scenarios</h2><ul><li>The screen shows correctly automatically selected columns in the first run.</li><li>The user is able to select different available columns for each base.</li><li>A/M switches are respected in repeated runs.</li><li>Switches react to selecting other than the current column by turning to M state.</li></ul><p><span><br/></span></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564669/75564660.bmml">mockup_tasks-list.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564669/75564661.png">mockup_tasks-list.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564669/75564662.bmml">mockup_story-task-creation-save-1.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564669/75564663.png">mockup_story-task-creation-save-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564669/75565047.bmml">mockup_story-3rd-iteration-subject-columns-for-each-kb.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564669/75565048.png">mockup_story-3rd-iteration-subject-columns-for-each-kb.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-75566311"></a>
+                                    <font class="smallfont"><p>I would say this is of lower priority if we are short on time during iteration 3. But it would be good to at least inform user that this shows only subject column of primary kb and some other knowledge base X have selected different subject column Y. </p><p>Because:</p><p>1) We do not know how often this will happen</p><p>2) Also I am still not persuaded, whether this subject column selection brings that much to the user</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by knapt at Okt 12, 2016 14:19
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

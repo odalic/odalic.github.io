@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Story: User can propose new classes/entities for classification/disambiguation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3.iteration_74875930.html">3.iteration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Story: User can propose new classes/entities for classification/disambiguation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Nov 27, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Story:Usercanproposenewclasses/entitiesforclassification/disambiguation-GithubIssue:https://github.com/odalic/sti/issues/90/https://github.com/odalic/odalic-ui/issues/24/https://github.com/odalic/odalic-ui/issues/25">Github Issue: <a href="https://github.com/odalic/sti/issues/90" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/90</a> / <a href="https://github.com/odalic/odalic-ui/issues/24" class="external-link" rel="nofollow">https://github.com/odalic/odalic-ui/issues/24</a> / <a href="https://github.com/odalic/odalic-ui/issues/25" class="external-link" rel="nofollow">https://github.com/odalic/odalic-ui/issues/25</a></h2><h2 id="Story:Usercanproposenewclasses/entitiesforclassification/disambiguation-UserStory">User Story</h2><p><span>As a user i want to be able to propose new classes/entities for classification/disambiguation </span></p><h2 id="Story:Usercanproposenewclasses/entitiesforclassification/disambiguation-Preconditions">Preconditions</h2><p>User can see results of classification/disambiguation (<a href="73762224.html">Story: User can see results of classification/disambiguation</a>)</p><h2 id="Story:Usercanproposenewclasses/entitiesforclassification/disambiguation-DetailedDescription"><span style="color: rgb(0,0,0);">Detailed Description </span></h2><ol><li>User can click on Propose button in Step 2 (<strong>directly on the table</strong>) for the given cell<ol><li>As a result, dialog appears where he can define further aspects of the proposed resource</li></ol></li><li>When satisfied, user clicks OK and the system tries to create newly proposed concept in the primary KB<ol><li>If successfull, see Step 3. If not, warning is shown and user has to adjust the definition of the new concept</li></ol></li><li>User is returned back to <strong>the main table</strong> - he may see his new resource being used for the annotation. </li></ol><ol><li style="list-style-type: none;background-image: none;"><ol><li>All other previous annotations are removed. </li><li>Also the column is automaticall locked - see: <a href="74192668.html">Story: User may lock disambiguation/classification for the given cell</a></li></ol></li></ol><p> </p><h2 id="Story:Usercanproposenewclasses/entitiesforclassification/disambiguation-Alternative:"><span>Alternative:</span></h2><ol><li>User can open details of class/disambigiation in Step 2 (directly on the table)<ol><li>As a result, such dialog is open</li></ol></li><li>User can click on Propose button <strong>under the primary knowledge base section in the dialog</strong><br/><ol><li>As a result, dialog appears where he can define further aspects of the proposed resource</li></ol></li><li>When satisfied, user clicks OK and the system tries to create newly proposed concept in the primary KB<ol><li>If successfull, see Step 4. If not, warning is shown and user has to adjust the definition of the new concept</li></ol></li><li>User is returned back to the <strong>dialog</strong> - he may see his new resource being used for the annotation. <ol><li>All other previous annotations are removed. </li><li>Also the column is automatically locked - see: <a href="74192668.html">Story: User may lock disambiguation/classification for the given cell</a></li></ol></li></ol><p> </p><p> </p><p><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_mockup-customize-class-search"><img class="balsamiq_mockup" src="attachments/74187068/74187032.png"/></a><br/></div></p><h2 id="Story:Usercanproposenewclasses/entitiesforclassification/disambiguation-AcceptanceCriteria&amp;TestScenarios">Acceptance Criteria &amp; Test Scenarios</h2><ol><li>User may propose new class<ol><li>Check that such class is really created in primary knowledge base</li></ol></li><li>User can immediately see the result of proposing the class - it is used for annotations</li><li>User may propose new entity for disambiguation<ol><li>Check that such class is really entity in primary knowledge base</li></ol></li><li>User can immediately see the result of proposing the entity - it is used for annotations</li></ol><h2 id="Story:Usercanproposenewclasses/entitiesforclassification/disambiguation-TechnicalNotes:">Technical Notes: </h2><p>SPARQL Update query is used to interact with KB (standard sparql endpoint) - <span style="color: rgb(0,0,0);">sparql graph protocol - </span><a href="https://www.w3.org/TR/sparql11-http-rdf-update/" class="external-link" rel="nofollow">https://www.w3.org/TR/sparql11-http-rdf-update/</a></p><p>Who does create URIs? Administrator of the primary KB via Odalic config defines base URL. User may then define suffixes. </p><ul><li>in the config file, one specifies <ul><li>the base URI for ontology (classes) </li><li>the base URI for resources (entities)</li><li>the base conceptSchema used for proposed concepts</li></ul></li><li>Possibility to define custom suffixes </li></ul><h3 id="Story:Usercanproposenewclasses/entitiesforclassification/disambiguation-Creatingnewclass:">Creating new class:</h3><ul><li>new triples are constructed, which contain:<ul><li>&lt;classURI&gt; <ul><li>a owl:Class</li><li>dcterms:title &lt;label&gt;</li><li>rdfs:label &lt;label&gt;</li><li>dcterms:title &lt;altLabel&gt;</li><li>rdfs:label &lt;altLabel&gt;</li><li>Optional: rdfs:subclassOf</li></ul></li></ul></li></ul><h3 id="Story:Usercanproposenewclasses/entitiesforclassification/disambiguation-Creatingnewentity:">Creating new entity:</h3><ul><li>new triples are constructed, which contain:<ul><li>&lt;entityURL&gt;<ul><li>a &lt;classURI&gt;</li><li>dcterms:title &lt;label&gt;</li><li>rdfs:label &lt;label&gt;</li><li>dcterms:title &lt;altLabel&gt;</li><li>rdfs:label &lt;altLabel&gt;<br/><br/></li></ul></li></ul></li></ul><h3 id="Story:Usercanproposenewclasses/entitiesforclassification/disambiguation-Searchingforparent:">Searching for parent:</h3><ul><li>SPARQL is used to suggest the terms containing the search terms in their labels<ul><li>By default we use the following predicates as holders for labels<br/><ul><li><span style="color: rgb(255,0,0);"><span style="color: rgb(0,0,0);"><a href="http://www.w3.org/2000/01/rdf-schema#label" class="external-link" rel="nofollow">http://www.w3.org/2000/01/rdf-schema#label</a></span><br/></span></li><li><span style="color: rgb(255,0,0);"><span style="color: rgb(0,0,0);"><a href="http://purl.org/dc/terms/title" class="external-link" rel="nofollow">http://purl.org/dc/terms/title</a></span></span></li></ul></li><li><span style="color: rgb(255,0,0);">But it can be configured int the KB config?</span></li><li><span style="color: rgb(0,51,102);">It shoudl search for owl:Classes</span></li></ul></li></ul><p> </p><p>TODO: </p><ul style="list-style-type: square;"><li>also add the possibility to express that the new class is subclass of certain class?</li></ul><h2 id="Story:Usercanproposenewclasses/entitiesforclassification/disambiguation-Questions:">Questions:</h2><p>Do we need to create skos:Concepts and also owl:Class? </p><ul><li>if we have both, the structure is more aligned with what PoolParty produces</li><li><strong>skos is good for expressing hierarchies</strong></li><li>Skos concepts: <ul><li>a skos:Concept</li><li>skos:prefLabel ...</li><li>skos:topConceptOf &lt;conceptSchemeURI&gt;</li><li>skos:alternativeLabel (if there was some)</li><li>skos:broader (if there was some parent)</li></ul></li></ul><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/74187033.bmml">mockup_mockup-alternative-classification.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/74187034.png">mockup_mockup-alternative-classification.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75563454.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75563455.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75563964.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75563965.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75563984.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75563985.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75563991.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75563992.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75564043.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75564044.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75564058.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/75564059.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/76220462.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/76220463.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/76222123.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/76222124.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/76222125.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/76222126.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/76222128.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/76222129.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/74187031.bmml">mockup_mockup-customize-class-search.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187068/74187032.png">mockup_mockup-customize-class-search.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

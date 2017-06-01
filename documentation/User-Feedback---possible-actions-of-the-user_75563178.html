@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : User Feedback - possible actions of the user</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic-UI_74187672.html">Odalic UI</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : User Feedback - possible actions of the user
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Nov 17, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="UserFeedback-possibleactionsoftheuser-Mockupswithuserfeedbackactionsdescribedbelow:">Mockups with user feedback actions described below: </h2><ul><li>Feedback to subject column detection - <a href="Scenario-4a-Customizing-subject-column---Selecting-different-subject-column_72223005.html">Scenario 4a Customizing subject column - Selecting different subject column</a></li><li>Feedback to classificaiton/disambiguation - <a href="Scenario-4b-Customizing-classification-class---selecting-different-non-suggested-primary-class-for-the-column-classification_72224380.html">Scenario 4b Customizing classification class - selecting different non-suggested primary class for the column classification</a></li><li>Feedback to relation discovery - <a href="Scenario-4d-Relations-feedback_72224388.html">Scenario 4d Relations feedback</a></li></ul><h2 id="UserFeedback-possibleactionsoftheuser-Lockingofthesuggestedwinningannotation(classification/disambiguation)">Locking of the suggested winning annotation (classification/disambiguation)</h2><ul><li style="list-style-type: circle;"><p><span>When the user is satisfied with the suggested winning annotation provided by Odalic Core, he may lock the suggested winning annotation</span></p></li><li style="list-style-type: circle;"><p><span>When the user adjusts certain annotation (classificaiton, disambiguation), then such adjustment is automatically locked. </span></p></li><li style="list-style-type: circle;"><p><span>In UI, Step 2, there is an icon (of lock) for each table cell (further called also &quot;annotation lock&quot;)</span></p><ul><li>for the given column in case of lock next to the column header</li><li>for the given cell value in case of other cells</li><li style="list-style-type: circle;"><p>By default, all cells have the icon of the &quot;open lock&quot;. User may click on that and as a result the icon changes to &quot;closed lock&quot;</p><ul><li>When there is open lock (default), Odalic Core is in each execution trying to find best candidate for that cell/column/relations</li><li>When there is a closed lock, Odalic Core will take the value locked by the user and will not try to discover the value on its own. </li></ul></li></ul></li></ul><p> </p><p>Apart from the lock at the level of table (see above), there are also locks at the level of knowledge base: </p><ul><li>when opening detail for the classification/disambiguation, he may lock the classfication/disambiguation at the level of knowledge base (&quot;knowledge base annotation lock&quot;). This behaves exactly the same as in case of annotation lock, the only difference is that such annotation is fixed only with respect to the locked knowledge base, so Odalic Core still tries to run normally for other knowledge bases. </li><li> Later, in iter4</li></ul><h2 id="UserFeedback-possibleactionsoftheuser-Lockingofthesuggestedwinningannotation(relations)">Locking of the suggested winning annotation (relations)</h2><ul><li style="list-style-type: circle;"><p>In case of relations, use may lock the particular relation (in the particular knowledge base) - so there should be a lock icon when clicking on detail of the relation next to each particular relation. The motivation for that is that user would like to retain certain relation, but if the algorithm finds another relations between the same classes and within the same KB, that is OK (expected in most cases). </p></li></ul><h2 id="UserFeedback-possibleactionsoftheuser-Lockingalldisambiguationforthegivenclassification">Locking all disambiguation for the given classification </h2><p>Apart from the functionality above, there is also a different lock icon, which allows to lock the column classification together with all disambiguations. </p><p><span style="color: rgb(255,0,0);">TODO specify in more detail, iter4.</span></p><h2 id="UserFeedback-possibleactionsoftheuser-Proposingnewannotations(classification/disambiguation)">Proposing new annotations (classification/disambiguation)</h2><ul><li>There is an icon, in Step 2, in each cell, which allows to propose new resource (not already available in the knowledge base) for the given cell classification/entity disambiguation. </li><li>Such concept is always proposed in the primary knowledge base.  </li><li>There is also button propose in the detail of the classification/disambiguation. </li></ul><p> </p><h2 id="UserFeedback-possibleactionsoftheuser-Proposingnewannotations(relations)">Proposing new annotations (relations)</h2><ul><li>In case of relations, use may draw new edge and then, in the detail, he may click propose. So there is no propose icon directly in the graph. </li></ul><p> </p><h2 id="UserFeedback-possibleactionsoftheuser-Proposingnewannotations(forallvaluesinthegivencolumn)">Proposing new annotations (for all values in the given column)</h2><p>Apart from the functionality above, there is also a different propose icon for the header cell, which allows to propose new entities disambiguating cell values in that column - it automatically creates entities for all cell values in that column which were not disambiguated/which were not disambiguated agains primary knowledge base. </p><p><span style="color: rgb(255,0,0);">TODO specify in more detail, iter4.</span></p><p> </p><h2 id="UserFeedback-possibleactionsoftheuser-Ignoringthegivencolumn(classification)">Ignoring the given column (classification)</h2><p>For the classification, user may decide to ignore the column. In Step 2 or in detailed dialog, he may click the icon to ignore/not-ignore the given column. See: <a href="74192594.html">Story: User ignores a column in a base</a></p><p>It is not possible to define that I would like to ignore certain knowledge base. Instead of that, I can simply remove certain </p><p> </p><p>NOTE: When ignore is checked, do we want to lock the cell? Currently it is implemented in that way, so that it is consistent</p><p> </p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

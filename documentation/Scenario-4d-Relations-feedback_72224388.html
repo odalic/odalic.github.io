@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Scenario 4d Relations feedback</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Scenario 4d Relations feedback
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified by <span class='editor'> Tomas Knap</span> on Sep 23, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Scenario4dRelationsfeedback-InitialState">Initial State</h1><p><span style="color: rgb(0,0,0);">The user is logged on the system <span style="color: rgb(0,0,0);">(see: </span><a href="Scenario-0a--Login-and-home-screen_72223863.html">Scenario 0 Login and home screen</a><span style="color: rgb(0,0,0);">)</span></span></p><p><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);"><span><span>User have defined and run classification/disambiguation/relation discovery task (see: <a href="Scenario-1-Task-creation_71439879.html">Scenario 1 Task creation</a></span><span>). </span></span></span><span style="color: rgb(0,0,0);">User is observing the results of the classification/disambiguation task.</span></span></span></p><h1 id="Scenario4dRelationsfeedback-Description"><span class="inline-comment-marker" data-ref="9490072c-52ce-41ae-9fd7-8114d9116e5d">Description</span></h1><ol><li style="list-style-type: decimal;"><p><span><span style="color: rgb(0,0,0);">The user may select any discovered relation and decide to customize</span></span></p></li><li style="list-style-type: decimal;"><p><span><span style="color: rgb(0,0,0);">User may specify alternative predicate for that relation</span></span></p><ol><li style="list-style-type: decimal;"><p><span><span style="color: rgb(0,0,0);">Dropdown list with alternative suggestions for relation predicate computed by algorithm is opened.<br/></span></span></p><ol><li><p>options are sorted by probability / score<span><span style="color: rgb(0,0,0);"><br/></span></span></p></li></ol></li></ol></li><li style="list-style-type: decimal;"><p><span><span style="color: rgb(0,0,0);">User may save such customization</span></span></p><ol><li style="list-style-type: decimal;"><p><span><span style="color: rgb(0,0,0);">As a result, system depicts new relation in the table preview</span></span></p></li></ol></li></ol><h1 id="Scenario4dRelationsfeedback-Alternatives">Alternatives</h1><ul><li><span style="color: rgb(0,0,0);">In 2. when the user isn't satisfied with any suggested alternative, he selects &quot;no suitable&quot; option</span><span style="color: rgb(0,0,0);"><span><br/></span></span></li><li><span style="color: rgb(0,0,0);">In 2. when the user wants to provide new own predicate, he writes appropriate URL to the &quot;custom&quot; textbox</span></li><li><span style="color: rgb(0,0,0);">In 2, user may mark the given relation as being wrong</span></li></ul><h1 id="Scenario4dRelationsfeedback-Whatcangowrong">What can go wrong</h1><h1 id="Scenario4dRelationsfeedback-Systemstateoncompletion">System state on completion</h1><p><span style="color: rgb(0,0,0);">The user provided alternative predicate of the relation</span><span style="color: rgb(0,0,0);">.</span></p><h1 id="Scenario4dRelationsfeedback-Notes:">Notes:</h1><p>The original paper about TableMiner+ distinguishes two types of relations:</p><ul><li><div class="page" title="Page 8"><div class="layoutArea"><div class="column"><p><span>binary relations between the subject column and other NE-columns </span></p></div></div></div></li><li><div class="page" title="Page 8"><div class="layoutArea"><div class="column"><p><span>a property of the concept used to annotate the subject column to best describe data in the literal-columns </span></p></div></div></div><ul><li><div class="page" title="Page 8"><div class="layoutArea"><div class="column"><p><span>property is considered both the annotation for the literal- column, and the relation between the subject column and the literal-column. </span></p></div></div></div><p><span><br/></span></p></li></ul></li></ul><p><span>In case of the mockup, both these relations (object or datatype properties) should be considered the same - they are relations/properties/predicates between columns A (a subject column) and B (target column). </span></p><h1 id="Scenario4dRelationsfeedback-RequirementsMotivatingtheScenario">Requirements Motivating the Scenario</h1><ul><li>20, 21, 53</li></ul><h1 id="Scenario4dRelationsfeedback-Mockups">Mockups</h1><p><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_mockup-relationdisc-overview"><img class="balsamiq_mockup" src="attachments/72224388/72225834.png" border="0" usemap="#map_mockup-relationdisc-overview"/></a><map name="map_mockup-relationdisc-overview"><area shape="rect" coords="1081,635,1269,662" href="/x/5whOB#mockup_mockup-rdf-preview-2" alt="mockup-rdf-preview-2" id="54"/>
+<area shape="rect" coords="766,635,869,662" href="/x/fA5OB#mockup_mockup-classification-customization" alt="mockup-classification-customization" id="56"/>
+</map></div></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72224685">Mockup Output feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72224686.png">Mockup Output feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72224386">Mockup Output feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72224387.png">Mockup Output feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72224689">Mockup 4d Relations feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72224690.png">Mockup 4d Relations feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72227046.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72227047.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72227051.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72227052.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73073672.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73073673.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73073684.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73073685.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73073692.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73073693.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73073720.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73073721.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73073722.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73073723.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73761289.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/73761290.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/74187076.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/74187077.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/75563507.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/75563508.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/75563522.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/75563523.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/75563530.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/75563531.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72225833.bmml">mockup_mockup-relationdisc-overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72224388/72225834.png">mockup_mockup-relationdisc-overview.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-73073604"></a>
+                                    <font class="smallfont"><p>Instead of having an extra table showing discovered relations, we are thinking if it is possible to have better visualisation methods.</p><p>For example, while users move their mouse cursor on a column header, reveal relations between this column and others as overarching arrows connecting this column and others. Then users can move to highlight any arrow, and by doing so we show a dropdown box on centre of the arrow, and users can use that to explore and correct relations (pretty much as how you show it in the top table in the mockup, but I am not sure if that is how you will implement it?). We'll see what we can do here. </p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by zhangz at Mai 31, 2016 18:02
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-73073615"></a>
+                                    <font class="smallfont"><p>Thanks for the comment!</p><p>I am reasonably sure that we account for both means of visualization. I am little concerned about the implementation of the arrows, as I am not sure, how easy it will be to find a suitable existing visual component supporting this. I will definitely urge our UI guys to look deeper into it.</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by brodecv at Jun 01, 2016 1:07
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-73073670"></a>
+                                    <font class="smallfont"><p>I will check with Deep. I remember he said there is some ways to do this. I will report back later</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by zhangz at Jun 01, 2016 10:49
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

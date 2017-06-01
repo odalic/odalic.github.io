@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Integrating LodView and LodLive with Odalic</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic-UI_74187672.html">Odalic UI</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="74187240.html">Browsing/Searching Knowledge Bases</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Integrating LodView and LodLive with Odalic
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Jul 21, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="IntegratingLodViewandLodLivewithOdalic-Ideaoftheintegration:">Idea of the integration:</h2><h3 id="IntegratingLodViewandLodLivewithOdalic-LodView"><span style="color: rgb(34,34,34);">LodView</span></h3><p><span style="color: rgb(34,34,34);">LodView is a Java web application based on Spring and Jena, which allows to browse data in the given SPARQL endpoint. So:</span></p><ul><li><span style="color: rgb(34,34,34);">LodViews is integrated with Odalic via shared RDF store </span><ul><li><span style="color: rgb(34,34,34);">When user clicks on &quot;browse&quot;, see: <a href="74187007.html">Story: User can browse KB for a concept to be used for classification/disambiguation</a>, lodView browser is open in a separate tab (or floating window, which would be nicer)</span><ul><li><span style="color: rgb(34,34,34);">How to access lodview webapp with URI of the resource to be depicted, see: <a href="http://lodview.it/" class="external-link" rel="nofollow">http://lodview.it/</a>, function go(), which basically calls: </span><ul><li><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">document.location = &#39;/lodview/?IRI=&#39; + encodeURIComponent($(&#39;textarea[name=IRI]&#39;).val()) + &#39;&amp;sparql=&#39; + encodeURIComponent($(&#39;input[name=sparql]&#39;).val() ? $(&#39;input[name=sparql]&#39;).val() : &#39;&lt;&gt;&#39;) + &quot;&amp;prefix=&quot; + encodeURIComponent($(&#39;input[name=prefix]&#39;).val() ? $(&#39;input[name=prefix]&#39;).val() : $(&#39;textarea[name=IRI]&#39;).val().replace(/(http:\/\/[^\/]+\/).+/, &#39;$1&#39;));
+
+</pre>
+</div></div><p>xxx</p><p><span style="color: rgb(34,34,34);"><br/></span></p></li></ul></li></ul></li><li><p>Moving between LodViews and LodLive should work out of the box - in lod view there is button to launch LodLive. </p></li><li><strong>How to add resource depicted in LodView to the list of resources classifying/disambiguating the value? <a class="confluence-userlink user-mention" data-username="satmarii" href="https://grips.semantic-web.at/display/~satmarii" data-linked-resource-id="71439729" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://grips.semantic-web.at">Istv&aacute;n Satm&aacute;ri</a> Please review</strong><ul><li>extend code of LodView, so that there is extra button &quot;Add and close&quot;<ul><li>as part of the on-click-event-handler<ul><li>Variant 1: Providing new resource URL + name of the resource via accessing certain Odalic UI URL and encoding new resource to that URL: <ul><li>floating window is closed (or tab is switched) and certain http URL in Odalic UI is accessed, </li><li>As a result, dialog showing the result of the task is created, dialog for classification customization opened, new resource (encouded in the URL, e.g.) added (see <a href="74187007.html">Story: User can browse KB for a concept to be used for classification/disambiguation</a>, Step 6)</li><li><span style="color: rgb(255,0,0);">TODO: How to remember the state of the Odalic-ui?</span> - task result, adjustments to that result... So that the user can continue working with what he did before<ul><li>When user finishes adjustments to the task result, he has to have the ability to save that anyway. <strong>So the task result may be saved in the similar way before switching to the browser and then recreated. </strong></li></ul></li></ul></li><li>Variant 2: Use postmessage or some other approach to send messages between browser windows and define listener in Odalic-ui<ul><li>Example of use: <a href="http://javascript.info/tutorial/cross-window-messaging-with-postmessage" class="external-link" rel="nofollow">http://javascript.info/tutorial/cross-window-messaging-with-postmessage</a></li><li><span style="color: rgb(255,0,0);">Note: We should ensure that only window from which &quot;browse&quot; button was pressed is updated with the selected resource (and not e.g. all windows in the browser)</span></li></ul></li><li>Variant 3: Use <a href="http://diveintohtml5.info/storage.html" class="external-link" rel="nofollow">localStore</a> (HTML5 features) to store the selected resource by LodView and then we can define listener in odalic-ui which is informed that new selected resource was stored<ul><li><span style="color: rgb(255,0,0);">Again it has to be checked that the selected resource is relevant for that particular odalic-ui window. </span></li></ul></li></ul></li><li>Summary of variants: <ul><li>Variant 2+3 does not require to store the intermediate state. <ul><li>if odalic-ui is closed for some reasone (e.g. by accident), the &quot;browse repository&quot; is unable to send results anywhere. Variant 3 is better in this case in a way that the information is there (e.g. information that for classification of column X in task T resource R was selected in the kb), and thus, when odalic-ui is restarted and the same task is open, &quot;customize classification&quot; dialog is open, it is possible to fetch the information from local store and the user is not forced to browse the knowledge base again. </li></ul></li><li>Variant 1 has the advantage of being able to replace window content with &quot;browse app&quot; and then &quot;restore the content in the same window&quot;. </li></ul></li></ul></li></ul></li></ul></li></ul><p> </p><p>TODO <a class="confluence-userlink user-mention" data-username="satmarii" href="https://grips.semantic-web.at/display/~satmarii" data-linked-resource-id="71439729" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://grips.semantic-web.at">Istv&aacute;n Satm&aacute;ri</a> Please describe a bit more the advantages/disadvantage of the approaches above. If needed, try a brief proof of concept to test it out. </p><p>TODO <strong><a class="confluence-userlink user-mention" data-username="satmarii" href="https://grips.semantic-web.at/display/~satmarii" data-linked-resource-id="71439729" data-linked-resource-version="1" data-linked-resource-type="userinfo" data-base-url="https://grips.semantic-web.at">Istv&aacute;n Satm&aacute;ri</a></strong> Please review the variants</p><p> </p><h3 id="IntegratingLodViewandLodLivewithOdalic-LodLive">LodLive</h3><p>We can just imitate (in our dialog for searching, see: <a href="74186917.html">Story: User can search KB for a concept to be used for classification/disambiguation/relation discovery</a>) the way how lodlive is used from <a href="http://en.lodlive.it/" class="external-link" rel="nofollow">http://en.lodlive.it/</a>, simple search box: </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/74187292/74187305.png" data-image-src="attachments/74187292/74187305.png" data-unresolved-comment-count="0" data-linked-resource-id="74187305" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2016-07-18 at 12.00.20.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="74187292" data-linked-resource-container-version="6"></span></p><h2 id="IntegratingLodViewandLodLivewithOdalic-Issues,Problems">Issues, Problems</h2><p>Not well documented</p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187292/74187305.png">Screen Shot 2016-07-18 at 12.00.20.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

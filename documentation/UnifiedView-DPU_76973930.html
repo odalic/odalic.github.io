@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : UnifiedView DPU</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="List-of-Requirements_71440542.html">List of Requirements</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : UnifiedView DPU
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Feb 14, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Inputs:</p><ul><li>FileDataUnit <ul><li>input CSV file</li></ul></li></ul><p>Outputs:</p><ul><li>2xFilesDataUnit<ul><li>Extended CSV file</li><li>RDF - Turtle</li></ul></li></ul><p>Idea: </p><p>Use may past configuration exported from Odalic. User must also define URL of the Odalic server. </p><p>As the DPU is executed, it automatically changes the configuration provided by user to generate unique fileID. Then it:</p><ul><li><span style="color: rgb(0,0,0);"> imports the task to the target Odalic server (defined in the conf) (<span style="color: rgb(255,0,0);">TODO: what to do if there is already configuration with the same name?</span>)</span></li><li><span style="color: rgb(0,0,0);">executes the task</span></li><li><span style="color: rgb(0,0,0);">tries to get result regularly - and show status</span><ul><li><span style="color: rgb(0,0,0);">ContextUtils.sendInfo(), ContextUtils.sendError(), ...</span></li></ul></li><li><span style="color: rgb(0,0,0);">produce output - 2 files</span></li><li><span style="color: rgb(0,0,0);">produce proper event messages - <span style="color: rgb(255,0,0);">there should be one event message with the link to the &quot;detail&quot; where user can see the annotations provided by the server. </span></span></li></ul><p><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_odalic-dpu"><img class="balsamiq_mockup" src="attachments/76973930/76973921.png"/></a><br/></div></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76973930/76973928.bmml">mockup_odalic-dpu.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76973930/76973929.png">mockup_odalic-dpu.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76973930/76973939.bmml">mockup_odalic-dpu.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76973930/76973940.png">mockup_odalic-dpu.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76973930/76973920.bmml">mockup_odalic-dpu.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76973930/76973921.png">mockup_odalic-dpu.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

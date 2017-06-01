@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Which library should be used for visualizing graph data?</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic-UI_74187672.html">Odalic UI</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Which library should be used for visualizing graph data?
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Aug 01, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Mainly &quot;relations&quot; part is concerned.</p><p>I've previously proposed several different libraries, namely:</p><div><a rel="nofollow">http://www.jointjs.com/</a></div><div><a rel="nofollow">http://js.cytoscape.org/</a></div><div><a rel="nofollow">http://visjs.org/showcase/index.html</a></div><div><a rel="nofollow">http://philogb.github.io/jit/demos.html</a></div><div><a rel="nofollow">https://jsplumbtoolkit.com/</a></div><div><a rel="nofollow">https://www.graphdracula.net/</a></div><div><a rel="nofollow">http://sigmajs.org/</a></div><div>Some links: </div><ul><li><a href="http://www.jointjs.com/demos/fsa" class="external-link" rel="nofollow">http://www.jointjs.com/demos/fsa</a></li><li><a href="http://bl.ocks.org/jhb/5955887" class="external-link" rel="nofollow">http://bl.ocks.org/jhb/5955887</a></li></ul><p>I wanted to go with &quot;JointJS&quot;, the problem is &quot;automatic layouting&quot;, which is only part of a &quot;Rappid&quot; framework/library/whatever of the JointJS library. &quot;Rappid&quot; is proprietary (i.e. we would need to pay for it) so I decided not to stick to JointJS and use a different library instead.</p><p>From the rest <em>(of the proposed libraries)</em>, only &quot;cytoscape&quot; seemed actually usable, however I did not examine it in detail so I cannot provide any &quot;expertise&quot; on this library.</p><p>So let's start from the beginning and reevaluate what we actually need:</p><ul><li><p><strong>Automatic layouting</strong> - the vertices need to be already properly positioned so the graph is clear and easy to work with. A user could potentially move the nodes around as he/she pleases, but this is impractical and would annoy a lot of people, so we simply need such a functionality.</p></li><li><p><strong>Custom styling</strong> - mainly to be able to differentiate between different kinds of nodes visually</p></li><li><strong>Graph should be directed </strong>- can also be achieved by custom styling (e.g. by adding arrows to edges in a certain way)</li><li><p><strong>Support for labeled vertices</strong> - drawing a bunch of points is useless; they need to carry some information <em>(this is probably obvious)</em></p></li><li><p><strong>Support for labeled edges</strong></p></li><li><p><strong style="line-height: 1.42857;">Support for assigning the following event handlers to vertices:</strong></p><ul><li><strong>On Mouse Over </strong>- displaying additional information for a certain vertex</li><li><strong>On Mouse Click</strong> - additional operations, such as removing a node, etc.</li></ul></li><li><p><strong>Support for assigning the following event handlers to edges:</strong></p><ul><li><strong>On Mouse Over </strong>- displaying additional information for a certain edge</li><li><strong>On Mouse Click</strong> - additional operations, such as removing a relation, changing predicate, etc.</li></ul></li><li><strong>Support for multigraphs would be useful - </strong>when having multiple different predicates (?) between 2 concepts</li><li><p><strong>Support for drag&amp;drop would be useful - </strong>mainly for creation of new relations (e.g. a user could simply drag a node over another one and create a new relation this way)</p></li></ul><p>While D3.js actually meets all of the criteria, its problem is that it is more of a &quot;multi-purpose&quot; library. It's not particularly useful for drawing graphs, or anything specific in particular. However, it does introduce many interesting and useful concepts, namely selection (<a href="https://d3js.org/" class="external-link" rel="nofollow">https://d3js.org/</a> the very first introductory page describes this), easy construction of many events (drag&amp;drop, mouseClick, ...) and provides several algorithms, such as computing forces.</p><p>&quot;Computing forces&quot; is also the only way how to actually draw graphs using pure D3.js (<a href="http://bl.ocks.org/jhb/5955887" style="line-height: 1.42857;" class="external-link" rel="nofollow">http://bl.ocks.org/jhb/5955887</a>). While satisfying our first condition, it looks clumsy and cannot solve more difficult graphs. But the biggest problem with D3.js is its unintuitive API, which takes more time to get into. (Do not underestimate this point - learning a complex and unintuitive library may significantly prolong the development!) The nodes and edges aren't drawn by the D3 itself, but instead a developer needs to define forces between vertices and basically redraw the &quot;circles&quot; (representing vertices) and &quot;lines&quot; (representing edges) in each &quot;tick&quot; on his own. </p><p>But, there is also a third option: dagre-d3 (<a href="https://github.com/cpettitt/dagre-d3/wiki" class="external-link" rel="nofollow">https://github.com/cpettitt/dagre-d3/wiki</a> have a look at the demos). The library uses D3 as its underlying &quot;rendering mechanism&quot;. Therefore we don't have to give up the capabilities of D3.js while also being able to use a library that greatly eases the development of the necessary components. dagre-d3 is composed of several components (most of which are created by the same person who developed dagre-d3), it uses dagre (<a href="https://github.com/cpettitt/dagre/wiki#using-dagre" class="external-link" rel="nofollow">https://github.com/cpettitt/dagre/wiki#using-dagre</a>) for layout computation. The technique used is described in the following link: <a href="http://webcache.googleusercontent.com/search?q=cache:http://www.graphviz.org/Documentation/TSE93.pdf&amp;gws_rd=cr&amp;ei=aDmTV6TtGYzBgAap94KwDw" class="external-link" rel="nofollow">http://webcache.googleusercontent.com/search?q=cache:http://www.graphviz.org/Documentation/TSE93.pdf&amp;gws_rd=cr&amp;ei=aDmTV6TtGYzBgAap94KwDw</a> but I suppose the details are not important. It should be enough for us that its main concern is drawing generic directed graph which is what we need. (Furthermore, the algorithm feels more professional than the traditional force-directed approach for drawing graphs.) If I understood it correctly, dagre-d3 was developed as an extention of graphlib (<a href="https://github.com/cpettitt/graphlib/wiki/API-Reference#algorithms" class="external-link" rel="nofollow">https://github.com/cpettitt/graphlib/wiki/API-Reference#algorithms</a>) which is now deprecated. However, save the link since the complete API reference is, unfortunately, non-existent, but different concepts are described in several different wiki pages. Do not be discouraged by the non-existent API documentation, since most of the demos are easily understandable by simply looking at their code - unlike the graph examples using pure D3.js. </p><p>There is 1 major drawback to using dagre-d3, though: it's development was discontinued several months ago. This, however, shouldn't be an issue since it can be used for all of the points mentioned above and being it part of several different commercial tools and frameworks (one of them being JointJS!) it makes me pretty certain there won't be any major bugs that could result in the project failure. I've already played with the API and will push a demo on github later.</p><h3 id="Whichlibraryshouldbeusedforvisualizinggraphdata?-UPDATE:">UPDATE:</h3><p>The demo on github was updated. Now it supports adding edges between vertices by dragging a line from one node to another. <em>Note that the demo is really just a <strong>demo</strong>nstration and may contain bugs.</em></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/74187780/74188466.png" data-image-src="attachments/74187780/74188466.png" data-unresolved-comment-count="0" data-linked-resource-id="74188466" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="screenshot.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="74187780" data-linked-resource-container-version="8"></span></p><p>It should be noted that the creation of line, its update, even handling of vertices (mouseover, dragging, ...) and most of the other functionality was added using D3js, not dagre-d3 itself. The library provides only API for handling graphs in their <em>more natural</em> form, i.e. we manipulate vertices and edges directly, not by some strange <em>forces</em>.</p><p>(This means the demo update was not that straightforward to make, however it was not that much complicated either. Using pure D3js would on the other hand make things a little bit more difficult, it seems to me. Only JointJS really had the capability to provide almost any functionality &quot;for free&quot; (i.e. straightforward utilization of its API and almost no coding), but, you know, it's not free.)</p><p><span class="inline-comment-marker" data-ref="fcb2c139-7463-4173-a2bb-ef9374fca85a">I should also state that dagre-d3 doesn't allow a user to move nodes around as if it was some toy; the lines representing edges would 'break'. We can however redraw the graph without any problem once a new node/edge is added or removed.</span></p><p><span class="inline-comment-marker" data-ref="fcb2c139-7463-4173-a2bb-ef9374fca85a"> </span></p><h3 id="Whichlibraryshouldbeusedforvisualizinggraphdata?-UPDATE2:">UPDATE 2:</h3><p>Here are the basic graph types:</p><p>1) star graph</p><p>2) created from 1) by randomly joining certain vertices</p><p>3) tree graph</p><p><span class="inline-comment-marker" data-ref="fcb2c139-7463-4173-a2bb-ef9374fca85a"><br/></span></p><p><span class="inline-comment-marker" data-ref="fcb2c139-7463-4173-a2bb-ef9374fca85a"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/74187780/74188526.png" data-image-src="attachments/74187780/74188526.png" data-unresolved-comment-count="0" data-linked-resource-id="74188526" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="layouting.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="74187780" data-linked-resource-container-version="8"></span></span></p><p><span class="inline-comment-marker" data-ref="fcb2c139-7463-4173-a2bb-ef9374fca85a">And here is a demonstration of how can dagre-d3 handle long labels:</span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/74187780/74188527.png" data-image-src="attachments/74187780/74188527.png" data-unresolved-comment-count="0" data-linked-resource-id="74188527" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="long_labels.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="74187780" data-linked-resource-container-version="8"></span></p><p>So what advantages does dagre-d3 bring over using pure d3js?</p><ul><li>Better, much clearer API. We work with &quot;grahp.setEdge&quot;, &quot;graph.setNode&quot; and not manipulating the whole JS object which contains the nodes / edges. Or let's put it this way: pure D3: <a href="http://bl.ocks.org/mbostock/4062045" class="external-link" rel="nofollow">http://bl.ocks.org/mbostock/4062045</a> against dagre-d3: <a href="http://cpettitt.github.io/project/dagre-d3/latest/demo/sentence-tokenization.html" class="external-link" rel="nofollow">http://cpettitt.github.io/project/dagre-d3/latest/demo/sentence-tokenization.html</a> (do have a loot at the sample code; I may be wrong about this point, but it looks to me that dagre-d3 is much more usable or <em>developer-friendly</em>)<ul><li>Note: d3js has big community around, lots of examples</li></ul></li><li>Better layouting system. It should be clear from looking at the provided examples.</li><li>It also uses D3js and we do not lose much (or maybe anything at all) from its provided functionality</li></ul><p>What disadvantages are there?</p><ul><li>We cannot use force-directed graphs using dagre-d3's API. That is a completely different JS object from the one provided by dagre-d3.</li><li>No real-time manipulation of the graph. <strong>User cannot move nodes around.</strong> We can re-render the graph once a user chooses an action (e.g. adding a new vertex or an edge), though it may be an unwanted feature. This is probably the biggest problem.</li><li>Library is not actively maintained (not crucial issue but may be an issue in the future)<br/><br/></li></ul><p>d3js links/cook book : </p><ul><li>Sticky force layout: <a href="http://bl.ocks.org/mbostock/3750558" class="external-link" rel="nofollow">http://bl.ocks.org/mbostock/3750558</a> ( so that we can fix certain node at his position - e.g. the node moved by the user or the node representing the subject column)</li><li>Adding nodes, layouting the tree: <a href="http://bl.ocks.org/mbostock/929623" class="external-link" rel="nofollow">http://bl.ocks.org/mbostock/929623</a></li><li>Graph with labeled edges: <a href="http://bl.ocks.org/jhb/5955887" class="external-link" rel="nofollow">http://bl.ocks.org/jhb/5955887</a></li><li>Force directed graph - bigger one: <a href="https://bl.ocks.org/mbostock/4062045" class="external-link" rel="nofollow">https://bl.ocks.org/mbostock/4062045</a></li><li>Another example: graph visualizer + angular.js: <ul><li><span style="color: rgb(34,34,34);">I started experimenting with this example which uses d3.js and angular.js</span><div>You can add nodes and relations and give them as many properties as you want:</div><div><a href="http://marmelab.com/ArchitectureTree/" class="external-link" rel="nofollow">http://marmelab.com/ArchitectureTree/</a></div></li></ul></li></ul><p> </p><p><strong>Summary:</strong> We will go for d3js - it is widely used, provides nice dynamic graphs and allows to realize our requirements. The API is sometimes not that intuitive, but there are plenty of examples. The idea is to grap what we need from various d3js example (see some of them above). </p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187780/74188466.png">screenshot.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187780/74188526.png">layouting.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74187780/74188527.png">long_labels.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-74188215"></a>
+                                    <font class="smallfont"><p>Looking for the demo of dagre-d3! Please try to verify that dagre-d3 can easily satisfy the requirements specified above.</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by knapt at Jul 25, 2016 13:08
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-74188522"></a>
+                                    <font class="smallfont"><p>Further note: In many cases, the graph will look more like a star with the subject column in the center and properties (edges) going to values in other cells in that row. Does dagre allow these kind of layouting? </p><p>Furthermore, in most cases, the graph will be also a tree. So a more generic question, which layouting algorithms does dagre support for layouting tree-based graphs? </p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by knapt at Jul 27, 2016 12:04
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-74188573"></a>
+                                    <font class="smallfont"><p>Another observation (from Jurgen): </p><p><span style="color: rgb(34,34,34);">in the end you won't be happy with anything other than d3js (you know, i like it)</span></p><p><span style="color: rgb(34,34,34);">drag&amp;drop example: </span><a href="http://bl.ocks.org/robschmuecker/7880033" class="external-link" rel="nofollow">http://bl.ocks.org/robschmuecker/7880033</a></p><div>also i can show you, how to directly call a sparql endpoint, e.g.</div><div>d3.csv(&quot;<a href="http://sparql.org/sparql?query=...&amp;format=text/csv" class="external-link" rel="nofollow">http://sparql.org/sparql?query=...&amp;format=text/csv</a>&quot;, function(csv){ csv.forEach(function(row){....});})</div><div>you can translate this example (<a href="http://www.larsko.org/v/euc/" class="external-link" rel="nofollow">http://www.larsko.org/v/euc/</a>) into real time calls... also note that there are more real time examples around for d3js</div><div>mouseovers and the like are easiest to implement.</div><div>since it is svg base you have any styling option you need.</div></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by knapt at Jul 27, 2016 16:35
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-74188582"></a>
+                                    <font class="smallfont"><p>Very well, though as I previously mentioned, being dagre-d3 based on d3, it too utilizes SVG, d3's events etc. But I understand the concerns.</p><p>We will use D3 for the development of the component. </p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by satmarii at Jul 27, 2016 20:04
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

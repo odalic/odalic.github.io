@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : RDF (triples)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Result-exports_76976183.html">Result exports</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : RDF (triples)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified by <span class='editor'> Václav Brodec</span> on Mär 03, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>RDF data are generated from the Annotated table (JSON) and extended Input (CSV) according to <a href="https://www.w3.org/TR/2015/REC-csv2rdf-20151217" class="external-link" rel="nofollow">csv2rdf</a> standard. We can export data in various RDF formats, for example Turtle or JSON-LD.</p><h1 id="RDF(triples)-Example">Example</h1><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&lt;http://adequate.at/concept/city/aibl&gt; a &lt;http://adequate.at/concept/city&gt; ;
+ 	dcterms:title &quot;City&quot;, &quot;LAU_NAME, &quot;Town&quot; ;
+	dc:description &quot;City of Austria&quot; ;
+	x:hasPopulationNat &quot;39&quot;^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; ;
+    x:hasPopulationTotal &quot;1386&quot;^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; ;
+    ad:liesIn &lt;http://adequate.at/concept/district/deutschlandsberg&gt; .
+&lt;http://adequate.at/concept/district/deutschlandsberg&gt; a &lt;http://adequate.at/concept/district&gt;
+    ...
+</pre>
+</div></div><h1 id="RDF(triples)-Exportprocess">Export process</h1><p>RDF export consists of two parts:</p><ul style="list-style-type: square;"><li>fetch the triple patterns from Annotated table</li><li>create the triples from Input rows according to the patterns</li></ul><h3 id="RDF(triples)-Fetchthetriplepatterns">Fetch the triple patterns</h3><p>We read all columns from the Annotated table and try to recognize triple patterns they describe. When the column has the suppressOutput boolean flag set to true, we do not consider this column (it just holds the URIs and does not describe triples). If the propertyUrl is empty, no triple can be created (the predicate is missing). The same situation applies for empty aboutUrl (missing subject). When aboutUrl is not a column link (enclosed in curly braces), the column describes just one fixed triple statement, so we add this statement to the RDF Model directly (it is used for the statistical data cube definition). Then we finally can create the triple pattern. When the valueUrl is empty, we create a DataPropertyTriplePattern, where the object value in the column is literal). Otherwise we have two more options: When the separator is empty, we create a ObjectPropertyTriplePattern, where subject pattern is link to some column and object pattern can also be the link to the column or literal, so we save also the dataType. Otherwise the separator exists and we create a ObjectListPropertyTriplePattern, where the linked object column contains more resources separated by given separator.</p><h3 id="RDF(triples)-Createthetriples">Create the triples</h3><p>Then we iterate over set of rows from the extended Input and for each row try to create the RDF triple from each triple pattern. First we create the subject. We expect only link to the column (in curly braces), So we find the value in given column and current row and when the value is not empty (and the column itself is not missing), we can create the IRI for subject.</p><p>IRI for predicate is already contained in the pattern, because we created it during creation of the pattern.</p><p>When the pattern is instance of DataPropertyTriplePattern, we assume that the object is literal, so when the value in given column and current row is not empty (and column is not missing), we can create literal for object (with dataType xsd:string). When there is instance of ObjectListPropertyTriplePattern, we must split the value according to given separator and for each resulting value create the IRI of object (so that more triples will be created). Finally it could be instance of ObjectPropertyTriplePattern, then the value can be IRI or literal. We can recognize it by checking the validity of IRI (valid IRI contains a colon). If it is literal and datatType is set and valid, we also set the dataType to the literal.</p><p>When we have the subject, predicate and objects created, we can add the new statements to the RDF Model. We use <a href="http://rdf4j.org/" class="external-link" rel="nofollow">RDF4J</a> library for creating the Model, which can be then easily exported by <a href="http://docs.rdf4j.org/programming/" class="external-link" rel="nofollow">Rio</a> to the specified RDF format.</p><h3 id="RDF(triples)-Statisticaldataspecifics">Statistical data specifics</h3><p>RDF export is processed the same way as for other than statistical data, it just includes processing of certain additional triples (without links to columns) and differentiates between creating of IRIs and Literals in object part of triples. Prefixes read from Annotated table &quot;context&quot; attribute are set to the RDF Model, so they are written to the header part of the resulting Turtle file.</p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

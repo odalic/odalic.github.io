@@ -1,0 +1,208 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1870" measuredH="985" mockupW="1777" mockupH="922">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="129" y="63" w="662" h="411" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Customize%20Classification</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="141" y="106" w="646" h="325" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="150" y="111" w="390" h="281" measuredW="167" measuredH="171" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%0A*ADEQATE%20KB%20%28Primary%20KB%29*%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::List" x="174" y="167" w="490" h="133" measuredW="100" measuredH="126" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>31</rowHeight>
+        <selectedIndex>0</selectedIndex>
+        <text>City%20%28http%3A//adequate.at/concept/city%29%20%28curated%29%0ALauName%20%28http%3A//adequate.at/concept/dataset358/lauName%20%28generated%29%0ADistrict%20%28http%3A//adequate.at/concept/district%29%20%28curated%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Arrow" x="540" y="307" w="377" h="19" measuredW="150" measuredH="100" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <rightArrow>true</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::TitleWindow" x="129" y="513" w="662" h="472" measuredW="450" measuredH="400" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Customize%20Classification</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Canvas" x="141" y="558" w="646" h="347" measuredW="100" measuredH="70" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="150" y="561" w="390" h="281" measuredW="167" measuredH="171" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%0A*ADEQATE%20KB%20%28Primary%20KB%29*%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::List" x="174" y="617" w="490" h="133" measuredW="100" measuredH="130" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>31</rowHeight>
+        <selectedIndex>3</selectedIndex>
+        <text>City%20%28http%3A//adequate.at/concept/city%29%20%28curated%29%0ALauName%20%28http%3A//adequate.at/concept/dataset358/lauName%20%28generated%29%0ADistrict%20%28http%3A//adequate.at/concept/district%29%20%28curated%29%0ADistrict-Graz%20%28http%3A//adequate.at/concept/districts-in-graz%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::StickyNote" x="605" y="803" w="144" h="149" measuredW="109" measuredH="123" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>It%20would%20be%20good%20to%20emhasize%20somehow%20the%20added%20classes%20%28District-Graz%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Image" x="1578" y="431" w="292" h="187" measuredW="303" measuredH="179" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>https%3A//grips.semantic-web.at/download/attachments/74186917/Screen%2520Shot%25202016-07-15%2520at%252011.25.02.png%3Fversion%3D1%26modificationDate%3D1468574729000%26api%3Dv2</src>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Arrow" x="658" y="720" w="674" h="50" measuredW="150" measuredH="100" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <direction>top</direction>
+        <leftArrow>true</leftArrow>
+        <rightArrow>false</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::TextInput" x="174" y="299" w="400" h="-1" measuredW="267" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%28search%20for%20more%20candidates%20-%20by%20keyword%20%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::StickyNote" x="1422" y="300" w="248" h="202" measuredW="109" measuredH="123" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>As%20the%20user%20specifies%20key%20word%2C%20it%20provides%20him%20suggestions%20and%20based%20on%20the%20selection%2C%20URI%20is%20depicted.%20%0A%28This%20can%20behave%20exactly%20as%20the%20search%20snippet%20for%20LODLive%2C%20so%20also%20the%20logic%20can%20be%20taken%20from%20there%2C%20see%3A%20http%3A//en.lodlive.it/</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::Button" x="574" y="299" w="90" h="27" measuredW="64" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>plus%7Cxsmall</icon>
+        <state>disabled</state>
+        <text>Add</text>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::TitleWindow" x="872" y="533" w="662" h="411" measuredW="450" measuredH="400" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Customize%20Classification</text>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::Canvas" x="884" y="576" w="646" h="325" measuredW="100" measuredH="70" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="893" y="581" w="390" h="281" measuredW="167" measuredH="171" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%0A*ADEQATE%20KB%20%28Primary%20KB%29*%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::List" x="917" y="637" w="490" h="133" measuredW="100" measuredH="126" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>31</rowHeight>
+        <selectedIndex>0</selectedIndex>
+        <text>City%20%28http%3A//adequate.at/concept/city%29%20%28curated%29%0ALauName%20%28http%3A//adequate.at/concept/dataset358/lauName%20%28generated%29%0ADistrict%20%28http%3A//adequate.at/concept/district%29%20%28curated%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::TextInput" x="917" y="769" w="400" h="-1" measuredW="362" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>District-Graz%20%28http%3A//adequate.at/concept/districts-in-graz%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::Button" x="1317" y="769" w="90" h="27" measuredW="64" measuredH="27" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>plus%7Cxsmall</icon>
+        <state>up</state>
+        <text>Add</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::TextInput" x="174" y="750" w="400" h="-1" measuredW="267" measuredH="27" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%28search%20for%20more%20candidates%20-%20by%20keyword%20%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::Button" x="574" y="750" w="90" h="27" measuredW="64" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>plus%7Cxsmall</icon>
+        <state>disabled</state>
+        <text>Add</text>
+      </controlProperties>
+    </control>
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::CallOut" x="95" y="97" w="-1" h="-1" measuredW="36" measuredH="43" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1</text>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::CallOut" x="836" y="518" w="-1" h="-1" measuredW="38" measuredH="40" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>3</text>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::CallOut" x="93" y="513" w="-1" h="-1" measuredW="36" measuredH="37" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>4</text>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::TitleWindow" x="868" y="78" w="662" h="411" measuredW="450" measuredH="400" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Customize%20Classification</text>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::Canvas" x="880" y="121" w="646" h="325" measuredW="100" measuredH="70" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="889" y="126" w="390" h="281" measuredW="167" measuredH="171" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%0A*ADEQATE%20KB%20%28Primary%20KB%29*%0A%20%0A%20%0A%20%0A%20%0A%20%0A%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::List" x="913" y="182" w="490" h="133" measuredW="100" measuredH="126" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>31</rowHeight>
+        <selectedIndex>0</selectedIndex>
+        <text>City%20%28http%3A//adequate.at/concept/city%29%20%28curated%29%0ALauName%20%28http%3A//adequate.at/concept/dataset358/lauName%20%28generated%29%0ADistrict%20%28http%3A//adequate.at/concept/district%29%20%28curated%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::TextInput" x="913" y="314" w="400" h="-1" measuredW="33" measuredH="27" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dis</text>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Button" x="1317" y="314" w="90" h="27" measuredW="64" measuredH="27" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>plus%7Cxsmall</icon>
+        <state>disabled</state>
+        <text>Add</text>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::CallOut" x="832" y="63" w="-1" h="-1" measuredW="38" measuredH="40" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>2</text>
+      </controlProperties>
+    </control>
+    <control controlID="86" controlTypeID="com.balsamiq.mockups::List" x="914" y="338" w="375" h="126" measuredW="100" measuredH="126" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>1</selectedIndex>
+        <text>District%20%28http%3A//adequate.at/concept/district%29%0ADistrict-Graz%20%28http%3A//adequate.at/concept/districts-in-graz%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="87" controlTypeID="com.balsamiq.mockups::Arrow" x="1174" y="377" w="103" h="400" measuredW="150" measuredH="100" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.25</backgroundAlpha>
+        <direction>top</direction>
+        <leftArrow>false</leftArrow>
+        <rightArrow>true</rightArrow>
+        <text/>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

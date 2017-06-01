@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : KB Proxy Settings</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Configuration_76975474.html">Configuration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : KB Proxy Settings
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Jan Váňa</span>, last modified by <span class='editor'> Václav Brodec</span> on Jun 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="KBProxySettings-CommonSettings">Common Settings</h2><p>M<strong>andatory</strong> common settings:</p><ul><li><p>Former option<strong> kb.cacheTemplatePath</strong> has been eliminted, the caches are dynamically created in the main cache folder for each user and his or her base.</p></li></ul><ul><li><p><strong>kb.advancedType</strong>- The name of the type. May affect interpreation of advanced key-values defined for the Knowledge base proxy.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.advancedType = SPARQL</pre>
+</div></div></li></ul><ul><li><p><strong>kb.name</strong> - The name of the knowledge base. Should be unique.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.name = DBpedia</pre>
+</div></div></li></ul><ul><li><p><strong>kb.stopListFile</strong> - A file that lists things (e.g., predicate URIs) to be used by an instance of <strong>uk.ac.shef.dcs.kbproxy.KBSearchResultFilter</strong>, which decides what triples/relations/classes to remove from the result as they are too general or meaningless. Specific rules are implemented by subclasses of <strong>uk.ac.shef.dcs.kbproxy.KBSearchResultFilter</strong>, which should be instantiated as part of <strong>uk.ac.shef.dcs.kbproxy.KBProxy</strong>.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.stopListFile = resources\\kbstoplist_dbpedia.txt</pre>
+</div></div></li><li><p><strong>kb.endpoint</strong> - SPARQL endpoint of the knowledge base.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.endpoint = http://localhost:8896/sparql</pre>
+</div></div></li></ul><p> </p><ul><li><p><strong>kb.structure.groups</strong> - The list of predicates used in the knowledge base. Multiple configuration files can be separated by the &quot;|&quot;. See <a href="76976380.html">KB Structure Settings (Groups)</a>.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.structure = dbpedia|rdf|skos</pre>
+</div></div></li></ul><h2 id="KBProxySettings-InsertSettings">Insert Settings</h2><p> </p><ul><li><p><strong>kb.insert.supported</strong> - Enables inserting new concepts into the knowledge base.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.insert.supported = false</pre>
+</div></div></li></ul><p>M<strong>andatory</strong> insert settings when <strong>kb.insert.supported</strong> is true</p><ul><li><p><strong>kb.insert.prefix.data</strong> - Prefix used in data elements (instances of classes).</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.insert.prefix.data = http://odalic.eu/resource/</pre>
+</div></div></li></ul><p> </p><ul><li><p><strong>kb.insert.prefix.schema</strong> - Prefix used in schema elements (classes and properties).</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.insert.prefix.schema = http://odalic.eu/schema/</pre>
+</div></div></li></ul><ul><li><p><strong>kb.insert.graph</strong> - Named graph used for new concepts.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.insert.graph = http://odalic.eu</pre>
+</div></div></li><li><p><strong>kb.fulltextEnabled</strong> - Enables full-text search in the knowledge base. If a query keyword does not match to anything, it tries to split it into parts using &quot;and&quot;.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> kb.fulltextEnabled = true</pre>
+</div></div></li><li><p><strong>kb.useBifContains</strong> - Enables support for the Virtuoso full-text search. Does nothing if the full-text search is disabled.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> kb.useBifContains = true</pre>
+</div></div></li><li><p><strong>kb.languageSuffix</strong> - The language suffix used in exact string matching and labels of newly added concepts.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> kb.languageSuffix =</pre>
+</div></div></li></ul><p><strong>Optional</strong> insert settings (the implementation is free to ignore and even when omitted, the shown values are used as defaults).</p><ul><li><p><strong>kb.insert.endpoint</strong> - When present it is used to insert resources instead of the default one. Some bases do have separate endpoint for insertion.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.insert.endpoint = </pre>
+</div></div></li></ul><p> </p><ul><li><p><strong>kb.insert.defaultClass</strong> - Default class used in situations, when the class is not specified.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.insert.defaultClass = http://www.w3.org/2002/07/owl#Thing</pre>
+</div></div></li><li><p><strong>kb.insert.predicate.label</strong> - Predicate used for assigning labels.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.insert.label = http://www.w3.org/2000/01/rdf-schema#label</pre>
+</div></div></li><li><p><strong>kb.insert.<strong>predicate</strong>.alternativeLabel</strong> - Predicate used for assigning alternative labels.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> kb.insert.label = http://www.w3.org/2000/01/rdf-schema#label</pre>
+</div></div></li><li><p><strong>kb.insert.<strong>predicate</strong>.subclassOf</strong> - Predicate used for the &quot;subclass of&quot; relationship.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> kb.insert.predicate.subclassOf = http://www.w3.org/2000/01/rdf-schema#subClassOf</pre>
+</div></div></li><li><p><strong>kb.insert.<strong>predicate</strong>.subPropertyOf</strong> - Predicate used for the &quot;sub-property of&quot; relationship.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> kb.insert.predicate.subProperty = http://www.w3.org/2000/01/rdf-schema#subPropertyOf</pre>
+</div></div></li><li><p><strong>kb.insert.type.class</strong> - Type used for inserting classes.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> kb.insert.type.class = http://www.w3.org/2002/07/owl#Class</pre>
+</div></div></li><li><p><strong>kb.insert.type.property</strong> - Type used for inserting properties.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> kb.insert.type.property = http://www.w3.org/1999/02/22-rdf-syntax-ns#Property</pre>
+</div></div></li><li><p>kb.insert.type.dataProperty - datatype properties type</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.insert.type.dataProperty = http://www.w3.org/2002/07/owl#DatatypeProperty</pre>
+</div></div></li><li><p>kb.insert.type.objectProperty - object properties type</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.insert.type.objectProperty = http://www.w3.org/2002/07/owl#ObjectProperty</pre>
+</div></div></li></ul><p>Other<strong> optional</strong> settings (implementation is free to ignore them too).</p><ul><li><p><strong>kb.classTypeMode</strong> - During initial disambiguation, class restriction is applied to the disambiguated entity. There are two modes, in which the class restriction may be applied. In the standard “indirect” mode, the disambiguated entity must be instance of something, which is a class. In the direct mode, the disambiguated entity can be class itself - this is the case e.g. in case of SKOS schemas, where there are just skos:Concepts.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> kb.classTypeMode = indirect</pre>
+</div></div></li><li><p><strong>kb.structure.predicate.instanceOf</strong> - Predicate used for the &quot;instance of&quot; relationship.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> kb.structure.predicate.instanceOf = http://www.w3.org/1999/02/22-rdf-syntax-ns#type</pre>
+</div></div></li><li><p><strong>kb.structure.predicate.domain</strong> - Predicate used to specify domains of properties.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> kb.structure.predicate.domain = http://www.w3.org/2000/01/rdf-schema#domain</pre>
+</div></div></li><li><p><strong>kb.structure.predicate.range</strong> - Predicate used to specify ranges of properties.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Default</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.structure.predicate.range = http://www.w3.org/2000/01/rdf-schema#range</pre>
+</div></div></li></ul><p> </p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

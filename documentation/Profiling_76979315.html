@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Profiling</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Profiling
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Jan Váňa</span> on Mär 15, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>There are several CPU profiling snapshots available at <a href="https://drive.google.com/drive/folders/0B-BaaOfP11_oTFNSLThUSzI0Wkk?usp=sharinghttps://drive.google.com/drive/folders/0B-BaaOfP11_oTFNSLThUSzI0Wkk?usp=sharing" class="external-link" rel="nofollow">Google Drive</a>. They were created in the VisualVM Java profiler.</p><p>The most surprising result is, that on first run, the most expensive operation is saving results into the cache.</p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Knowledge Base</th><th class="confluenceTh">Cache Status</th><th class="confluenceTh">Total Execution Time</th><th class="confluenceTh">Cache Update Time</th></tr><tr><td class="confluenceTd">Local DBpedia</td><td class="confluenceTd">empty</td><td class="confluenceTd">36 s</td><td class="confluenceTd">26 s</td></tr><tr><td class="confluenceTd">Local DBpedia</td><td class="confluenceTd"><p>100% cached</p></td><td class="confluenceTd">0.5 s</td><td class="confluenceTd"><p>0 s</p></td></tr><tr><td class="confluenceTd">Remote DBpedia</td><td class="confluenceTd">empty</td><td class="confluenceTd">233 s</td><td class="confluenceTd"><p>146 s</p></td></tr><tr><td colspan="1" class="confluenceTd">Remote DBpedia</td><td colspan="1" class="confluenceTd">100% cached</td><td colspan="1" class="confluenceTd">7 s</td><td colspan="1" class="confluenceTd">0 s</td></tr></tbody></table></div><p> </p><p> </p>
+                    </div>
+
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-76979386"></a>
+                                    <font class="smallfont"><p>That is quite weird. We should check how to improve the caching mechanism (cache less, improve the way of dealing with Solr, setting Solr differently etc.)</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by knapt at Mär 16, 2017 11:13
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-76979387"></a>
+                                    <font class="smallfont"><p>But please try to also run that for bigger files as these measurements are probably for the Books file?</p><p>(please provide also a link to the tested file)</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by knapt at Mär 16, 2017 11:14
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

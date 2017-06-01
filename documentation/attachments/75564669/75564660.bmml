@@ -1,0 +1,58 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1564" measuredH="702" mockupW="752" mockupH="516">
+  <controls>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::MenuBar" x="812" y="186" w="-1" h="-1" measuredW="199" measuredH="29" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Tasks%2C%20Create%20a%20new%20task</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::DataGrid" x="864" y="295" w="534" h="180" measuredW="428" measuredH="81" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Task%20Name%2C%20Task%20Description%2C%20Author%0AMy%20task%201%2C%20Authors%20and%20books%20and%20numnber%20of%20books%20selled%2C%20%0AMy%20task%202%2C%20Cities%20and%20districts%20togehter%20with%20stats...%2C%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::StickyNote" x="864" y="536" w="208" h="123" measuredW="109" measuredH="123" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>When%20clicking%2C%20user%20is%20switched%20to%20the%20screen%20with%20the%20cirle%20and%20waiting%20for%20the%20result.%20Then%20he%20can%20see%20the%20output%20as%20now.%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Canvas" x="812" y="235" w="742" h="449" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="827" y="259" w="-1" h="-1" measuredW="138" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Configurations%20of%20tasks</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Button" x="952" y="509" w="-1" h="-1" measuredW="74" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Run%20Now</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="1096" y="509" w="176" h="27" measuredW="139" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Run%20in%20UnifiedViews</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Button" x="1279" y="509" w="176" h="27" measuredW="170" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+        <text>Schedule%20in%20UnifiedViews</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::StickyNote" x="1119" y="530" w="153" h="166" measuredW="109" measuredH="123" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Note%20supported%20yet%20-%20but%20this%20will%20include%20possibility%20to%20run%20in%20UV%20-%20results%20may%20be%20reviewed%20later%20on</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::StickyNote" x="1291" y="536" w="153" h="166" measuredW="109" measuredH="123" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Note%20supported%20yet%20-%20but%20this%20will%20include%20possibility%20to%20schedule%20in%20UV</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::StickyNote" x="1455" y="288" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Possibility%20to%20view%20latest%20result%3F</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

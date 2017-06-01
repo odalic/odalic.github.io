@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Reducing the space consumption of DBpedia</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Installation-guides_76975775.html">Installation guides</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Reducing the space consumption of DBpedia
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified by <span class='editor'> Václav Brodec</span> on Mär 03, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>If everything (the whole DBpedia dump) is loaded to Virtuoso, it requires too much space. In order too alleviate from this burden, you can select only an essential subset of the datasets from the dump. From our experience, when you start from <a href="http://wiki.dbpedia.org/Downloads2015-10" class="external-link" rel="nofollow">http://wiki.dbpedia.org/Downloads2015-10</a></p><p>dump, than the datasets most relevant to Odalic Semantic Table Interpreation are the following:</p><ul><li><strong><a href="http://wiki.dbpedia.org/Downloads2015-10#ontology" class="external-link" rel="nofollow">ontology</a></strong></li><li><strong><a href="http://wiki.dbpedia.org/services-resources/documentation/datasets#homepages" class="external-link" rel="nofollow">homepages</a></strong></li><li><strong><a href="http://wiki.dbpedia.org/services-resources/documentation/datasets#instancetypes" class="external-link" rel="nofollow">instance types</a></strong></li><li><strong><a href="http://wiki.dbpedia.org/services-resources/documentation/datasets#labels" class="external-link" rel="nofollow">labels</a></strong></li><li><strong><a href="http://wiki.dbpedia.org/services-resources/documentation/datasets#mappingbasedliterals" class="external-link" rel="nofollow">mappingbased literals</a></strong></li><li><strong><a href="http://wiki.dbpedia.org/services-resources/documentation/datasets#mappingbasedobjects" class="external-link" rel="nofollow">mappingbased objects</a></strong></li><li><strong><a href="http://wiki.dbpedia.org/services-resources/documentation/datasets#shortabstracts" class="external-link" rel="nofollow">short abstracts</a></strong></li><li><strong><a href="http://wiki.dbpedia.org/services-resources/documentation/datasets#wikipedialinks" class="external-link" rel="nofollow">wikipedia links</a></strong></li></ul><p>These are the Virtuoso iSQL commands you may use to load the datasets to the Virtuoso store:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">ld_dir (&#39;d:/KBs/DBpediaCommon&#39;, &#39;*.owl&#39;, &#39;http://dbpedia.org&#39;);
+ld_dir (&#39;d:/KBs/DBpediaEN&#39;, &#39;homepages*.ttl&#39;, &#39;http://dbpedia.org&#39;);
+ld_dir (&#39;d:/KBs/DBpediaEN&#39;, &#39;instance_types*.ttl&#39;, &#39;http://dbpedia.org&#39;);
+ld_dir (&#39;d:/KBs/DBpediaEN&#39;, &#39;labels*.ttl&#39;, &#39;http://dbpedia.org&#39;);
+ld_dir (&#39;d:/KBs/DBpediaEN&#39;, &#39;mappingbased_literals*.ttl&#39;, &#39;http://dbpedia.org&#39;);
+ld_dir (&#39;d:/KBs/DBpediaEN&#39;, &#39;mappingbased_objects*.ttl&#39;, &#39;http://dbpedia.org&#39;);
+ld_dir (&#39;d:/KBs/DBpediaEN&#39;, &#39;short_abstracts*.ttl&#39;, &#39;http://dbpedia.org&#39;);
+ld_dir (&#39;d:/KBs/DBpediaEN&#39;, &#39;wikipedia_links*.ttl&#39;, &#39;http://dbpedia.org&#39;);</pre>
+</div></div><p>This must be confirmed by the iSQL command starting the import:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">rdf_loader_run();</pre>
+</div></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

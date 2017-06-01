@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Jugend centers in Austria</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Testing-Data_75564208.html">Testing Data</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Jugend centers in Austria
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified on Jan 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Version: develop 1.1.2017<br/> File: <a href="http://data.ooe.gv.at/files/cms/Mediendateien/OGD/ogd_dirBGD/Jugendzentren.csv" class="external-link" rel="nofollow">http://data.ooe.gv.at/files/cms/Mediendateien/OGD/ogd_dirBGD/Jugendzentren.csv</a></p><h2 id="JugendcentersinAustria-Analysisoftheresults">Analysis of the results</h2><p>File was not processed.</p><h2 id="JugendcentersinAustria-Issues/Bugs">Issues/Bugs</h2><p>Task execution ended by error caused by <span><span class="ng-binding ng-scope">NullPointerException </span></span> <span><span class="ng-binding ng-scope">at uk.ac.shef.dcs.sti.core.subjectcol.WSScorer.score(WSScorer.java:81)</span></span>:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="711" src="attachments/76224217/76225704.png" data-image-src="attachments/76224217/76225704.png" data-unresolved-comment-count="0" data-linked-resource-id="76225704" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Jugendzentren_error2.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76224217" data-linked-resource-container-version="3"></span></p><p>Previous test (11.12.2016):</p><p>Task execution ended by error. The UI displayed the error statement, but user cannot recognize what is the reason of the error:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/76224217/76224231.png" data-image-src="attachments/76224217/76224231.png" data-unresolved-comment-count="0" data-linked-resource-id="76224231" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="jugendzentren-error.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76224217" data-linked-resource-container-version="3"></span></p><p>I found that the error was caused by SPARQLProxy and the method queryEntityCandidates when the query string contains quotes, In the original file in the first column some rows contain string with quotes, for example &quot;Girls-Treff &quot;&quot;Insel&quot;&quot;&quot; in row 6 or &quot;Jugendzentrum &quot;&quot;Ins Schwarze&quot;&quot;&quot; in row 17. These strings are problematic for this query method.</p><ul><li>issue: <a href="https://github.com/odalic/sti/issues/242" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/242</a></li></ul><h2 id="JugendcentersinAustria-Performance">Performance</h2><p>The file was processed in X minutes / was necessary to reduce to X lines.</p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224217/76224231.png">jugendzentren-error.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224217/76225704.png">Jugendzentren_error2.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Virtuoso installation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Installation-guides_76975775.html">Installation guides</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Virtuoso installation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Jan Váňa</span>, last modified by <span class='editor'> Václav Brodec</span> on Mär 03, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span style="color: rgb(0,0,0);text-decoration: none;">At least one of the knowledge bases, that are made accessible to Odalic Semantic Table Interpretation server through the associated proxies and their configuration, must be modifiable by the user. For most of the publicly accessible bases this is not the case for obvious reasons. Therefore it might be necessary for the user to establish its own knowledge base by running own <a href="https://en.wikipedia.org/wiki/Triplestore" class="external-link" rel="nofollow">RDF store</a>. Probably the most popular one is <a href="https://virtuoso.openlinksw.com/" class="external-link" rel="nofollow">Virtuoso</a>.<br/></span></p><h1 id="Virtuosoinstallation-Installation"><span style="color: rgb(0,0,0);text-decoration: none;">Installation</span></h1><p><span style="color: rgb(0,0,0);text-decoration: none;">Detailed instructions for the installation and setting-up the Virtuoso (for Windows) can be found at <a href="http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VOSUsageWindows#Getting%20Started%20with%20the%20VOS%20Binary%20Distribution%20for%20Windows" class="external-link" rel="nofollow">http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VOSUsageWindows#Getting%20Started%20with%20the%20VOS%20Binary%20Distribution%20for%20Windows</a>. The most important points are the following:<br/></span></p><ol><li>Download pre-compiled binaries (in an archive) from <a href="http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VOSDownload#Pre-built%20binaries%20for%20Windows" class="external-link" rel="nofollow">http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VOSDownload#Pre-built%20binaries%20for%20Windows</a>.</li><li>Unpack the archive to a folder of your choice.</li><li>Set a system environmental variable <code>VIRTUOSO_HOME</code> to the absolute path of the folder you unpacked the archive.<em><br/></em></li><li>Add the following values to the <code>PATH</code> environmental variable: <code>&quot;%VIRTUOSO_HOME%/bin</code>&quot; and &quot;<code>VIRTUOSO_HOME%/lib</code>&quot; <em>(usually separated by a semicolon &quot;<code>;</code>&quot;).</em></li><li>The configuration files and Virtuoso database are now located in directory <code>&quot;%VIRTUOSO_HOME%/database</code><code>&quot;.</code></li><li>Set up Virtuoso service with the following command: <code>virtuoso-t +service create +instance &quot;New Instance Name&quot; +configfile virtuoso.ini</code>.<code><br/></code></li><li>If you do intend to use several instances of Virtuoso <em>(e.g. one for DBPedia and another one for a base of different kind, e.g. Wikidata)</em>, clone folder from &quot;<code>%VIRTUOSO_HOME%/database</code>&quot; and set up a Virtuoso service also for the newly cloned configuration file.</li><li>If you move a folder with configuration files out of its original destination, you have to correct all relative paths in the file <code>virtuoso.ini</code>.</li><li>Configuration parameters <code>NumberOfBuffers </code>and <code>MaxDirtyBuffers</code> should be set according to your available computer memory <em>(follow the instructions in the configuration file).</em></li><li>The port number assigned to Virtuoso may be changed as well. Note that if you intend to use several instances of Virtuoso, this is an obligatory step.</li><li>Once a Virtuoso service is running, a web interface may be opened. <em>(By default it is accessible at <a href="http://localhost:8890/conductor" class="external-link" rel="nofollow">http://localhost:8890/conductor</a>).</em></li><li>A <code>VOS ODBC Driver</code> should be installed as well. Download the driver and follow the instructions at <a href="http://virtuoso.openlinksw.com/download/" class="external-link" rel="nofollow">http://virtuoso.openlinksw.com/download/</a>.</li></ol><h1 id="Virtuosoinstallation-Datasetsimport"><span style="color: rgb(0,0,0);text-decoration: none;"><span style="color: rgb(0,0,0);text-decoration: none;">Datasets import</span></span></h1><p><span style="color: rgb(0,0,0);text-decoration: none;"><span style="color: rgb(0,0,0);text-decoration: none;">Instructions on how to import datasets to Virtuoso may be found at <a href="http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VirtBulkRDFLoader" class="external-link" rel="nofollow">http://virtuoso.openlinksw.com/dataspace/doc/dav/wiki/Main/VirtBulkRDFLoader</a>. DBpedia d<span style="color: rgb(0,0,0);text-decoration: none;"><span style="color: rgb(0,0,0);text-decoration: none;">atasets</span></span> can be found at <a href="http://wiki.dbpedia.org/Downloads2015-10" style="color: rgb(0,0,0);text-decoration: none;" class="external-link" rel="nofollow">http://wiki.dbpedia.org/Downloads2015-10<span style="color: rgb(0,0,0);text-decoration: none;"><span style="color: rgb(0,0,0);text-decoration: none;">.</span></span></a> <span style="color: rgb(0,0,0);text-decoration: none;">Wikidata datasets can be found at <a href="https://www.wikidata.org/wiki/Wikidata:Database_download#RDF_dumps" class="external-link" rel="nofollow">https://www.wikidata.org/wiki/Wikidata:Database_download#RDF_dumps</a>. Note that the import may take a significant amount of time, if a large knowledge base is used.</span></span></span></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

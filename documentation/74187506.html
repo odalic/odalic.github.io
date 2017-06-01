@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Repositories &amp; Modules</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Repositories &amp; Modules
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span> on Jul 19, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Repositories&amp;Modules-Odalic/sti">Odalic/sti</h2><p><span class="final-path">Modules:</span></p><ul><li><span class="final-path"><span class="final-path">any23-sti</span><br class="_mce_tagged_br"/></span><ul><li><span class="final-path"><span class="final-path"><strong>Anything To Triples (Any23)</strong><span> is a library, a web service and a command line tool that extracts structured data in RDF format from a variety</span><br/><span>of Web documents. This modules provides some extensions to that Any23 library (as Ziqi said, the original motivation for these extensions was to get the xpath of the extracted RDFa triples). These extensions are used to extract RDFa triples from some webpages, such as IMDB, MusicBrainz and used for example in: </span><br/></span></span><ul><li><span class="final-path"><span class="final-path"><span>TableContextExtractorIMDB</span></span></span></li><li><span class="final-path"><span class="final-path"><span>TableContextExtractorMusicBrainz </span></span></span></li></ul></li><li><span class="final-path"><span class="final-path"><span>Consider to remove this module: <a href="https://github.com/odalic/sti/issues/93" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/93</a></span></span></span></li></ul></li><li><span class="final-path"><span class="final-path">common-utils</span></span><ul><li><span class="final-path"><span class="final-path">There are three classes: <a href="https://github.com/odalic/sti/tree/master/common-util/src/main/java/uk/ac/shef/dcs/util" class="external-link" rel="nofollow">https://github.com/odalic/sti/tree/master/common-util/src/main/java/uk/ac/shef/dcs/util</a></span></span></li><li><span class="final-path">? Do we need that to be in a separate module? Or are they used just by the core algorithm?</span></li></ul></li><li><span class="final-path">core</span><ul><li><span class="final-path">Core algorithm (derived from TableMiner+)</span></li></ul></li><li><span class="final-path">odalic</span><ul><li><span class="final-path">War application, REST services.</span></li></ul></li><li><span class="final-path">kbsearch</span><ul><li><span class="final-path">DBpediaSearch</span><ul><li>why the methods findEntity are implemented here and not in SparqlSearch? There is one or two customizations regarding the predicate names, but this can be extracted to the config file e.g. because they are for sure not DBpedia specific and does not justify creation of new class</li><li>Certain logic is duplicated - <p><span>findEntityCandidatesOfTypes and </span>findEntityCandidates</p><p> </p></li><li><p>Summary: No need for special DBpediaSearch, SPARQLSearch (with few config params regarding the predicates) is enough. </p></li></ul></li></ul></li><li><span class="final-path">websearch</span><ul><li>Contains definitions of web search and particular implementation for BING</li><li>Suggestion: Merge with core (abstract classes for any WebSearch) and for now</li></ul></li><li><span class="final-path"> </span></li></ul><p> </p><p> </p><h2 id="Repositories&amp;Modules-Odalic/odalic-ui">Odalic/odalic-ui</h2>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

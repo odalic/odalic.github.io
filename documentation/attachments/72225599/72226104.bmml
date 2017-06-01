@@ -1,0 +1,159 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="783" measuredH="640" mockupW="743" mockupH="600">
+  <controls>
+    <control controlID="83" controlTypeID="__group__" x="40" y="40" w="743" h="600" measuredW="743" measuredH="600" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="743" h="600" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="83">
+          <controlProperties>
+            <text>Knowledge%20base%20details</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="28" y="450" w="502" h="52" measuredW="502" measuredH="52" zOrder="1" locked="false" isInGroup="83">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="19" y="26" w="-1" h="-1" measuredW="113" measuredH="21" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>Prefix%20for%20concepts</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::TextInput" x="173" y="25" w="79" h="-1" measuredW="32" measuredH="27" zOrder="1" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>ad%3A</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="260" y="25" w="242" h="-1" measuredW="237" measuredH="27" zOrder="2" locked="false" isInGroup="1">
+              <controlProperties>
+                <text>http%3A//adequate.at/resource/concept/</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::CheckBox" x="0" y="0" w="-1" h="-1" measuredW="201" measuredH="22" zOrder="3" locked="false" isInGroup="1">
+              <controlProperties>
+                <state>selected</state>
+                <text>New%20concepts%20may%20be%20created</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="2" controlTypeID="__group__" x="28" y="414" w="368" h="27" measuredW="368" measuredH="27" zOrder="2" locked="false" isInGroup="83">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::CheckBoxGroup" x="0" y="5" w="-1" h="-1" measuredW="185" measuredH="17" zOrder="0" locked="false" isInGroup="2">
+              <controlProperties>
+                <text>%5B%5D%20Use%20PoolParty%20to%20maitain%20KB</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="193" y="0" w="-1" h="-1" measuredW="175" measuredH="27" zOrder="1" locked="false" isInGroup="2">
+              <controlProperties>
+                <text>See%20the%20history%20of%20imports</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="582" y="536" w="-1" h="-1" measuredW="41" measuredH="27" zOrder="3" locked="false" isInGroup="83">
+          <controlProperties>
+            <text>OK</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="518" y="536" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="4" locked="false" isInGroup="83">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="__group__" x="28" y="235" w="700" h="171" measuredW="700" measuredH="171" zOrder="5" locked="false" isInGroup="83">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::DataGrid" x="0" y="29" w="700" h="142" measuredW="592" measuredH="111" zOrder="0" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Dataset%2C%20Named%20Graph%2C%20Type%2C%20When%2C%20Action%0AFreebase%2C%20%2C%20External%2C%2021.%205.%202016%2014%3A38%3A22%2C%0ASchools%20Linz%2C%20http%3A//adequate.at/graphs/schools-in-linz%2C%20Internal%2C%2021.%205.%202016%2014%3A38%3A22%2C%0ASchools%20Graz%2C%20http%3A//adequate.at/graphs/schools-in-graz%2C%20Internal%2C%2021.%205.%202016%2014%3A38%3A22%2C%0A%7B13L%2C%2037L%2C%2010L%2C%2020L%2C%2020L%7D</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="296" h="-1" measuredW="150" measuredH="21" zOrder="1" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>List%20of%20imported%20datasets</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="617" y="51" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="2" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Remove</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="617" y="81" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="3" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Remove</text>
+              </controlProperties>
+            </control>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="560" y="135" w="-1" h="-1" measuredW="45" measuredH="27" zOrder="4" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Add</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="617" y="108" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="5" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Remove</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::Button" x="560" y="51" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="6" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Detail</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::Button" x="560" y="81" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="7" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Detail</text>
+              </controlProperties>
+            </control>
+            <control controlID="8" controlTypeID="com.balsamiq.mockups::Button" x="560" y="108" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="8" locked="false" isInGroup="5">
+              <controlProperties>
+                <text>Detail</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="6" controlTypeID="__group__" x="28" y="51" w="354" h="177" measuredW="354" measuredH="177" zOrder="6" locked="false" isInGroup="83">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="53" measuredH="21" zOrder="0" locked="false" isInGroup="6">
+              <controlProperties>
+                <text>KB%20name</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="27" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="1" locked="false" isInGroup="6">
+              <controlProperties>
+                <text>KB%20description</text>
+              </controlProperties>
+            </control>
+            <control controlID="2" controlTypeID="com.balsamiq.mockups::TextArea" x="154" y="30" w="200" h="60" measuredW="200" measuredH="140" zOrder="2" locked="false" isInGroup="6">
+              <controlProperties>
+                <text>Adequate%20KB%20with%20concepts%20from%20Austrian%20open%20data%20portals</text>
+              </controlProperties>
+            </control>
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="154" y="0" w="200" h="-1" measuredW="91" measuredH="27" zOrder="3" locked="false" isInGroup="6">
+              <controlProperties>
+                <text>Adequate%20KB</text>
+              </controlProperties>
+            </control>
+            <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="0" y="97" w="-1" h="-1" measuredW="40" measuredH="21" zOrder="4" locked="false" isInGroup="6">
+              <controlProperties>
+                <text>Owner</text>
+              </controlProperties>
+            </control>
+            <control controlID="5" controlTypeID="com.balsamiq.mockups::TextInput" x="154" y="94" w="200" h="-1" measuredW="36" measuredH="27" zOrder="5" locked="false" isInGroup="6">
+              <controlProperties>
+                <align>left</align>
+                <color>16777215</color>
+                <state>disabled</state>
+                <text>Jan</text>
+              </controlProperties>
+            </control>
+            <control controlID="6" controlTypeID="com.balsamiq.mockups::CheckBox" x="154" y="131" w="-1" h="-1" measuredW="76" measuredH="22" zOrder="6" locked="false" isInGroup="6">
+              <controlProperties>
+                <state>selected</state>
+                <text>Is%20default</text>
+              </controlProperties>
+            </control>
+            <control controlID="7" controlTypeID="com.balsamiq.mockups::CheckBox" x="154" y="155" w="-1" h="-1" measuredW="70" measuredH="22" zOrder="7" locked="false" isInGroup="6">
+              <controlProperties>
+                <text>Is%20public</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

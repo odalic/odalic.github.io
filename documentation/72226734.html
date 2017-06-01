@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Scenario 6f Task configuration - Import/Export</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Scenario 6f Task configuration - Import/Export
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified by <span class='editor'> István Satmári</span> on Mai 22, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Scenario6fTaskconfiguration-Import/Export-InitialState"><span style="color: rgb(0,0,0);">Initial State</span></h1><p><span style="color: rgb(0,0,0);">The logged-in user is either creating a task (from scratch or based on some pre-existing) or reviewing configuration of some scheduled task.<br/></span></p><h1 id="Scenario6fTaskconfiguration-Import/Export-Description"><span>Description</span></h1><ol><li style="list-style-type: decimal;">When the user click the &quot;Import configuration...&quot; button (<a href="#Scenario6fTaskconfiguration-Import/Export-mockup1">Mockup 1</a>), standard file selection dialogue appears with <span class="inline-comment-marker" data-ref="9c9c4d75-32e6-4cd7-9e35-8e9852265371">*.otc (Odalic Task Configuration)</span> suffix filter and any file filter.</li><li style="list-style-type: decimal;">User chooses the file with configuration to upload.</li><li style="list-style-type: decimal;">Application changes the edited configuration according to the content parsed from the file.</li></ol><h1 id="Scenario6fTaskconfiguration-Import/Export-Alternatives"><span style="color: rgb(0,0,0);">Alternatives</span></h1><ul><li>User can also export the configuration by clicking the &quot;Export configuration...&quot;. The save file dialogue appears (<a href="#Scenario6fTaskconfiguration-Import/Export-mo">Mockup 2</a>).<span style="color: rgb(0,0,0);"><br/></span></li><li>When the dialog is displayed during task creation, only Apply button is available.<span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);"> </span></span></li><li>When the dialog is displayed for already running task, only Apply in new task button is available.<span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);"> </span></span></li><li>If applied to already running task (which entered this state after dialog appearance), the dialog behaves as if Apply in new task button was clicked (notifying the user about it in the process).</li></ul><h1 id="Scenario6fTaskconfiguration-Import/Export-Whatcangowrong"><span>What can go wrong</span></h1><ul><li><span style="color: rgb(0,0,0);">The provided file cannot be parsed.<br/></span></li></ul><h1 id="Scenario6fTaskconfiguration-Import/Export-Systemstateoncompletion"><span>System state on completion</span></h1><ul><li><span style="color: rgb(0,0,0);">The current configuration is set according to the content parsed from the file.</span><span style="color: rgb(0,0,0);"> </span></li></ul><h1 id="Scenario6fTaskconfiguration-Import/Export-Implementationdetails"><span style="color: rgb(0,0,0);">Implementation details</span></h1><ul><li><span style="color: rgb(0,0,0);"><span>The inner representation of the file is the same as is used in the REST API.</span></span></li></ul><h1 id="Scenario6fTaskconfiguration-Import/Export-RequirementsMotivatingtheScenario">Requirements Motivating the Scenario</h1><ul><li><a href="List-of-Requirements_71440542.html#ListofRequirements-31">31</a></li></ul><h1 id="Scenario6fTaskconfiguration-Import/Export-Mockups"><span style="color: rgb(0,0,0);">Mockups</span></h1><p><span class="confluence-anchor-link" id="Scenario6fTaskconfiguration-Import/Export-mockup1"></span><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_Mockup 6.11 - Import and Export"><img class="balsamiq_mockup" src="attachments/72226734/72226727.png"/></a><br/></div></p><p><span class="confluence-anchor-link" id="Scenario6fTaskconfiguration-Import/Export-mockup2"></span><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_Mockup 6.12 - Export from read-only"><img class="balsamiq_mockup" src="attachments/72226734/72226729.png"/></a><br/></div><span style="color: rgb(255,0,0);"> </span></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226690.bmml">mockup_Mockup 6.7 -Relations hints.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226691.png">mockup_Mockup 6.7 -Relations hints.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226692.bmml">mockup_Mockup 6.8 - Relations hints - read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226693.png">mockup_Mockup 6.8 - Relations hints - read-only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226694.bmml">mockup_Mokcup 6.4 - Classficaction option - read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226695.png">mockup_Mokcup 6.4 - Classficaction option - read-only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226696.bmml">mockup_Mockup 6.3 - Classification options.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226697.png">mockup_Mockup 6.3 - Classification options.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226698.bmml">mockup_Mokcup 6.2 - Knowledge base selection read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226699.png">mockup_Mokcup 6.2 - Knowledge base selection read-only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226700.bmml">mockup_Mockup 6.1 - Knowledge Base selection.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226701.png">mockup_Mockup 6.1 - Knowledge Base selection.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226702.png">mockup_Mockup 1 - Task configuration overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226703.bmml">mockup_Mockup 1 - Task configuration overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226704.bmml">mockup_test-balsamic.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226705.png">mockup_test-balsamic.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226706">Mockup 0.1 Login screen</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226707.png">Mockup 0.1 Login screen.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226708">Mockup 0.2 Application frame</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226709.png">Mockup 0.2 Application frame.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226710">Mockup 1.3 Selecting encoding and other options</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226711.png">Mockup 1.3 Selecting encoding and other options.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226712">Mockup 1.4 Configuration and constraints</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226713.png">Mockup 1.4 Configuration and constraints.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226714">Mockup 1.2 File cached</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226715.png">Mockup 1.2 File cached.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226716">Mockup 1.1 Specifying input files Copy</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226717.png">Mockup 1.1 Specifying input files Copy.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226718">Mock 1.1 Specifying input files</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226719.png">Mock 1.1 Specifying input files.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226720.bmml">mockup_specifying input files.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226721.png">mockup_specifying input files.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226722.bmml">mockup_Mockup 6.9 - Result tranformations.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226723.png">mockup_Mockup 6.9 - Result tranformations.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226724.bmml">mockup_Mockup 6.9 - Result tranformations.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226725.png">mockup_Mockup 6.9 - Result tranformations.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226688.bmml">mockup_Mockup 6.9 - Result tranformations.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226689.png">mockup_Mockup 6.9 - Result tranformations.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226730.bmml">mockup_Mockup 6.11 - Import and Export.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226731.png">mockup_Mockup 6.11 - Import and Export.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226732.bmml">mockup_Mockup 6.12 - Export from read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226733.png">mockup_Mockup 6.12 - Export from read-only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226866.bmml">mockup_Mockup 6.11 - Import and Export.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226867.png">mockup_Mockup 6.11 - Import and Export.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226868.bmml">mockup_Mockup 6.12 - Export from read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226869.png">mockup_Mockup 6.12 - Export from read-only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226726.bmml">mockup_Mockup 6.11 - Import and Export.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226727.png">mockup_Mockup 6.11 - Import and Export.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226872.bmml">mockup_Mockup 6.12 - Export from read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226873.png">mockup_Mockup 6.12 - Export from read-only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226728.bmml">mockup_Mockup 6.12 - Export from read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226734/72226729.png">mockup_Mockup 6.12 - Export from read-only.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

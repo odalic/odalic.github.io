@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Number of dogs (according to breeds) in the city of Vienna</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Testing-Data_75564208.html">Testing Data</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Number of dogs (according to breeds) in the city of Vienna
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified on Dez 14, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Version: develop 11.12.2016<br/> File: <a href="https://www.wien.gv.at/finanzen/ogd/hunde-wien.csv" class="external-link" rel="nofollow">https://www.wien.gv.at/finanzen/ogd/hunde-wien.csv</a> (reduced to 20 lines)<br/> Preprocessing: Remove extra header line</p><h2 id="Numberofdogs(accordingtobreeds)inthecityofVienna-Analysisoftheresults">Analysis of the results</h2><p>against Jan's (reduced) DBpedia, original DBpedia and German DBpedia:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/76224252/76224515.png" data-image-src="attachments/76224252/76224515.png" data-unresolved-comment-count="0" data-linked-resource-id="76224515" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="hunde-result.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76224252" data-linked-resource-container-version="3"></span></p><p>Classification:</p><ul><li>NUTS1 not; NUTS2 only DBpedia, but strange (Item); NUTS3 not</li><li>Dog Breed all: DBpedia seems correct (Breed / dog breed), but German DBpedia not correct (Location)</li><li>other columns not (expected, just numeric values)</li></ul><p>Disambiguation:</p><ul><li>NUTS1 all seems OK; NUTS2 only DBpedia, but seems strange; NUTS3 nothing</li><li>Dog Breed sometimes all OK, sometimes just German DBpedia, sometimes two of KBs, sometimes nothing</li><li>other columns are just numeric values</li></ul><p>Subject column:</p><ul><li>Dog Breed always - OK</li></ul><p>Relations:</p><ul><li>no relations were found</li></ul><p>Complete data (original and reduced file, screens, exports and caches):</p><ul><li><a href="attachments/76224252/76224516.zip" data-linked-resource-id="76224516" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="hunde-wien.zip" data-nice-type="Zip Archive" data-linked-resource-content-type="application/zip" data-linked-resource-container-id="76224252" data-linked-resource-container-version="3">hunde-wien.zip</a></li></ul><h2 id="Numberofdogs(accordingtobreeds)inthecityofVienna-Issues/Bugs">Issues/Bugs</h2><p>Special characters, e.g. é, not correctly displayed</p><ul><li>issue: <a href="https://github.com/odalic/sti/issues/243" rel="nofollow" class="external-link">https://github.com/odalic/sti/issues/243</a></li></ul><h2 id="Numberofdogs(accordingtobreeds)inthecityofVienna-Performance">Performance</h2><p>The file was processed in about 20 minutes / was necessary to reduce to 20 lines.</p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224252/76224515.png">hunde-result.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224252/76224516.zip">hunde-wien.zip</a> (application/zip)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

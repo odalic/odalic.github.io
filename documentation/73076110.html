@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Notes to communication Odalic Server and UI/Odalic Core</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="REST-API_72225449.html">REST API</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Notes to communication Odalic Server and UI/Odalic Core
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Jul 20, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><span><span><a class="confluence-userlink user-mention" data-username="knapt" href="https://grips.semantic-web.at/display/~knapt" data-linked-resource-id="32638941" data-linked-resource-version="3" data-linked-resource-type="userinfo" data-base-url="https://grips.semantic-web.at">Tomas Knap</a> Needs polishing</span></span></p><div style="margin-left: 0.0pt;"><p> </p><p><span><span><br/></span></span></p><div style="margin-left: 0.0pt;"><p><span><span><br/></span></span></p><div style="margin-left: 0.0pt;"><p> </p><div class="table-wrap"><table class="confluenceTable"><tbody><tr><td colspan="2" class="confluenceTd"><p><span style="color: rgb(0,0,0);">Odalic Core - Classification/Disambiguation/RelationDiscovery API</span></p></td></tr><tr><td class="confluenceTd"><p><span style="color: rgb(0,0,0);">Description</span></p></td><td class="confluenceTd"><p><span style="color: rgb(0,0,0);">This API is used by Odalic Server to run particular phases of the algorithm and provide information about the results to UI ( list of suggested winning concepts to be shown, etc. )</span></p></td></tr><tr><td class="confluenceTd"><p><span style="color: rgb(0,0,0);">API</span></p></td><td class="confluenceTd"><p style="text-align: justify;"><span style="color: rgb(0,0,0);">runClassificationDisambiguation(File f)</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Runs the (re)classification and (re)disambiguation for the input file. Standard phase of Odalic Core. </span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Used by: Odalic Server</span></p><br/><p style="text-align: justify;"><span style="color: rgb(0,0,0);">runRelationDiscovery(File f)</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Runs the process of (re)discoverying relations for the given input file. Standard phase of Odalic Core. </span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Used by: Odalic Server</span></p><br/><p style="text-align: justify;"><span style="color: rgb(0,0,0);">URL getWinningClass(Column c)</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Returns the </span><span>suggested winning concept classifying the given column. </span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Used by: Odalic Server</span></p><br/><p style="text-align: justify;"><span style="color: rgb(0,0,0);">List&lt;URLs, Score&gt; getSuggestedClasses(Column c, int num)</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Returns list of suggested concepts classifying the given column c, including also scores for such concepts. Optionally restricted by num, which specifies max number of such suggested concepts returned. </span></p><br/><p style="text-align: justify;"><span style="color: rgb(0,0,0);">URL getWinningDisambigEntity(Cell c)</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Returns the </span><span>suggested entity disambiguating the given cell value. </span></p><br/><p style="text-align: justify;"><span style="color: rgb(0,0,0);">List&lt;URLs, Score&gt; getSuggestedDisambEntities(Cell c, int num)</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Returns list of resources classifying the given column c, including also scores for such resources. Optionally restricted by num</span></p><br/><p style="text-align: justify;"><span style="color: rgb(0,0,0);">runClassificationDisambiguation(Column c)</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Runs the classification for the given column c. This is called when re-classification is needed. </span></p><br/><p style="text-align: justify;"><span style="color: rgb(0,0,0);">generateResultCsvData(File f)</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Creates the resulting CSV file + metadata describing classification/disambiguation/relation discovery based on the original file and settings for classification, disambiguation, relation discovery (CSV on the Web standard) </span></p><br/><p style="text-align: justify;"><span style="color: rgb(0,0,0);">generateResultingRdfData(File f)</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Creates the resulting RDF file based  on the original file and settings for classification, disambiguation, relation discovery (CSV on the Web standard) </span></p><br/><p style="text-align: justify;"><span style="color: rgb(0,0,0);">changeWinningConcept(Concept new)</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Changes the winning suggested concept suggested by Odalic Core with a different suggested concept </span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Reqs: PP_07</span></p><br/><p style="text-align: justify;"><span style="color: rgb(0,0,0);">selectNewWinningConcept(Concept new)</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Changes the winning suggested concept suggested by Odalic Core with a new concept selected from the knowledge base</span></p><p style="text-align: justify;"><span style="color: rgb(0,0,0);">Reqs: PP_07</span></p></td></tr><tr><td class="confluenceTd"><p><span style="color: rgb(0,0,0);">Candidates</span></p></td><td class="confluenceTd"><p><span style="color: rgb(0,0,0);">Odalic</span></p></td></tr></tbody></table></div></div></div></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

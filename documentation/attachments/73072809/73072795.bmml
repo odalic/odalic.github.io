@@ -1,0 +1,58 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="490" measuredH="245" mockupW="450" mockupH="205">
+  <controls>
+    <control controlID="10" controlTypeID="__group__" x="40" y="40" w="450" h="205" measuredW="450" measuredH="205" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="450" h="205" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="10">
+          <controlProperties>
+            <text>New%20Dataset</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="15" y="43" w="-1" h="-1" measuredW="107" measuredH="21" zOrder="1" locked="false" isInGroup="10">
+          <controlProperties>
+            <text>SPARQL%20Endpoint</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="15" y="75" w="-1" h="-1" measuredW="29" measuredH="21" zOrder="2" locked="false" isInGroup="10">
+          <controlProperties>
+            <text>User</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="15" y="108" w="-1" h="-1" measuredW="56" measuredH="21" zOrder="3" locked="false" isInGroup="10">
+          <controlProperties>
+            <text>Password</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::TextInput" x="129" y="40" w="251" h="-1" measuredW="79" measuredH="26" zOrder="4" locked="false" isInGroup="10">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="386" y="40" w="-1" h="-1" measuredW="49" measuredH="27" zOrder="5" locked="false" isInGroup="10">
+          <controlProperties>
+            <text>Test</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::TextInput" x="129" y="72" w="251" h="-1" measuredW="79" measuredH="26" zOrder="6" locked="false" isInGroup="10">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="129" y="105" w="251" h="-1" measuredW="79" measuredH="26" zOrder="7" locked="false" isInGroup="10">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::Button" x="371" y="144" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="8" locked="false" isInGroup="10">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::Button" x="324" y="144" w="-1" h="-1" measuredW="40" measuredH="27" zOrder="9" locked="false" isInGroup="10">
+          <controlProperties>
+            <text>Ok</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

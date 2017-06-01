@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Story: Task configurations may be executed (on the server, results fetched later)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3.iteration_74875930.html">3.iteration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Story: Task configurations may be executed (on the server, results fetched later)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Okt 12, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Story:Taskconfigurationsmaybeexecuted(ontheserver,resultsfetchedlater)-GithubIssues:https://github.com/odalic/odalic-ui/issues/106">Github Issues: <a href="https://github.com/odalic/odalic-ui/issues/106" class="external-link" rel="nofollow">https://github.com/odalic/odalic-ui/issues/106</a></h2><h2 id="Story:Taskconfigurationsmaybeexecuted(ontheserver,resultsfetchedlater)-Req:">Req: </h2><h2 id="Story:Taskconfigurationsmaybeexecuted(ontheserver,resultsfetchedlater)-UserStory">User Story</h2><p><span>As a user I would like to be able to execute task configuration. </span></p><p>This is available from the table of tasks  - <strong>where it is executed on the background</strong> and also from the task detail (where I can save and run the task, as also available in Iteration 2 - <strong>so I directly wait for the result</strong>), see: <a href="74875417.html">Story: Task configuration - User may edit task configuration</a></p><p> </p><h2 id="Story:Taskconfigurationsmaybeexecuted(ontheserver,resultsfetchedlater)-Preconditions">Preconditions</h2><h2 id="Story:Taskconfigurationsmaybeexecuted(ontheserver,resultsfetchedlater)-DetailedDescription"><span style="color: rgb(0,0,0);">Detailed Description</span></h2><ol><li><span style="color: rgb(0,0,0);">User may see execute the task. As a result, when done, user may examine result of the task - see: <a href="75564435.html">Story: Task configurations - last results may be explored</a></span><br/><br/></li></ol><p><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_tasks-list"><img class="balsamiq_mockup" src="attachments/75564455/75564448.png"/></a><br/></div></p><h2 id="Story:Taskconfigurationsmaybeexecuted(ontheserver,resultsfetchedlater)-AcceptanceCriteria&amp;TestScenarios">Acceptance Criteria &amp; Test Scenarios</h2><ul><li>The processing continues even when the user ends the session, closes the browser.</li><li>User is not able to create multiple running or idle instances of one task configuration.</li><li>System reasonably limits the number of concurrently running instances. <strong>For the 3rd iteration only one running instance at a time (across the whole application) is acceptable.</strong></li><li><span class="inline-comment-marker" data-ref="d994d521-1c48-4d18-ba01-84046ca70f54">Run action button changes to abort action immediately after it is clicked and behaves as such.</span></li><li>The available states are as specified in the REST API specification (<a href="75565239.html">REST API: 3rd iteration proposal</a>).</li><li>Immediately after clicking the run button, the the status changes either into scheduled or currently running.</li><li><span class="inline-comment-marker" data-ref="a7f0dc86-bad4-4c1c-a4b1-14941eb9c1ac">The states are periodically updated for the topmost task(s) in the execution order.</span></li></ul><h2 id="Story:Taskconfigurationsmaybeexecuted(ontheserver,resultsfetchedlater)-Variations">Variations</h2><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564455/75564449.bmml">mockup_story-task-creation-save-1.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564455/75564450.png">mockup_story-task-creation-save-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564455/75564459.bmml">mockup_tasks-list.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564455/75564460.png">mockup_tasks-list.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564455/75564447.bmml">mockup_tasks-list.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/75564455/75564448.png">mockup_tasks-list.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

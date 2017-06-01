@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Classification/Disambiguation/Relation Discovery - Multiple classes/entities</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic-Core_74187556.html">Odalic Core</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Classification/Disambiguation/Relation Discovery - Multiple classes/entities
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Mär 23, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p> </p><p>Odalic may be run against multiple knowledge bases. As a result, there may be more than one entity correctly disambiguating the given cell value and user may need to classify the column with more than one class. Also relation may be annotated with different URIs - winning relations in each knowledge base. </p><p>Odalic Core produces for each knowledge base it is executed against a different set of scores, which are in general not comparable. So when recommending the classes/entities/relations to the user , it should always recommend classes/entities/relations which have highest score in each knowledge base. So if there are two different winning disambiguating entities in knowledge bases A and B, both should appear in the annotations. It should by default <span class="inline-comment-marker" data-ref="291c6145-ec3c-4d75-b04d-6ac62bd63e41">recommend only the first object with the highest score from each knowledge base</span>. </p><p>There is a concept of primary knowledge base. When Odalic is being executed against more than one knowledge bases, user must decide which knowledge base is the primary one. Such knowledge base is used during export. User may further specify what should happen in case there is class/entity/relation in non-primary knowledge base, but it is missing in the primary knowledge base - either class/entity/relation from non-primary knowledge base is taken (its URI), or, new class/entity/relation must be created (generated or manually created) in the primary knowledge base and linked to non-primary resources. <span style="color: rgb(255,0,0);">Currently (for iteration 2), if the class/entity/relation is missing in primary knowledge base, but is available in other knowledge bases, the resource from non-primary knowledge base should be used during export. </span></p><p>By default, only <strong>one</strong> winning annotation for class, entity, relation is taken from <strong>one</strong> knowledge base (as a result of the algorithm). Nevertheless, user may add more classes as annotations of the same column from the same knowledge base. In that moment, all such annotations are considered in UI and export. <span class="inline-comment-marker" data-ref="986dccf7-2973-4c8b-8d12-f062dc6bce6c">User is not allowed to select two different entities disambiguating the same object from the same knowledge base (as this typically does not make much sense). Similarly, in case of relations, user cannot select two different predicates(relations) from the same knowledge base annotating the same relatio</span>n. </p><h3 id="Classification/Disambiguation/RelationDiscovery-Multipleclasses/entities-Howaretheresultsofmultipleclassification/disambiguationdepictedinUI?"><span class="inline-comment-marker" data-ref="40167f20-247d-4c3a-beeb-b2bdc9c3afe2">How are the results of multiple classification/disambiguation depicted in UI?</span> </h3><p>Classificaiton/Disambiguation: UI always shows top concepts (concept with highest score) from each considered knowledge base. If primary knowledge base is set, UI always shows top concept (concept with highest score) from that primary knowledge base differently - as first suggestion and bolded or otherwise emphasized. </p><p>Regarding relation discovery, there may be multiple relations, each being annotated with relations coming from different knowledge bases. Again, all winning annotations (at maximum one from each knowledge base) for the given relation are depicted, with the one coming from primary knowledge base being emphasized. <span style="color: rgb(255,0,0);">TODO: There may be more valid relations coming from one KB</span> </p><h3 id="Classification/Disambiguation/RelationDiscovery-Multipleclasses/entities-Howaretheresultsofclassification/disambiguationexportedtoRDF?">How are the results of classification/disambiguation exported to RDF?</h3><p>When there are more classes attached to the given column, when exporting data to RDF, more rdf:type triples are produced, e.g.: </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&lt;http://adequate.at/concept/city/Aibl&gt; rdf:type &lt;http://adequate.at/concept/city&gt;, &lt;http://dbpedia.org/resource/City&gt; .</pre>
+</div></div><p> </p><p>When there are more entities disambiguating the given cell value (e.g. http://adequate.at/concept/city/Aibl and <span><a href="http://dbpedia.org/resource/Aibl" class="external-link" rel="nofollow">http://dbpedia.org/resource/Aibl</a> for the city of Aibl), </span>then one disambiguating entity (the one from the primary knowledge base) is used as the primary one about which other statements are expressed. The other disambiguated entities are linked via owl:sameAs links, e.g.: </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&lt;http://adequate.at/concept/city/Aibl&gt; rdf:type &lt;http://adequate.at/concept/city&gt;, &lt;http://dbpedia.org/resource/Aibl&gt; ;
+									   dcterms:title &quot;Aibl&quot;;
+									   geo:location .... .
+ &lt;http://adequate.at/concept/city/Aibl&gt; owl:sameAs &lt;http://dbpedia.org/resource/Aibl&gt; .</pre>
+</div></div><p> </p><p>When there are more relations, one is used and the other are connected via owl:sameAs (see the disambiguation above). <span style="color: rgb(255,0,0);">TODO: There may be more valid relations coming from one KB</span> </p><p> </p><h4 id="Classification/Disambiguation/RelationDiscovery-Multipleclasses/entities-Classificationismissing,buttherearedisambiguations:">Classification is missing,but there are disambiguations: </h4><p>Ad druhy dotaz, pokud chybi klasifikace, tak proste chybi. Nicmene melo by to zpracovat jednotlive radky s tim, ze bude chybet trojice &quot;rdf:type&quot;</p><h4 id="Classification/Disambiguation/RelationDiscovery-Multipleclasses/entities-Onevs.Moreclassificationspercolumn">One vs. More classifications per column</h4><p>Note: <span style="color: rgb(0,0,0);">We keep only one classification per column per base</span></p><h3 id="Classification/Disambiguation/RelationDiscovery-Multipleclasses/entities-PrimaryKnowledgeBase-thereisnoevidenceforclass/disamb.inprimaryKB:">Primary Knowledge Base - there is no evidence for class/disamb. in primary KB: </h3><p>Variant 1: If there is no evidence for class/disamb in primary KB, some URL is used from other KB instead. <span style="color: rgb(255,0,0);">The current behavior for iteration 2</span></p><p>Variant 2: If there is no evidence for class/disamb in primary KB, user is warned and should be able to propose new URL. We will implement that in Iteration 3.</p><p> </p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Scenario 6c Task configuration - Cells</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Scenario 6c Task configuration - Cells
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified on Mai 22, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Scenario6cTaskconfiguration-Cells-InitialState"><span style="color: rgb(0,0,0);">Initial State</span></h1><p><span style="color: rgb(0,0,0);">The logged-in user is either creating a task (from scratch or based on some pre-existing) or reviewing configuration of some scheduled task.<br/></span></p><h1 id="Scenario6cTaskconfiguration-Cells-Description"><span>Description</span></h1><ol><li style="list-style-type: decimal;">When the user selects Cells tab, appropriate group appears (<a href="#Scenario6cTaskconfiguration-Cells-mockup1">Mockup 1</a>).</li><li style="list-style-type: decimal;"><p><span>User can add another item to customize a cell disambiguation or prevent any attempts to do so (item identified by both the column order (or name) and a literal).</span><span><br/></span></p></li><li style="list-style-type: decimal;"><span>User can provide the custom concept using the same means as in <a href="Scenario-4c-Customizing-disambiguation---selecting-an-extra-concept-for-disambiguation_72224384.html">Scenario 4c</a>.</span></li><li style="list-style-type: decimal;"><span>When user unchecks the box in Disambiguate column, the concept is deleted and the hints stand for &quot;do not attempt to disambiguate&quot;.<br/></span></li></ol><h1 id="Scenario6cTaskconfiguration-Cells-Alternatives"><span style="color: rgb(0,0,0);">Alternatives</span></h1><ul><li><span style="color: rgb(0,0,0);">User can delete the <span style="color: rgb(0,0,0);">disambiguation hint</span> by clicking on &quot;delete&quot; in the last column.</span><span style="color: rgb(0,0,0);"> </span></li><li><span style="color: rgb(0,0,0);">When the dialog is displayed during task creation, only Apply button is available.</span><span style="color: rgb(0,0,0);"> </span><span style="color: rgb(0,0,0);"> </span></li><li><span style="color: rgb(0,0,0);">When the dialog is displayed for already running task, only Apply in new task button is available.</span><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);"> </span></span></li><li><span style="color: rgb(0,0,0);"><span style="color: rgb(0,0,0);">If applied to already running task (which entered this state after dialog appearance), the dialog behaves as if Apply in new task button was clicked (notifying the user about it in the process).</span></span></li></ul><h1 id="Scenario6cTaskconfiguration-Cells-Whatcangowrong"><span>What can go wrong</span></h1><ul><li><span style="color: rgb(0,0,0);">The concept visualization relying on remote access can suffer from loss of connection or service outage.<br/></span></li></ul><h1 id="Scenario6cTaskconfiguration-Cells-Systemstateoncompletion"><span>System state on completion</span></h1><ul><li><span style="color: rgb(0,0,0);">Cell disambiguation hints are set for the currently processed configuration.</span><span style="color: rgb(0,0,0);"><br/></span></li></ul><h1 id="Scenario6cTaskconfiguration-Cells-Implementationnotes">Implementation notes</h1><ul><li>When the input file (or its schema) is loaded, the application uses its values to provide hints for user input.</li></ul><h1 id="Scenario6cTaskconfiguration-Cells-RequirementsMotivatingtheScenario">Requirements Motivating the Scenario</h1><ul><li><span class="confluence-link"> <a href="List-of-Requirements_71440542.html#ListofRequirements-18">18</a><br/></span></li></ul><h1 id="Scenario6cTaskconfiguration-Cells-Mockups"><span style="color: rgb(0,0,0);">Mockups</span></h1><p><span class="confluence-anchor-link" id="Scenario6cTaskconfiguration-Cells-mockup1"></span><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_Mockup 6.5 - Disambiguation"><img class="balsamiq_mockup" src="attachments/72226506/72226487.png"/></a><br/></div></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226458.bmml">mockup_Mokcup 6.4 - Classficaction option - read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226459.png">mockup_Mokcup 6.4 - Classficaction option - read-only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226460.bmml">mockup_Mockup 6.3 - Classification options.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226461.png">mockup_Mockup 6.3 - Classification options.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226462.bmml">mockup_Mokcup 6.2 - Knowledge base selection read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226463.png">mockup_Mokcup 6.2 - Knowledge base selection read-only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226464.bmml">mockup_Mockup 6.1 - Knowledge Base selection.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226465.png">mockup_Mockup 6.1 - Knowledge Base selection.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226466.png">mockup_Mockup 1 - Task configuration overview.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226467.bmml">mockup_Mockup 1 - Task configuration overview.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226468.bmml">mockup_test-balsamic.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226469.png">mockup_test-balsamic.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226470">Mockup 0.1 Login screen</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226471.png">Mockup 0.1 Login screen.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226472">Mockup 0.2 Application frame</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226473.png">Mockup 0.2 Application frame.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226474">Mockup 1.3 Selecting encoding and other options</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226475.png">Mockup 1.3 Selecting encoding and other options.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226476">Mockup 1.4 Configuration and constraints</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226477.png">Mockup 1.4 Configuration and constraints.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226478">Mockup 1.2 File cached</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226479.png">Mockup 1.2 File cached.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226480">Mockup 1.1 Specifying input files Copy</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226481.png">Mockup 1.1 Specifying input files Copy.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226482">Mock 1.1 Specifying input files</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226483.png">Mock 1.1 Specifying input files.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226484.bmml">mockup_specifying input files.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226485.png">mockup_specifying input files.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226599.bmml">mockup_Mockup 6.5 - Disambiguation.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226600.png">mockup_Mockup 6.5 - Disambiguation.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226601.bmml">mockup_Mockup 6.6 - Disambiguation - read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226602.png">mockup_Mockup 6.6 - Disambiguation - read-only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226843.bmml">mockup_Mockup 6.5 - Disambiguation.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226844.png">mockup_Mockup 6.5 - Disambiguation.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226603.bmml">mockup_Mockup 6.6 - Disambiguation - read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226604.png">mockup_Mockup 6.6 - Disambiguation - read-only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226489.bmml">mockup_Mockup 6.6 - Disambiguation - read-only.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226490.png">mockup_Mockup 6.6 - Disambiguation - read-only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226486.bmml">mockup_Mockup 6.5 - Disambiguation.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72226506/72226487.png">mockup_Mockup 6.5 - Disambiguation.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments:</h2>
+                        </div>
+
+                        <table border="0" width="100%">
+                                                        <tr>
+                                <td >
+                                    <a name="comment-73073608"></a>
+                                    <font class="smallfont"><p>To support 'do not disambiguate this' tableminer+ needs to be changed. Currently it just attempts on all cells.</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by zhangz at Mai 31, 2016 18:10
+                                    </div>
+                                </td>
+                            </tr>
+                                                        <tr>
+                                <td  style="border-top: 1px dashed #666666">
+                                    <a name="comment-73073610"></a>
+                                    <font class="smallfont"><p>Thanks!</p></font>
+                                    <div align="left" class="smallfont" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                                        <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                                        Posted by brodecv at Jun 01, 2016 0:26
+                                    </div>
+                                </td>
+                            </tr>
+                                                    </table>
+                    </div>
+                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

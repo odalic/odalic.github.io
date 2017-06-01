@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Story: User ignores a column in a base</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="3.iteration_74875930.html">3.iteration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Story: User ignores a column in a base
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified by <span class='editor'> Tomas Knap</span> on Sep 30, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Story:Userignoresacolumninabase-GithubIssues:https://github.com/odalic/sti/issues/145,https://github.com/odalic/sti/issues/144">Github Issues: <a href="https://github.com/odalic/sti/issues/145" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/145</a> , <a href="https://github.com/odalic/sti/issues/144" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/144</a></h2><h2 id="Story:Userignoresacolumninabase-Req:73,15">Req: 73, 15</h2><h2 id="Story:Userignoresacolumninabase-UserStory">User Story</h2><p><span>As a user I want the algorithm to completely ignore some column as if it never existed when processed by a base. </span></p><p><span>The choice is remembered for the re-runs, so unless I revert the choice back, the column will be ignored.</span></p><p><span>It is not possible to ignore the chosen subject column for primary base and an ignored column for a primary base cannot be selected as the subject column.</span></p><p><span>No processing is done on the ignored column by the algorithm.</span></p><p><span>All controls for the column in the UI are disabled (but their content and other states are kept until the next run) and associated feedback is ignored as long as the column itself is ignored.</span></p><p><span>Such column is not available in the export. </span></p><p><span style="color: rgb(255,0,0);">TODO: What will happen if the user see result of Odalic Core, mark the column C as ignored. Re-runs the algorithm and marks C as NOT being ignored. One option: if there was some annotation before, it is used. (but that would mean to store it somewhere). Or a bit easier - simply require reexecution of the algorithm in that case. </span></p><h2 id="Story:Userignoresacolumninabase-1classification-ignore-column"><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_classification-ignore-column"><img class="balsamiq_mockup" src="attachments/74192594/75564383.png"/></a><br/></div></h2><h2 id="Story:Userignoresacolumninabase-Preconditions">Preconditions</h2><ul><li>The data or the application identified the available columns or at least their number in the input.</li></ul><h2 id="Story:Userignoresacolumninabase-DetailedDescription"><span style="color: rgb(0,0,0);">Detailed Description</span></h2><ol><li>User indicates that a column is to be ignored.</li><li>Associated controls are disabled (but their states and content kept until re-run).</li><li>Associated relations are shown to be removed when the relations designing screen is displayed.</li><li>All ignored columns are made unavailable for the subject column selection.</li><li>The choice is saved for the re-runs.</li><li>The associated check-box is filled according to the choice.</li></ol><h2 id="Story:Userignoresacolumninabase-AcceptanceCriteria&amp;TestScenarios">Acceptance Criteria &amp; Test Scenarios</h2><ol><li>The choice to ignore the column is applied in the subsequent export, so such column is not available in the export</li><li>It is tested that subject column cannot be marked as ignored</li><li>It is tested that in Step 1, ignored column (marked after the previous run of the algorithm) cannot be marked as subject column </li><li>Note the differences between this functionality an the option to leave a column from export, which takes the column into account during the whole run of the algorithm, but leaves it out in the output and all relations it takes part in.</li><li>It behaves correctly in case of the sequense - mark column C as ignored, re-run, mark as NOT ignored. </li></ol>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74192594/75564382.bmml">mockup_classification-ignore-column.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74192594/75564383.png">mockup_classification-ignore-column.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Story: User updates existing local or remote file meta-data in the persistent storage</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Backlog_75563358.html">Backlog</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Story: User updates existing local or remote file meta-data in the persistent storage
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified by <span class='editor'> Tomas Knap</span> on Sep 22, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Story:Userupdatesexistinglocalorremotefilemeta-datainthepersistentstorage-GithubIssues:">Github Issues:</h2><h2 id="Story:Userupdatesexistinglocalorremotefilemeta-datainthepersistentstorage-UserStory">User Story</h2><p><span>As a user I am able to select one of the existing available files (both local and remote) and let the application display (or provide by the API) the associated meta-data.</span></p><p><span>I am able to alter the meta-data.</span></p><p><span>TODO: Decide whether to allow in the process link existing local file definition to a remote file and then somehow (if the number of references gets to zero) removing the local content.<br/></span></p><p><span>TODO: Discuss if we should prevent the opposite act: changing remote file definition to link to a local file by providing local URI. This might prevent some simpler infinite redirections, but on the other hand these might be limited by an API limiter, which could prevent even complex redirections.<br/></span></p><p><span>After I confirm the changes the application updates the file meta-data.<br/></span></p><p><span>All tasks referring to the file use the updated version of meta-data until they are modified again or deleted.</span></p><p><span>TODO: Decide on the file storage.</span></p><p><span><span>TODO: Decide on the meta-data storage.</span></span></p><h2 id="Story:Userupdatesexistinglocalorremotefilemeta-datainthepersistentstorage-Preconditions">Preconditions</h2><ul><li>At least one existing file definition is available to the user.</li></ul><h2 id="Story:Userupdatesexistinglocalorremotefilemeta-datainthepersistentstorage-DetailedDescription"><span style="color: rgb(0,0,0);">Detailed Description</span></h2><ol><li>User lists the existing files and selects one of them.</li><li>User changes the meta-data and then confirms the change (by hitting the update button) or, if using the API, uploads a new complete version of meta-data in one step.</li><li>The old version of meta-data is immediately replaced by the updated one in the permanent storage. The change is not confirmed until it is done so.</li><li>User is informed about the successful update.</li><li>When the user selects the file (by its identifier) later, the new meta-data are displayed (or provided in the API call result).</li><li>All subsequent usage of the file in referring tasks employs the new meta-data.</li></ol><h2 id="Story:Userupdatesexistinglocalorremotefilemeta-datainthepersistentstorage-AcceptanceCriteria&amp;TestScenarios">Acceptance Criteria &amp; Test Scenarios</h2><ol><li>Updated meta-data remain available to the user in the same form even after server restarts and/or session renewal (if implemented).</li><li>Restored meta-data are identical to the one updated.</li><li>Only valid meta-data are updated.</li></ol><h2 id="Story:Userupdatesexistinglocalorremotefilemeta-datainthepersistentstorage-Variations">Variations</h2><ul><li>TODO: Add further steps based on the discussion of above TODOs.</li></ul>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

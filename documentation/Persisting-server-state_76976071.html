@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Persisting server state</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Persisting server state
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified on Mär 03, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Persistingserverstate-Motivation">Motivation</h1><p>Extraction of the Linked Open Data is an expensive process. The knowledge bases are usually accessed remotely, and even if they are mirrored locally or most of the requests hit the cache, the processing can take from several seconds up to several hours. Therefore it is crucial that once computed results are not involuntarily lost, and there is no need to run it again. Apart from that the requirements on the permanent storage by the Odalic Semantic Table Interpretation are relatively modest. There is only a handful of classes which instances has to be serialized:</p><ul><li>Users attempting registration.<ul><li>Otherwise the sign up requests would get lost and confirmation links sent in e-mails would not work.</li></ul></li><li>Registered users.<ul><li>This requirement is natural.</li></ul></li><li>Logged in users.<ul><li>This could be eventually omitted, but since the tokens distributed by the application might be relatively long-lived (as is the case of the UnifiedViews plugin), it is better to keep it safe.</li></ul></li><li>Files data and meta-data.<ul><li>Even in the case of remote files, there is strong need to keep the format used by the parser intact.</li></ul></li><li>Files utilization by the tasks.<ul><li>Files can be shared between several task, if we loose this information, a file might accidentally get deleted, despite being a dependency of some configured task.</li></ul></li><li>Task configurations.<ul><li>This requirement could be theoretically partially solved by exporting the definitions and re-importing them in time of need. But this is impractical in large numbers. Also the configurations do not keep references to the owning users (to allow easy exchange and archiving) and the files are linked only by their ID.</li></ul></li><li>Results.<ul><li>As mentioned in the introducing statement, all the tasks could be potentially re-run, but there are good reasons not to.</li></ul></li></ul><h1 id="Persistingserverstate-MapDB">MapDB</h1><p>Embedded database <a href="http://www.mapdb.org/" class="external-link" rel="nofollow">MapDB</a> was selected as the solution for keeping the state from several reasons:</p><ul><li>There is no need to somehow convert or map the stored objects. They only need to be serializable and immutable, which is a good idea anyway.</li><li>Its interfaces are common Java collections and maps, therefore its usage is almost seamless in simple cases.<ul><li>This came handy because all of the aforementioned services were written as memory-only first (and still can be set as, through the Spring configuration), where the objects were kept in the Java collections and maps.</li></ul></li><li>It comes with <a href="https://jankotek.gitbooks.io/mapdb/content/performance/" class="external-link" rel="nofollow">write-ahead-log and transactions</a>.</li><li>It is performing <a href="https://jankotek.gitbooks.io/mapdb/content/performance/" class="external-link" rel="nofollow">well enough</a>.</li><li>It has a decent <a href="https://jankotek.gitbooks.io/mapdb/content/btreemap/" class="external-link" rel="nofollow">support for nested maps</a>, called prefix tables, similar to <a href="https://github.com/google/guava/wiki/NewCollectionTypesExplained#table" class="external-link" rel="nofollow">Guava Tables</a>.<ul><li>This served well when the time to extend the existing code to provide separate user spaces came. It practically meant only to introduce a top-level map from user IDs to the previously used maps.</li></ul></li></ul><p>Despite being in version 3, it still has some minor flaws, which were not an obstacle to its deployment in Odalic:</p><ul><li>The transactions are limited only to collection instances spawned from the same DB object. This makes them hard to execute across method boundaries without sharing the DB project. This is a major design nuisance, which one does not usually encounter when relying on mainstream Java Transaction API.</li><li>Also all commits and roll-backs has to be explicit.</li><li>In comparison to previous version, the 3rd one is forcing its users to cast map keys to Objects in order to use the prefix tables. This makes the code inherently less safe (and indeed we encountered a bug that was hidden behind this, when testing the Odalic server).</li></ul><h2 id="Persistingserverstate-Usagewithintheproject">Usage within the project</h2><p>All stored objects are kept in collections and maps initialized from a single MapDB object, which is obtainable by calling a method <code>getDb()</code> at <code>cz.cuni.mff.xrg.odalic.util.storage.FileDbService</code>, which implements interface <code>cz.cuni.mff.xrg.odalic.util.storage.DbService</code>. User can specify the location of the used writeable file at key<code> cz.cuni.mff.xrg.odalic.db.file</code> in the <code>config/sti.properties</code>.</p><p>For example initialization of a map from user IDs to the user instances looks like this:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">this.db = dbService.getDb(); // Kept for further use, mainly commiting of transactions.
+this.userIdsToUsers = this.db.hashMap(&quot;userIdsToUsers&quot;, Serializer.STRING, Serializer.JAVA).createOrOpen(); // Uses a more performant MapDB serializer for the keys.</pre>
+</div></div><p>Typical write to the DB can be found in a method <code>cz.cuni.mff.xrg.odalic.users.DbUserService.confirmPasswordChange(Token)</code>, which demonstrates how the transactions work:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">@Override
+public void confirmPasswordChange(final Token token) {
+  final DecodedToken decodedToken = validateAndDecode(token);
+
+  final User newUser = matchPasswordChangingUser(decodedToken);
+
+  final User replaced;
+  try {
+    replaced = replace(newUser);
+  } catch (final Exception e) {
+    this.db.rollback(); // Rollback in case the user version replacement fails.
+    throw e;
+  }
+
+  invalidateTokens(replaced);
+
+  this.db.commit(); // Commit in case of success.
+}
+
+private User replace(final User user) {
+  final User replaced = this.userIdsToUsers.replace(user.getEmail(), user);
+  Preconditions.checkState(replaced != null, &quot;Nonexisting user!&quot;);
+  
+  return replaced;
+}</pre>
+</div></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,25 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1213" measuredH="609" mockupW="1037" mockupH="569">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="176" y="40" w="912" h="569" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Image" x="191" y="75" w="-1" h="-1" measuredW="560" measuredH="472" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>https%3A//grips.semantic-web.at/download/attachments/75563494/Screen%20Shot%202016-09-23%20at%2008.47.48.png%3Fversion%3D1%26modificationDate%3D1474614263000%26api%3Dv2</src>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::ComboBox" x="718" y="113" w="186" h="-1" measuredW="59" measuredH="62" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Book%0AAuthor%0ASeries</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="718" y="92" w="-1" h="-1" measuredW="94" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Subject%20column%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::StickyNote" x="919" y="42" w="294" h="204" measuredW="109" measuredH="123" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>When%20running%20first%20time%2C%20it%20shows%20primary%20KB%20subject%20column.%20%28so%20the%20subject%20column%20of%20other%20knowledge%20bases%20may%20be%20different%2C%20although%20it%20is%20not%20probably%2C%20because%20now%20it%20examines%20only%20the%20properties%20of%20the%20file%29.%20%20If%20manually%20selected%20to%20certain%20column%2C%20this%20is%20retained%20when%20the%20algorithm%20is%20re-executed%20for%20all%20KBs.</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

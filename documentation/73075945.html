@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Annotated Table (Result of running Odalic Core)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Annotated Table (Result of running Odalic Core)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Aug 12, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Suppose the original file as described <a href="https://grips.semantic-web.at/display/ADEQ/Inputs">here, input A</a>.  Suppose that result of running Odalic Core is depicted below: </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">	District;			City;		POP_FOR_NAT;	POP_TOTAL;		
+	Graz-Stadt;			Graz;		46952;			269997;			
+	Deutschlandsberg;	Aibl;		39;				1386;			</pre>
+</div></div><p> </p><p>Further, we present two variants for expressing results of running Odalic Core using <a href="https://www.w3.org/2013/csvw/wiki/Main_Page" class="external-link" rel="nofollow">CSV on the Web</a>.</p><h2 id="AnnotatedTable(ResultofrunningOdalicCore)-Metadata-Approach1-Usinganextracolumnforthedisambiguatedentities">Metadata - Approach 1 -  Using an extra column for the disambiguated entities</h2><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">	District;			City;		POP_FOR_NAT;	POP_TOTAL;	City_url; District_url;	
+	Graz-Stadt;			Graz;		46952;			269997;			
+	Deutschlandsberg;	Aibl;		39;				1386;			</pre>
+</div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+&quot;@context&quot;: &quot;http://www.w3.org/ns/csvw&quot;,
+&quot;url&quot;: &quot;file.csv&quot;,
+ 
+&quot;tableSchema&quot;: { &quot;columns&quot;: [
+{ &quot;name&quot;: &quot;City&quot;, &quot;titles&quot;: [ &quot;City&quot;, &quot;LAU_NAME, &quot;Town&quot; ], &quot;dc:description&quot;: &quot;City of Austria&quot;, &quot;datatype&quot;: &quot;string&quot; 
+  &quot;aboutUrl&quot;: &quot;{City_url}&quot;,
+  &quot;propertyUrl&quot;: &quot;dcterms:title&quot;},
+{ &quot;name&quot;: &quot;District&quot;, &quot;titles&quot;: [ &quot;City&quot;, &quot;DISTRICT_NAME&quot; ], &quot;dc:description&quot;: &quot;District of Austria&quot;, &quot;datatype&quot;: &quot;string&quot;
+  &quot;aboutUrl&quot;: &quot;{District_url}&quot;,
+  &quot;propertyUrl&quot;: &quot;dcterms:title&quot;},
+{ &quot;name&quot;: &quot;POP_FOR_NAT&quot;, &quot;titles&quot;: [ &quot;Population of foreigners&quot; ], &quot;dc:description&quot;: &quot;Population of foreigners in the given area&quot;, &quot;datatype&quot;: &quot;string&quot;
+  &quot;aboutUrl&quot;: &quot;{City_url}&quot;,
+  &quot;propertyUrl&quot;: &quot;x:hasPopulationNat&quot;},
+{ &quot;name&quot;: &quot;POP_TOTAL&quot;, &quot;titles&quot;: [ &quot;Population Total&quot; ], &quot;dc:description&quot;: &quot;Total Population in the given area&quot;, &quot;datatype&quot;: &quot;string&quot;
+  &quot;aboutUrl&quot;: &quot;{City_url}&quot;,
+  &quot;propertyUrl&quot;: &quot;x:hasPopulationTotal&quot;},
+
+{ &quot;name&quot;: &quot;City_type&quot;,
+      &quot;virtual&quot;: true,
+	  &quot;aboutUrl&quot;: &quot;{City_url}&quot;, //relies on value within the column City - does it take valueUrl automatically (if available)?
+      &quot;propertyUrl&quot;: &quot;rdf:type&quot;,
+      &quot;valueUrl&quot;: &quot;http://adequate.at/concept/city&quot;},
+ 
+{ &quot;name&quot;: &quot;City_url&quot;,   //do not produce to the output JSON, this is used only to hold identifier for the row/part of the row
+	  &quot;suppressOutput&quot; : &quot;true&quot;,
+	  &quot;datatype&quot;: &quot;anyURI&quot;  
+      &quot;valueUrl&quot;: &quot;{City_url}&quot;
+ 
+{ &quot;name&quot;: &quot;City_alternative_urls&quot;,  //in the form &quot;http://example.org/1 http://example.org/2&quot;
+	  &quot;aboutUrl&quot;: &quot;{City_url}&quot;, //relies on value within the column City - does it take valueUrl automatically (if available)?
+      &quot;separator&quot;: &quot; &quot;,
+      &quot;propertyUrl&quot;: &quot;owl:sameAs&quot;,
+      &quot;valueUrl&quot;: &quot;{City_alternative_urls}&quot;},
+    
+ 
+{ &quot;name&quot;: &quot;District_type&quot;,
+      &quot;virtual&quot;: true,
+	  &quot;aboutUrl&quot;: &quot;{District_url}&quot;,
+      &quot;propertyUrl&quot;: &quot;rdf:type&quot;,
+      &quot;valueUrl&quot;: &quot;http://adequate.at/concept/district&quot;},},
+ 
+{ &quot;name&quot;: &quot;District_url&quot;,
+	   &quot;suppressOutput&quot; : &quot;true&quot;,
+       &quot;datatype&quot;: &quot;anyURI&quot; 
+       &quot;valueUrl&quot;: &quot;{District_url}, },
+ 
+{ &quot;name&quot;: &quot;City_District_liesIn&quot;,
+	  &quot;virtual&quot;: true,
+      &quot;aboutUrl&quot;: &quot;{City_url}&quot;,
+      &quot;propertyUrl&quot;: &quot;ad:liesIn&quot;,
+      &quot;valueUrl&quot;: &quot;{District_url}&quot;}, },
+ 
+       
+     
+ 
+},  //end of table schema
+
+ 
+} //end
+
+    
+
+
+</pre>
+</div></div><p>Notes to the metadata:</p><ul><li>column city contains also alternative titles - formed by the alternative titles introduced in the PPT concept City and in the original document. </li><li>column type_city is virtual - does not appear in the CSV file <ul><li>user to hold type (class) of another column </li><li>virtual column, propertyUrl, valueUrl - see e.g. Example 63, <a href="https://www.w3.org/TR/2016/NOTE-tabular-data-primer-20160225/" class="external-link" rel="nofollow">https://www.w3.org/TR/2016/NOTE-tabular-data-primer-20160225/</a></li></ul></li><li>relations:<br/><ul><li>defined also as virtual columns (e.g. liesIn)</li><li>See Example 10-12, <a href="https://www.w3.org/TR/2015/REC-csv2rdf-20151217/" class="external-link" rel="nofollow">https://www.w3.org/TR/2015/REC-csv2rdf-20151217/</a></li></ul></li><li><span style="color: rgb(0,0,0);">aboutUrl always defines a template for the URI for every row</span><ul><li><span style="color: rgb(0,0,0);">aboutUrl depends on the particular city/district disambiguated URLs, thus, &quot;valueUrl&quot; attribute of city/district column</span><ul><li><span style="color: rgb(0,0,0);">such valueUrl is available in extra column/columns</span></li></ul></li></ul></li><li><span style="color: rgb(0,51,102);">Columns C</span>ity_url, City_alternative_urls are added to the produced CSV file (when exported as CSV), but hidden in the Odalic UI<br/><ul><li><span style="color: rgb(0,51,102);">for the subject column, the <code>suppressOutput</code> will be set to true</span><ul><li>when e.g. RDF representation will be generated, there will be no triple for this column </li><li>triple &lt;<a href="http://adequate.at/concept/district/Deutschlandsberg" class="external-link" rel="nofollow">http://adequate.at/concept/district/Deutschlandsberg</a>&gt; x &lt;<a href="http://adequate.at/concept/district/Deutschlandsberg" class="external-link" rel="nofollow">http://adequate.at/concept/district/Deutschlandsberg</a>&gt; does not make much sense</li></ul></li><li><p><span style="color: rgb(0,0,0);">When more values (more disambiguations e.g.) are withing the cell (e.g. alternative disambiguations), we may use separator: </span></p><ul><li><p><span style="color: rgb(255,0,0);"><a href="https://www.w3.org/TR/2016/NOTE-tabular-data-primer-20160225/#sequence-values" class="external-link" rel="nofollow">https://www.w3.org/TR/2016/NOTE-tabular-data-primer-20160225/#sequence-values</a></span></p></li></ul></li></ul></li><li>If there is just one property between city and disctrict (e.g.), such property may be modelled directly on &quot;Disctrict_url&quot; column<ul><li>If there are more properties between city and district, they may be represented as virtual columns<br/><ul><li><pre>{ &quot;name&quot;: &quot;liesIn&quot;,
+      &quot;virtual&quot;: true,
+      &quot;aboutUrl&quot;: &quot;{City_url}&quot;,  
+      &quot;propertyUrl&quot;: &quot;ad:liesIn&quot;,
+      &quot;valueUrl&quot;: &quot;{District_url}&quot;},
+}],</pre></li></ul></li></ul><p> </p></li></ul><h2 id="AnnotatedTable(ResultofrunningOdalicCore)-Metadata-Approach2-UsingalsoAnnotationsontheWebStandard">Metadata - Approach 2 -  Using also <a href="http://w3c.github.io/web-annotation/model/wd2/" class="external-link" rel="nofollow">Annotations on the Web</a> Standard</h2><p> </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">{
+  &quot;@context&quot;: &quot;http://www.w3.org/ns/csvw&quot;,
+  &quot;url&quot;: &quot;doap.csv&quot;,
+ 
+&quot;tableSchema&quot;: { &quot;columns&quot;: [
+{ &quot;name&quot;: &quot;City&quot;, &quot;titles&quot;: [ &quot;City&quot;, &quot;LAU_NAME, &quot;Town&quot; ], &quot;dc:description&quot;: &quot;City of Austria&quot;, &quot;datatype&quot;: &quot;anyURI&quot; 
+  &quot;aboutUrl&quot;: &quot;{City}&quot;,
+  &quot;propertyUrl&quot;: &quot;schema:name&quot;},
+{ &quot;name&quot;: &quot;District&quot;, &quot;titles&quot;: [ &quot;City&quot;, &quot;DISTRICT_NAME&quot; ], &quot;dc:description&quot;: &quot;District of Austria&quot;, &quot;datatype&quot;: &quot;anyURI&quot;
+  &quot;aboutUrl&quot;: &quot;{District}&quot;,
+  &quot;propertyUrl&quot;: &quot;schema:name&quot;},
+{ &quot;name&quot;: &quot;POP_FOR_NAT&quot;, &quot;titles&quot;: [ &quot;Population of foreigners&quot; ], &quot;dc:description&quot;: &quot;Population of foreigners in the given area&quot;
+  &quot;aboutUrl&quot;: &quot;{City}&quot;,
+  &quot;propertyUrl&quot;: &quot;x:hasPopulationNat&quot;},
+{ &quot;name&quot;: &quot;POP_TOTAL&quot;, &quot;titles&quot;: [ &quot;Population Total&quot; ], &quot;dc:description&quot;: &quot;Total Population in the given area&quot;
+  &quot;aboutUrl&quot;: &quot;{City}&quot;,
+  &quot;propertyUrl&quot;: &quot;x:hasPopulationTotal&quot;},
+
+{ &quot;name&quot;: &quot;City_type&quot;,
+      &quot;virtual&quot;: true,
+	  &quot;aboutUrl&quot;: &quot;{City}&quot;, //relies on value within the column City - does it take valueUrl automatically (if available)?
+      &quot;propertyUrl&quot;: &quot;rdf:type&quot;,
+      &quot;valueUrl&quot;: &quot;http://adequate.at/concept/city&quot;},
+ 
+{ &quot;name&quot;: &quot;District_type&quot;,
+      &quot;virtual&quot;: true,
+	  &quot;aboutUrl&quot;: &quot;{District}&quot;,
+      &quot;propertyUrl&quot;: &quot;rdf:type&quot;,
+      &quot;valueUrl&quot;: &quot;http://adequate.at/concept/district&quot;},},
+ 
+{ &quot;name&quot;: &quot;liesIn&quot;,
+      &quot;virtual&quot;: true,
+      &quot;aboutUrl&quot;: &quot;{City}&quot;,  
+	  &quot;propertyUrl&quot;: &quot;ad:liesIn&quot;,
+      &quot;valueUrl&quot;: &quot;{District}&quot;},
+}], 
+},  //end of table schema
+ 
+&quot;notes&quot;: [
+   ...
+   {
+    &quot;type&quot;: &quot;Annotation&quot;,
+    &quot;target&quot;: &quot;countries.csv#cell=3,1&quot;,
+    &quot;body&quot;: { 
+      &quot;valueUrl&quot; : &quot;http://adequate.at/concept/district/Deutschlandsberg&quot;
+     },
+  },{
+    &quot;type&quot;: &quot;Annotation&quot;,
+    &quot;target&quot;: &quot;countries.csv#cell=3,2&quot;,
+    &quot;body&quot;: &quot;http://adequate.at/concept/city/Aibl&quot;,
+  }, {
+    &quot;type&quot;: &quot;Annotation&quot;,
+    &quot;target&quot;: &quot;countries.csv#cell=3,4&quot;,
+    &quot;body&quot;: &quot;Corrected.&quot;,
+  }, 
+  ...
+  }] //end of notes (cell annotations)
+ 
+ 
+} //end
+
+    
+
+</pre>
+</div></div><p> </p><p>Notes to the metadata (specific aspects of the second alternative):</p><ul><li><span style="color: rgb(0,0,0);">aboutUrl always defines a template for the URI for every row</span><ul><li><span style="color: rgb(0,0,0);">aboutUrl depends on the particular city/district disambiguated URL - valueUrl attribute of city/district column</span><span style="color: rgb(0,0,0);"><br/></span><ul><li><span style="color: rgb(0,0,0);">One has to define &quot;valueUrl&quot; for each city/district - this should be done by defining the notes <a href="http://w3c.github.io/web-annotation/model/wd2/" class="external-link" rel="nofollow">annotation</a> of a cell</span><ul><li><span style="color: rgb(0,0,0);">annotating cells (e.g. to attach disambiguated values to the cell values)</span><ul><li><span style="color: rgb(0,0,0);">the approach described here can be used: <a href="https://www.w3.org/TR/2016/NOTE-tabular-data-primer-20160225/#cell-annotations" class="external-link" rel="nofollow">https://www.w3.org/TR/2016/NOTE-tabular-data-primer-20160225/#cell-annotations</a></span></li><li>it uses annotation vocabulary as defined by: <a href="https://www.w3.org/annotation/" class="external-link" rel="nofollow">https://www.w3.org/annotation/</a>, so by a different standardization effort</li></ul></li></ul></li></ul></li></ul><p> </p></li></ul><h2 id="AnnotatedTable(ResultofrunningOdalicCore)-OutputtedRDFdata:">Outputted RDF data: </h2><p>When RDF is automatically generated - <a href="https://www.w3.org/TR/2015/REC-csv2rdf-20151217/#example-countries" class="external-link" rel="nofollow">https://www.w3.org/TR/2015/REC-csv2rdf-20151217/</a>, it produces the RDF data as follows (result outputted from Approach 1 annotation): </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"> 
+&lt;http://adequate.at/concept/city/aibl&gt; a &lt;http://adequate.at/concept/city&gt; ;
+ 	dcterms:title &quot;City&quot;, &quot;LAU_NAME, &quot;Town&quot; ;
+	dc:description &quot;City of Austria&quot; ;
+	x:hasPopulationNat &quot;39&quot;^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; ;
+    x:hasPopulationTotal &quot;1386&quot;^^&lt;http://www.w3.org/2001/XMLSchema#integer&gt; ;
+    ad:liesIn &lt;http://adequate.at/concept/district/deutschlandsberg&gt; .
+&lt;http://adequate.at/concept/district/deutschlandsberg&gt; a &lt;http://adequate.at/concept/district&gt;
+    ...
+    
+
+</pre>
+</div></div><p> </p><h2 id="AnnotatedTable(ResultofrunningOdalicCore)-Tools">Tools</h2><p><span style="color: rgb(0,0,0);">Tool for extracting annotations and producing RDF from that (as described in <a href="https://www.w3.org/TR/2015/REC-csv2rdf-20151217/#example-countries" style="text-decoration: underline;" class="external-link" rel="nofollow"><span style="color: rgb(0,0,0);">https://www.w3.org/TR/2015/REC-csv2rdf-20151217/</span></a>)</span></p><ul><li><span style="color: rgb(0,51,102);">From Jurgen: <a href="https://www.w3.org/community/csvw/2016/01/20/csv-metadata-generator-and-editor/" class="external-link" rel="nofollow"><span style="color: rgb(0,51,102);">https://www.w3.org/community/csvw/2016/01/20/csv-metadata-generator-and-editor/</span></a></span><ul><li>This is just an editor of CSV metadata</li></ul></li><li><span style="color: rgb(255,0,0);"><span style="color: rgb(0,0,0);"><a href="https://github.com/ruby-rdf/rdf-tabular" style="text-decoration: underline;" class="external-link" rel="nofollow"><span style="color: rgb(0,0,0);">https://github.com/ruby-rdf/rdf-tabular</span></a> (<a href="http://greggkellogg.net/2015/04/implementing-csv-on-the-web/" class="external-link" rel="nofollow"><span style="color: rgb(0,0,0);">http://greggkellogg.net/2015/04/implementing-csv-on-the-web/</span></a>)</span><br/></span><ul><li><span style="color: rgb(255,0,0);"><span style="color: rgb(0,0,0);">Discussion: <a href="https://www.w3.org/community/csvw/" class="external-link" rel="nofollow">https://www.w3.org/community/csvw/</a></span></span></li><li><span style="color: rgb(255,0,0);"><span style="color: rgb(0,0,0);">Other tools:</span> <a href="https://www.w3.org/2013/csvw/wiki/Tools" class="external-link" rel="nofollow">https://www.w3.org/2013/csvw/wiki/Tools</a></span></li></ul></li></ul><p><strong>Summary:</strong> There is just one implementation we may have use, but it is in ruby. We will create our own implementation which satisfies the CSV on the Web stardards but implements only what we need? </p><p>We need to be able to : </p><ul><li>create annotations<ul><li>create such annotations (in metadata file)</li></ul></li><li>interpret annotations<ul><li>be able to parse such annotations and show the CSV file (with annotations) in UI</li></ul></li><li>automatically produce RDF data from it</li></ul><h2 id="AnnotatedTable(ResultofrunningOdalicCore)-Questions/TODO:">Questions/TODO:</h2><ul><li><span style="color: rgb(255,0,0);">TODO How to generate value for the valueURL if the disambiguation is not available? </span></li><li><span style="color: rgb(255,0,0);">TODO How difficult it is to implement creation and later processing of such annotations? </span></li></ul><p>Glossary: </p><ul><li><span style="color: rgb(0,0,0);">valueUrl: </span><ul><li><span style="color: rgb(0,0,0);">A </span><a class="external-link" href="https://www.w3.org/TR/2015/REC-tabular-metadata-20151217/#dfn-uri-template-property" rel="nofollow">URI template property</a><span style="color: rgb(0,0,0);"> that is used to map the values of cells into URLs. The value of this property becomes the </span><a class="external-link" href="http://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#dfn-column-value-url" rel="nofollow">value URL</a><span style="color: rgb(0,0,0);"> annotation for the described </span><a class="external-link" href="http://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#dfn-column" rel="nofollow">column</a><span style="color: rgb(0,0,0);"> and is used to create the value of the </span><a class="external-link" href="http://www.w3.org/TR/2015/REC-tabular-data-model-20151217/#dfn-cell-value-url" rel="nofollow">value URL</a><span style="color: rgb(0,0,0);"> annotation for the cells within that column as described in </span><a class="external-link" href="https://www.w3.org/TR/2015/REC-tabular-metadata-20151217/#uri-template-properties" rel="nofollow">section <span class="secno" style="color: rgb(0,0,0);">5.1.3</span> <span class="sec-title">URI Template Properties</span></a><span style="color: rgb(0,0,0);">.</span></li></ul></li></ul><p><span style="color: rgb(0,0,0);"><br/></span></p><p><span style="color: rgb(0,0,0);">With the metadata attached (based on the CSV on the Web standard - <a href="https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/" class="external-link" rel="nofollow">https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/</a>, <a href="https://www.w3.org/TR/2015/REC-tabular-metadata-20151217/#column-examples" class="external-link" rel="nofollow">https://www.w3.org/TR/2015/REC-tabular-metadata-20151217/</a></span></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

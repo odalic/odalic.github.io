@@ -1,0 +1,69 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="2213" measuredH="1016" mockupW="2124" mockupH="962">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::DataGrid" x="89" y="54" w="1274" h="433" measuredW="794" measuredH="370" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>37</rowHeight>
+        <size>16</size>
+        <text>NUTS3%2C%20DistrictCode%2C%20DistrictName%2C%20LauCode%2C%20LauName%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%5Cn%20%2C%20PopTotal%2C%20refDate%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060301%2C%20Aibl%5Cn%5Cn%5Cn%5Cn%2C%201386%2C%2001.01.2014%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060303%2C%20Eibiswald%20%5Cn%5Cn%5Cn%5Cn%2C%201437%2C%2001.01.2014</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Canvas" x="719" y="82" w="258" h="30" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <color>11982760</color>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="732" y="87" w="-1" h="-1" measuredW="238" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>City%20%28http%3A//adequate.at/concept/city%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Canvas" x="719" y="114" w="258" h="29" measuredW="100" measuredH="70" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <color>16370588</color>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="732" y="117" w="-1" h="-1" measuredW="236" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>false</bold>
+        <text>Cities%20%28http%3A//dbpedia.org/ontology/city%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Canvas" x="721" y="253" w="248" h="30" measuredW="100" measuredH="70" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <color>11982760</color>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="732" y="257" w="-1" h="-1" measuredW="226" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>http%3A//adequate.at/concept/city/aibl</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Canvas" x="721" y="284" w="248" h="29" measuredW="100" measuredH="70" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <color>16370588</color>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Label" x="736" y="287" w="218" h="-1" measuredW="189" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>false</bold>
+        <text>http%3A//dbpedia.org/resource/aibl</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::StickyNote" x="1947" y="862" w="142" h="154" measuredW="109" measuredH="123" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>When%20mouse%20is%20over%20certain%20resource%2C%20preview%20is%20depicted%20in%20the%20floating%20window%20%28browser%20window%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::StickyNote" x="2104" y="613" w="-1" h="-1" measuredW="109" measuredH="123" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Top%205%20scores%20from%20each%20KB</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Scenario 4a Customizing subject column - Selecting different subject column</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Scenario 4a Customizing subject column - Selecting different subject column
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified by <span class='editor'> Tomas Knap</span> on Sep 23, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Scenario4aCustomizingsubjectcolumn-Selectingdifferentsubjectcolumn-InitialState">Initial State</h1><p><span style="color: rgb(0,0,0);">The user is logged on the system <span>(see: </span><a href="Scenario-0a--Login-and-home-screen_72223863.html">Scenario 0a Login and home screen</a><span>)</span></span></p><p><span style="color: rgb(0,0,0);"><span><span>User have defined and run a task (see: <a href="Scenario-1-Task-creation_71439879.html">Scenario 1 Task creation</a></span><span>). </span></span></span><span style="color: rgb(0,0,0);">User is observing the results of the processing.</span></p><p><span style="color: rgb(0,0,0);line-height: 1.25;font-size: 24.0px;">Description</span></p><p>As a user I want to change the subject column to another one, because the algorithm could make a completely wrong choice or there is a column, that I find more suitable to be the subject column.</p><p><span class="inline-comment-marker" data-ref="6721acf6-e1ff-4715-8e8e-6735bab612ec">As the changing of the subject column has a serious impact on the final result, I am OK with re-running the algorithm again in order to let the algorithm take the changed column into account.</span></p><p> </p><ol><li style="list-style-type: decimal;"><p>User is provided with the suggested subject column (one of the original CSV columns).</p><ol><li>Step 1 contains only subject column of the primary knowledge base (other KBs can have different subject columns. But this is OK, subject column influences the relations discovery - each KBs may discover different relations, and also export - in that )</li></ol></li><li>User may select different subject column as depicted in <a href="#Scenario4aCustomizingsubjectcolumn-Selectingdifferentsubjectcolumn-Mockup1"><span class="inline-comment-marker">Mockup 1</span></a><span class="inline-comment-marker" data-ref="8171ee00-3a6d-421d-a889-1d4cc95907cf"> </span> (using the radio buttons).<br/><ol><li><span class="inline-comment-marker" data-ref="c6bc8a6b-6dcb-4307-b526-9c67ec884bef">As a result, system records the selection and saves it as a part of the feedback of the task. <em>(i.e. it does not change the resulting RDF file)</em></span></li></ol></li><li><span class="inline-comment-marker" data-ref="b81e4521-3162-40a6-929a-1632a48e3450">If no other customization is done, user clicks on the &quot;Re-execute task&quot; button to execute task with provided feedback</span></li></ol><h1 id="Scenario4aCustomizingsubjectcolumn-Selectingdifferentsubjectcolumn-Alternatives">Alternatives</h1><ul><li>Even when the suggested column is directly lifted from the (optionally) provided meta-data file, custom selection is still enabled.</li><li>User can check the &quot;This is a statistical file...&quot; option, thus making the subject column selection irrelevant and setting the feedback provision into RDF cube mode.</li><li>User can check the &quot;Automatic selection&quot; option (which is checked by default, until the user un-checks it or directly selects some other column), thus leaving the decision to the algorithm again.</li></ul><h1 id="Scenario4aCustomizingsubjectcolumn-Selectingdifferentsubjectcolumn-Whatcangowrong">What can go wrong</h1><ul><li>The wanted subject column is set to be ignored: the user must revert the decision to ignore the desired column first.</li></ul><h1 id="Scenario4aCustomizingsubjectcolumn-Selectingdifferentsubjectcolumn-Systemstateoncompletion">System state on completion</h1><p><span style="color: rgb(0,0,0);">Different subject column is selected.</span></p><h1 id="Scenario4aCustomizingsubjectcolumn-Selectingdifferentsubjectcolumn-RequirementsMotivatingtheScenario">Requirements Motivating the Scenario</h1><ul><li><a href="List-of-Requirements_71440542.html#ListofRequirements-22">22</a>, <a href="List-of-Requirements_71440542.html#ListofRequirements-23">23</a></li></ul><h1 id="Scenario4aCustomizingsubjectcolumn-Selectingdifferentsubjectcolumn-Mockups:">Mockups:</h1><p><span class="confluence-anchor-link" id="Scenario4aCustomizingsubjectcolumn-Selectingdifferentsubjectcolumn-Mockup1"></span></p><p><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_mockup-select-subject-column"><img class="balsamiq_mockup" src="attachments/72223005/72227036.png"/></a><br/></div></p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72223858">Mockup Output feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72223859.png">Mockup Output feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72224557">Mockup Output feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72224558.png">Mockup Output feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72224696">Mockup Output feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72224697.png">Mockup Output feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72224602">Mockup Output feedback tmp draft (I.S.)</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72224603.png">Mockup Output feedback tmp draft (I.S.).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72224600">Mockup Output feedback tmp draft (I.S.)</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72224601.png">Mockup Output feedback tmp draft (I.S.).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72223856">Mockup Output feedback</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72223857.png">Mockup Output feedback.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/73073640.bmml">mockup_mockup-select-subject-column.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/73073641.png">mockup_mockup-select-subject-column.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/74875528.bmml">mockup_mockup-select-subject-column.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/74875529.png">mockup_mockup-select-subject-column.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/74875539.bmml">mockup_mockup-select-subject-column.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/74875540.png">mockup_mockup-select-subject-column.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/75563236.bmml">mockup_mockup-select-subject-column.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/75563237.png">mockup_mockup-select-subject-column.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/75563264.png">mockup_mockup-select-subject-column.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/75563263.bmml">mockup_mockup-select-subject-column.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/75563759.bmml">mockup_mockup-select-subject-column.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/75563760.png">mockup_mockup-select-subject-column.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72227035.bmml">mockup_mockup-select-subject-column.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72223005/72227036.png">mockup_mockup-select-subject-column.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Results of elections in Voralrlberg 2009</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Testing-Data_75564208.html">Testing Data</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Results of elections in Voralrlberg 2009
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified on Dez 13, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Version: develop 11.12.2016<br/> <span class="inline-comment-marker" data-ref="1e9d6415-4445-4cf1-b48c-8c4064c56f11">File: </span><a href="http://data.vorarlberg.gv.at/katalog/politik/LT-2009.csv" class="external-link" rel="nofollow"><span class="inline-comment-marker" data-ref="1e9d6415-4445-4cf1-b48c-8c4064c56f11">http://data.vorarlberg.gv.at/katalog/politik/LT-2009.csv</span></a><span class="inline-comment-marker" data-ref="1e9d6415-4445-4cf1-b48c-8c4064c56f11"> with added semicolon on the first line (reduced to 20 lines)</span></p><h2 id="ResultsofelectionsinVoralrlberg2009-Analysisoftheresults">Analysis of the results</h2><p>against Jan's (reduced) DBpedia, original DBpedia and German DBpedia):</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/76224215/76224221.png" data-image-src="attachments/76224215/76224221.png" data-unresolved-comment-count="0" data-linked-resource-id="76224221" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="elections-result.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76224215" data-linked-resource-container-version="2"></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/76224215/76224220.png" data-image-src="attachments/76224215/76224220.png" data-unresolved-comment-count="0" data-linked-resource-id="76224220" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="elections-relations.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76224215" data-linked-resource-container-version="2"></span></p><p>Classification:</p><ul><li>Gemeinde and Bezirk all, but differently</li><li>other columns not (expected, just numeric values) (ÖVP just German DBpedia, but wrongly)</li></ul><p>Disambiguation:</p><ul><li>Gemeinde and Bezirk just very few lines and differently</li><li>other columns are just numeric values</li></ul><p>Subject column:</p><ul><li>Gemeinde always - seems OK</li></ul><p>Relations:</p><ul><li>Gemeinde -&gt; Bezirk (bezirk / district) seems OK (except German DBpedia)</li><li>Gemeinde -&gt; ÖVP (areaCode) only in German DBpedia, but not correct</li></ul><p>Complete data (original and corrected reduced file, screens, exports and caches):</p><ul><li><a href="attachments/76224215/76224222.zip" data-linked-resource-id="76224222" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="LT-2009.zip" data-nice-type="Zip Archive" data-linked-resource-content-type="application/zip" data-linked-resource-container-id="76224215" data-linked-resource-container-version="2">LT-2009.zip</a></li></ul><h2 id="ResultsofelectionsinVoralrlberg2009-Issues/Bugs">Issues/Bugs</h2><p>Special German characters, e.g. Ö, not correctly displayed</p><ul><li>issue: <a href="https://github.com/odalic/sti/issues/243" rel="nofollow" class="external-link">https://github.com/odalic/sti/issues/243</a></li></ul><p>UI - result - first step: not all rows are displayed (just 10 rows are displayed), this leads to not proper highlighting of even and odd rows (due to missing rows)</p><ul><li>issue: <a href="https://github.com/odalic/odalic-ui/issues/183" class="external-link" rel="nofollow">https://github.com/odalic/odalic-ui/issues/183</a></li></ul><p>The original file is not correctly formatted. First line (header) is not ended by semicolon, but other lines are ended by semicolon, so they have one more column (which is empty). So that the task execution ended by error. The UI displayed the error statement, but user cannot recognize, that the error was caused by bad formatting of the input file. Then I added a semicolon to the first line and file was processed.</p><ul><li>issue: <a href="https://github.com/odalic/sti/issues/169" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/169</a> (fixed)</li></ul><h2 id="ResultsofelectionsinVoralrlberg2009-Performance">Performance</h2><p>The file was processed in 7 minutes / was necessary to reduce to 20 lines.</p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224215/76224212.zip">STMK_2012_LIVEBIRTHS.zip</a> (application/zip)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224215/76224213.png">livebirths-relations.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224215/76224214.png">livebirths-result.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224215/76224220.png">elections-relations.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224215/76224221.png">elections-result.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224215/76224222.zip">LT-2009.zip</a> (application/zip)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

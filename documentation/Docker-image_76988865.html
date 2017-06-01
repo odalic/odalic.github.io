@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Docker image</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Installation-guides_76975775.html">Installation guides</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Docker image
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Jan Váňa</span>, last modified on Jun 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>The Odalic Docker image is available on GitHub: <a href="https://github.com/odalic/odalic-docker" class="external-link" rel="nofollow">https://github.com/odalic/odalic-docker</a>.</p><h2 id="Dockerimage-Dockersetup"><span class="anchor">Docker setup</span></h2><p>You can find the Docker installation files for all major platforms here: <a href="https://www.docker.com/community-edition" class="external-link" rel="nofollow">https://www.docker.com/community-edition</a>.</p><p>Please note, that Docker for Windows requires Hyper-V, so it cannot run natively on Windows 10 Home or older Windows versions. You have to use the Docker Tools instead: <a href="https://www.docker.com/products/docker-toolbox" class="external-link" rel="nofollow">https://www.docker.com/products/docker-toolbox</a>.</p><h2 id="Dockerimage-RunningOdalic"><span class="anchor">Running Odalic</span></h2><p>Odalic requires a working SPARQL endpoint with update rights. An easy way to setup such endpoint is to run the virtuoso Docker image:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">docker run --name localKB -p 8890:8890 -e SPARQL_UPDATE=true -e DEFAULT_GRAPH=http://odalic.eu -d tenforce/virtuoso</pre>
+</div></div><p>To build the Odalic Docker image, execute:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">docker build --tag odalic:latest https://github.com/odalic/odalic-docker.git</pre>
+</div></div><p>If you do not have git, you have to download the dockerfile and run:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">docker build --tag odalic:latest .</pre>
+</div></div><p>The following Docker command will run the prepared Docker image:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">docker run -ti --name odalic --link localKB -p 8080:8080 odalic:latest</pre>
+</div></div><p>The Odalic UI can be now accessed from your favourite browser on <a href="http://localhost:8080/odalic-ui" class="external-link" rel="nofollow">localhost:8080/odalic-ui</a>.</p><h2 id="Dockerimage-Accessingthevirtualmachine"><span class="anchor">Accessing the virtual machine</span></h2><p>If you want to access the odalic installation files and configuration, you have to run the Odalic image in a detached mode:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">docker run -d --name odalic --link localKB -p 8080:8080 odalic:latest</pre>
+</div></div><p>You can then start the Linux command line by executing:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">docker exec -ti odalic sh</pre>
+</div></div><h2 id="Dockerimage-StartingandstoppingtheOdaliccontainer"><span class="anchor">Starting and stopping the Odalic container</span></h2><p>Running a Docker image will create a Docker container. You can start/stop the created container like this:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Start</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">docker start odalic</pre>
+</div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Stop</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">docker stop odalic</pre>
+</div></div><h2 id="Dockerimage-Changingports">Changing ports</h2><p>You can generally change a docker container port by changing the &quot;-p&quot; parameter:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">-p 8080:[your local port]</pre>
+</div></div><p>You can freely change the local SPARQL endpoint port. It is only used when you access it directly over: <a href="http://localhost:8890/sparql" class="external-link" rel="nofollow">http://localhost:8890/sparql</a>.</p><p>To change the Odalic port, you have to also access the Odalic virtual machine and edit following files:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">/usr/local/tomcat/webapps/odalic-ui/config.txt
+/usr/local/odalic/config/sti.properties</pre>
+</div></div><p>For more information please consult the Odalic documentation.</p><h2 id="Dockerimage-UpdatingOdalic">Updating Odalic</h2><p>If you want to update your Docker container to a new Odalic version, you have to first stop the existing container. Then remove it by executing:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">docker container rm -f odalic</pre>
+</div></div><p>After the container is removed, you can update the image by running the build again:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">docker build --tag odalic:latest https://github.com/odalic/odalic-docker.git</pre>
+</div></div><h1 id="Dockerimage-AdvancedDockerconfiguration"><span class="anchor">Advanced Docker configuration</span></h1><p>For more advanced commands please refer to the Docker documentation <a href="https://docs.docker.com/engine/reference/commandline/cli" class="external-link" rel="nofollow">https://docs.docker.com/engine/reference/commandline/cli</a>.</p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

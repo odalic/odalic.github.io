@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Number of new babies by the cities, districts</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Testing-Data_75564208.html">Testing Data</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Number of new babies by the cities, districts
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Dez 14, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Version: develop 11.12.2016<br/> File: <a href="http://service.stmk.gv.at/ogd/OGD_Data_ABT17/statistik/STMK_2012_LIVEBIRTHS.csv" class="external-link" rel="nofollow">http://service.stmk.gv.at/ogd/OGD_Data_ABT17/statistik/STMK_2012_LIVEBIRTHS.csv</a> (reduced to 20 lines)</p><h2 id="Numberofnewbabiesbythecities,districts-Analysisoftheresults">Analysis of the results</h2><p>against Jan's (reduced) DBpedia, original DBpedia and German DBpedia:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/76224174/76224197.png" data-image-src="attachments/76224174/76224197.png" data-unresolved-comment-count="0" data-linked-resource-id="76224197" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="livebirths-result.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76224174" data-linked-resource-container-version="7"></span></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/76224174/76224198.png" data-image-src="attachments/76224174/76224198.png" data-unresolved-comment-count="0" data-linked-resource-id="76224198" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="livebirths-relations.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76224174" data-linked-resource-container-version="7"></span></p><p>Classification:</p><ul><li>NUTS1 not; NUTS2 only DBpedia, <span class="inline-comment-marker" data-ref="75e868aa-4b2f-4652-aea6-d09b01167606">but strange (Item)</span>; NUTS3 only German DBpedia, but <span class="inline-comment-marker" data-ref="c39b6404-243c-409a-968e-a724f13b8661">without label</span></li><li>DISTRICT_NAME all, but only DBpedia seems correct (District)</li><li><span class="inline-comment-marker" data-ref="f24bef5b-0a4d-450a-aceb-7ba698ee63b4">LAU_NAME all, but strange</span>, just reduced DBpedia seems better (Settlement)</li><li>DISTRICT_CODE, LAU_CODE, LIVEBIRTHS and YEAR not (expected, just numeric values)</li></ul><p>Disambiguation:</p><ul><li>NUTS1 all seems OK; NUTS2 only DBpedia, but seems strange; NUTS3 nothing</li><li>DISTRICT_NAME mostly all seems OK, just Graz-Stadt seems strange</li><li>LAU_NAME sometimes all OK, sometimes just German DBpedia, sometimes nothing</li><li>DISTRICT_CODE, LAU_CODE, LIVEBIRTHS and YEAR are just numeric values</li></ul><p>Subject column:</p><ul><li>LAU_NAME always - seems OK</li></ul><p>Relations:</p><ul><li>LAU_NAME -&gt; DISTRICT_NAME (district) seems OK (except German DBpedia)</li><li>LAU_NAME -&gt; NUTS3 (nutsCode) only in German DBpedia, but not correct</li></ul><p>Complete data (original and reduced file, screens, exports and caches):</p><ul><li><a href="attachments/76224174/76224202.zip" data-linked-resource-id="76224202" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="STMK_2012_LIVEBIRTHS.zip" data-nice-type="Zip Archive" data-linked-resource-content-type="application/zip" data-linked-resource-container-id="76224174" data-linked-resource-container-version="7">STMK_2012_LIVEBIRTHS.zip</a></li></ul><h2 id="Numberofnewbabiesbythecities,districts-FurthernotesfromTomasKnap(tested1.12.)">Further notes from Tomas Knap (tested 1.12.)</h2><p>- It correctly disambiguates NUTS1 column <br/>- identifies relation between LAU_NAME and DISTRICT_NAME - <a href="http://dbpedia.org/ontology/district" class="external-link" rel="nofollow">http://dbpedia.org/ontology/district</a></p><p>- There are certain resources which are not available in dbpedia but available in german dbpedia. Which allow more disambiguated entities, e.g. in case of <a href="http://de.dbpedia.org/page/Lannach" class="external-link" rel="nofollow">http://de.dbpedia.org/page/Lannach</a></p><p> </p><p>Issues:<br/>- DISTRICT_NAME is classified as &quot;<a href="http://dbpedia.org/resource/article" class="external-link" rel="nofollow">http://dbpedia.org/resource/article</a>&quot;. This is extremaly strange as the disambiguations for <a href="http://dbpedia.org/resource/Deutschlandsberg" class="external-link" rel="nofollow">http://dbpedia.org/resource/Deutschlandsberg</a> <span class="inline-comment-marker" data-ref="2a591285-e1aa-4587-b485-db0b21b68a2c">contain quite some useful classes</span><br/>- Disambiguation - relying for one resource during disambiguation is certainly <span class="inline-comment-marker" data-ref="73ae05a3-c44b-40de-8368-836030e96bdc">not correct!</span> For example, Hollenegg is disambiguated to Schloss_Hollenegg. But there is better match: <a href="http://dbpedia.org/page/Hollenegg" class="external-link" rel="nofollow">http://dbpedia.org/page/Hollenegg</a>!<br/>- Categorie <a href="http://de.dbpedia.org/resource/Kategorie:Gundersdorf" class="external-link" rel="nofollow">http://de.dbpedia.org/resource/Kategorie:Gundersdorf</a> is used to disambiguate city of Gundersdorf, which is not correct. Again, more candidates would be helpful. <span class="inline-comment-marker" data-ref="5efe2dda-a329-443c-af08-23a6dd7ed28d">Categories should not be used!</span><br/>- NUTS1 is disambiguated, but <span class="inline-comment-marker" data-ref="a546edf7-1049-4728-b488-ec141344d13f">there is no class</span>. <br/>- NUTS1 is disambiguated, but NUTS2, NUTS3 NOT!<br/>- NUTS3 is classified with <a href="http://dbpedia.org/ontology/nutsCode" class="external-link" rel="nofollow">http://dbpedia.org/ontology/nutsCode</a>, which is owl:DatatypeProperty <br/>- There is no label for <a href="http://dbpedia.org/ontology/nutsCode" class="external-link" rel="nofollow">http://dbpedia.org/ontology/nutsCode</a>, but such resource contains rdfs:label (e.g.). For <a href="http://dbpedia.org/ontology/Settlement" class="external-link" rel="nofollow">http://dbpedia.org/ontology/Settlement</a>, the label is fetched!<br/>- identifies relation between LAU_NAME and NUTS3, but it is not correct</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-external-resource" height="400" src="https://cloud.githubusercontent.com/assets/3014917/20758341/c49b814c-b719-11e6-9cd4-57dcfc4f9a48.png" data-image-src="https://cloud.githubusercontent.com/assets/3014917/20758341/c49b814c-b719-11e6-9cd4-57dcfc4f9a48.png"></span><br/><br/></p><h2 id="Numberofnewbabiesbythecities,districts-Issues/Bugs">Issues/Bugs</h2><p>Special German characters, e.g. ß, not correctly displayed</p><ul><li>issue: <a href="https://github.com/odalic/sti/issues/243" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/243</a></li></ul><p>UI - result - first step: third data row (with LAU_NAME Deutschlandsberg) is not displayed</p><ul><li>issue: <a href="https://github.com/odalic/odalic-ui/issues/183" rel="nofollow" class="external-link">https://github.com/odalic/odalic-ui/issues/183</a></li></ul><p>When tested 1.12. (Tomas), there was issue with export, <span style="color: rgb(255,0,0);">retest needed</span></p><h2 id="Numberofnewbabiesbythecities,districts-Performance">Performance</h2><p>The file was processed in about 5 minutes / was necessary to reduce to 20 lines.</p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224174/76224197.png">livebirths-result.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224174/76224198.png">livebirths-relations.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224174/76224200.png">livebirths-result[1].png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224174/76224199.png">livebirths-result[1].png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224174/76224201.png">livebirths-result[1][1].png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76224174/76224202.zip">STMK_2012_LIVEBIRTHS.zip</a> (application/zip)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

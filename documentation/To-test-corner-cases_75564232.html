@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : To test corner cases</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Testing-Data_75564208.html">Testing Data</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : To test corner cases
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span> on Sep 28, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Totestcornercases-Strangefile:emptycolumns,emptyrows">Strange file:empty columns, empty rows</h2><p><a href="https://www.data.gv.at/katalog/dataset/ergvolkszaehl/resource/29533a67-5920-4ac7-858a-3631654e291f" class="external-link" rel="nofollow">httpswww.data.gv.atkatalogstoragefVolkszaehlungsergebnisseBevoelkerunginKlagenfurtnachGeschlecht.csv</a></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">Bevölkerungsentwicklung in Klagenfurt nach Geschlecht (Volkszählungsergebnisse);;;;;;;;;
+Jahr;Insgesamt;Geschlecht_männlich;Geschlecht_weiblich;;;;;;
+1869;15.285    ;7.313    ;7.972    ;;;;;;
+1880;18.747    ;9.911    ;8.836    ;;;;;;
+1890;19.756    ;10.195    ;9.561    ;;;;;;
+1900;24.284    ;12.571    ;11.713    ;;;;;;
+1910;28.911    ;14.856    ;14.055    ;;;;;;
+1920;26.147    ;12.149    ;13.998    ;;;;;;
+1923;27.423    ;13.087    ;14.336    ;;;;;;
+1934;29.671    ;14.082    ;15.589    ;;;;;;
+1939;56.701    ;29.194    ;27.507    ;;;;;;
+1951;62.782    ;28.952    ;33.830    ;;;;;;
+1961;69.218    ;31.360    ;37.858    ;;;;;;
+1971;74.326    ;33.639    ;40.687    ;;;;;;
+1981;87.321    ;39.678    ;47.643    ;;;;;;
+1991;89.415    ;41.171    ;48.244    ;;;;;;
+2001;90.141    ;41.396    ;48.745    ;;;;;;
+2011;94.483    ;44.168    ;50.315    ;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;
+;;;;;;;;;</pre>
+</div></div><p> </p><p>Challenges:</p><ul><li>empty rows, empty column headers<ul><li>It must be properly handled, no NullPointerException etc. </li><li>Expected solution: <ul><li>no empty rows, </li><li>empty columns may remain empty, </li><li>column without any label do not have any label, but the algorithm must be able to work with that</li></ul></li></ul></li></ul><h2 id="Totestcornercases-Onlynumericalcolumns">Only numerical columns</h2><p><a href="https://www.data.gv.at/katalog/dataset/nrw2013/resource/e891982b-4c03-4095-95e6-066043b1132d" class="external-link" rel="nofollow">httpswww.data.gv.atkatalogdataset0eb8ba3fb3864f7d98c9699065b2b5bdresourcee891982b4c03409595e6066043b1132ddownloadergebnissedernationalratswahl2013nachsprengeln</a></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">WSP ;Wahlberechtigte_männlich;Wahlberechtigte_weiblich;Wahlberechtigte_insgesamt;gültig;ungültig;SPÖ;ÖVP;FPÖ;BZÖ;GRÜNE;FRANK;NEOS;KPÖ;PIRAT
+1110;107;91;198;96;0;19;24;17;8;21;1;4;0;2
+2110;233;243;476;286;3;51;64;43;25;63;8;29;1;2
+3110;262;227;489;249;4;49;38;35;29;43;20;24;4;7
+4110;252;263;515;275;5;51;69;25;24;51;29;22;2;2</pre>
+</div></div><p>Challenges: </p><ul><li>No named entity columns<ul><li>It must be properly handled, no null column exceptions etc. </li><li>Expected solution: It should show the table (Step 2) with no annotations. There should be some info message (above the table) displaying that no named entities recognized. In case of subject column detection. no column is selected. No relations prepared. </li></ul></li></ul><h2 id="Totestcornercases-Numberofdogs(accordingtobreeds)inthecityofVienna-extraheaderline">Number of dogs (according to breeds) in the city of Vienna - extra header line</h2><p><a href="https://www.data.gv.at/katalog/dataset/stadt-wien_anzahlderhundeprobezirkderstadtwien/resource/b8d97349-c993-486d-b273-362e0524f98c" class="external-link" rel="nofollow">https://www.data.gv.at/katalog/dataset/stadt-wien_anzahlderhundeprobezirkderstadtwien/resource/b8d97349-c993-486d-b273-362e0524f98c</a></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">Hunderassen in Wien | Breed of Dogs in Vienna;;;;;;;;														
+NUTS1;NUTS2;NUTS3;DISTRICT_CODE;SUB_DISTRICT_CODE;Postal_CODE;Dog Breed;Anzahl;Ref_Date														
+AT1;AT13;AT113;90100;.;1010;Afghanischer Windhund;1;20160531														
+AT1;AT13;AT113;90100;.;1010;Amerikanischer Staffordshire-Terrier;4;20160531														
+AT1;AT13;AT113;90100;.;1010;Amerikanischer Staffordshire-Terrier / Mischling;1;20160531														
+
+</pre>
+</div></div><p> </p><p>Challenges:</p><ul><li>extra header line (this happens sometimes for data at the portals)</li><li>Expected solution: <ul><li>Only the fist column has label - <span style="line-height: 1.42857;">Hunderassen in Wien | Breed of Dogs in Vienna, the other columns do not have the name</span></li><li><span style="line-height: 1.42857;">The real header is the first data row</span></li><li><span style="line-height: 1.42857;">There is a possibility in the upload CSV file dialog - checkbox - to specify &quot;Skip first row in CSV file&quot; (by default unchecked) </span></li></ul></li></ul>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Architecture / Developer Documentation</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Architecture / Developer Documentation
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> István Satmári</span>, last modified by <span class='editor'> Tomas Knap</span> on Sep 09, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p><strong>Brief overview of components</strong></p><p><strong>
+
+<map id="gliffy-map-74875244-8631" name="gliffy-map-74875244-8631"></map>
+<table width="100%" class="gliffy-macro-table">
+    <tr>
+        <td >
+            <table class="gliffy-macro-inner-table">
+                <caption align="bottom">
+                                    </caption>
+                <tr>
+                    <td>
+                        <img style="border: none; width: 1183px;" usemap="#gliffy-map-74875244-8631" src="attachments/72222608/74875245.png" alt="" class="gliffy-macro-image"/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+<br/></strong></p><p><strong><br/></strong></p><p><strong>More detailed: </strong></p><p style="margin-left: 30.0px;"> </p><p>
+
+<map id="gliffy-map-72222611-2266" name="gliffy-map-72222611-2266"></map>
+<table width="100%" class="gliffy-macro-table">
+    <tr>
+        <td >
+            <table class="gliffy-macro-inner-table">
+                <caption align="bottom">
+                                    </caption>
+                <tr>
+                    <td>
+                        <img style="border: none; width: 1200px;" usemap="#gliffy-map-72222611-2266" src="attachments/72222608/72222612.png" alt="" class="gliffy-macro-image"/>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+</p><p><strong>Web UI</strong></p><p>A part of the application running in a user's web browser.</p><p><strong><br/></strong></p><p><strong>Web Backend</strong></p><p>This is a component tightly coupled with <span style="color: rgb(51,51,153);">Web UI</span>. Its existence is questionable, but may be desired if we are to allow additional functionalities to users that the REST API component does not provide, such as saving multiple input files before running a conversion on them, etc.</p><p><strong><br/></strong></p><p><strong>Time Notifier</strong></p><p>According to observer pattern (<a href="https://en.wikipedia.org/wiki/Observer_pattern" class="external-link" rel="nofollow">https://en.wikipedia.org/wiki/Observer_pattern</a>). Notifies about passed time to subscribed components.</p><p> </p><p><strong>File Cache</strong></p><p>Saving temporary files. For instance, a user uploads a CSV file before running a conversion - this file must be stored somewhere in the meantime. Additionally, after the user runs a task (and the task has completed), the expected output may not be picked up by the user immediately, therefore we need to save it somewhere temporarily.</p><p> </p><p><strong>Core Algorithm</strong></p><p>An extension of the original TableMiner+. Runs the submitted tasks.</p><p>This component should run in its own instance, independently of <span style="color: rgb(51,51,153);">REST API Wrapper</span> (the REST API would become unusable during conversions otherwise).</p><p>It is expected there will be a <span style="color: rgb(51,51,153);">Queue of submitted tasks</span> (items pushed by a REST API Wrapper's subcomponent - <span style="color: rgb(51,51,153);">Task Queue</span>). The <span style="color: rgb(51,51,153);">Computing unit</span> runs tasks over input files that are stored in the <span style="color: rgb(51,51,153);">File Cache</span>. After the <span style="color: rgb(51,51,153);">Computing unit</span> finishes a certain task popped from the queue, it should report back to the <span style="color: rgb(51,51,153);">Task Queue</span> about the task (+ send output data). This is represented by <em>&lt;&lt;calls&gt;&gt;</em>. Then, it should start over working on further tasks. (If queue is empty, it can 'sleep', and may be awaken while pushing a new task.)</p><p>Since we cannot inspect the progress of a particular task inside the <span style="color: rgb(51,51,153);">Computing unit</span> by an outside observer, the <span style="color: rgb(51,51,153);">Computing unit</span> should probably report progress back to the <span style="color: rgb(51,51,153);">Task Queue</span> component in certain stages of a conversion task in a similar way.</p><p> </p><p><strong>Data Store</strong></p><p>For saving configurations and tasks (and possibly some other data). The <span style="color: rgb(51,51,153);">RDF Database</span> should not be accessed directly, thus the <span style="color: rgb(51,51,153);">RDF DB Proxy</span> component.</p><p><span style="color: rgb(51,51,153);">RDF DB Proxy</span> should translate requests for &quot;getting&quot; and &quot;setting&quot; data (namely configuration and task objects) to something that <span style="color: rgb(51,51,153);">RDF Database</span> 'understands'.</p><p> </p><p><strong>REST API Wrapper<br/></strong></p><p><strong>Authentication</strong></p><p>Questionable how the authentication should be handled (<a href="http://stackoverflow.com/questions/319530/restful-authentication" class="external-link" rel="nofollow">http://stackoverflow.com/questions/319530/restful-authentication</a>), for now let's only assume that we have something, which magically takes care of the matter.</p><p> </p><p><strong>Access Control List</strong></p><p>The name of the component is ambitious; it will probably stay on the level of 'protection ring', or something otherwise simple. We need to differentiate at least between 2 kinds of users ('ordinary' and 'administrators'), thus the need for a something like a list of permissions for each object.</p><p> </p><p><strong>Configurations</strong></p><p>Expected interface is something in a way of:</p><ul><li><code>ConfigID SaveConfig(ConfigurationData)</code><ul><li>Store the provided configuration into the database and return <code>ConfigID</code>, so it can be later referenced from tasks, etc.</li><li><code>ConfigurationData</code> carries complete information about a particular configuration</li></ul></li><li><code>ConfigurationData GetConfig(ConfigID)</code><ul><li>Returns a configuration (that was previously stored in the <span style="color: rgb(0,51,102);">RDF Database</span>) in a form of <code><span style="color: rgb(0,51,102);">ConfigurationData</span></code></li></ul></li><li><code>void DeleteConfig(ConfigID)</code><ul><li>Removes the referenced configuration</li></ul></li></ul><p>The component should 'negotiate' with <span style="color: rgb(51,51,153);">RDF DB Proxy</span> to either access, store or delete a certain configuration. For simplicity, we could, for example, assume, that <code>ConfigurationData</code> is in JSON format. Since the underlying language (Java) does not resolve JSON by default (I think), <span style="color: rgb(0,51,102);">File Converter</span> is used to transform JSON into Java objects and vice versa.</p><p>By the way, of course, this is REST, so methods should be imagined in this way:</p><p><code>ConfigurationData GetConfig(ConfigID my_id)</code><strong> =&gt;</strong><code> curl -get http://.../GetConfig/my_id/</code></p><p>The content-type of the returned object should match that of <code>ConfigurationData</code> (e.g. JSON)</p><p> </p><p><strong>Task Queue</strong></p><p>Proposed interface:</p><ul><li><code>TaskID PushTask(TaskData, ConfigID)</code><ul><li>Stores the task into the <span style="color: rgb(0,51,102);">RDF Database</span></li><li>The task will use the specified configuration</li><li><code>TaskData</code> = input file to be run a task on</li><li>And runs the specified task</li></ul></li><li><code>TaskInfoData GetTaskInfo(TaskID)</code><ul><li>Returns certain information about the specified task (configurations, progress, ...)</li></ul></li><li><code>ResultData GetResult(TaskID)</code><ul><li>If the task has been completed, returns the result (in RDF, presumably)</li></ul></li></ul><p>The dataflow may be like this:</p><ul><li>First, a task object (carries basic information about the task, such as date when added, owner, etc.) is stored into the <span style="color: rgb(51,51,153);">RDF Database</span> (via <span style="color: rgb(51,51,153);">RDF DB Proxy</span>) for later reference. Input file is stored in the <span style="color: rgb(51,51,153);">File Cache</span>.</li><li>After the task has been run, file reference, TaskID and other information, are pushed into the <span style="color: rgb(51,51,153);">Queue of submitted tasks</span>.</li><li>When <span style="color: rgb(51,51,153);">Computing unit</span> starts executing the task, it will be reporting progress back to the <span style="color: rgb(51,51,153);">Task Queue</span>. For this reason the <span style="color: rgb(51,51,153);">Task Queue</span> may cache the task object, so it doesn't have to update it in the <span style="color: rgb(51,51,153);">RDF Database</span> each time the progress is reported. (That would probably render our system slow-ish.)</li><li>Once the task is finished, the <span style="color: rgb(51,51,153);">Computing unit</span> stores the result as a file in the <span style="color: rgb(51,51,153);">File Cache</span> (for a certain period of time) and the input file may be deleted. Then it reports back to the <span style="color: rgb(51,51,153);">Task Queue</span>. The task object is updated in the <span style="color: rgb(51,51,153);">RDF Database</span> (via <span style="color: rgb(51,51,153);">RDF DB Proxy</span>) and possibly removed from the proposed cache.</li><li>Finally, if the result is still stored in the <span style="color: rgb(51,51,153);">File Cache</span>, it may be returned upon a request.</li></ul><p> </p><p><strong>File Converter</strong></p><p>Was discussed in <span style="color: rgb(51,51,153);">Configurations</span> part.</p><p> </p><p><ul class='childpages-macro'><li><a href="73075945.html">Annotated Table (Result of running Odalic Core)</a></li><li><a href="Classes_72226203.html">Classes</a></li><li><a href="Knowledge-Bases_75565836.html">Knowledge Bases</a></li><li><a href="Odalic-Core_74187556.html">Odalic Core</a></li><li><a href="Odalic-Server_74191816.html">Odalic Server</a></li><li><a href="Odalic-UI_74187672.html">Odalic UI</a></li><li><a href="Open-Questions_73072709.html">Open Questions</a></li><li><a href="74187506.html">Repositories &amp; Modules</a></li><li><a href="REST-API_72225449.html">REST API</a></li></ul></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222614">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222615.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222618">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222619.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222621">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222622.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222624">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222625.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222629">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222630.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222664">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222665.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222677">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222678.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222684">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222685.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222689">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222690.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222692">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222693.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222709">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222710.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222711">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222712.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222713">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222714.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222715">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222716.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222720">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222721.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222734">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222735.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222738">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222739.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222742">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222743.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222744">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222745.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222611">Odalic Architecture Draft</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/72222612.png">Odalic Architecture Draft.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/74875246">overview-components</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/74875247.png">overview-components.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/74875261">overview-components</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/74875262.png">overview-components.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/74875452">overview-components</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/74875453.png">overview-components.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/74875244">overview-components</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/72222608/74875245.png">overview-components.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

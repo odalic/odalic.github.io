@@ -1,0 +1,39 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="490" measuredH="217" mockupW="450" mockupH="177">
+  <controls>
+    <control controlID="7" controlTypeID="__group__" x="40" y="40" w="450" h="177" measuredW="450" measuredH="177" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="450" h="177" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>New%20Dataset</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="15" y="38" w="-1" h="-1" measuredW="94" measuredH="21" zOrder="1" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>Upload%20RDF%20file.</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="15" y="68" w="345" h="-1" measuredW="127" measuredH="27" zOrder="2" locked="false" isInGroup="7">
+          <controlProperties>
+            <state>disabled</state>
+            <text>KnowledgeBase.rdf</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="367" y="68" w="-1" h="-1" measuredW="68" measuredH="27" zOrder="3" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>Discard</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="371" y="110" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="4" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="327" y="110" w="-1" h="-1" measuredW="40" measuredH="27" zOrder="5" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>Ok</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

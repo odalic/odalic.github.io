@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Scenario 2b Dataset import - RDF</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Scenario 2b Dataset import - RDF
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Jan Váňa</span>, last modified on Mai 23, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Scenario2bDatasetimport-RDF-InitialState"><span style="color: rgb(0,0,0);text-decoration: none;">Initial State</span></h2><p><span style="color: rgb(0,0,0);text-decoration: none;">The user is logged on the system <span style="color: rgb(0,0,0);"> (see: </span><a href="Scenario-0a--Login-and-home-screen_72223863.html">Scenario 0a Login and home screen</a><span style="color: rgb(0,0,0);">)</span></span></p><h2 id="Scenario2bDatasetimport-RDF-Description"><span style="color: rgb(0,0,0);text-decoration: none;"><span class="inline-comment-marker" data-ref="76af473f-4022-4bc6-baec-30ba8496026b">Description</span></span></h2><ol><li class="_mce_tagged_br">User displays a list of knowledge bases (see <a href="https://grips.semantic-web.at/display/ADEQ/Scenario+9+Viewing+list+of+knowledge+bases" rel="nofollow">Scenario 9</a>)<span style="color: rgb(0,0,0);text-decoration: none;"> </span><span style="color: rgb(0,0,0);text-decoration: none;"> </span><span style="color: rgb(0,0,0);text-decoration: none;"> </span></li><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;">User decides to add a new dataset for an existing knowledge base and clicks &quot;Import new data&quot;.<br/></span><ol><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;">As a result, system shows the dialog from <span class="confluence-link"><a href="#Scenario2bDatasetimport-RDF-Mockup1">Mockup 1</a></span>.</span></li></ol></li><li class="_mce_tagged_br">User inserts the Dataset Name and Named Graph.<span style="color: rgb(0,0,0);text-decoration: none;"> <br/></span></li><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;">User chooses to import from a RDF file and cofirms the dialog.</span><span style="color: rgb(0,0,0);text-decoration: none;"><br/></span><ol><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;">As a result, <span style="color: rgb(0,0,0);text-decoration: none;"><span style="color: rgb(0,0,0);text-decoration: none;">system shows the dialog from</span></span> <span style="color: rgb(0,0,0);text-decoration: none;"><span style="color: rgb(0,0,0);text-decoration: none;"><span class="confluence-link"><a href="#Scenario2bDatasetimport-RDF-Mockup2">Mockup 2</a></span></span></span>.</span></li></ol></li><li class="_mce_tagged_br">User uploads the RDF file<ol><li class="_mce_tagged_br">As a result, the system is in the state depicted in <span style="color: rgb(0,0,0);text-decoration: none;"><span style="color: rgb(0,0,0);text-decoration: none;"><span class="confluence-link"><a href="#Scenario2bDatasetimport-RDF-Mockup3">Mockup 3</a></span></span></span></li></ol></li><li class="_mce_tagged_br">User <span class="_mce_tagged_br">confirms the import</span><span style="color: rgb(0,0,0);text-decoration: none;"><br/></span><ol><li class="_mce_tagged_br"><span style="color: rgb(0,0,0);text-decoration: none;">As a result, system imports the dataset</span></li></ol></li></ol><h2 id="Scenario2bDatasetimport-RDF-Whatcangowrong"><span style="color: rgb(0,0,0);text-decoration: none;">What can go wrong</span></h2><ul><li style="list-style-type: disc;"><p><span style="color: rgb(0,0,0);text-decoration: none;">System cannot obtain the specified RDF file.</span></p></li><li style="list-style-type: disc;"><p><span style="color: rgb(0,0,0);text-decoration: none;">The specified file is not a valid RDF file.</span></p></li><li style="list-style-type: disc;"><span style="color: rgb(0,0,0);text-decoration: none;">The knowledge base for the dataset was deleted in the meantime.<br/></span></li></ul><h2 id="Scenario2bDatasetimport-RDF-Systemstateoncompletion"><span style="color: rgb(0,0,0);text-decoration: none;">System state on completion</span></h2><p><span style="color: rgb(0,0,0);text-decoration: none;">The system saves the dataset and the user can use it in further conversion tasks.</span></p><h2 id="Scenario2bDatasetimport-RDF-RequirementsMotivatingtheScenario"><span style="color: rgb(0,0,0);text-decoration: none;">Requirements Motivating the Scenario</span></h2><p><span style="color: rgb(0,0,0);text-decoration: none;"><a href="List-of-Requirements_71440542.html#ListofRequirements-48">48</a>.</span></p><h2 id="Scenario2bDatasetimport-RDF-ImplementationNotes">Implementation Notes</h2><div>RDF files are stored into the internal RDF store.</div><h1 id="Scenario2bDatasetimport-RDF-Mockups"><span style="color: rgb(0,0,0);">Mockups</span></h1><h4 id="Scenario2bDatasetimport-RDF-Mockup1Mockup1"><span class="confluence-anchor-link" id="Scenario2bDatasetimport-RDF-Mockup1"></span><span style="color: rgb(0,0,0);">Mockup 1</span><span style="color: rgb(0,0,0);"><br/></span></h4><p><div class="balsamiq_mockup" align="left"><a class="balsamiq_mockup" name="mockup_mockup - kb - dataset - new"><img class="balsamiq_mockup" src="attachments/73072791/73072781.png"/></a><br/></div></p><h4 id="Scenario2bDatasetimport-RDF-Mockup2Mockup2"><span class="confluence-anchor-link" id="Scenario2bDatasetimport-RDF-Mockup2"></span><span style="color: rgb(0,0,0);">Mockup 2<br/></span></h4><p><div class="balsamiq_mockup" align="left"><a class="balsamiq_mockup" name="mockup_mockup-kb-dataset-new"><img class="balsamiq_mockup" src="attachments/73072791/73072776.png"/></a><br/></div></p><h4 id="Scenario2bDatasetimport-RDF-Mockup3Mockup3"><span class="confluence-anchor-link" id="Scenario2bDatasetimport-RDF-Mockup3"></span><span style="color: rgb(0,0,0);">Mockup 3<br/></span></h4><p><div class="balsamiq_mockup" align="left"><a class="balsamiq_mockup" name="mockup_mockup-kd-dataset-RDF"><img class="balsamiq_mockup" src="attachments/73072791/73072784.png"/></a><br/></div></p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072775.bmml">mockup_mockup-kb-dataset-new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072776.png">mockup_mockup-kb-dataset-new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072777.bmml">mockup_mockup-kb-dataset-sparql.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072778.png">mockup_mockup-kb-dataset-sparql.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072779.bmml">mockup_mockup-kb-new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072780.png">mockup_mockup-kb-new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072781.png">mockup_mockup - kb - dataset - new.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072782.bmml">mockup_mockup - kb - dataset - new.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072783.bmml">mockup_mockup-kd-dataset-RDF.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072784.png">mockup_mockup-kd-dataset-RDF.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072785">3 - SPARQL Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072786.png">3 - SPARQL Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072787">2 - RDF Import</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072788.png">2 - RDF Import.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072789">1 - New knowledge base dialog</a> (application/gliffy+json)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/73072791/73072790.png">1 - New knowledge base dialog.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Story: User remove all disambiguations in the given columm</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="71439855.html">Requirements/Stories and Scenarios</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="4.iteration_75563298.html">4.iteration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Story: User remove all disambiguations in the given columm
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified by <span class='editor'> Tomas Knap</span> on Sep 22, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Story:Userremovealldisambiguationsinthegivencolumm-GithubIssues:https://github.com/odalic/odalic-ui/issues/72,https://github.com/odalic/sti/issues/29">Github Issues: <a href="https://github.com/odalic/odalic-ui/issues/72" class="external-link" rel="nofollow">https://github.com/odalic/odalic-ui/issues/72</a> , <a href="https://github.com/odalic/sti/issues/29" class="external-link" rel="nofollow">https://github.com/odalic/sti/issues/29</a></h2><h2 id="Story:Userremovealldisambiguationsinthegivencolumm-Req:75">Req: 75</h2><h2 id="Story:Userremovealldisambiguationsinthegivencolumm-UserStory">User Story</h2><p><span style="color: rgb(255,0,0);"><span class="inline-comment-marker" data-ref="b42963a4-fdec-4a03-8ab2-2fd9239966c5">As a user I sometimes want to keep a whole column ambiguous. It usually happens in the case of numeric columns or other where the disambiguation provides no benefit.</span> I should have the possibility to remove all disambiguations. Then I can lock the disambiguations to prevent Odalic Core from disambiguating.</span></p><p><span>The choice is remembered for the re-runs, so unless I revert the choice back, all subsequent exports will keep the cell ambiguous.</span></p><p><span>The ambiguous cells may still appear in the result as an object in a triple consisting of a value from the subject column on the same row and a predicate determined by the class assigned to the column the ambiguous cell resides in.</span></p><p><span>When I decide leave a whole column ambiguous, individual disambiguation choices are ignored, but remembered in case I change my mind.</span></p><p><span>The option to leave a column ambiguous is controlled by a dedicated form element (checkbox). When left ambiguous, all individual cells controls are disabled, but their settings are kept until the next run in case I change my mind.<br/></span></p><p><span>Making whole column ambiguous must not prevent either the algorithm from attempting to classify the column using only its header or the user doing it manually.</span></p><p><span>See <a href="Scenario-4b-Customizing-classification-class---selecting-different-non-suggested-primary-class-for-the-column-classification_72224380.html">Scenario 4b Customizing classification class - selecting different non-suggested primary class for the column classification</a> - there is also button on the main table to prevent and remove disambiguations for the given column</span></p><p><span><div class="balsamiq_mockup" align="center"><a class="balsamiq_mockup" name="mockup_story-column-ambiguous-1"><img class="balsamiq_mockup" src="attachments/74192664/74875757.png"/></a><br/></div><br/></span></p><h2 id="Story:Userremovealldisambiguationsinthegivencolumm-Preconditions">Preconditions</h2><ul><li>The algorithm has been run at least once on the data or the application already knows how many columns are available in the input.</li></ul><h2 id="Story:Userremovealldisambiguationsinthegivencolumm-DetailedDescription"><span style="color: rgb(0,0,0);">Detailed Description</span></h2><ol><li>User indicates that all cells in column are to be left ambiguous (by un-checking associated check-box ).</li><li>When the user chooses to export the result, the cells appear in the result only in its ambiguous form (without assigned entities and only as a literal objects).</li><li>The choice is saved for the re-runs.</li><li>The associated check-box is filled according to the choice when loaded in the next run.</li></ol><h2 id="Story:Userremovealldisambiguationsinthegivencolumm-AcceptanceCriteria&amp;TestScenarios">Acceptance Criteria &amp; Test Scenarios</h2><ol><li>The choice to leave the cells ambiguous is also applied in the subsequent export.</li><li>Leaving a whole column ambiguous supersedes any individual disambiguation choices.</li><li>Associated form elements are pre-filled according to the set choice when loaded.</li><li>Neither automatic nor manual classification is affected apart from taking the information from disambiguated cells away.</li></ol><h2 id="Story:Userremovealldisambiguationsinthegivencolumm-Variations">Variations</h2><ul><li>Optional goal: The user is able to take his decision back without any problems affecting the immediate export. No re-run is necessary (unless other feedback, requiring a re-run is provided).</li></ul>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74192664/74875756.bmml">mockup_story-column-ambiguous-1.bmml</a> (text/xml)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74192664/74875757.png">mockup_story-column-ambiguous-1.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

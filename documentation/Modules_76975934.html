@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Modules</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Modules
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified on Jun 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>All modules are located in the <a href="https://github.com/odalic/sti" class="external-link" rel="nofollow">sti repository of the Odalic project</a>.</p><ul><li><strong>odalic</strong><ul><li>This module contains almost all the extensions added to the original <a href="https://github.com/ziqizhang/sti" class="external-link" rel="nofollow">STI TableMiner+</a> under this project, apart from those that modify the algorithm or work with knowledge bases and web search.</li><li>It is divided into packages, which detailed description is provided in relevant parts of the developer documentation. They are the following (some low-level packages were left-out from this overview for sake of clarity, they are described in the Javadoc):<br/><ul><li><strong>api</strong> (available server APIs)<ul><li><strong>rdf</strong> (RDF input and outputs - only task and bases configuration so far)</li><li><strong>rest</strong> (REST API classes, all built atop the standard <a href="https://jersey.java.net/" class="external-link" rel="nofollow">Jersey</a> server library)</li></ul></li><li><strong>bases</strong> (list of working knowledge bases; now a full-fledged runtime bases management is supported)</li><li><strong>entities</strong> (searching of available existing and proposing of new, custom RDF resources)</li><li><strong>feedback</strong> (model classes used to describe the feedback user provides to the algorithm)</li><li><strong>files</strong> (input files management and format configuration)</li><li><strong>input</strong> (parsing of the input files and tied domain classes)</li><li><strong>outputs</strong> (result export formats and facilitating classes)<ul><li><strong>annotatedtable</strong> (JSON-formatted annotations complementary to the extended CSVs)</li><li><strong>csvexport</strong> (extended CSV files, see <a href="https://www.w3.org/2013/csvw/wiki/Main_Page" class="external-link" rel="nofollow">https://www.w3.org/2013/csvw/wiki/Main_Page</a> for the standard draft)</li><li><strong>rdfexport</strong> (RDF serialization formats)</li></ul></li><li><strong>tasks</strong> (tasks management)<br/><ul><li><strong>annotations</strong> (classes representing the table annotations produced by the processing algorithm)</li><li><strong>configurations</strong> (task configuration classes and service - one of the factors, next to the input and state of used knowledge bases, affecting the processing result)</li><li><strong>executions</strong> (execution environment for the tasks, directly employing the modified TableMiner+ algorithm)</li><li><strong>feedbacks</strong> (means to provide a feedback to the algorithm)</li><li><strong>results</strong> (processing result representation and conversion from and to the format used by the algorithm)</li></ul></li><li><strong>users</strong> (user management, authorization and authentication support)</li><li><strong>util</strong> (utilities applicable across the whole extension project)<ul><li><strong>configuration</strong> (configuration reading utilities)</li><li><strong>hash</strong> (password hashing)</li><li><strong>mail</strong> (e-mails delivery)</li><li><strong>storage</strong> (keeping of the server state after shut-down or restart)</li></ul></li></ul></li></ul></li><li><strong><span class="final-path"><span class="final-path">sti-common-utils</span></span></strong><ul><li><span class="final-path"><span class="final-path">Original STI module.<br/></span></span></li><li><span class="final-path"><span class="final-path">This module contains utility classes (cache interface, string and serialization utilities) used by more than one original sti module.</span></span></li></ul></li><li><strong>sti-kbproxy</strong> (interfaces to knowledge base proxies and factory methods creating them from the configuration files or configuration provided via API)<br/><ul><li><strong>model</strong> (model classes of the objects kept in the bases)</li><li><strong>sparql</strong> (proxies to bases accessible through SPARQL endpoints)</li></ul></li><li><strong>sti-main</strong><ul><li><span class="final-path"><span class="final-path">Original STI module, stripped of non-essential parts (such as files batch processing, baseline algorithms, HTML parsing,...), cleaned-up and extended with code to accept user feedback and other improvements.</span></span></li><li><strong><span class="final-path"><span class="final-path">core</span></span></strong><ul><li><span class="final-path"><span class="final-path"><strong>algorithm</strong> (the modified TableMiner+ algorithm)<br/></span></span></li><li><span class="final-path"><span class="final-path"><strong>extension</strong> (feedback classes mirrored from the odalic module to avoid circular dependence, their instances are fed to the algorithm, encapsulated in the Constraint instance)</span></span><span class="final-path"><span class="final-path"><br class="inline-comment-marker"/></span></span></li><li><span class="final-path"><span class="final-path"><strong>model</strong> (internal annotations model of the algorithm, these classes are generally mutable and not fit to use outside of the module scope)<br/></span></span></li><li><span class="final-path"><span class="final-path"><strong>scorer</strong> (score computation for the candidates to annotations)<br/></span></span></li><li><span class="final-path"><span class="final-path"><strong>subjectcol</strong> (subject column, a.k.a &quot;primary key&quot; column discovery)<br/></span></span></li></ul></li><li><span class="final-path"><span class="final-path"><strong>nlp</strong> (NLP processing tools)<br/></span></span></li><li><span class="final-path"><span class="final-path"><strong>util</strong><br/></span></span></li></ul></li><li><strong>sti-websearch</strong><ul><li><span class="final-path"><span class="final-path">Original STI module, but heavily rewritten in order to accommodate the new version of the Bing API.<br/></span></span></li><li>Contains a simple web client querying the public API of the Bing web search. Its results are used to compute scores of the candidates to annotations.</li></ul></li></ul>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

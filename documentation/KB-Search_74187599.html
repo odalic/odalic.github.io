@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : KB Search</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic-Core_74187556.html">Odalic Core</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : KB Search
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Dez 15, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>In a separate module <strong>kbsearch</strong>. </p><p> </p><p>Currently it works as follows (dbpedia/sparql based KB): SPARQLProxy class. </p><ul><li>KBProxy.findEntityCandidates(sample.getText()); <br/><ul><li>For initial disambiguation (for the sample), or for constrained disambiguation with no matches found for the cell value. </li><li>Prepares the query: createExactMatchWithOptionalTypes()<ul><li>Result: Entity URL and optinally the type for that entity<ul><li>Where condition gives restrictions on predicateLabels (those predicates that are configured to contain labels), which have to exactly match the given value in the input cell. Language tag used may be configured in the config file. <ul><li>Note if more than one predicate is defined, there is a UNION pattern used. </li></ul></li></ul></li><li><strong><strong>Sample query: </strong></strong>SELECT DISTINCT ?s ?o WHERE {?s &lt;<a href="http://www.w3.org/2004/02/skos/core#prefLabel" class="external-link" rel="nofollow">http://www.w3.org/2004/02/skos/core#prefLabel</a>&gt; &quot;AT22&quot;@de . OPTIONAL {?s &lt;<a href="http://www.w3.org/2004/02/skos/core#broader" class="external-link" rel="nofollow">http://www.w3.org/2004/02/skos/core#broader</a>&gt; ?o}}</li></ul></li><li>Tries to get the evidence for cell values within the knowledge bases (SPARQLProxy.queryEntityCandidates)<ul><li>Get label query: SELECT DISTINCT ?o WHERE {&lt;<a href="http://adequate-project-pp.semantic-web.at/user/muecksteinm" class="external-link" rel="nofollow">http://adequate-project-pp.semantic-web.at/user/muecksteinm</a>&gt; &lt;<a href="http://www.w3.org/2004/02/skos/core#prefLabel" class="external-link" rel="nofollow">http://www.w3.org/2004/02/skos/core#prefLabel</a>&gt; ?o .}</li><li>First, it tries to gets results from the cache, if available (such results have to have type associated)</li><li>Otherwise it queries KB using sparql queries<ul><li>First, it tries exact string match. <ul><li>applies the query prepared above</li></ul></li><li>Try regex query:<ul><li><strong>Sample query: </strong></li></ul></li><li>Ranks the result of queries</li><li>Gets all attributes of that entity<ul><li>add typeAttribute - and here it takes into account type setting in the config.file for that KB<ul><li><span style="color: rgb(255,0,0);">but (custom) typeAtribute is not considered during the queries above!</span></li></ul></li></ul></li></ul></li></ul></li></ul></li><li>KBProxy.findEntityCandidatesOfTypes(cell value, winningColumnClazz);  <ul><li>for constrained disambiguation - where we have some idea about the type</li><li>Prepares the query: createExactMatchQueries()<ul><li>Result:</li><li><strong>Sample query: </strong>SELECT DISTINCT ?s WHERE {?s &lt;<a href="http://www.w3.org/2004/02/skos/core#prefLabel" class="external-link" rel="nofollow">http://www.w3.org/2004/02/skos/core#prefLabel</a>&gt; &quot;Gro�radl&quot;@de .}<ul><li>So there is no type, as this is known</li></ul></li></ul></li><li>Tries to get the evidence for cell values within the knowledge base (see above, it is the same)<ul><li>First, it tries to gets results from the cache, if available (<strong>such results have to have the correct type associated <strong> (if there is certain type among the input params)</strong>, otherwise not considered</strong>)</li><li>Otherwise it queries KB using sparql queries<ul><li>First, it tries exact string match. <ul><li><strong>the results have to have proper type associated (if there is certain type among the input params)</strong></li></ul></li><li>Try regex query (as above)</li><li>Ranks the results, gets all attributes (as above)</li></ul></li></ul></li><li>if there is no evidence with the type restriction, try also to find candidates without the type restriction</li></ul></li></ul><p> </p><h3 id="KBSearch-Note:">Note: </h3><p>As discovered while working on <a class="external-link" href="https://github.com/odalic/sti/pull/255" rel="nofollow">#255</a>, there are quite some queries when entity is being discovered in the target KB for the given cell value text. Always there are the following queries (if it is not cached):</p><ul><li>exact query to get resource URL of the target entity (optionally typed)</li><li>if there is no result, also regex query</li><li>query getting all attributes for that resource URL</li><li>for each attribute obtained by the previous query with the object URL get label for that object URL</li></ul><p>So if the target entity contains 20 attributes, from which 10 attributes are URLs, there is 12-13 queries.</p><p>To optimize:</p><ul><li>when querying for all attributes of that resource URL, query also for the labels of the object values, if the object is URL. This would reduce the number of queries to constant value 2-3.</li></ul><p><span>Note: Before doing that it would be good to profile the application to find out where most of the time (during annotating for the first time) is spent - see: </span><a class="external-link" href="https://github.com/odalic/sti/issues/257" title="Profile the application - KB search " rel="nofollow">#257</a></p><h2 id="KBSearch-DBpediaSearch"><span class="final-path">DBpedia Search</span></h2><p>Adjustments ongoing: <a href="https://github.com/odalic/sti/pull/95" class="external-link" rel="nofollow">https://github.com/odalic/sti/pull/95</a></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

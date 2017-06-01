@@ -1,0 +1,40 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1430" measuredH="504" mockupW="1302" mockupH="416">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="128" y="88" w="1302" h="416" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Task%20configuration</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::FieldSet" x="140" y="163" w="1280" h="256" measuredW="200" measuredH="170" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Relations</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="1360" y="431" w="-1" h="-1" measuredW="56" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Close</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Button" x="146" y="431" w="-1" h="-1" measuredW="149" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Export%20configuration...</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::ButtonBar" x="610" y="126" w="-1" h="-1" measuredW="338" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <text>Knowledge%20Bases%2C%20Columns%2C%20Cells%2C%20Relations</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::DataGrid" x="146" y="180" w="1253" h="231" measuredW="1216" measuredH="51" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Source%20column%20order%2C%20Source%20column%20name%2C%20Source%20concept%2C%20Predicate%2C%20Target%20column%20order%2C%20Target%20column%20name%2C%20Target%20concept%0A3%2C%20City%2C%20%2C%20Local%20custom%20%28http%3A//adequate.at/concept/local-custom%29%2C%20%2C%20Favorite%20Dish%2C%20Dish%20%28http%3A//yumyumpedia.org/t/dish%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::StickyNote" x="624" y="216" w="131" h="135" measuredW="109" measuredH="123" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Not%20editable%20when%20in%20read-only%20mode.%20But%20all%20the%20concepts%20can%20still%20be%20explored%20as%20in%20Scenario%204.</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

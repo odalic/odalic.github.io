@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Configurations export and import</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Configurations export and import
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified on Jun 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Configurationsexportandimport-Motivation">Motivation</h1><p>The result of the execution is determined by the following factors:</p><ul><li>content of the processed file</li><li>parsing format assigned to the file<ul><li>e.g. changing the used delimiter can affect how many columns the CSV file has</li></ul></li><li>available knowledge bases<ul><li>e.g. when some resource is missing in the base, the algorithm will not use it to annotate any of the table parts</li></ul></li><li>task configuration, which stands for:<ul><li>task description</li><li>the input file</li><li>provided feedback which the server uses as constraints for the next algorithm run</li><li>set of of bases, that the user selected to run the processing against</li><li>chosen primary base</li><li>specified maximum number of rows that will be processed from the file</li><li>whether to approach the input as statistical data (which ultimately results in the export of the <a href="https://www.w3.org/TR/vocab-data-cube/" class="external-link" rel="nofollow">RDF data cude</a>)</li></ul></li></ul><p>It is impractical to transfer the whole knowledge bases, the more so because they are usually remotely accessible. The definition of proxies on the other hand are small and easy to transfer. Files are also easy to send from one machine to another, the remote file location can just be shared (apart from the parsing format, but it hardly ever changes so it does not hurt to set it up on another machine). What remains to solve is the task configuration export and import.</p><p>In the current state the task configuration includes also the definitions of the used base proxies. When a base proxy of the same name is already present, it is used as it is; if not the serialized definition is used to create the used base proxy first. The base proxies can also be exported and imported independently on the tasks.</p><p>Tasks do also have other properties: owning user, task ID, time of creation/modification. But these are ephemeral and not that useful to keep in a configuration transferable from machine to machine.</p><h1 id="Configurationsexportandimport-Formatchoice">Format choice</h1><p>One has almost too many choices when choosing how to encode the configurations. Serialized RDF is an appealing option, not only because of the project subject matter, but it also makes it easy to accompany the processing results with their provenance. What makes the conversion to RDF a challenge is a relatively large and diverse class hierarchy of the task configuration that must be turned into RDF statements. It would be possible to write a code doing that by manually constructing the RDF model, but an option to annotate the involved classes and employ some framework to construct the statements automatically (as is the case when mapping the domain classes to JSON through JAXB annotations for the REST API) appeared like a better choice.</p><p>There are few options, such as <a href="https://bitbucket.org/openrdf/alibaba/src/master/object-repository/" class="external-link" rel="nofollow">Alibaba</a>, <a href="https://github.com/mhgrove/Empire" class="external-link" rel="nofollow">Empire</a>, but these are focused on storing Java objects in RDF stores and are therefore too heavy for simple round-trip conversion. There is an existing older library <a href="http://rdfbeans.sourceforge.net/" class="external-link" rel="nofollow">http://rdfbeans.sourceforge.net/</a>, which appears to be abandoned. Ultimately <a href="https://github.com/stardog-union/pinto" class="external-link" rel="nofollow">Pinto</a> library was chosen. Following <a href="REST-API-implementation_76976077.html">the practice established to convert domain objects to JSON for the REST API</a>, a separate package cz.cuni.mff.xrg.odalic.api.rdf.values containing the mapped versions of objects was established and these versions annotated with Pinto annotations. Because the Pinto lacks the concept of <a href="https://docs.oracle.com/javase/8/docs/api/javax/xml/bind/annotation/adapters/XmlAdapter.html" class="external-link" rel="nofollow">XMLJavaTypeAdapter</a>s, the mapped version of objects must refer to other mapped versions, and methods converting the value objects back to the domain ones have to be provided.</p><p>Much larger complication appeared when attempting to convert Java Maps of more complex types than Strings. Pinto did not handle these cases well, so the maps had to be converted to collections of key-value entries first. Apart from that, the solution finalized in <code>cz.cuni.mff.xrg.odalic.api.rdf.TurtleRdfMappingTaskSerializationService</code> and in <code>cz.cuni.mff.xrg.odalic.api.rdf.TurtleRdfMappingknowledgeBaseSerializationService</code> proved to be reliable, even for a complicated configuration cases, involving extensive user feedback.</p><h1 id="Configurationsexportandimport-Formatspecification">Format specification</h1><p>All the exported tasks have a unique identifier generated, which is present in the serialized configuration in a triple in the form:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&lt;http://odalic.eu/odalic/SerializedTask/V5/246c095d-f89b-4151-962b-34bd25b02843&gt; a &lt;http://odalic.eu/internal/Task&gt;</pre>
+</div></div><p>The subject URI consists of three main parts: application instance web address (odalic.eu in this case), version identifier (currently the fifth version) and UUID. The subject is of type <a href="http://odali.eu/internal/Task," class="external-link" rel="nofollow">http://odali.eu/internal/Task,</a> and through other RDF statements has all the other exported properties linked. Properties such as <a href="http://odalic.eu/internal/Task/configuration" class="external-link" rel="nofollow">http://odalic.eu/internal/Task/configuration</a> follow a common pattern where every property has a suffix in the form <span class="nolink">http://odalic.eu/internal</span> , followed by the name of the class the property belongs to and the name of the property, derived from the properties as defined by the objects exchanged through <a href="REST-API-specification_76975884.html">REST API</a>.</p><p>Knowledge base proxies follow the same schema, only substituting Task for KnowledgeBase. The underlying library does not map Java collections using RDF collections, but instead opts for one-time (but not anonymous) nodes forming the defining connections. They share the same prefix http://odalic.eu/odalic/SerializedTask/Node/ followed by UUID. These are also used to represent contained entities (which alleviates the need to create manually unique identifier for each &quot;pointer&quot;). The only exception are maps which are before mapping converted to a set of entries (for example in the case of a map from base name to annotation candidates).</p><p>The typical fragment of exported configuration looks like this, which illustrates the above mentioned peculiarities of the format:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">&lt;http://odalic.eu/odalic/SerializedTask/V5/29eac34b-de44-4328-8d54-ad97799384f7&gt; a &lt;http://odalic.eu/internal/Task&gt; ;
+	&lt;http://odalic.eu/internal/Task/configuration&gt; &lt;http://odalic.eu/odalic/SerializedTask/Node/8a0734da21ccdc62ad71f2483c8519d8&gt; .
+
+&lt;http://odalic.eu/odalic/SerializedTask/Node/f1188357b6a2c82746d36af42dd04cb3&gt; a &lt;http://odalic.eu/internal/Entity&gt; .
+
+&lt;http://odalic.eu/odalic/SerializedTask/Node/6ea67dc770af060bc491dbb8385bc867&gt; &lt;http://odalic.eu/internal/Entity/resource&gt; &quot;http://dbpedia.org/dbtax/Surname&quot; .
+
+&lt;http://odalic.eu/odalic/SerializedTask/Node/6532423b372f99780ed96f118409c1d1&gt; &lt;http://odalic.eu/internal/EntityCandidate/score&gt; &lt;http://odalic.eu/odalic/SerializedTask/Node/928ec89c7f9e3d7a72590c219e1cb611&gt; .
+
+&lt;http://odalic.eu/odalic/SerializedTask/Node/f501ceaf6326453502a757e2a22ddcfa&gt; &lt;http://odalic.eu/internal/KnowledgeBase/insertGraph&gt; &quot;http://odalic.eu&quot; .
+
+&lt;http://odalic.eu/odalic/SerializedTask/Node/59d958855ae15086db58fea03a825b6f&gt; a &lt;http://odalic.eu/internal/Entity&gt; .
+
+&lt;http://odalic.eu/odalic/SerializedTask/Node/4b072229a26e9e103703e060b1133020&gt; &lt;http://odalic.eu/internal/EntityCandidate/entity&gt; &lt;http://odalic.eu/odalic/SerializedTask/Node/156ae04d9c18edca709e51a644076014&gt; .
+
+&lt;http://odalic.eu/odalic/SerializedTask/Node/156ae04d9c18edca709e51a644076014&gt; &lt;http://odalic.eu/internal/Entity/label&gt; &quot;Person&quot; .
+
+&lt;http://odalic.eu/odalic/SerializedTask/Node/fdcd19e5f18a7469262778efed4bc633&gt; &lt;http://odalic.eu/internal/EntityCandidateNavigableSetWrapper/value&gt; &lt;http://odalic.eu/odalic/SerializedTask/Node/239164724ee31eea35337b2d0a83a21b&gt; .
+
+&lt;http://odalic.eu/odalic/SerializedTask/Node/75734a569feba5ad18339a2dbfa7cab7&gt; &lt;http://odalic.eu/internal/KnowledgeBaseEntityCandidateNavigableSetEntry/base&gt; &quot;DBpedia&quot; .
+
+&lt;http://odalic.eu/odalic/SerializedTask/Node/6888029707e6588411dbbe33f195597a&gt; &lt;http://odalic.eu/odalic/SerializedTask/Node/value&gt; 3.0438887148351625E0 .
+
+...</pre>
+</div></div>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

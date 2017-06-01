@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Task Configuration - from NSWI041</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic-Server_74191816.html">Odalic Server</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Task Configuration - from NSWI041
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span> on Aug 26, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="TaskConfiguration-fromNSWI041-OriginalContentfromNSWI041">Original Content from NSWI041</h2><p><span style="color: rgb(0,0,0);"><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/74191857/74191854.png" data-image-src="attachments/74191857/74191854.png" data-unresolved-comment-count="0" data-linked-resource-id="74191854" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2016-08-26 at 10.09.12.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="74191857" data-linked-resource-container-version="1"></span><br/></span></p><p><span style="color: rgb(0,0,0);">Taken from: <a href="https://drive.google.com/drive/u/1/folders/0B-BaaOfP11_oWnhVUUZkb0JCenM?ths=true" class="external-link" rel="nofollow">https://drive.google.com/drive/u/1/folders/0B-BaaOfP11_oWnhVUUZkb0JCenM?ths=true</a></span></p><p> </p><p><span style="color: rgb(0,0,0);">Firstly, the former TaskConfiguration has been split into two parts: a TaskConfigurationTemplate, which carries all the parts of configuration that are reusable between new tasks; and a usually much more short-lived TaskConfiguration, which serves as receipt for the Scheduler to actually create and plan the actual Task.</span></p><p><span style="color: rgb(0,0,0);">The TaskConfiguration thus contains (apart from the aforementioned template instance) fields describing the locations of output and input (as these are usually changed whenever you want to create a new task with the same settings as some existing task).</span></p><p><span style="color: rgb(0,0,0);"><br/></span></p><p><span style="color: rgb(0,0,0);"><br/></span></p><p><span style="color: rgb(0,0,0);"><br/></span></p><p><span style="color: rgb(0,0,0);"><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/74191857/74191855.png" data-image-src="attachments/74191857/74191855.png" data-unresolved-comment-count="0" data-linked-resource-id="74191855" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Screen Shot 2016-08-26 at 10.12.09.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="74191857" data-linked-resource-container-version="1"></span><br/></span></p><p><span style="color: rgb(0,0,0);">The Sequence diagram / Task configuration life-time starts with a user creating a new task (an event propagated to the task controller from GUI). If the configuration is based on another task, its TaskConfigurationTemplate is passed as initializing argument to the TaskConfiguration builder (shown as setter, but might be in the constructor as well), otherwise a blank one with no options filled is used. The builder is than used to keep track of all the settings that user selects using the GUI (only input definiton is presented to minimize the glut of various configuration options, but they all follow the same pattern).</span></p><p> </p><p><span style="color: rgb(0,0,0);">When the user reaches the last step of configuration wizard and hits the Run button, the builder is used to build the TaskConfiguration, which is passed to the scheduler. The scheduler decides on the node used to run the provided configuration. After the node is assigned with a task born from the configuration, the algorithm (operating on the inputs and outputs through the -Content interfaces) starts processing.</span></p><p><br/><span style="color: rgb(0,0,0);">Majority of the recently added interface methods found its way to the new class diagram.</span></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74191857/74191854.png">Screen Shot 2016-08-26 at 10.09.12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74191857/74191855.png">Screen Shot 2016-08-26 at 10.12.09.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

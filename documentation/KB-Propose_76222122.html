@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : KB Propose</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic-Core_74187556.html">Odalic Core</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : KB Propose
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Nov 27, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p> </p><p>Settings in dbpedia.config:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence"># Settings for inserts
+kb.insert.supported=true
+kb.insert.prefix=http://odalic.eu/concept/
+kb.insert.root.class=http://www.w3.org/2002/07/owl#Thing
+kb.insert.label=http://www.w3.org/2000/01/rdf-schema#label
+kb.insert.alternative.label=http://www.w3.org/2000/01/rdf-schema#label
+kb.insert.subclass.of=http://www.w3.org/2000/01/rdf-schema#subClassOf
+kb.insert.instance.of=http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+kb.insert.class.type=http://www.w3.org/2002/07/owl#Class
+kb.insert.graph=http://propose.odalic.eu</pre>
+</div></div><p> </p><h2 id="KBPropose-Proposingentity(notaclass):">Proposing entity (not a class):</h2><p>When running Odalic on top of <a href="attachments/76222122/76222121.csv" data-linked-resource-id="76222121" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Books-v1.csv" data-linked-resource-content-type="text/csv" data-linked-resource-container-id="76222122" data-linked-resource-container-version="2">Books-v1.csv</a>, I just click on propose for Steven Erikson. As a result I got: </p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">http://odalic.eu/concept/steve-eric http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://www.w3.org/2002/07/owl#Thing
+http://odalic.eu/concept/steve-eric http://www.w3.org/2000/01/rdf-schema#label &quot;Steve-custom&quot;
+http://odalic.eu/concept/steve-eric http://www.w3.org/2000/01/rdf-schema#label &quot;Steve-custom2&quot;
+
+
+
+
+</pre>
+</div></div><p> </p><p>Problem to be solved: The first triple should use as the object (the class the new entity is instance of) the real class from the primary knowledge base which is used for classifying the column (and not the pre-configured root class).</p><p>If the class is not known (there is no classification from the primary knowledge base), such propose should fail with a message (it is necessary to first select/propose class for the column from the primary knowledge base).</p><p> </p><p>Extension needed: owl:equivalentClass (configurable term in config.properties for the primary KB) to the classes from non-primary KBs.</p><h2 id="KBPropose-Proposingclass(notaclass):">Proposing class (not a class):</h2><p>New class is proposed for &quot;authors&quot;</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">http://odalic.eu/concept/fantasy-writers
+http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+http://www.w3.org/2002/07/owl#Class
+
+http://odalic.eu/concept/fantasy-writers
+http://www.w3.org/2000/01/rdf-schema#label
+&quot;Fantasy writers&quot;
+
+http://odalic.eu/concept/fantasy-writers
+http://www.w3.org/2000/01/rdf-schema#subClassOf
+http://www.w3.org/2002/07/owl#Thing
+
+
+
+</pre>
+</div></div><p>Problem/Adjustmen neededt: Do not define the triple &quot;X subClassOff Thing&quot;, as this is valid by default for all classes, there is no need to explicitely materialize that. </p><p> </p><p> </p><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76222122/76222121.csv">Books-v1.csv</a> (text/csv)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

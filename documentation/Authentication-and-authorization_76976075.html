@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Authentication and authorization</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Authentication and authorization
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified on Jun 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="Authenticationandauthorization-Fromawebclientperspective">From a web client perspective</h1><p>The web client uses Satellizer library (<a href="https://github.com/sahat/satellizer" rel="nofollow" class="external-link">https://github.com/sahat/satellizer</a>) to support server security demands where the parties agreed on use of tokens adhering to the <a href="https://jwt.io/" class="external-link" rel="nofollow">JWT</a> standard.</p><h2 id="Authenticationandauthorization-Signingup">Signing up</h2><ol><li>User creates a new account by providing relevant information, such as e-mail, by which his or her account will be identified.</li><li>The web client sends a request to the server with the relevant information <em>(e-mail, password)</em>.</li><li>In case no other account is paired with the provided e-mail address, the server creates the new account and responds with an affirmative message. The server additionally asynchronously sends an e-mail to the provided address.</li><li>The web client informs the user to await an e-mail with additional instructions.</li><li>The e-mail consists<em> (besides human readable instructions)</em> of a hyperlink leading to a specific URL, as configured in the previously mentioned <code>config/sti.properties</code> file. For example, <code>http://localhost:8080/index.html#/signup/&lt;token&gt;, </code>where &quot;&lt;<code>token&gt;</code>&quot; is an actual token provided by the server.</li><li>By clicking on the link, the user is redirected to a specific screen on the web client. There, the application automatically parses the URL and sends a confirmation request to the server with the token attached.</li><li>If the token has not expired yet, the server responds with an affirmative message, to which the client application responds by displaying information to the user, ensuring him or her the account has been successfully activated, and requesting him or her to log in.</li></ol><h2 id="Authenticationandauthorization-Loggingin">Logging in</h2><ol><li>The user logs in by providing the e-mail address his or her account is now associated with, and the password.</li><li>The application sends a request to the server containing the e-mail and the password.</li><li>If the account information is valid, the server responds with an affirmative message with a token attached.</li><li>The application saves the token in the user's local storage <em>(by using HTML5 Web Storage API)</em>.</li><li><strong>From now on, each request the application sends is automatically attached with an authorization header containing the token.</strong></li><li>If the user logs out, the token is removed from the local storage.</li><li>A server may respond to a request with a negative message, even if the token is provided in the authorization header of the request <em>(e.g. when the token is expired)</em>. In that case, the application redirects the user to &quot;log in&quot; screen, where it automatically re-evaluates the validity of the token <em>(by sending a testing request to the server)</em>. If the token is not valid anymore, the user is automatically logged out and the token removed from the local storage. The user may log in again.</li></ol><p>Because the communication between the web client and the server is still vulnerable to the &quot;man-in-the-middle&quot; attacks, a usage of TLS/SSL communication protocol is highly recommended.</p><p>Also the confirmation emails can be turned off in the main configuration.</p><h1 id="Authenticationandauthorization-Fromtheserverperspective">From the server perspective</h1><h2 id="Authenticationandauthorization-Tokens">Tokens</h2><p>Employing <a href="https://jwt.io/" class="external-link" rel="nofollow">JWT</a> tokens to authenticate the client of the REST API has several appealing properties, such as:</p><ul><li>They can be shared with 3rd parties to enable them to act on behalf of the user without compromising the actual credentials (e-mail and password combination).<ul><li>Such is the case of the <span style="color: rgb(255,0,0);"><span style="color: rgb(51,51,51);"><a href="UnifiedViews-DPU-implementation_76976691.html">Odalic UnifiedViews plugin</a></span></span>.</li></ul></li><li>They can carry useful information which does not have to be remembered by the server, but still can be relied on.<br/><ul><li>But it is good to keep in mind that unless other measures are taken, these pieces of information are publicly visible!</li><li>For example Odalic server stores the date of expiration in the tokens, which is checked by the server, without the fear that it has been tampered with.</li></ul></li><li>Unless they are long-lived enough to endanger the user, the server does not have remember which tokens were issued.<ul><li>Unfortunately the processing of tasks may take a long time, during which the client polls the server and it would be impractical to negotiate a new token. So the Odalic server does remember which tokens were issued (their ID is enough). Only then it can revoke them when needed, which is implemented by letting the user change his or her password.</li></ul></li><li>They can be safely shared in a URL, unless they are excessively long, because they are composed from safe characters.<ul><li>This is useful in the case of e-mail confirmation, because the token can be placed in the link itself.</li></ul></li><li>They are well supported across languages and platforms.</li></ul><p><span style="color: rgb(255,0,0);"><span style="color: rgb(51,51,51);">The server uses the <a href="https://github.com/auth0/java-jwt" class="external-link" rel="nofollow">auth0 Java JWT library</a> to i<span style="color: rgb(0,0,0);">ss</span></span><span style="color: rgb(0,0,0);">ue and verify sign-up and password reset tokens and the tokens authenticating the source of the API calls. As the available memory is always limited, only a certain amount of tokens is remembered by the server, when this limit is reached, the oldest issued token is lost. </span><br/></span></p><h2 id="Authenticationandauthorization-AuthenticationandauthorizationwithJersey"><span style="color: rgb(0,0,0);">Authentication and authorization with Jersey</span></h2><p><span style="color: rgb(0,0,0);">To secure REST endpoints, the privileged <a href="https://jersey.java.net/documentation/latest/jaxrs-resources.html" class="external-link" rel="nofollow">Resource</a> classes or their methods (if higher granularity is needed) are marked with <code>cz.cuni.mff.xrg.odalic.api.rest.Secured</code> annotation, which triggers checking code in Authentication request filter. This code calls upon the <code>cz.cuni.mff.xrg.odalic.users.UserService</code> to match the token received in HTTP Authorization header with some of the valid issued ones. The Secured annotation also has a parameter which allows to specify which role the user must have to access the secured endpoint. This is handled by Authorization request filter which compares the callee's role with the set of acceptable ones. Should any of these checks fail, an exception is thrown and mapped to appropriate HTTP response, thus denying the access. So far only two roles are supported: common users and the administrator. The administrator has all the rights of the regular users, plus it can access endpoints allowing to list all the users and delete some of them. Also he or she can act on behalf of another user by providing his or her user ID in the calls.</span></p><h2 id="Authenticationandauthorization-Passwordhandling"><span style="color: rgb(0,0,0);">Password handling</span></h2><p><span style="color: rgb(255,0,0);"><span style="color: rgb(0,0,0);">The password set during the sign-up or reset is never stored. The server only computes a hash from it and the assigned salt and compares is with a password sent in login credentials. For this an </span><a href="https://github.com/wg/scrypt" class="external-link" rel="nofollow">Scrypt implementation in pure Java</a><span style="color: rgb(51,51,51);"> was used. It may lack the raw performance, but does not need to be linked to a C library.</span><br/></span></p>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Test exporting the cube - Tomas</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Testing-Data_75564208.html">Testing Data</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="76224174.html">Number of new babies by the cities, districts</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Test exporting the cube - Tomas
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span> on Feb 23, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Dimensions proposed: dimDistrict, dimCity</p><p>Measures: numberOfBornBabies and year</p><p>Graz-Stadt disamb added </p><p>Classification is: Location for districts, populated place for cities</p><p> </p><p>Exported cube: </p><p> </p><pre>@prefix qb: &lt;http://purl.org/linked-data/cube#&gt; .
+@prefix sdmx-measure: &lt;http://purl.org/linked-data/sdmx/2009/measure#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+
+&lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; a qb:DataSet ;
+	dcterms:title &quot;STMK_2012_LIVEBIRTHS-10lines.csv&quot; ;
+	qb:structure &lt;http://odalic.eu/schema/dsd/eed886ae-cc5d-40f7-b3de-fc7100aa485c&gt; .
+
+&lt;http://odalic.eu/schema/dsd/eed886ae-cc5d-40f7-b3de-fc7100aa485c&gt; a qb:DataStructureDefinition ;
+	qb:component &lt;http://odalic.eu/schema/dimension/f8098d7e-fcdb-4f18-b11b-674a25f09e3f&gt; .
+
+&lt;http://odalic.eu/schema/dimension/f8098d7e-fcdb-4f18-b11b-674a25f09e3f&gt; qb:dimension &lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; .
+
+&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; a rdf:Property , qb:DimensionProperty ;
+	rdfs:label &quot;dimDistrict&quot; ;
+	qb:concept &lt;http://dbpedia.org/ontology/Location&gt; .
+
+&lt;http://odalic.eu/schema/dsd/eed886ae-cc5d-40f7-b3de-fc7100aa485c&gt; qb:component &lt;http://odalic.eu/schema/dimension/ea1782cd-3a9d-499c-95a8-1b802ae5c7e1&gt; .
+
+&lt;http://odalic.eu/schema/dimension/ea1782cd-3a9d-499c-95a8-1b802ae5c7e1&gt; qb:dimension &lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; .
+
+&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; a rdf:Property , qb:DimensionProperty ;
+	rdfs:label &quot;dimCity&quot; ;
+	qb:concept &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/schema/dsd/eed886ae-cc5d-40f7-b3de-fc7100aa485c&gt; qb:component &lt;http://odalic.eu/schema/measure/6b8ed191-2b11-4520-beb7-61eb97919a0d&gt; .
+
+&lt;http://odalic.eu/schema/measure/6b8ed191-2b11-4520-beb7-61eb97919a0d&gt; qb:measure &lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; .
+
+&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; a rdf:Property , qb:MeasureProperty ;
+	rdfs:label &quot;numberOfBornBabies&quot; ;
+	rdfs:subPropertyOf sdmx-measure:obsValue .
+
+&lt;http://odalic.eu/schema/dsd/eed886ae-cc5d-40f7-b3de-fc7100aa485c&gt; qb:component &lt;http://odalic.eu/schema/measure/215d4beb-0a5b-451b-8384-8bc972e097ca&gt; .
+
+&lt;http://odalic.eu/schema/measure/215d4beb-0a5b-451b-8384-8bc972e097ca&gt; qb:measure &lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; .
+
+&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; a rdf:Property , qb:MeasureProperty ;
+	rdfs:label &quot;year&quot; ;
+	rdfs:subPropertyOf sdmx-measure:obsValue .
+
+&lt;http://dbpedia.org/resource/AT2_mine&gt; dcterms:title &quot;AT2&quot; ;
+	a &lt;http://dbpedia.org/ontology/Place&gt; .
+
+&lt;http://odalic.eu/resource/graz-stadt&gt; dcterms:title &quot;Graz-Stadt&quot; ;
+	a &lt;http://dbpedia.org/ontology/Location&gt; .
+
+&lt;http://dbpedia.org/resource/Graz&gt; dcterms:title &quot;Graz&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/fee1c913-14fb-41a2-966e-04d2ca19085d&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://odalic.eu/resource/graz-stadt&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Graz&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;2558&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Deutschlandsberg&gt; dcterms:title &quot;Deutschlandsberg&quot; ;
+	a &lt;http://dbpedia.org/ontology/Location&gt; .
+
+&lt;http://dbpedia.org/resource/Aibl&gt; dcterms:title &quot;Aibl&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/d8fe2d15-e015-421e-a7d4-19d15bf99f4b&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Aibl&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;8&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Deutschlandsberg&gt; a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/5f63ee90-b13b-4627-abce-b1032cf18197&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;61&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Eibiswald&gt; dcterms:title &quot;Eibiswald&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/aa2a6d34-0f15-4eb1-85bb-8d644fbb3ffb&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Eibiswald&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;11&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Bad_Gams&gt; dcterms:title &quot;Bad Gams&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/21811f50-0692-48e6-a4be-795ffd4c4d18&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Bad_Gams&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;19&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Garanas&gt; dcterms:title &quot;Garanas&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/67c4ce96-5ec5-4a12-bba5-186d515fcd89&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Garanas&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;3&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Georgsberg&gt; dcterms:title &quot;Georgsberg&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/7b34c076-c1ef-4f25-8be8-b0747755038f&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Georgsberg&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;16&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Greisdorf&gt; dcterms:title &quot;Greisdorf&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/ad888c94-ee97-4884-8fd0-29044551c5ae&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Greisdorf&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;6&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Gressenberg&gt; dcterms:title &quot;Gressenberg&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/6acad916-18a0-4529-80eb-8b48f46fdd0d&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Gressenberg&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;1&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://odalic.eu/resource/observation/9bbb976c-14dc-4fd8-a3c0-911a7cd86f45&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;20&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://odalic.eu/resource/observation/30c7aa69-6da5-4417-84d6-0b92a762ce9b&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;17&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Gundersdorf&gt; dcterms:title &quot;Gundersdorf&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/792ff056-e343-4419-87bf-73bbbd0e7a6e&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Gundersdorf&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;5&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Hollenegg&gt; dcterms:title &quot;Hollenegg&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/be035d1d-413c-461d-b899-6c5075cd3215&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Hollenegg&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;13&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Kloster,_Styria&gt; dcterms:title &quot;Kloster&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/c39c7ee8-541f-45a4-833b-6627c5b9a0d6&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Kloster,_Styria&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;0&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .
+
+&lt;http://dbpedia.org/resource/Lannach&gt; dcterms:title &quot;Lannach&quot; ;
+	a &lt;http://dbpedia.org/ontology/PopulatedPlace&gt; .
+
+&lt;http://odalic.eu/resource/observation/e548d3bc-2e9a-4575-9361-bb00ec31b0ab&gt; a qb:Observation ;
+	qb:dataSet &lt;http://odalic.eu/schema/dataset/b34e0036-166c-4f72-9f76-ad46a5c83114&gt; ;
+	&lt;http://odalic.eu/schema/06f49996-156a-4ab1-9e3f-3e89b761dd3a&gt; &lt;http://dbpedia.org/resource/Deutschlandsberg&gt; ;
+	&lt;http://odalic.eu/schema/a1fe41db-fa9a-4bb5-a1f5-6a4cd45050c7&gt; &lt;http://dbpedia.org/resource/Lannach&gt; ;
+	&lt;http://odalic.eu/schema/8a6a0b11-e99a-4ee7-b0de-f21dbc0019a5&gt; &quot;29&quot; ;
+	&lt;http://odalic.eu/schema/3911893d-e800-45c3-9692-2894cd1dc34f&gt; &quot;2012&quot; .</pre>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

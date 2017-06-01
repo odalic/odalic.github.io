@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Tasks executions</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Tasks executions
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified by <span class='editor'> Václav Brodec</span> on Mär 03, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h2 id="Tasksexecutions-Executionworkflow"><span>Execution workflow<br/></span></h2><p><span>When the user gives command to execute a processing task, the following happens:</span></p><ol><li>Server verifies that execution is not already in process.<ul><li>To simplify matters we allow only one execution per task definition. This is only a slight practical limitation as nothing prevents the user from copying the exact task definition under another name (via export/import round-trip).</li></ul></li><li><span style="color: rgb(0,0,0);">The current <a href="Configurations-export-and-import_76976080.html">configuration</a> is retrieved.</span></li><li><span style="color: rgb(0,0,0);">A snapshot of the the parsed input specified in the configuration is made.</span><ul><li><span style="color: rgb(0,0,0);">This prevents possible corruption of the result display in case the formatting of the original file changes between the start of processing and the result presentation. This might cause columns mismatch and other undesirable effects.<br/></span></li><li><span style="color: rgb(0,0,0);">The parser also automatically detects line separators and remembers them to apply in outputs.<br/></span></li></ul></li><li><span style="color: rgb(0,0,0);">A Runnable instance is created, which does the following:</span><ol><li><span style="color: rgb(0,0,0);">The parsed input is converted to the working table format of the core algorithm.</span></li><li><span style="color: rgb(0,0,0);">Interpreters associated with the defined knowledge base proxies are provided with the table and started one by one (although parallel computation is about to be explored in future releases), each applying the algorithm on the table, constrained by the optionally provided user feedback from previous runs.</span></li><li><span style="color: rgb(0,0,0);">Their results are merged into single result which is cached and set as a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Future.html" class="external-link" rel="nofollow">Future</a> result, waiting for retrieval by the client or returning immediately if the retrieval call has already been made.<br/></span></li></ol></li><li><span style="color: rgb(0,0,0);">The Runnable instance is submitted to <a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html" class="external-link" rel="nofollow">ExecutorService</a> and the returned Future is associated with the user's ID and task ID, but not before the previously cached result is purged.</span></li></ol><p><span style="color: rgb(0,0,0);">When the command to cancel the task is received, it is passed on the Future. Unfortunately in the current version it is not possible to actually stop the execution and it always has to go through even if it does appear stopped the client code. At least until cooperative handling of thread interruption is introduced to the algorithm code. The problem lies in the Solr caches, which do not handle the pre-emptive interruptions well and are in the risk of corruption if the client code does them.<br/></span></p><h2 id="Tasksexecutions-Executionstates"><span style="color: rgb(0,0,0);">Execution states</span></h2><p><span style="color: rgb(0,0,0);"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="656" width="606" src="attachments/76975884/76975882.png" data-image-src="attachments/76975884/76975882.png" data-unresolved-comment-count="0" data-linked-resource-id="76975882" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="flow-taskstate.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76975884" data-linked-resource-container-version="25"></span><br/></span></p><p>The state of the Future (whether it it is done, and if so, if it is cancelled) and whether there is even any associated with the task, or a result is cached, determines the possible execution states of the task. It is the caching in persistent storage, that slightly complicates things against the memory-only version, because the Futures naturally cannot be serialized, and any exceptions raised during the task processing even less so. This causes the ERROR state to be lost upon server restart, which was ultimately deemed an acceptable result, compared with the effort needed to keep the arbitrary error cause serialized. Naturally the task result is available only when the execution is in the SUCCESS or WARNING state.</p><p>The warnings presented when querying the result from the WARNING state are collected from minor runtime exceptions that occur throughout the algorithm execution. The motivation for their introduction was the fact that in the original algorithm version even minor setbacks, like temporary HTTP connection problems, caused the entire processing to halt, which was frustrating in cases when the processing took several-hours to repeat.</p><h1 id="Tasksexecutions-Taskprocessingresult">Task processing result</h1><p>Odalic internal model of table annotations (<code>cz.cuni.mff.xrg.odalic.tasks.results.Result</code>), presented on the outside by the REST API, is geared towards making the working of the client easier first, rather than truly reflect any theoretical model. It has the following parts:</p><ul><li><strong>subjectColumnPositions</strong><ul><li>mapping of knowledge bases to subject columns<br/><ul><li>subject columns (concept similar to a primary key, all the relations lead from them) are determined through the run of the algorithm for each base in its own interpreter</li></ul></li></ul></li><li><strong>headerAnnotations</strong><ul><li>each column gets assigned an <a href="https://www.w3.org/TR/rdf-schema/#ch_classes" class="external-link" rel="nofollow">RDF class</a> per knowledge base and that implies that all the cells in the column are its instances<ul><li>Actually there are usually multiples candidates, which are ordered according to their score and left for the user to choose from, if not satisfied with the default choice.</li></ul></li></ul></li><li><strong>cellAnnotations</strong><ul><li>A matrix of RDF resources, one per each cell at most, that disambiguate the original cell content.<br/><ul><li>The format of the cell annotations is actually quite similar to those in headers, as there is not much need to distinguish between them for most uses.</li></ul></li></ul></li><li><strong>columnRelationAnnotations</strong><ul><li>RDF properties forming a relation between two columns.<ul><li>The domain of the property conforms to the class of the first column, the range to the second one.</li></ul></li></ul></li><li><strong>statisticalAnnotations</strong><br/><ul><li>They assign set of property to each column per base and a type indicating whether the column is a measure of dimension of the formed data cube.</li><li>Applies only when a statistical processing was chosen during the task configuration. This basically means that no relations were formed, and the choice of subject column was also dropped, because what matters is the final data cube formed during the export.</li></ul></li><li><strong>columnProcessingAnnotations</strong><ul><li>Explicit information whether the column was declared by the algorithm to contain named entities (most of the disambiguated content), non-named entities (typically numerical values) or if the column was ignored by the algorithm (on the user's request) during the process.</li></ul></li><li><strong>warnings</strong><ul><li>List of warnings in the order as they were written when non-fatal errors occurred during the processing.</li></ul></li></ul><p>These parts are adapted from the filled by adapting the result representation provided by the algorithm (<code>uk.ac.shef.dcs.sti.core.model.TAnnotation</code>), which by itself is not suitable to be passed around, but designed to be modified during the processing.</p><h2 id="Tasksexecutions-Annotationstructure">Annotation structure</h2><p>Every annotation (for headers, cells, relations,...) has the following structure:</p><ul><li>Map from knowledge bases to ordered set of candidates.<ul><li>Every candidate is composed from the actual resources description and score assigned by the algorithm.<ul><li>Resource description has a label and the resource URI (optionally prefixed as is common in many common <a href="https://www.w3.org/TR/turtle/#prefixed-name" class="external-link" rel="nofollow">representations</a>).</li></ul></li></ul></li><li>Map from knowledge bases to the set of chosen candidates.</li></ul><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74191878/74191818.png">Screen Shot 2016-08-26 at 10.09.12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74191878/74191821">Sequence diagram %2F Task configuration life time</a> (application/octet-stream)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/74191878/74191822.png">Screen Shot 2016-08-26 at 10.12.09.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

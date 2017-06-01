@@ -1,0 +1,68 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="490" measuredH="356" mockupW="450" mockupH="316">
+  <controls>
+    <control controlID="13" controlTypeID="__group__" x="40" y="40" w="450" h="316" measuredW="450" measuredH="316" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="0" y="0" w="450" h="316" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>New%20Knowledge%20Base</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="16" y="37" w="-1" h="-1" measuredW="35" measuredH="21" zOrder="1" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>Name</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="15" y="68" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="2" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>Description</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::CheckBox" x="16" y="166" w="-1" h="-1" measuredW="192" measuredH="22" zOrder="3" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>Use%20PoolParty%20to%20maintain%20KB</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::CheckBox" x="16" y="189" w="210" h="22" measuredW="201" measuredH="22" zOrder="4" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>New%20concepts%20may%20be%20created</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="35" y="218" w="-1" h="-1" measuredW="113" measuredH="21" zOrder="5" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>Prefix%20for%20concepts</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::TextInput" x="156" y="215" w="-1" h="-1" measuredW="79" measuredH="26" zOrder="6" locked="false" isInGroup="13">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="241" y="215" w="186" h="-1" measuredW="79" measuredH="26" zOrder="7" locked="false" isInGroup="13">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::TextInput" x="91" y="34" w="336" h="-1" measuredW="79" measuredH="26" zOrder="8" locked="false" isInGroup="13">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::TextArea" x="91" y="68" w="336" h="91" measuredW="200" measuredH="140" zOrder="9" locked="false" isInGroup="13">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Button" x="322" y="254" w="-1" h="-1" measuredW="40" measuredH="27" zOrder="10" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>Ok</text>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="371" y="254" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="11" locked="false" isInGroup="13">
+          <controlProperties>
+            <text>Cancel</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

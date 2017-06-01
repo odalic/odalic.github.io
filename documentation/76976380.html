@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : KB Structure Settings (Groups)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Developer-Documentation_76973577.html">Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Server_76975931.html">Server</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Configuration_76975474.html">Configuration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : KB Structure Settings (Groups)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Jan Váňa</span>, last modified by <span class='editor'> Václav Brodec</span> on Jun 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>These settings define the structure of the knowledge base. Each setting can contain multiple values separated by the space character &quot; &quot;. Mandatory settings must be defined in at least one group per knowledge base proxy. For the initially loaded bases, these are located in the <code>enums</code> subdirectory. The base configurations can either specify them manually or let the application detect them manually before each task run when the key <code>kb.structure.groups</code> is omitted in the KB proxy definition.</p><h2 id="KBStructureSettings(Groups)-Types">Types</h2><p>All settings in this category are <strong>optional</strong>.</p><ul><li><p><strong>kb.structure.type.class</strong> - Types used for classes. This setting is by default undefined.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.structure.predicate.type = http://www.w3.org/1999/02/22-rdf-syntax-ns#type</pre>
+</div></div></li><li><p><strong>kb.structure.type.property</strong> - Types used for properties. This setting is by default undefined.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.structure.type.property = http://www.w3.org/1999/02/22-rdf-syntax-ns#Property</pre>
+</div></div></li></ul><h2 id="KBStructureSettings(Groups)-Predicates">Predicates</h2><p><strong>Mandatory </strong>predicates (in the sense that at last one of the groups used by the must have them defined).</p><ul><li><p><strong>kb.structure.predicate.label </strong>- Predicate used for assigning labels.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.structure.predicate.label = http://www.w3.org/2000/01/rdf-schema#label</pre>
+</div></div></li><li><p><strong>kb.structure.predicate.type</strong> - Predicate used for the &quot;type&quot; relationship.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.structure.predicate.type = http://www.w3.org/1999/02/22-rdf-syntax-ns#type</pre>
+</div></div></li></ul><p><strong>Optional</strong> predicates.</p><ul><li><p><strong>kb.structure.predicate.description</strong> - Predicate used for assigning descriptions. This setting is by default undefined.</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Example</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: java; gutter: false; theme: Confluence" data-theme="Confluence">kb.structure.predicate.description = http://dbpedia.org/ontology/abstract</pre>
+</div></div></li></ul>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

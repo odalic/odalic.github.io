@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Task result</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="User-Documentation_76974286.html">User Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="User-interface_76977455.html">User interface</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Task result
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Josef Janoušek</span>, last modified on Jun 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>Page with the result of semantic annotation can be opened from the <a href="List-of-tasks_76974368.html">List of tasks</a> by the &quot;Window-arrow&quot; button in the <em>Action</em> column of the table with tasks. Here you can see the result of classifications, disambiguations, subject column detections and relation discovery process, adjust feedback for the algorithm and export resulting annotations in the form of extended CSV file, JSON annotations and RDF triples.</p><h1 id="Taskresult-Classificationsanddisambiguations">Classifications and disambiguations</h1><p>In the first tab you can review resources suggested as classifications of the columns and disambiguations of the cells. Resources from different knowledge bases are distinguished by colours and made bold for the primary knowledge base. The name of corresponding knowledge base is shown in a tooltip (when the mouse is over) of the resource label. The link next to the resource label opens a resource web page (in a browser's new tab).</p><p>Missing resource annotation can be caused by several reasons: the way how the algorithm viewed the processing of column is shown in the tooltip (when the mouse is over) of the column header text. There are four possible ways the algorithm can view a column:</p><ul style="list-style-type: square;"><li><strong>Named entity</strong> - the algorithm recognized the values of column as named entities (uniquely identifiable by an URI from the base) and performed classification and disambiguation process normally.</li><li><strong>Non-named entity</strong> - the algorithm assessed that the values are not named entities (for example when there are numbers), so the classification and disambiguation process was skipped for that column.</li><li><strong>Ignored</strong> - the column was intentionally ignored, because the user asked so in the feedback to previous task run.</li><li><strong>Compulsory</strong> - the column was classified and disambiguated although it was not recognized as named entity, because the user asked so in the feedback to previous task run.</li></ul><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76974383/76989056.png" data-image-src="attachments/76974383/76989056.png" data-unresolved-comment-count="0" data-linked-resource-id="76989056" data-linked-resource-version="3" data-linked-resource-type="attachment" data-linked-resource-default-alias="classification.PNG" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974383" data-linked-resource-container-version="14"></span></p><h2 id="Taskresult-Relatedfeedback">Related feedback</h2><p>You can adjust basic feedback settings directly from the table of results. The lock icon shows whether the feedback is set for the particular cell or column header. If so it should be reflected by the algorithm in the next run of the task. Initially it is unlocked. When you adjust some feedback, it locks automatically. You can also lock and unlock it manually.</p><ul style="list-style-type: square;"><li><strong>&quot;Bin&quot; icon</strong> - deletes resource annotation for particular knowledge base. For cells it means that the disambiguation of the cell will be skipped, for column headers is means that the whole column will be skipped (ignored).</li><li><strong>&quot;Plus&quot; icon</strong> - opens dialog for proposing a new resource, which will be then used for new disambiguation of the cell (or classification of the column). It is possible to propose resources only to the primary knowledge base (which must be modifiable).<br/><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76974383/76975841.png" data-image-src="attachments/76974383/76975841.png" data-unresolved-comment-count="0" data-linked-resource-id="76975841" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="result-propose.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974383" data-linked-resource-container-version="14"></span><br/><br/></li><li>&quot;Arrow&quot; icon - opens a dialog with detail of classification/disambiguation (described bellow).<br/><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76974383/76975842.png" data-image-src="attachments/76974383/76975842.png" data-unresolved-comment-count="0" data-linked-resource-id="76975842" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="result-detail.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974383" data-linked-resource-container-version="14"></span><br/><br/></li></ul><p>The detail dialog shows annotations found for cell/column in their entirety. It offers more options for feedback adjustment than the table perspective.</p><p>The smart select box displays chosen annotation for each knowledge base. When you click to the select box next to the chosen annotation, other candidates suggested by the algorithm are displayed and you can select one of them as the new annotation resource. Every item in the select box shows label, URI of the resource and a score computed by the algorithm. The available commands in the smart select box are the following:</p><ul><li>By clicking the<strong> &quot;i&quot; icon</strong> you can open the resource web page (in the new tab, if the underlying base has such HTML representation published).</li><li>The <strong>&quot;chain&quot; icon</strong> opens the LodLive component with the corresponding resource.</li><li>The <strong>&quot;cross&quot; icon</strong> deletes the annotation which means that the cell / column will be skipped in the next run.</li></ul><p>When you want to set another resource (different from the candidates provided by algorithm), you can search it in the associated knowledge base (by the label). Then select one of the results and <em>Use</em> it as the annotation. For the primary knowledge base you can also propose completely new resource (as described above). By the last checkbox you can completely skip the cell/ignore column (for all knowledge bases). The lock icon works in the same way as in the result table.</p><h1 id="Taskresult-Subjectcolumns">Subject columns</h1><p>In the second tab (available only for a task which does not process statistical data - see <a href="New-task_76974355.html">Task configuration</a>) you can review suggested subject columns. Subject columns serve as sources for relation discovery (depicted in the third tab). The subject column suggested by algorithm is emphasized in the table preview for each knowledge base. Grey marked column shows an algorithm suggestion (or user feedback from previous run). When we want to mark another columns as subject columns, just click on the desired columns and they will be emphasized by orange color. Adjusting of this part of the feedback is also confirmed by the lock icon which works in a similar way as in the previous tabs.</p><h1 id="Taskresult-"><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76974383/76989060.png" data-image-src="attachments/76974383/76989060.png" data-unresolved-comment-count="0" data-linked-resource-id="76989060" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="subject columns.PNG" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974383" data-linked-resource-container-version="14"></span></h1><h1 id="Taskresult-Relations">Relations</h1><p>In the third tab (also only for task which does not process statistical data) you can review suggested relations between the subject column and other columns. Relations are depicted in the directed graph, where vertices represent columns and relations are represented by edges labelled with predicate resources found in the knowledge bases. Click on the edge label opens dialog with details similar to those for classifications or disambiguations in the first tab. Lock icons work also in the same way.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76974383/76989061.png" data-image-src="attachments/76974383/76989061.png" data-unresolved-comment-count="0" data-linked-resource-id="76989061" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="realtion.PNG" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974383" data-linked-resource-container-version="14"></span></p><p>First mode of the graph, called <em>Node dragging</em>, allows dragging of the vertices around the screen, thus changing the layout. When you switch to the second mode by the <em>Link creation</em> button, then you can add new edges representing new relations between some columns. After their creation it also opens the dialog with details, where you can search or propose the new predicate resource annotation.</p><h1 id="Taskresult-Tabforstatisticaldataprocessing">Tab for statistical data processing</h1><p>When you set the statistical data processing check box to turned on state in the <a href="New-task_76974355.html">Task configuration</a>, the subject column detection and relation discovery parts of the algorithm are skipped. The algorithm instead prepares statistical annotations for a data cube. This means that the algorithm will determine which columns are dimensions and which one measures. Initially all named entity columns are considered for dimensions and non-named entity columns for measures.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76974383/76989111.png" data-image-src="attachments/76974383/76989111.png" data-unresolved-comment-count="0" data-linked-resource-id="76989111" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="cube.PNG" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974383" data-linked-resource-container-version="14"></span></p><p>You can eventually change this decision. <strong>&quot;Bin&quot; icon</strong> removes a column from particular group, <strong>&quot;Add to ...&quot;</strong> buttons add selected column to the group.</p><p>After that you should set the predicate resource in a way similar to classification or disambiguation. &quot;Plus&quot; icon proposes new resource, lock icon confirms the settings and<strong> &quot;Arrow&quot; icon</strong> opens the dialog with details, where you can search resources in the knowledge base. Predicate resources are set only for the primary knowledge base. The predicates are eventually used in the next run of the algorithm (if you hit <em>Reexecute</em>) for creating the so-called &quot;Observations&quot; according to the <a href="https://www.w3.org/TR/vocab-data-cube/" class="external-link" rel="nofollow">data cube vocabulary</a>.</p><h1 id="Taskresult-Reexecute">Reexecute</h1><p>To consider changes which were provided as a feedback, the algorithm must be reexecuted. You can reexecute the task directly by the<strong> &quot;Reexecute&quot; button</strong>. Or you can just save the provided feedback by the <strong>&quot;Save&quot; button</strong> and start the execution later.</p><h1 id="Taskresult-Export">Export</h1><p>At any time you can export the results by buttons at the end of the Result page. Only the result of the last finished execution is used as basis for the exports (thus ignoring a feedback that was not baked in by the task re-execution).</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76974383/76975859.png" data-image-src="attachments/76974383/76975859.png" data-unresolved-comment-count="0" data-linked-resource-id="76975859" data-linked-resource-version="3" data-linked-resource-type="attachment" data-linked-resource-default-alias="result-export.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76974383" data-linked-resource-container-version="14"></span></p><ul style="list-style-type: square;"><li>Extended CSV - file containing columns of the task input file plus extra columns with annotations (disambiguation resources) . The extra columns are easily distinguishable from the original ones, because they are named <em>*_url</em> where <em>*</em> stands for the original column name.</li><li>Annotations - annotations for columns of the extended CSV file according to the <a href="https://www.w3.org/TR/tabular-data-primer/" class="external-link" rel="nofollow">CSV on the Web</a> standard (including annotations of virtual columns used for classifications, relations or statistical data cube).</li><li>RDF - linked data triples in form of RDF describing disambiguated values with classification and relations (or data cube observations in case of statistical data processing).<br/><ul style="list-style-type: square;"><li>There are two common RDF formats available: <a href="https://www.w3.org/TR/turtle/" class="external-link" rel="nofollow">Turtle</a> and <a href="https://www.w3.org/TR/json-ld/" class="external-link" rel="nofollow">JSON-LD</a>.</li></ul></li></ul><p> </p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76975840.png">result-s1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76975839.png">result-s1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76975841.png">result-propose.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76976057.png">result-detail.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76975848.png">result-subject.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76975856.png">result-relations.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76975857.png">result-statistical.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76976059.png">result-export.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76975842.png">result-detail.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76977318.png">result-export.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76975859.png">result-export.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76989058.png">classification.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76989059.png">classification.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76989056.png">classification.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76989062.png">subject columns.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76989061.png">realtion.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76989060.png">subject columns.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76974383/76989111.png">cube.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

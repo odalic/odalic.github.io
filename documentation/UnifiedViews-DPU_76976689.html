@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : UnifiedViews DPU</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="ODALIC-Documentation_76973575.html">ODALIC Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="User-Documentation_76974286.html">User Documentation</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : UnifiedViews DPU
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Václav Brodec</span>, last modified on Jun 01, 2017
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h1 id="UnifiedViewsDPU-Introduction">Introduction</h1><p>The UnifiedViews DPU allows the user to run and schedule <a href="https://grips.semantic-web.at/display/ADEQ/Introduction+to+Odalic+and+the+problem+it+solves#IntroductiontoOdalicandtheproblemitsolves-server" rel="nofollow">Odalic Semantic Table Interpretation</a> in combination with other plugins in <a href="https://grips.semantic-web.at/display/UDDOC" rel="nofollow">UnifiedViews</a>. In order to get yourself familiarized with UnifiedViews and its concepts and usage follow the <a href="https://grips.semantic-web.at/display/UDDOC" rel="nofollow">documentation</a>.</p><h1 id="UnifiedViewsDPU-Settingupatemplate">Setting up a template</h1><h2 id="UnifiedViewsDPU-Retrievingauthenticationtoken">Retrieving authentication token</h2><p>First obtain the authentication token. This can be done by accessing a web client that will share the same server as the plugin. Log in and go to <strong>My account</strong> and click <strong>Show token</strong> to reveal it. Copy the token to clipboard.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/76976689/76977388.png" data-image-src="attachments/76976689/76977388.png" data-unresolved-comment-count="0" data-linked-resource-id="76977388" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="odalic-u-plugin-obtain-token.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76976689" data-linked-resource-container-version="7"></span></p><h2 id="UnifiedViewsDPU-Accessingpluginproperties">Accessing plugin properties</h2><p>Following the <a href="Installation-guides_76975775.html#Installationguides-plugin-installation">plugin installation</a> , go to DPU Templates  if you are not already there, and open the <strong>t-odalic</strong> plugin properties by selecting it in the left column.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76976689/76977367.png" data-image-src="attachments/76976689/76977367.png" data-unresolved-comment-count="0" data-linked-resource-id="76977367" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="odalic-u-plugin-deployment.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76976689" data-linked-resource-container-version="7"></span></p><h2 id="UnifiedViewsDPU-Templateconfiguration">Template configuration</h2><p>Go to the <strong>Template configuration</strong> tab and insert the Odalic server address to <strong>Host</strong> and paste the obtained token to the <strong>Authentication token</strong> field. You can also set the other settings, but it is usually better to set them for each instance individually.</p><p>The mandatory <strong>Task configuration</strong> accepts <a href="List-of-tasks_76974368.html#Listoftasks-task-configuration-download">exported task configuration</a> as the input. The following settings allow to set the format of the input CSV file, which the plugin expects as its sole input. You can set the character encoding (using the names from <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html" class="external-link" rel="nofollow">https://docs.oracle.com/javase/8/docs/technotes/guides/intl/encoding.doc.html</a>) in the <strong>Input character set</strong>, or row <strong>Records delimiter</strong>, you can tell the parser to Ignore empty lines. Optionally you can set the <strong>Quoting character</strong> (to quote the strings containing delimiters), <strong>Escaping character</strong> (which escapes quotes) and finally <strong>Comment marker</strong>. In any case do not forget to <strong>Save</strong> the template.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76976689/76977370.png" data-image-src="attachments/76976689/76977370.png" data-unresolved-comment-count="0" data-linked-resource-id="76977370" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="odalic-u-plugin-template.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76976689" data-linked-resource-container-version="7"></span></p><h1 id="UnifiedViewsDPU-Usingtheinstances">Using the instances</h1><h2 id="UnifiedViewsDPU-Creatingpipeline">Creating pipeline</h2><p>To use the set-up DPU instance you have to create a pipeline first. Go to <strong>Pipelines</strong> and click <strong>Create pipeline</strong>.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76976689/76977399.png" data-image-src="attachments/76976689/76977399.png" data-unresolved-comment-count="0" data-linked-resource-id="76977399" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="odalic-u-plugin-pipeline-create-mark.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76976689" data-linked-resource-container-version="7"></span></p><h2 id="UnifiedViewsDPU-Pipelineworkbench">Pipeline workbench</h2><p>A workbench to construct UnifiedViews pipeline appears, with the list of available DPU templates on the left. Pick the t-odalic template and drag it to the working plane and connect it with other desired DPUs.</p><p>The Odalic DPU accepts only one mandatory file input and produces three file outputs: <em>extended CSV</em> and the complementary <em>table annotations</em> and <em>serialized RDF in Turtle format</em>. All three outputs are optional, that means they do not have to be connected to an input of another DPU.</p><p>The following figure demonstrates the use of plugin by connecting its input to a DPU downloading file from a remote location and its outputs to two plugins: the first one will upload the extended CSV and the annotated table to some location, the second one will parse the Turtle input into RDF model, which the user can for example connect to some RDF storage or query with SPARQL DPUs.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76976689/76977397.png" data-image-src="attachments/76976689/76977397.png" data-unresolved-comment-count="0" data-linked-resource-id="76977397" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="odalic-u-plugin-pipeline-with-column.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76976689" data-linked-resource-container-version="7"></span></p><h2 id="UnifiedViewsDPU-Instanceconfiguration">Instance configuration</h2><p>Now is the time to set the instance of the t-odalic by clicking the gear icon which appears when hovering with a mouse over the associated blue box. A dialog similar to the one configuring the template appears. <a href="List-of-tasks_76974368.html">Export a task configuration</a> from the web client to make it serve as the blueprint for this DPU processing. Upload it using the <strong>Task configuration</strong> form component. Its content will appear in the non-editable text area. You can <strong>Clear</strong> the <strong>configuration</strong> and upload another if necessary. <strong>Save</strong> the instance specific settings.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76976689/76977400.png" data-image-src="attachments/76976689/76977400.png" data-unresolved-comment-count="0" data-linked-resource-id="76977400" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="odalic-u-plugin-template-instance.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76976689" data-linked-resource-container-version="7"></span></p><h2 id="UnifiedViewsDPU-Debuggingthepipeline">Debugging the pipeline</h2><p>You can debug the sample pipeline fragment by hitting the <em>bug icon</em> on the <em>uv-t-filesToRdf</em> DPU box. A reporting window will appear and after the processing finishes, it should look something like the following figure. Notice the lines that have<em> t-odalic</em> in the DPU Instance column, these are the messages sent by the Odalic DPU about its processing state.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76976689/76977366.png" data-image-src="attachments/76976689/76977366.png" data-unresolved-comment-count="0" data-linked-resource-id="76977366" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="odalic-u-plugin-debug.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76976689" data-linked-resource-container-version="7"></span></p><h2 id="UnifiedViewsDPU-Resultpreview">Result preview</h2><p>You can preview the parsed RDF output which was produced during the semantic table interpretation by going to <strong>Browse/Query</strong> tab, selecting the <em>uv-t-filesToRdf</em> DPU and choosing its <em>rdfOutput</em>. A table of parsed triples like on the following figure should appear.</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" src="attachments/76976689/76977369.png" data-image-src="attachments/76976689/76977369.png" data-unresolved-comment-count="0" data-linked-resource-id="76977369" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="odalic-u-plugin-rdf.png" data-base-url="https://grips.semantic-web.at" data-linked-resource-content-type="image/png" data-linked-resource-container-id="76976689" data-linked-resource-container-version="7"></span></p><p>In order to have a valid pipeline you must connect the RDF parsing plugin to some output DPU. Nevertheless even this small example should give you a good grasp on how to tackle the semantic table interpretation with UnifiedViews using the Odalic plugin.</p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977366.png">odalic-u-plugin-debug.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977367.png">odalic-u-plugin-deployment.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977368.png">odalic-u-plugin-pipeline.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977369.png">odalic-u-plugin-rdf.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977370.png">odalic-u-plugin-template.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977388.png">odalic-u-plugin-obtain-token.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977389.png">image2017-3-2 18:18:22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977396.png">odalic-u-plugin-pipeline-create.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977397.png">odalic-u-plugin-pipeline-with-column.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977398.png">image2017-3-2 18:51:5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977399.png">odalic-u-plugin-pipeline-create-mark.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/76976689/76977400.png">odalic-u-plugin-template-instance.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

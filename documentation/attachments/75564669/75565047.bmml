@@ -1,0 +1,111 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1211" measuredH="734" mockupW="1184" mockupH="614">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::TitleWindow" x="27" y="120" w="1184" h="614" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Step%202%3A%20Subject%20column%20selection</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::StickyNote" x="421" y="329" w="163" h="123" measuredW="109" measuredH="123" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Subject%20columns%20may%20differ%20across%20the%20used%20bases.</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="__group__" x="212" y="208" w="935" h="131" measuredW="935" measuredH="131" zOrder="5" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::DataGrid" x="0" y="28" w="935" h="103" measuredW="854" measuredH="95" zOrder="0" locked="false" isInGroup="29">
+          <controlProperties>
+            <rowHeight>37</rowHeight>
+            <text>NUTS3%2C%20DistrictCode%2C%20DistrictName%2C%20LauCode%2C%20*City%20%28http%3A//adequate.at/concept/city%29*%20%28Original%3A%20LauName%29%20%20%20%20%2C%20PopTotal%2C%20refDate%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060301%2C%20*Aibl%20%28http%3A//adequate.at/concept/city/aibl%29*%2C%201386%2C%2001.01.2014%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060303%2C%20AD%3AEibiswald%2C%201437%2C%2001.01.2014</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="147" y="28" w="136" h="103" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="29">
+          <controlProperties>
+            <backgroundAlpha>0.5</backgroundAlpha>
+            <color>15374745</color>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="251" y="20" w="32" h="33" measuredW="46" measuredH="27" zOrder="2" locked="false" isInGroup="29">
+          <controlProperties>
+            <icon>unlock-alt%7Csmall</icon>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="0" y="0" w="-1" h="-1" measuredW="97" measuredH="21" zOrder="3" locked="false" isInGroup="29">
+          <controlProperties>
+            <text>English%20DBpedia</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::DataGrid" x="212" y="390" w="935" h="103" measuredW="854" measuredH="95" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>37</rowHeight>
+        <text>NUTS3%2C%20DistrictCode%2C%20DistrictName%2C%20LauCode%2C%20*City%20%28http%3A//adequate.at/concept/city%29*%20%28Original%3A%20LauName%29%20%20%20%20%2C%20PopTotal%2C%20refDate%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060301%2C%20*Aibl%20%28http%3A//adequate.at/concept/city/aibl%29*%2C%201386%2C%2001.01.2014%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060303%2C%20AD%3AEibiswald%2C%201437%2C%2001.01.2014</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::Canvas" x="561" y="390" w="438" h="103" measuredW="100" measuredH="70" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.5</backgroundAlpha>
+        <color>15374745</color>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Button" x="967" y="383" w="32" h="33" measuredW="46" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>unlock-alt%7Csmall</icon>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Label" x="212" y="362" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>German%20DBpedia</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::DataGrid" x="210" y="546" w="935" h="103" measuredW="854" measuredH="95" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <rowHeight>37</rowHeight>
+        <text>NUTS3%2C%20DistrictCode%2C%20DistrictName%2C%20LauCode%2C%20*City%20%28http%3A//adequate.at/concept/city%29*%20%28Original%3A%20LauName%29%20%20%20%20%2C%20PopTotal%2C%20refDate%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060301%2C%20*Aibl%20%28http%3A//adequate.at/concept/city/aibl%29*%2C%201386%2C%2001.01.2014%0AAT225%2C%20603%2C%20Deutschlandsberg%2C%2060303%2C%20AD%3AEibiswald%2C%201437%2C%2001.01.2014</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Canvas" x="489" y="544" w="72" h="103" measuredW="100" measuredH="70" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.5</backgroundAlpha>
+        <color>15374745</color>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Button" x="544" y="539" w="32" h="33" measuredW="46" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>unlock-alt%7Csmall</icon>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Label" x="210" y="518" w="-1" h="-1" measuredW="56" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Focus%20KB</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Button" x="789" y="671" w="-1" h="-1" measuredW="143" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+        <text>Re-run%20the%20algorithm</text>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::Button" x="60" y="671" w="-1" h="-1" measuredW="167" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+        <text>Start%20from%20the%20beginning</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Button" x="970" y="671" w="-1" h="-1" measuredW="103" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+        <text>Previous%20step</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::Button" x="1075" y="671" w="-1" h="-1" measuredW="80" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>disabled</state>
+        <text>Next%20step</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

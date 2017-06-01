@@ -1,0 +1,60 @@
+Duration <1 minutes for taskId STMK_2012_LIVEBIRTHS and KB ADEQUATe
+Duration 1 minutes for taskId STMK_2012_LIVEBIRTHS and KB DBpedia Clone
+Duration <1 minutes for taskId STMK_2012_LIVEBIRTHS and KB DBpedia
+Duration 5 minutes for taskId STMK_2012_LIVEBIRTHS and KB German DBpedia
+Duration 7 minutes for taskId STMK_2012_LIVEBIRTHS (whole task)
+
+Duration 1 minutes for taskId LT-2009 and KB ADEQUATe
+Duration 2 minutes for taskId LT-2009 and KB DBpedia Clone
+Duration 1 minutes for taskId LT-2009 and KB DBpedia
+Duration 8 minutes for taskId LT-2009 and KB German DBpedia
+Duration 12 minutes for taskId LT-2009 (whole task)
+
+Duration 2 minutes for taskId Jugendzentren and KB ADEQUATe
+Duration 3 minutes for taskId Jugendzentren and KB DBpedia Clone
+Duration 2 minutes for taskId Jugendzentren and KB DBpedia
+Duration 12 minutes for taskId Jugendzentren and KB German DBpedia
+Duration 19 minutes for taskId Jugendzentren (whole task)
+
+Duration <1 minutes for taskId SCHULEOGD and KB ADEQUATe
+Duration <1 minutes for taskId SCHULEOGD and KB DBpedia Clone
+Duration <1 minutes for taskId SCHULEOGD and KB DBpedia
+Duration <1 minutes for taskId SCHULEOGD and KB German DBpedia
+Duration 2 minutes for taskId SCHULEOGD (whole task)
+
+Duration 1 minutes for taskId hunde-wien and KB ADEQUATe
+Duration 1 minutes for taskId hunde-wien and KB DBpedia Clone
+Duration 1 minutes for taskId hunde-wien and KB DBpedia
+Duration 2 minutes for taskId hunde-wien and KB German DBpedia
+Duration 5 minutes for taskId hunde-wien (whole task)
+
+Duration 1 minutes for taskId auslg_2015 and KB ADEQUATe
+Duration 46 minutes for taskId auslg_2015 and KB DBpedia Clone
+Duration 1 minutes for taskId auslg_2015 and KB DBpedia
+Duration 23 minutes for taskId auslg_2015 and KB German DBpedia
+Duration 71 minutes for taskId auslg_2015 (whole task)
+
+Duration 1 minutes for taskId top-locations-wien and KB ADEQUATe
+Duration 16 minutes for taskId top-locations-wien and KB DBpedia Clone
+Duration 5 minutes for taskId top-locations-wien and KB DBpedia
+Duration 10 minutes for taskId top-locations-wien and KB German DBpedia
+Duration 32 minutes for taskId top-locations-wien (whole task)
+
+Duration 2 minutes for taskId unternehmen and KB ADEQUATe
+Duration 19 minutes for taskId unternehmen and KB DBpedia Clone
+Duration 8 minutes for taskId unternehmen and KB DBpedia
+Duration 20 minutes for taskId unternehmen and KB German DBpedia
+Duration 49 minutes for taskId unternehmen (whole task)
+
+Duration 2 minutes for taskId artist and KB ADEQUATe
+Duration 15 minutes for taskId artist and KB DBpedia Clone
+Duration 55 minutes for taskId artist and KB DBpedia
+Duration 412 minutes for taskId artist and KB German DBpedia
+Duration 484 minutes for taskId artist (whole task)
+
+Duration 11 minutes for taskId states and KB ADEQUATe
+Duration 201 minutes for taskId states and KB DBpedia Clone
+Duration 22 minutes for taskId states and KB DBpedia
+Duration 232 minutes for taskId states and KB German DBpedia
+Duration 466 minutes for taskId states (whole task)
+

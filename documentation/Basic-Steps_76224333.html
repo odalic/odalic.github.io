@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ADEQUATE : Basic Steps</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">ADEQUATE</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic_71438906.html">Odalic</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="72222608.html">Architecture / Developer Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Odalic-Core_74187556.html">Odalic Core</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            ADEQUATE : Basic Steps
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Tomas Knap</span>, last modified on Dez 15, 2016
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <p>See sti-main, TMPOdalicInterpreter</p><ul><li>Detecting subject column</li><li>Learning<ul><li>For named entity columns (which are not ignored):<ul><li>Learning.learn()<ul><li>LEARNINGPreliminaryColumnClassifier.runPreliminaryColumnClassifier()<ul><li>get the sample of cells</li><li>find candidate entities for that sample cells (they will then vote for the initial class)<ul><li>KBProxy.findEntityCandidates(sample.getText());  (SPARQLProxy e.g.)</li></ul></li><li>TCellDisambiguator.coldstartDisambiguate()<ul><li>KBProxy.findAttributesForEntity (basically all triples about that entity)</li><li>EntityScorer.computeElementScores() (using TMPEntityScorer)</li><li>EntityScorer.computeFinal() (using TMPEntityScorer)</li></ul></li><li>TCellDisambiguator.addCellAnnotation()</li><li>TColumnClassifier.generateCandidateClazz()</li><li>generatePreliminaryColumnClass()</li></ul></li><li>LEARNINGPreliminaryDisamb.runPreliminaryDisamb()<ul><li>for those already disambiguate, run LEARNINGPreliminaryDisamb.reselect() - some of them may not vote for the selected class, so in that case, new selection should be made or there is no disambiguation</li><li>for the rest, run LEARNINGPreliminaryDisamb.constraintDisambiguation (constrained with the winning class)<ul><li><p>KBProxy.findEntityCandidatesOfTypes(cell value, winningColumnClazz);  (SPARQLProxy e.g.)</p></li><li>also tries to run KBProxy.findEntityCandidates(sample.getText());  (SPARQLProxy e.g.) - so without type restriction, when there are not results on the call above. <ul><li>This is useful in cases when e.g. the sample was not properly selected and other cell values would like to introduce different type value</li></ul></li></ul></li><li>TCellDisambiguator.addCellAnnotation()</li><li>TColumnClassifier.updateColumnClazz()</li></ul></li></ul></li><li>Update.update()<ul><li>In iterations (until stabilizes) run:<ul><li>Update.collectAllEntityCandidateIds()</li><li>TColumnClassifier.updateClazzScoresByDC()<ul><li>ClazzScorer.computeDC()</li></ul></li><li>Update.reviseColumnAndCellAnnotations()<ul><li>Update.disambiguate()<ul><li><p>KBProxy.findEntityCandidatesOfTypes(cell value, winningColumnClazz);  (SPARQLProxy e.g.)</p></li><li>also tries to run KBProxy.findEntityCandidates(sample.getText());  (SPARQLProxy e.g.) - so without type restriction, when there are not results on the call above. </li></ul></li></ul></li><li>Update.checkStablization</li></ul></li></ul></li><li>Relationenumeration.enumerate()<ul><li><span style="color: rgb(255,0,0);">TODO</span><br/><br/><span style="color: rgb(0,0,0);"><span style="color: rgb(255,0,0);"><br/></span></span></li></ul></li></ul></li></ul></li><li>Update</li><li>Relation enumeration</li></ul>
+                    </div>
+
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Jun 01, 2017 13:30</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
